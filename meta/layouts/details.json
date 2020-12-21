@@ -1,0 +1,126 @@
+{
+  "components": [
+    {
+      "attributes": [],
+      "components": [
+        {
+          "name": "main",
+          "type": "content-container"
+        }
+      ],
+      "name": "body0",
+      "style": {
+        "marginTop": "56px"
+      },
+      "type": "body"
+    },
+    {
+      "components": [
+        {
+          "attributes": [],
+          "class": "justify-content-start align-items-center",
+          "components": [
+            {
+              "class": "d-flex align-items-center           col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2",
+              "components": [
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "type": "back"
+                      }
+                    ]
+                  },
+                  "icon": "",
+                  "name": "buttonBack",
+                  "size": "sm",
+                  "style": {
+                    "backgroundColor": "rgba(0, 0, 0, 0)",
+                    "color": "#f5f5f5",
+                    "fontSize": "32px",
+                    "fontWeight": "600",
+                    "height": "40px",
+                    "marginLeft": "6px",
+                    "marginTop": "-20px",
+                    "paddingLeft": "10px",
+                    "paddingRight": "10px"
+                  },
+                  "text": "←",
+                  "tooltip": "",
+                  "type": "button"
+                }
+              ],
+              "name": "leftCol",
+              "type": "col"
+            },
+            {
+              "class": "justify-content-center      col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8",
+              "components": [
+                {
+                  "attributes": [
+                    {
+                      "name": "ID",
+                      "value": "headerDetailsTitel"
+                    }
+                  ],
+                  "name": "labelTitel",
+                  "style": {
+                    "color": "#f5f5f5",
+                    "fontSize": "20px",
+                    "textAlign": "center",
+                    "width": "100%"
+                  },
+                  "text": "${security.user.name}",
+                  "type": "label"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            },
+            {
+              "class": "text-lg-right           col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2",
+              "components": [
+                {
+                  "icon": "dashboard",
+                  "name": "linkDashboard",
+                  "style": {
+                    "color": "#f5f5f5",
+                    "fontSize": "24px",
+                    "marginRight": "20px"
+                  },
+                  "text": "",
+                  "type": "link"
+                }
+              ],
+              "name": "rightCol",
+              "style": {
+                "textAlign": "right"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "headerRow",
+          "style": {
+            "height": "56px"
+          },
+          "type": "row"
+        }
+      ],
+      "name": "header0",
+      "style": {
+        "border": "0px 0px 1px none none solid "
+      },
+      "type": "header"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "suchenText",
+        "type": "set",
+        "value": "''"
+      }
+    ]
+  },
+  "name": "Details"
+}

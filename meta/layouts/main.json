@@ -1,0 +1,176 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "class": "justify-content-start align-items-center",
+          "components": [
+            {
+              "class": "d-flex align-items-center col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
+              "components": [
+                {
+                  "name": "sidebar-toggle0",
+                  "style": {
+                    "border": "-1px none solid none none rgb(0, 0, 0) rgb(234, 238, 240) rgb(0, 0, 0) rgb(0, 0, 0)"
+                  },
+                  "type": "sidebar-toggle"
+                }
+              ],
+              "name": "leftCol",
+              "type": "col"
+            },
+            {
+              "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 justify-content-center",
+              "components": [
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "path": "dashboard",
+                        "type": "navigate"
+                      }
+                    ]
+                  },
+                  "name": "image0",
+                  "path": "/assets/images/LogoOhneSchriftzug3.png",
+                  "style": {
+                    "height": "30px",
+                    "width": ""
+                  },
+                  "type": "image"
+                }
+              ],
+              "name": "col0",
+              "style": {
+                "textAlign": "center"
+              },
+              "type": "col"
+            },
+            {
+              "class": "text-lg-right col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
+              "components": [
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "path": "dashboard",
+                        "type": "navigate"
+                      }
+                    ]
+                  },
+                  "name": "image1",
+                  "path": "/assets/images/IconWidget.png",
+                  "style": {
+                    "height": "24px",
+                    "marginBottom": "2px",
+                    "marginRight": "16px",
+                    "width": ""
+                  },
+                  "type": "image"
+                }
+              ],
+              "name": "rightCol",
+              "style": {
+                "textAlign": "right"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "headerRow",
+          "style": {
+            "height": "56px"
+          },
+          "type": "row"
+        }
+      ],
+      "name": "header0",
+      "type": "header"
+    },
+    {
+      "components": [
+        {
+          "name": "main",
+          "style": {
+            "width": "1823px"
+          },
+          "type": "content-container"
+        }
+      ],
+      "name": "body0",
+      "style": {
+        "paddingBottom": "10px",
+        "paddingTop": "10px"
+      },
+      "type": "body"
+    },
+    {
+      "attributes": [],
+      "components": [
+        {
+          "items": [
+            {
+              "icon": "dashboard",
+              "path": "dashboard",
+              "text": "Dashboard"
+            },
+            {
+              "icon": "assignment",
+              "path": "dienstplan",
+              "text": "Dienstplan"
+            },
+            {
+              "icon": "face",
+              "path": "kunden",
+              "text": "Kunden"
+            },
+            {
+              "icon": "book",
+              "path": "kontakte",
+              "text": "Kontakte"
+            },
+            {
+              "icon": "email",
+              "path": "nachrichten",
+              "text": "Nachrichten"
+            },
+            {
+              "icon": "directions_car",
+              "path": "fahrtenbuch",
+              "text": "Fahrtenbuch"
+            },
+            {
+              "icon": "settings",
+              "path": "einstellungen",
+              "text": "Einstellungen"
+            },
+            {
+              "icon": "account_balance",
+              "path": "impressum",
+              "text": "Impressum"
+            },
+            {
+              "icon": "verified_user",
+              "path": "datenschutz",
+              "text": "Datenschutz"
+            },
+            {
+              "icon": "power_settings_new",
+              "items": [],
+              "path": "abmelden",
+              "text": "Abmelden"
+            }
+          ],
+          "name": "panelmenu0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "panelmenu"
+        }
+      ],
+      "name": "sidebar0",
+      "stretch": true,
+      "type": "sidebar"
+    }
+  ],
+  "name": "Main"
+}

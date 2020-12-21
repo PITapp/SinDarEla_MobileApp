@@ -1,0 +1,332 @@
+{
+  "access": [
+    "Authenticated"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "class": "align-items-center",
+          "components": [
+            {
+              "class": "col-md-12 col-12 col-sm-12 col-lg-12 col-xl-12",
+              "components": [
+                {
+                  "events": {
+                    "change": [
+                      {
+                        "name": "suchenBase",
+                        "type": "set",
+                        "value": "${event}"
+                      },
+                      {
+                        "code": "${this.datalistBase.load()}",
+                        "type": "execute"
+                      }
+                    ]
+                  },
+                  "name": "textboxSuchen",
+                  "style": {
+                    "width": "100%"
+                  },
+                  "type": "textbox",
+                  "value": ""
+                }
+              ],
+              "name": "col2",
+              "type": "col"
+            }
+          ],
+          "name": "row1",
+          "style": {
+            "backgroundColor": "#08ed3e",
+            "height": "56px",
+            "marginBottom": "0",
+            "marginLeft": "0",
+            "marginRight": "0",
+            "marginTop": "0",
+            "position": "fixed",
+            "width": "100%",
+            "zIndex": "10"
+          },
+          "type": "row"
+        },
+        {
+          "name": "card0",
+          "style": {
+            "height": "56px"
+          },
+          "type": "card",
+          "visible": true
+        },
+        {
+          "events": {
+            "click": [
+              {
+                "parameters": [],
+                "path": "base-details",
+                "type": "popup"
+              }
+            ]
+          },
+          "name": "button0",
+          "style": {
+            "width": "50%"
+          },
+          "text": "",
+          "type": "button"
+        },
+        {
+          "events": {
+            "click": [
+              {
+                "parameters": [
+                  {
+                    "name": "baseID",
+                    "value": "${event.baseID}"
+                  }
+                ],
+                "path": "base-details",
+                "type": "navigate"
+              }
+            ]
+          },
+          "name": "button1",
+          "style": {
+            "backgroundColor": "#5dbf74",
+            "width": "50%"
+          },
+          "text": "",
+          "type": "button"
+        },
+        {
+          "allowPaging": true,
+          "count": "${getBasesCount}",
+          "data": "${getBasesResult}",
+          "defaultRowText": "Template for index",
+          "emptyText": "Laden...",
+          "events": {
+            "loadData": [
+              {
+                "name": "dbSinDarEla.getBases",
+                "parameters": [
+                  {
+                    "name": "$top",
+                    "value": "event.top"
+                  },
+                  {
+                    "name": "$skip",
+                    "value": "event.skip"
+                  },
+                  {
+                    "name": "$count",
+                    "value": "event.top != null && event.skip != null"
+                  },
+                  {
+                    "name": "$filter",
+                    "value": "contains(tolower(frage),tolower('${suchenBase}'))"
+                  }
+                ],
+                "then": [
+                  {
+                    "name": "getBasesResult",
+                    "type": "set",
+                    "value": "${result.value}"
+                  },
+                  {
+                    "name": "getBasesCount",
+                    "type": "set",
+                    "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                  }
+                ],
+                "type": "invoke"
+              },
+              {
+                "name": "dbSinDarEla.getBases",
+                "parameters": [
+                  {
+                    "name": "$top",
+                    "value": "event.top"
+                  },
+                  {
+                    "name": "$skip",
+                    "value": "event.skip"
+                  },
+                  {
+                    "name": "$count",
+                    "value": "event.top != null && event.skip != null"
+                  }
+                ],
+                "then": [
+                  {
+                    "name": "getBasesResult",
+                    "type": "set",
+                    "value": "${result.value}"
+                  },
+                  {
+                    "name": "getBasesCount",
+                    "type": "set",
+                    "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                  }
+                ],
+                "type": "invoke"
+              },
+              {
+                "name": "dbSinDarEla.getBases",
+                "parameters": [
+                  {
+                    "name": "$top",
+                    "value": "event.top"
+                  },
+                  {
+                    "name": "$skip",
+                    "value": "event.skip"
+                  },
+                  {
+                    "name": "$count",
+                    "value": "event.top != null && event.skip != null"
+                  }
+                ],
+                "then": [
+                  {
+                    "name": "getBasesResult",
+                    "type": "set",
+                    "value": "${result.value}"
+                  },
+                  {
+                    "name": "getBasesCount",
+                    "type": "set",
+                    "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                  }
+                ],
+                "type": "invoke"
+              }
+            ]
+          },
+          "name": "datalistBase",
+          "pageSize": 10,
+          "style": {},
+          "template": [
+            {
+              "class": "align-items-center",
+              "components": [
+                {
+                  "class": "col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 align-items-center d-flex",
+                  "components": [
+                    {
+                      "name": "link1",
+                      "path": "base-details",
+                      "style": {
+                        "fontSize": "16px",
+                        "verticalAlign": "baseline",
+                        "width": "100%"
+                      },
+                      "target": "",
+                      "text": "${data.NameGesamt}",
+                      "type": "link"
+                    }
+                  ],
+                  "name": "col0",
+                  "style": {
+                    "paddingBottom": "0",
+                    "paddingRight": "0",
+                    "paddingTop": "0"
+                  },
+                  "type": "col"
+                },
+                {
+                  "class": "col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 align-items-center d-flex justify-content-end",
+                  "components": [
+                    {
+                      "icon": "",
+                      "name": "link0",
+                      "path": "base-details",
+                      "style": {
+                        "color": "#ff6d41",
+                        "fontFamily": "arial,helvetica,sans-serif",
+                        "height": "",
+                        "width": "20px"
+                      },
+                      "text": "❯",
+                      "type": "link"
+                    },
+                    {
+                      "events": {
+                        "click": [
+                          {
+                            "parameters": [
+                              {
+                                "name": "baseID",
+                                "value": "${data.baseID}"
+                              }
+                            ],
+                            "path": "base-details",
+                            "type": "navigate"
+                          }
+                        ]
+                      },
+                      "name": "button2",
+                      "text": "",
+                      "type": "button"
+                    }
+                  ],
+                  "name": "col1",
+                  "style": {
+                    "textAlign": "right"
+                  },
+                  "type": "col"
+                }
+              ],
+              "name": "row0",
+              "style": {
+                "border": "1px 0px 1px none none solid rgb(33, 37, 41) rgb(33, 37, 41) rgb(230, 236, 239)",
+                "borderBottom": "1px solid #e6ecef",
+                "marginBottom": "0",
+                "marginLeft": "0",
+                "marginRight": "0",
+                "marginTop": "0",
+                "paddingBottom": "12px",
+                "paddingTop": "7px",
+                "textAlign": "left",
+                "verticalAlign": "baseline"
+              },
+              "type": "row"
+            }
+          ],
+          "type": "datalist",
+          "wrapItems": false
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "suchenBase",
+        "type": "set",
+        "value": "''"
+      },
+      {
+        "code": "this.datalistBase.load();",
+        "then": [],
+        "type": "execute"
+      },
+      {
+        "code": "document.getElementById(\"headerDetailsTitel\").innerHTML = '<div style=\"color: #f5f5f5; font-size: 20px; width: 100%; text-align: center;\">Base</div>'",
+        "type": "execute"
+      },
+      {
+        "code": "this.datalistBase.load();",
+        "type": "execute"
+      },
+      {
+        "code": "this.datalistBase.load();",
+        "type": "execute"
+      }
+    ]
+  },
+  "layout": "Details",
+  "name": "Base"
+}

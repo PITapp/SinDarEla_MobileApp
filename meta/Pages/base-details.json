@@ -1,0 +1,83 @@
+{
+  "access": [
+    "Authenticated"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "BaseDetails",
+          "type": "heading"
+        },
+        {
+          "components": [
+            {
+              "name": "label0",
+              "text": "${paramBaseID}",
+              "type": "label"
+            }
+          ],
+          "name": "card0",
+          "type": "card",
+          "visible": true
+        },
+        {
+          "name": "textarea0",
+          "style": {
+            "width": "100%"
+          },
+          "type": "textarea",
+          "value": "${baseAntwort}"
+        },
+        {
+          "components": [
+            {
+              "content": "<div innerHTML='${baseAntwort}'></div>",
+              "name": "html0",
+              "type": "html"
+            }
+          ],
+          "name": "card1",
+          "type": "card",
+          "visible": true
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "paramBaseID",
+        "type": "set",
+        "value": "${parameters.baseID}"
+      },
+      {
+        "name": "dbSinDarEla.getBases",
+        "parameters": [
+          {
+            "name": "baseID",
+            "value": "${paramBaseID}"
+          }
+        ],
+        "then": [
+          {
+            "name": "baseAntwort",
+            "type": "set",
+            "value": "${result.antwort}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "code": "document.getElementById(\"headerDetailsTitel\").innerHTML = '<div style=\"color: #f5f5f5; font-size: 20px; width: 100%; text-align: center;\">Antwort</div>'",
+        "type": "execute"
+      }
+    ]
+  },
+  "layout": "Details",
+  "name": "BaseDetails"
+}
