@@ -878,19 +878,19 @@
             "navigationProperty": "BenutzerModules"
           }
         },
-        "Module1": {
+        "Module": {
           "type": "object",
-          "$ref": "#/definitions/Module1"
+          "$ref": "#/definitions/Module"
         },
         "ModulID": {
           "x-nullable": false,
           "type": "integer",
           "x-foreignKey": {
             "parentTable": "Module",
-            "parentEntityType": "Module1",
-            "type": "Module1",
+            "parentEntityType": "Module",
+            "type": "Module",
             "principalKey": "ModulID",
-            "name": "Module1",
+            "name": "Module",
             "textProperty": "ModulName",
             "navigationProperty": "BenutzerModules"
           }
@@ -3892,9 +3892,9 @@
         }
       }
     },
-    "Module1": {
+    "Module": {
       "x-table": "def.Module",
-      "resource": "Module1s",
+      "resource": "Modules",
       "required": [
         "ModulName",
         "ActionLabel",
@@ -3908,7 +3908,7 @@
           "type": "integer",
           "x-navigation": [
             {
-              "inversePropertyName": "Module1",
+              "inversePropertyName": "Module",
               "name": "BenutzerModules",
               "type": "BenutzerModule"
             }
@@ -5478,6 +5478,84 @@
         }
       }
     },
+    "VwBenutzerAnu": {
+      "x-view": true,
+      "x-table": "def.vwBenutzerANU",
+      "resource": "VwBenutzerAnus",
+      "required": [
+        "Id",
+        "AccessFailedCount",
+        "EmailConfirmed",
+        "LockoutEnabled",
+        "PhoneNumberConfirmed",
+        "TwoFactorEnabled"
+      ],
+      "properties": {
+        "Id": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 255,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "AccessFailedCount": {
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "ConcurrencyStamp": {
+          "type": "string",
+          "length": 4294967295
+        },
+        "Email": {
+          "type": "string",
+          "length": 256
+        },
+        "EmailConfirmed": {
+          "x-nullable": false,
+          "type": "boolean"
+        },
+        "LockoutEnabled": {
+          "x-nullable": false,
+          "type": "boolean"
+        },
+        "LockoutEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "NormalizedEmail": {
+          "type": "string",
+          "length": 256
+        },
+        "NormalizedUserName": {
+          "type": "string",
+          "length": 256
+        },
+        "PasswordHash": {
+          "type": "string",
+          "length": 4294967295
+        },
+        "PhoneNumber": {
+          "type": "string",
+          "length": 4294967295
+        },
+        "PhoneNumberConfirmed": {
+          "x-nullable": false,
+          "type": "boolean"
+        },
+        "SecurityStamp": {
+          "type": "string",
+          "length": 4294967295
+        },
+        "TwoFactorEnabled": {
+          "x-nullable": false,
+          "type": "boolean"
+        },
+        "UserName": {
+          "type": "string",
+          "length": 256
+        }
+      }
+    },
     "VwBenutzerAuswahlNeue": {
       "x-view": true,
       "x-table": "def.vwBenutzerAuswahlNeue",
@@ -5853,6 +5931,7 @@
       "required": [
         "BaseID",
         "start",
+        "end",
         "EreignisArtCode",
         "title",
         "Gruppe",
@@ -5872,6 +5951,11 @@
           "x-virtual": true
         },
         "start": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
           "x-nullable": false,
           "type": "string",
           "format": "date-time"
@@ -5952,6 +6036,7 @@
         "BaseID",
         "Start",
         "Ende",
+        "end",
         "Titel",
         "title",
         "titleModulDashboard",
@@ -6030,6 +6115,11 @@
           "format": "date-time"
         },
         "Ende": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
           "x-nullable": false,
           "type": "string",
           "format": "date-time"
@@ -6467,6 +6557,10 @@
           "type": "string",
           "format": "date-time"
         },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        },
         "BeantragtAm": {
           "type": "string",
           "format": "date-time"
@@ -6770,7 +6864,8 @@
       "x-table": "def.vwEreignisseMitTeilnehmer",
       "resource": "VwEreignisseMitTeilnehmers",
       "required": [
-        "start"
+        "start",
+        "end"
       ],
       "properties": {
         "id": {
@@ -6789,6 +6884,11 @@
           "format": "date-time",
           "x-key": true,
           "x-virtual": true
+        },
+        "end": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
         },
         "allDay": {
           "type": "integer"
@@ -6877,6 +6977,7 @@
         "EreignisArtCode",
         "title",
         "start",
+        "end",
         "BaseID",
         "Gruppe",
         "Bezeichnung",
@@ -6908,6 +7009,11 @@
           "type": "integer"
         },
         "start": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
           "x-nullable": false,
           "type": "string",
           "format": "date-time"
@@ -6979,6 +7085,7 @@
         "title",
         "description",
         "start",
+        "end",
         "BaseID",
         "Gruppe",
         "Bezeichnung",
@@ -7066,6 +7173,11 @@
         "startZeitspanne": {
           "type": "string",
           "length": 23
+        },
+        "end": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
         },
         "BaseID": {
           "x-nullable": false,
@@ -7276,6 +7388,7 @@
         "title",
         "description",
         "start",
+        "end",
         "BaseID",
         "Gruppe",
         "Bezeichnung",
@@ -7368,6 +7481,11 @@
           "type": "string",
           "length": 124
         },
+        "end": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
         "BaseID": {
           "x-nullable": false,
           "type": "integer"
@@ -7439,6 +7557,7 @@
       "required": [
         "EreignisArtCode",
         "start",
+        "end",
         "Gruppe",
         "Bezeichnung",
         "Kurzzeichen"
@@ -7468,6 +7587,11 @@
           "type": "integer"
         },
         "start": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
           "x-nullable": false,
           "type": "string",
           "format": "date-time"
@@ -7529,6 +7653,7 @@
       "required": [
         "EreignisArtCode",
         "start",
+        "end",
         "BaseID",
         "Gruppe",
         "Bezeichnung",
@@ -7559,6 +7684,11 @@
           "type": "integer"
         },
         "start": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
           "x-nullable": false,
           "type": "string",
           "format": "date-time"
@@ -7629,6 +7759,7 @@
         "EreignisArtCode",
         "title",
         "start",
+        "end",
         "BaseID",
         "Gruppe",
         "Bezeichnung",
@@ -7660,6 +7791,11 @@
           "type": "integer"
         },
         "start": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
           "x-nullable": false,
           "type": "string",
           "format": "date-time"
@@ -16511,9 +16647,9 @@
         }
       }
     },
-    "/Module1s": {
+    "/Modules": {
       "get": {
-        "operationId": "getModule1s",
+        "operationId": "getModules",
         "parameters": [
           {
             "in": "query",
@@ -16562,7 +16698,7 @@
               "properties": {
                 "value": {
                   "items": {
-                    "$ref": "#/definitions/Module1"
+                    "$ref": "#/definitions/Module"
                   },
                   "type": "array"
                 }
@@ -16578,7 +16714,7 @@
         }
       },
       "post": {
-        "operationId": "createModule1",
+        "operationId": "createModule",
         "parameters": [
           {
             "in": "query",
@@ -16587,16 +16723,16 @@
           },
           {
             "in": "body",
-            "name": "Module1",
+            "name": "Module",
             "schema": {
-              "$ref": "#/definitions/Module1"
+              "$ref": "#/definitions/Module"
             }
           }
         ],
         "responses": {
           "201": {
             "schema": {
-              "$ref": "#/definitions/Module1"
+              "$ref": "#/definitions/Module"
             }
           },
           "default": {
@@ -17981,6 +18117,73 @@
                 "value": {
                   "items": {
                     "$ref": "#/definitions/VwBenutzer"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwBenutzerAnus": {
+      "get": {
+        "operationId": "getVwBenutzerAnus",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwBenutzerAnu"
                   },
                   "type": "array"
                 }
@@ -27849,9 +28052,9 @@
         }
       }
     },
-    "/Module1s({ModulID})": {
+    "/Modules({ModulID})": {
       "delete": {
-        "operationId": "deleteModule1",
+        "operationId": "deleteModule",
         "parameters": [
           {
             "in": "path",
@@ -27869,7 +28072,7 @@
         }
       },
       "get": {
-        "operationId": "getModule1ByModulID",
+        "operationId": "getModuleByModulID",
         "parameters": [
           {
             "in": "query",
@@ -27885,7 +28088,7 @@
         "responses": {
           "200": {
             "schema": {
-              "$ref": "#/definitions/Module1"
+              "$ref": "#/definitions/Module"
             }
           },
           "default": {
@@ -27896,7 +28099,7 @@
         }
       },
       "patch": {
-        "operationId": "updateModule1",
+        "operationId": "updateModule",
         "parameters": [
           {
             "in": "query",
@@ -27910,9 +28113,9 @@
           },
           {
             "in": "body",
-            "name": "Module1",
+            "name": "Module",
             "schema": {
-              "$ref": "#/definitions/Module1"
+              "$ref": "#/definitions/Module"
             }
           }
         ],

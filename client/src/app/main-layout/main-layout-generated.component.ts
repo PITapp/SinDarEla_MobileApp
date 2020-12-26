@@ -12,27 +12,26 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { HeaderComponent } from '@radzen/angular/dist/header';
 import { SidebarToggleComponent } from '@radzen/angular/dist/sidebar-toggle';
-import { LabelComponent } from '@radzen/angular/dist/label';
+import { ImageComponent } from '@radzen/angular/dist/image';
 import { BodyComponent } from '@radzen/angular/dist/body';
 import { ContentContainerComponent } from '@radzen/angular/dist/content-container';
 import { SidebarComponent } from '@radzen/angular/dist/sidebar';
 import { PanelMenuComponent } from '@radzen/angular/dist/panelmenu';
-import { FooterComponent } from '@radzen/angular/dist/footer';
 
 import { ConfigService } from '../config.service';
 
+import { SecurityService } from '../security.service';
 
 export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('header0') header0: HeaderComponent;
   @ViewChild('sidebar-toggle0') sidebarToggle0: SidebarToggleComponent;
-  @ViewChild('label0') label0: LabelComponent;
+  @ViewChild('image0') image0: ImageComponent;
+  @ViewChild('image1') image1: ImageComponent;
   @ViewChild('body0') body0: BodyComponent;
   @ViewChild('main') main: ContentContainerComponent;
   @ViewChild('sidebar0') sidebar0: SidebarComponent;
   @ViewChild('panelmenu0') panelmenu0: PanelMenuComponent;
-  @ViewChild('footer0') footer0: FooterComponent;
-  @ViewChild('footerText') footerText: LabelComponent;
 
   router: Router;
 
@@ -55,6 +54,8 @@ export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   _location: Location;
 
   _subscription: Subscription;
+
+  security: SecurityService;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -81,6 +82,7 @@ export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.security = this.injector.get(SecurityService);
   }
 
   ngAfterViewInit() {
@@ -100,4 +102,18 @@ export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
     }
   }
 
+
+  image0Click(event: any) {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
+    this.router.navigate(['dashboard']);
+  }
+
+  image1Click(event: any) {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
+    this.router.navigate(['dashboard']);
+  }
 }

@@ -1,0 +1,30 @@
+<rz-content #content1 container="main">
+  <div class="row align-items-center" [ngStyle]="{'backgroundColor': '#08ed3e', 'height': '56px', 'marginBottom': '0', 'marginLeft': '0', 'marginRight': '0', 'marginTop': '0', 'position': 'fixed', 'width': '100%', 'zIndex': '10'}">
+    <div class="col-md-12 col-12 col-sm-12 col-lg-12 col-xl-12">
+      <rz-textbox #textboxSuchen [style]="{'width': '100%'}" name="textboxSuchen" (change)="textboxSuchenChange($event)">
+      </rz-textbox>
+    </div>
+  </div>
+  <rz-card #card0 [style]="{'height': '56px'}">
+  </rz-card>
+  <rz-button #button0 [style]="{'width': '50%'}" (click)="button0Click($event)">
+  </rz-button>
+  <rz-button #button1 [style]="{'backgroundColor': '#5dbf74', 'width': '50%'}" (click)="button1Click($event)">
+  </rz-button>
+  <rz-datalist #datalistBase [allowPaging]="true" [count]="getBasesCount" [data]="getBasesResult" defaultRowText="Template for index" emptyText="Laden..." [pageSize]="10" [style]="{}" [wrapItems]="false" (loadData)="datalistBaseLoadData($event)">
+    <ng-template let-data datalistTemplate>
+      <div class="row align-items-center" [ngStyle]="{'border': '1px 0px 1px none none solid rgb(33, 37, 41) rgb(33, 37, 41) rgb(230, 236, 239)', 'borderBottom': '1px solid #e6ecef', 'marginBottom': '0', 'marginLeft': '0', 'marginRight': '0', 'marginTop': '0', 'paddingBottom': '12px', 'paddingTop': '7px', 'textAlign': 'left', 'verticalAlign': 'baseline'}">
+        <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 align-items-center d-flex" [ngStyle]="{'paddingBottom': '0', 'paddingRight': '0', 'paddingTop': '0'}">
+          <rz-link #link1 path="base-details" [style]="{'fontSize': '16px', 'verticalAlign': 'baseline', 'width': '100%'}" [text]="data?.NameGesamt">
+          </rz-link>
+        </div>
+        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 align-items-center d-flex justify-content-end" [ngStyle]="{'textAlign': 'right'}">
+          <rz-link #link0 path="base-details" [style]="{'color': '#ff6d41', 'fontFamily': 'arial,helvetica,sans-serif', 'height': '', 'width': '20px'}" text="❯">
+          </rz-link>
+          <rz-button #button2 (click)="button2Click($event, data)">
+          </rz-button>
+        </div>
+      </div>
+    </ng-template>
+  </rz-datalist>
+</rz-content>

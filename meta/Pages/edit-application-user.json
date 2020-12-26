@@ -1,5 +1,7 @@
 {
-  "access": "Authenticated",
+  "access": [
+    "Authenticated"
+  ],
   "events": {
     "load": [
       {
@@ -51,12 +53,14 @@
                       "property": "UserName",
                       "type": "string",
                       "disabled": true,
-                      "title": "User Name"
+                      "title": "User Name",
+                      "requiredText": "is required"
                     },
                     {
                       "property": "Email",
                       "type": "string",
-                      "title": "Email"
+                      "title": "Email",
+                      "requiredText": "is required"
                     },
                     {
                       "title": "Roles",
@@ -65,18 +69,23 @@
                       "data": "${roles}",
                       "multiple": true,
                       "textProperty": "Name",
-                      "valueProperty": "Name"
+                      "valueProperty": "Name",
+                      "requiredText": "is required",
+                      "multipleItemsSelectedText": "{0} items selected",
+                      "emptyFilterText": "No results found"
                     },
                     {
                       "type": "password",
                       "property": "Password",
-                      "title": "Password"
+                      "title": "Password",
+                      "requiredText": "is required"
                     },
                     {
                       "type": "password",
                       "property": "ConfirmPassword",
                       "compare": "Password",
-                      "title": "Confirm password"
+                      "title": "Confirm password",
+                      "requiredText": "is required"
                     }
                   ],
                   "events": {

@@ -46,7 +46,9 @@
                       "multiple": true,
                       "textProperty": "Name",
                       "valueProperty": "Name",
-                      "requiredText": "is required"
+                      "requiredText": "is required",
+                      "multipleItemsSelectedText": "{0} items selected",
+                      "emptyFilterText": "No results found"
                     },
                     {
                       "type": "password",

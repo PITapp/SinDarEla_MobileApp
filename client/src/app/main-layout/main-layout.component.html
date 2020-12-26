@@ -1,25 +1,45 @@
 <rz-header #header0>
-  <div class="row justify-content-start align-items-center">
-    <div class="col-6 d-flex align-items-center">
-      <rz-sidebar-toggle #sidebarToggle0>
+  <div class="row justify-content-start align-items-center" [ngStyle]="{'height': '56px'}">
+    <div class="d-flex align-items-center col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+      <rz-sidebar-toggle #sidebarToggle0 [style]="{'border': '-1px none solid none none rgb(0, 0, 0) rgb(234, 238, 240) rgb(0, 0, 0) rgb(0, 0, 0)'}">
       </rz-sidebar-toggle>
-      <rz-label #label0 text="SinDarElaMobile">
-      </rz-label>
     </div>
-    <div class="col-6 text-right">
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 justify-content-center" [ngStyle]="{'textAlign': 'center'}">
+      <rz-image #image0 path="assets/images/LogoOhneSchriftzug3.png" [style]="{'height': '30px', 'width': ''}" (click)="image0Click($event)">
+      </rz-image>
+    </div>
+    <div class="text-lg-right col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" [ngStyle]="{'textAlign': 'right'}">
+      <rz-image #image1 path="assets/images/IconWidget.png" [style]="{'height': '24px', 'marginBottom': '2px', 'marginRight': '16px', 'width': ''}" (click)="image1Click($event)">
+      </rz-image>
     </div>
   </div>
 </rz-header>
-<rz-body #body0>
-  <rz-content-container #main name="main">
+<rz-body #body0 [style]="{'paddingBottom': '10px', 'paddingTop': '10px'}">
+  <rz-content-container #main [style]="{'width': '1823px'}" name="main">
   </rz-content-container>
 </rz-body>
-<rz-sidebar #sidebar0>
+<rz-sidebar #sidebar0 [stretch]="true">
   <rz-panelmenu #panelmenu0 [style]="{'height': '100%'}">
+    <rz-panelmenu-item icon="dashboard" path="dashboard" text="Dashboard" *ngIf="security?.isInRole(['Authenticated'])">
+    </rz-panelmenu-item>
+    <rz-panelmenu-item icon="assignment" path="dienstplan" text="Dienstplan" *ngIf="security?.isInRole(['Authenticated'])">
+    </rz-panelmenu-item>
+    <rz-panelmenu-item icon="face" path="kunden" text="Kunden" *ngIf="security?.isInRole(['Authenticated'])">
+    </rz-panelmenu-item>
+    <rz-panelmenu-item icon="book" path="kontakte" text="Kontakte" *ngIf="security?.isInRole(['Authenticated'])">
+    </rz-panelmenu-item>
+    <rz-panelmenu-item icon="email" path="nachrichten" text="Nachrichten" *ngIf="security?.isInRole(['Authenticated'])">
+    </rz-panelmenu-item>
+    <rz-panelmenu-item icon="directions_car" path="fahrtenbuch" text="Fahrtenbuch" *ngIf="security?.isInRole(['Authenticated'])">
+    </rz-panelmenu-item>
+    <rz-panelmenu-item icon="settings" path="einstellungen" text="Einstellungen" *ngIf="security?.isInRole(['Authenticated'])">
+    </rz-panelmenu-item>
+    <rz-panelmenu-item icon="account_balance" path="impressum" text="Impressum" *ngIf="security?.isInRole(['Authenticated'])">
+    </rz-panelmenu-item>
+    <rz-panelmenu-item icon="verified_user" path="datenschutz" text="Datenschutz" *ngIf="security?.isInRole(['Authenticated'])">
+    </rz-panelmenu-item>
+    <rz-panelmenu-item icon="power_settings_new" path="abmelden" text="Abmelden" *ngIf="security?.isInRole(['Everybody'])">
+    </rz-panelmenu-item>
   </rz-panelmenu>
 </rz-sidebar>
-<rz-footer #footer0>
-  <rz-label #footerText text="SinDarElaMobile, Copyright &copy; 2020">
-  </rz-label>
-</rz-footer>
 <router-outlet></router-outlet>
