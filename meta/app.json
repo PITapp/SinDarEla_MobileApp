@@ -292,7 +292,7 @@
     "$steps-number-selected-background": "#479cc8",
     "$steps-number-selected-color": "#ffffff",
     "$steps-title-selected-color": "#479cc8",
-    "$success": "#5d717b",
+    "$success": "#5dbf74",
     "$tabs-background-color": "#ffffff",
     "$tabs-border": "1px solid #dfe7ec",
     "$tabs-border-radius": "4px",
