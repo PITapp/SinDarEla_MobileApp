@@ -5322,6 +5322,147 @@ a.text-dark:hover, a.text-dark:focus {
   visibility: hidden !important;
 }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  src: local("SourceSansPro-ExtraLight"), local("Source Sans Pro"), url("../fonts/SourceSansPro-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  src: local("SourceSansPro-Light"), local("Source Sans Pro"), url("../fonts/SourceSansPro-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  src: local("SourceSansPro-Regular"), local("Source Sans Pro"), url("../fonts/SourceSansPro-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  src: local("SourceSansPro-Semibold"), local("Source Sans Pro Semibold"), url("../fonts/SourceSansPro-Semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  src: local("SourceSansPro-Bold"), local("Source Sans Pro Bold"), url("../fonts/SourceSansPro-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  src: local("SourceSansPro-Black"), local("Source Sans Pro Black"), url("../fonts/SourceSansPro-Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: normal;
+  src: local("SourceSansPro-ExtraLightIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-ExtraLightIt.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  src: local("SourceSansPro-LightIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-LightIt.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  src: local("SourceSansPro-It"), local("Source Sans Pro"), url("../fonts/SourceSansPro-It.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+  src: local("SourceSansPro-SemiboldIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-SemiboldIt.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  src: local("SourceSansPro-BoldIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-BoldIt.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: normal;
+  src: local("SourceSansPro-BlackIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-BlackIt.woff") format("woff");
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.38;
+}
+
+label {
+  margin-bottom: 0;
+}
+
 /*!
 FullCalendar Core Package v4.1.0
 Docs & License: https://fullcalendar.io/
@@ -6749,109 +6890,6 @@ be a descendant of the grid when it is being dragged.
   border-bottom-color: transparent;
 }
 
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../fonts/MaterialIcons-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 200;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-ExtraLight"), local("Source Sans Pro"), url("../fonts/SourceSansPro-ExtraLight.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-Light"), local("Source Sans Pro"), url("../fonts/SourceSansPro-Light.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-Regular"), local("Source Sans Pro"), url("../fonts/SourceSansPro-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-Semibold"), local("Source Sans Pro Semibold"), url("../fonts/SourceSansPro-Semibold.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-Bold"), local("Source Sans Pro Bold"), url("../fonts/SourceSansPro-Bold.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 900;
-  font-style: normal;
-  font-stretch: normal;
-  src: local("SourceSansPro-Black"), local("Source Sans Pro Black"), url("../fonts/SourceSansPro-Black.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 200;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-ExtraLightIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-ExtraLightIt.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 300;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-LightIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-LightIt.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 400;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-It"), local("Source Sans Pro"), url("../fonts/SourceSansPro-It.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 600;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-SemiboldIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-SemiboldIt.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 700;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-BoldIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-BoldIt.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-weight: 900;
-  font-style: italic;
-  font-stretch: normal;
-  src: local("SourceSansPro-BlackIt"), local("Source Sans Pro"), url("../fonts/SourceSansPro-BlackIt.woff") format("woff");
-}
-
 .material-icons, .fc-prev-button .ui-icon,
 .fc-next-button .ui-icon, .ui-datatable-loading-content .fa-circle-o-notch, .ui-datatable-header .fa-plus, .ui-sortable-column .fa, .ui-datatable .fa-chevron-circle-down, .ui-datatable .fa-chevron-circle-right, .ui-fileupload-row .ui-button .fa-close, .ui-fileupload-row .ui-paginator-element .fa-close,
 .ui-fileupload-row .ui-button .pi-times,
@@ -6882,44 +6920,6 @@ be a descendant of the grid when it is being dragged.
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: 'liga';
-}
-
-h1 {
-  font-size: 2.25rem;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: normal;
-}
-
-h4 {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-h5 {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-h6 {
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-p {
-  line-height: 1.38;
-}
-
-label {
-  margin-bottom: 0;
 }
 
 .ui-helper-hidden-accessible {
@@ -7125,8 +7125,8 @@ p-button[type] {
 }
 
 .ui-spinner.ui-state-disabled .ui-inputtext, .ui-calendar.ui-state-disabled .ui-inputtext .ui-inputtext, .ui-picklist.ui-state-disabled .ui-inputtext, .ui-listbox.ui-state-disabled .ui-inputtext, .ui-autocomplete-input:disabled .ui-inputtext, .ui-state-disabled.ui-multiselect .ui-inputtext, .ui-state-disabled.ui-dropdown .ui-inputtext, .ui-radiobutton-box.ui-state-disabled .ui-inputtext, .ui-chkbox-box.ui-state-disabled .ui-inputtext, .rz-colorpicker:disabled .ui-inputtext, .ui-lookup-search input:disabled .ui-inputtext, .ui-spinner:disabled .ui-inputtext, .ui-calendar .ui-inputtext:disabled .ui-inputtext, .ui-multiselect:disabled .ui-inputtext, .ui-dropdown:disabled .ui-inputtext, .mask:disabled .ui-inputtext, .textarea:disabled .ui-inputtext, .textbox:disabled .ui-inputtext {
-  background-color: transparent;
-  color: inherit;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgba(58, 58, 58, 0.4);
 }
 
 input {
@@ -7496,6 +7496,64 @@ p-accordiontab {
 .ui-fileupload-row .ui-button .menu:not(.profile-menu) .ui-icon-trash:not(.navigation-item-icon-children),
 .ui-fileupload-row .ui-paginator-element .menu:not(.profile-menu) .ui-icon-trash:not(.navigation-item-icon-children) {
   margin: 0 0.625rem 0 0;
+}
+
+.rz-menu-toggle-item {
+  display: none;
+  padding: 0.8125rem 0.625rem;
+  text-align: right;
+  width: 100%;
+  height: 100%;
+}
+
+.rz-menu-toggle {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.rz-menu-toggle:active {
+  background-color: transparent;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .rz-menu-toggle-item {
+    display: block;
+  }
+  .menu:not(.profile-menu).rz-menu-closed .navigation-item {
+    display: none;
+  }
+  .menu:not(.profile-menu) .rz-menu-toggle .material-icons, .menu:not(.profile-menu) .rz-menu-toggle .fc-prev-button .ui-icon, .fc-prev-button .menu:not(.profile-menu) .rz-menu-toggle .ui-icon,
+.menu:not(.profile-menu) .rz-menu-toggle .fc-next-button .ui-icon,
+.fc-next-button .menu:not(.profile-menu) .rz-menu-toggle .ui-icon, .menu:not(.profile-menu) .rz-menu-toggle .ui-datatable-loading-content .fa-circle-o-notch, .ui-datatable-loading-content .menu:not(.profile-menu) .rz-menu-toggle .fa-circle-o-notch, .menu:not(.profile-menu) .rz-menu-toggle .ui-datatable-header .fa-plus, .ui-datatable-header .menu:not(.profile-menu) .rz-menu-toggle .fa-plus, .menu:not(.profile-menu) .rz-menu-toggle .ui-sortable-column .fa, .ui-sortable-column .menu:not(.profile-menu) .rz-menu-toggle .fa, .menu:not(.profile-menu) .rz-menu-toggle .ui-datatable .fa-chevron-circle-down, .ui-datatable .menu:not(.profile-menu) .rz-menu-toggle .fa-chevron-circle-down, .menu:not(.profile-menu) .rz-menu-toggle .ui-datatable .fa-chevron-circle-right, .ui-datatable .menu:not(.profile-menu) .rz-menu-toggle .fa-chevron-circle-right, .menu:not(.profile-menu) .rz-menu-toggle .ui-fileupload-row .ui-button .fa-close, .menu:not(.profile-menu) .rz-menu-toggle .ui-fileupload-row .ui-paginator-element .fa-close, .ui-fileupload-row .ui-button .menu:not(.profile-menu) .rz-menu-toggle .fa-close, .ui-fileupload-row .ui-paginator-element .menu:not(.profile-menu) .rz-menu-toggle .fa-close,
+.menu:not(.profile-menu) .rz-menu-toggle .ui-fileupload-row .ui-button .pi-times,
+.menu:not(.profile-menu) .rz-menu-toggle .ui-fileupload-row .ui-paginator-element .pi-times,
+.ui-fileupload-row .ui-button .menu:not(.profile-menu) .rz-menu-toggle .pi-times,
+.ui-fileupload-row .ui-paginator-element .menu:not(.profile-menu) .rz-menu-toggle .pi-times,
+.menu:not(.profile-menu) .rz-menu-toggle .ui-fileupload-row .ui-button .ui-icon-trash,
+.menu:not(.profile-menu) .rz-menu-toggle .ui-fileupload-row .ui-paginator-element .ui-icon-trash,
+.ui-fileupload-row .ui-button .menu:not(.profile-menu) .rz-menu-toggle .ui-icon-trash,
+.ui-fileupload-row .ui-paginator-element .menu:not(.profile-menu) .rz-menu-toggle .ui-icon-trash {
+    margin: 0;
+  }
+  .menu:not(.profile-menu).rz-menu-open {
+    display: block;
+  }
+  .menu:not(.profile-menu).rz-menu-open .navigation-item {
+    background-color: inherit;
+  }
+  .menu:not(.profile-menu).rz-menu-open .navigation-menu {
+    position: static;
+    box-shadow: none;
+  }
+  .menu:not(.profile-menu) .navigation-item-wrapper-active:before {
+    display: none !important;
+  }
 }
 
 .panel-menu {
@@ -7903,6 +7961,12 @@ ul.profile-menu .navigation-menu .ui-fileupload-row .ui-paginator-element .ui-ic
   display: inline-block;
   width: 3rem;
   height: 1.75rem;
+}
+
+.rz-switch .rz-helper-hidden-accessible {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .rz-switch-circle {

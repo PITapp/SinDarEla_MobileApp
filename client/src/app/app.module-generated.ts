@@ -30,6 +30,7 @@ import { TextAreaModule } from '@radzen/angular/dist/textarea';
 import { HtmlModule } from '@radzen/angular/dist/html';
 import { LoginModule } from '@radzen/angular/dist/login';
 import { FormModule } from '@radzen/angular/dist/form';
+import { PasswordModule } from '@radzen/angular/dist/password';
 import { TabsModule } from '@radzen/angular/dist/tabs';
 import { GridModule } from '@radzen/angular/dist/grid';
 import { SharedModule } from '@radzen/angular/dist/shared';
@@ -159,6 +160,7 @@ export const AppImports = [
   HtmlModule,
   LoginModule,
   FormModule,
+  PasswordModule,
   TabsModule,
   GridModule,
   SharedModule,

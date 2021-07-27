@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinDarElaMobile.Models.DbSinDarEla
 {
-  [Table("Benutzer")]
-  public partial class Benutzer
+  [Table("vwBenutzerRollen")]
+  public partial class VwBenutzerRollen
   {
     [Key]
     public string BenutzerID
@@ -23,8 +23,6 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       get;
       set;
     }
-
-    public Base Base { get; set; }
     public string Benutzername
     {
       get;
@@ -61,6 +59,16 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       set;
     }
     public int? LetzteBenutzerID
+    {
+      get;
+      set;
+    }
+    public string RoleId
+    {
+      get;
+      set;
+    }
+    public string RolleTitel
     {
       get;
       set;

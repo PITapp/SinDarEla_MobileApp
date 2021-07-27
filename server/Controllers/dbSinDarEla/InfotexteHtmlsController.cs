@@ -20,45 +20,45 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
   using Data;
   using Models.DbSinDarEla;
 
-  [ODataRoutePrefix("odata/dbSinDarEla/Benutzers")]
-  [Route("mvc/odata/dbSinDarEla/Benutzers")]
-  public partial class BenutzersController : ODataController
+  [ODataRoutePrefix("odata/dbSinDarEla/InfotexteHtmls")]
+  [Route("mvc/odata/dbSinDarEla/InfotexteHtmls")]
+  public partial class InfotexteHtmlsController : ODataController
   {
     private Data.DbSinDarElaContext context;
 
-    public BenutzersController(Data.DbSinDarElaContext context)
+    public InfotexteHtmlsController(Data.DbSinDarElaContext context)
     {
       this.context = context;
     }
-    // GET /odata/DbSinDarEla/Benutzers
+    // GET /odata/DbSinDarEla/InfotexteHtmls
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     [HttpGet]
-    public IEnumerable<Models.DbSinDarEla.Benutzer> GetBenutzers()
+    public IEnumerable<Models.DbSinDarEla.InfotexteHtml> GetInfotexteHtmls()
     {
-      var items = this.context.Benutzers.AsQueryable<Models.DbSinDarEla.Benutzer>();
-      this.OnBenutzersRead(ref items);
+      var items = this.context.InfotexteHtmls.AsQueryable<Models.DbSinDarEla.InfotexteHtml>();
+      this.OnInfotexteHtmlsRead(ref items);
 
       return items;
     }
 
-    partial void OnBenutzersRead(ref IQueryable<Models.DbSinDarEla.Benutzer> items);
+    partial void OnInfotexteHtmlsRead(ref IQueryable<Models.DbSinDarEla.InfotexteHtml> items);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{BenutzerID}")]
-    public SingleResult<Benutzer> GetBenutzer(string key)
+    [HttpGet("{InfotextID}")]
+    public SingleResult<InfotexteHtml> GetInfotexteHtml(int key)
     {
-        var items = this.context.Benutzers.Where(i=>i.BenutzerID == key);
-        this.OnBenutzersGet(ref items);
+        var items = this.context.InfotexteHtmls.Where(i=>i.InfotextID == key);
+        this.OnInfotexteHtmlsGet(ref items);
 
         return SingleResult.Create(items);
     }
 
-    partial void OnBenutzersGet(ref IQueryable<Models.DbSinDarEla.Benutzer> items);
+    partial void OnInfotexteHtmlsGet(ref IQueryable<Models.DbSinDarEla.InfotexteHtml> items);
 
-    partial void OnBenutzerDeleted(Models.DbSinDarEla.Benutzer item);
+    partial void OnInfotexteHtmlDeleted(Models.DbSinDarEla.InfotexteHtml item);
 
-    [HttpDelete("{BenutzerID}")]
-    public IActionResult DeleteBenutzer(string key)
+    [HttpDelete("{InfotextID}")]
+    public IActionResult DeleteInfotexteHtml(int key)
     {
         try
         {
@@ -68,8 +68,8 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
             }
 
 
-            var itemToDelete = this.context.Benutzers
-                .Where(i => i.BenutzerID == key)
+            var itemToDelete = this.context.InfotexteHtmls
+                .Where(i => i.InfotextID == key)
                 .FirstOrDefault();
 
             if (itemToDelete == null)
@@ -78,8 +78,8 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            this.OnBenutzerDeleted(itemToDelete);
-            this.context.Benutzers.Remove(itemToDelete);
+            this.OnInfotexteHtmlDeleted(itemToDelete);
+            this.context.InfotexteHtmls.Remove(itemToDelete);
             this.context.SaveChanges();
 
             return new NoContentResult();
@@ -91,11 +91,11 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
         }
     }
 
-    partial void OnBenutzerUpdated(Models.DbSinDarEla.Benutzer item);
+    partial void OnInfotexteHtmlUpdated(Models.DbSinDarEla.InfotexteHtml item);
 
-    [HttpPut("{BenutzerID}")]
+    [HttpPut("{InfotextID}")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult PutBenutzer(string key, [FromBody]Models.DbSinDarEla.Benutzer newItem)
+    public IActionResult PutInfotexteHtml(int key, [FromBody]Models.DbSinDarEla.InfotexteHtml newItem)
     {
         try
         {
@@ -104,17 +104,16 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            if (newItem == null || (newItem.BenutzerID != key))
+            if (newItem == null || (newItem.InfotextID != key))
             {
                 return BadRequest();
             }
 
-            this.OnBenutzerUpdated(newItem);
-            this.context.Benutzers.Update(newItem);
+            this.OnInfotexteHtmlUpdated(newItem);
+            this.context.InfotexteHtmls.Update(newItem);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.Benutzers.Where(i => i.BenutzerID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Base");
+            var itemToReturn = this.context.InfotexteHtmls.Where(i => i.InfotextID == key);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -124,9 +123,9 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{BenutzerID}")]
+    [HttpPatch("{InfotextID}")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult PatchBenutzer(string key, [FromBody]Delta<Models.DbSinDarEla.Benutzer> patch)
+    public IActionResult PatchInfotexteHtml(int key, [FromBody]Delta<Models.DbSinDarEla.InfotexteHtml> patch)
     {
         try
         {
@@ -135,7 +134,7 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            var itemToUpdate = this.context.Benutzers.Where(i => i.BenutzerID == key).FirstOrDefault();
+            var itemToUpdate = this.context.InfotexteHtmls.Where(i => i.InfotextID == key).FirstOrDefault();
 
             if (itemToUpdate == null)
             {
@@ -145,12 +144,11 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
 
             patch.Patch(itemToUpdate);
 
-            this.OnBenutzerUpdated(itemToUpdate);
-            this.context.Benutzers.Update(itemToUpdate);
+            this.OnInfotexteHtmlUpdated(itemToUpdate);
+            this.context.InfotexteHtmls.Update(itemToUpdate);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.Benutzers.Where(i => i.BenutzerID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Base");
+            var itemToReturn = this.context.InfotexteHtmls.Where(i => i.InfotextID == key);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -160,11 +158,11 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
         }
     }
 
-    partial void OnBenutzerCreated(Models.DbSinDarEla.Benutzer item);
+    partial void OnInfotexteHtmlCreated(Models.DbSinDarEla.InfotexteHtml item);
 
     [HttpPost]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult Post([FromBody] Models.DbSinDarEla.Benutzer item)
+    public IActionResult Post([FromBody] Models.DbSinDarEla.InfotexteHtml item)
     {
         try
         {
@@ -178,20 +176,11 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 return BadRequest();
             }
 
-            this.OnBenutzerCreated(item);
-            this.context.Benutzers.Add(item);
+            this.OnInfotexteHtmlCreated(item);
+            this.context.InfotexteHtmls.Add(item);
             this.context.SaveChanges();
 
-            var key = item.BenutzerID;
-
-            var itemToReturn = this.context.Benutzers.Where(i => i.BenutzerID == key);
-
-            Request.QueryString = Request.QueryString.Add("$expand", "Base");
-
-            return new ObjectResult(SingleResult.Create(itemToReturn))
-            {
-                StatusCode = 201
-            };
+            return Created($"odata/DbSinDarEla/InfotexteHtmls/{item.InfotextID}", item);
         }
         catch(Exception ex)
         {

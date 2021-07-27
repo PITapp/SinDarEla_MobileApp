@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Reflection;
+using System.Globalization;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -33,7 +34,7 @@ namespace SinDarElaMobile.Data
         }
         public override bool CanWriteResult(OutputFormatterCanWriteContext context)
         {
-            return context.HttpContext.Request.Query.ContainsKey("$format") && 
+            return context.HttpContext.Request.Query.ContainsKey("$format") &&
                 context.HttpContext.Request.Query["$format"].ToString() == "xlsx";
         }
         public override Task WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
@@ -99,9 +100,10 @@ namespace SinDarElaMobile.Data
 
                         if (typeCode == TypeCode.DateTime)
                         {
-                            if (stringValue != string.Empty)
+                            if (!string.IsNullOrWhiteSpace(stringValue))
                             {
-                                cell.CellValue = new CellValue() { Text = DateTime.Parse(stringValue).ToOADate().ToString() };
+                                cell.CellValue = new CellValue() { Text = DateTime.Parse(stringValue).ToOADate().ToString(System.Globalization.CultureInfo.InvariantCulture) };
+                                cell.DataType = new EnumValue<CellValues>(CellValues.Number);
                                 cell.StyleIndex = (UInt32Value)1U;
                             }
                         }
@@ -112,6 +114,11 @@ namespace SinDarElaMobile.Data
                         }
                         else if (IsNumeric(typeCode))
                         {
+                            if (value != null)
+                            {
+                                stringValue = Convert.ToString(value, CultureInfo.InvariantCulture);
+                            }
+
                             cell.CellValue = new CellValue(stringValue);
                             cell.DataType = new EnumValue<CellValues>(CellValues.Number);
                         }

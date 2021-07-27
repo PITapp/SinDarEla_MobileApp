@@ -202,79 +202,19 @@ export class DbSinDarElaService {
   }
 
   createBenutzer(expand: string | null, benutzer: models.Benutzer | null) : Observable<any> {
-    return this.odata.post(`/Benutzers`, benutzer, { expand }, ['Base', 'BenutzerRollen']);
+    return this.odata.post(`/Benutzers`, benutzer, { expand }, ['Base']);
   }
 
-  deleteBenutzer(benutzerId: number | null) : Observable<any> {
-    return this.odata.delete(`/Benutzers(${benutzerId})`, item => !(item.BenutzerID == benutzerId));
+  deleteBenutzer(benutzerId: string | null) : Observable<any> {
+    return this.odata.delete(`/Benutzers('${encodeURIComponent(benutzerId)}')`, item => !(item.BenutzerID == benutzerId));
   }
 
-  getBenutzerByBenutzerId(expand: string | null, benutzerId: number | null) : Observable<any> {
-    return this.odata.getById(`/Benutzers(${benutzerId})`, { expand });
+  getBenutzerByBenutzerId(expand: string | null, benutzerId: string | null) : Observable<any> {
+    return this.odata.getById(`/Benutzers('${encodeURIComponent(benutzerId)}')`, { expand });
   }
 
-  updateBenutzer(expand: string | null, benutzerId: number | null, benutzer: models.Benutzer | null) : Observable<any> {
-    return this.odata.patch(`/Benutzers(${benutzerId})`, benutzer, item => item.BenutzerID == benutzerId, { expand }, ['Base','BenutzerRollen']);
-  }
-
-  getBenutzerModules(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/BenutzerModules`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  createBenutzerModule(expand: string | null, benutzerModule: models.BenutzerModule | null) : Observable<any> {
-    return this.odata.post(`/BenutzerModules`, benutzerModule, { expand }, ['Benutzer', 'Module']);
-  }
-
-  deleteBenutzerModule(benutzerModuleId: number | null) : Observable<any> {
-    return this.odata.delete(`/BenutzerModules(${benutzerModuleId})`, item => !(item.BenutzerModuleID == benutzerModuleId));
-  }
-
-  getBenutzerModuleByBenutzerModuleId(expand: string | null, benutzerModuleId: number | null) : Observable<any> {
-    return this.odata.getById(`/BenutzerModules(${benutzerModuleId})`, { expand });
-  }
-
-  updateBenutzerModule(expand: string | null, benutzerModuleId: number | null, benutzerModule: models.BenutzerModule | null) : Observable<any> {
-    return this.odata.patch(`/BenutzerModules(${benutzerModuleId})`, benutzerModule, item => item.BenutzerModuleID == benutzerModuleId, { expand }, ['Benutzer','Module']);
-  }
-
-  getBenutzerProtokolls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/BenutzerProtokolls`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  createBenutzerProtokoll(expand: string | null, benutzerProtokoll: models.BenutzerProtokoll | null) : Observable<any> {
-    return this.odata.post(`/BenutzerProtokolls`, benutzerProtokoll, { expand }, ['Benutzer']);
-  }
-
-  deleteBenutzerProtokoll(benutzerProtokollId: number | null) : Observable<any> {
-    return this.odata.delete(`/BenutzerProtokolls(${benutzerProtokollId})`, item => !(item.BenutzerProtokollID == benutzerProtokollId));
-  }
-
-  getBenutzerProtokollByBenutzerProtokollId(expand: string | null, benutzerProtokollId: number | null) : Observable<any> {
-    return this.odata.getById(`/BenutzerProtokolls(${benutzerProtokollId})`, { expand });
-  }
-
-  updateBenutzerProtokoll(expand: string | null, benutzerProtokollId: number | null, benutzerProtokoll: models.BenutzerProtokoll | null) : Observable<any> {
-    return this.odata.patch(`/BenutzerProtokolls(${benutzerProtokollId})`, benutzerProtokoll, item => item.BenutzerProtokollID == benutzerProtokollId, { expand }, ['Benutzer']);
-  }
-
-  getBenutzerRollens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/BenutzerRollens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  createBenutzerRollen(expand: string | null, benutzerRollen: models.BenutzerRollen | null) : Observable<any> {
-    return this.odata.post(`/BenutzerRollens`, benutzerRollen, { expand }, []);
-  }
-
-  deleteBenutzerRollen(benutzerRolleId: number | null) : Observable<any> {
-    return this.odata.delete(`/BenutzerRollens(${benutzerRolleId})`, item => !(item.BenutzerRolleID == benutzerRolleId));
-  }
-
-  getBenutzerRollenByBenutzerRolleId(expand: string | null, benutzerRolleId: number | null) : Observable<any> {
-    return this.odata.getById(`/BenutzerRollens(${benutzerRolleId})`, { expand });
-  }
-
-  updateBenutzerRollen(expand: string | null, benutzerRolleId: number | null, benutzerRollen: models.BenutzerRollen | null) : Observable<any> {
-    return this.odata.patch(`/BenutzerRollens(${benutzerRolleId})`, benutzerRollen, item => item.BenutzerRolleID == benutzerRolleId, { expand }, []);
+  updateBenutzer(expand: string | null, benutzerId: string | null, benutzer: models.Benutzer | null) : Observable<any> {
+    return this.odata.patch(`/Benutzers('${encodeURIComponent(benutzerId)}')`, benutzer, item => item.BenutzerID == benutzerId, { expand }, ['Base']);
   }
 
   getDebuggs(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
@@ -455,6 +395,26 @@ export class DbSinDarElaService {
 
   updateFeedback(expand: string | null, feedbackId: number | null, feedback: models.Feedback | null) : Observable<any> {
     return this.odata.patch(`/Feedbacks(${feedbackId})`, feedback, item => item.FeedbackID == feedbackId, { expand }, ['Base']);
+  }
+
+  getInfotexteHtmls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/InfotexteHtmls`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  createInfotexteHtml(expand: string | null, infotexteHtml: models.InfotexteHtml | null) : Observable<any> {
+    return this.odata.post(`/InfotexteHtmls`, infotexteHtml, { expand }, []);
+  }
+
+  deleteInfotexteHtml(infotextId: number | null) : Observable<any> {
+    return this.odata.delete(`/InfotexteHtmls(${infotextId})`, item => !(item.InfotextID == infotextId));
+  }
+
+  getInfotexteHtmlByInfotextId(expand: string | null, infotextId: number | null) : Observable<any> {
+    return this.odata.getById(`/InfotexteHtmls(${infotextId})`, { expand });
+  }
+
+  updateInfotexteHtml(expand: string | null, infotextId: number | null, infotexteHtml: models.InfotexteHtml | null) : Observable<any> {
+    return this.odata.patch(`/InfotexteHtmls(${infotextId})`, infotexteHtml, item => item.InfotextID == infotextId, { expand }, []);
   }
 
   getKundens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
@@ -1097,26 +1057,6 @@ export class DbSinDarElaService {
     return this.odata.patch(`/MitteilungenVerteilers(${mitteilungVerteilerId})`, mitteilungenVerteiler, item => item.MitteilungVerteilerID == mitteilungVerteilerId, { expand }, ['Mitteilungen','Base']);
   }
 
-  getModules(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/Modules`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  createModule(expand: string | null, module: models.Module | null) : Observable<any> {
-    return this.odata.post(`/Modules`, module, { expand }, []);
-  }
-
-  deleteModule(modulId: number | null) : Observable<any> {
-    return this.odata.delete(`/Modules(${modulId})`, item => !(item.ModulID == modulId));
-  }
-
-  getModuleByModulId(expand: string | null, modulId: number | null) : Observable<any> {
-    return this.odata.getById(`/Modules(${modulId})`, { expand });
-  }
-
-  updateModule(expand: string | null, modulId: number | null, module: models.Module | null) : Observable<any> {
-    return this.odata.patch(`/Modules(${modulId})`, module, item => item.ModulID == modulId, { expand }, []);
-  }
-
   getProtokolls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
     return this.odata.get(`/Protokolls`, { filter, top, skip, orderby, count, expand, format, select });
   }
@@ -1157,447 +1097,11 @@ export class DbSinDarElaService {
     return this.odata.patch(`/RegelnAbwesenheitens(${regelnAbwesenheitenId})`, regelnAbwesenheiten, item => item.RegelnAbwesenheitenID == regelnAbwesenheitenId, { expand }, []);
   }
 
-  getTextbausteineHtmls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/TextbausteineHtmls`, { filter, top, skip, orderby, count, expand, format, select });
+  getVwBenutzerRollens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/VwBenutzerRollens`, { filter, top, skip, orderby, count, expand, format, select });
   }
 
-  createTextbausteineHtml(expand: string | null, textbausteineHtml: models.TextbausteineHtml | null) : Observable<any> {
-    return this.odata.post(`/TextbausteineHtmls`, textbausteineHtml, { expand }, []);
-  }
-
-  deleteTextbausteineHtml(textbausteinId: number | null) : Observable<any> {
-    return this.odata.delete(`/TextbausteineHtmls(${textbausteinId})`, item => !(item.TextbausteinID == textbausteinId));
-  }
-
-  getTextbausteineHtmlByTextbausteinId(expand: string | null, textbausteinId: number | null) : Observable<any> {
-    return this.odata.getById(`/TextbausteineHtmls(${textbausteinId})`, { expand });
-  }
-
-  updateTextbausteineHtml(expand: string | null, textbausteinId: number | null, textbausteineHtml: models.TextbausteineHtml | null) : Observable<any> {
-    return this.odata.patch(`/TextbausteineHtmls(${textbausteinId})`, textbausteineHtml, item => item.TextbausteinID == textbausteinId, { expand }, []);
-  }
-
-  getVersionskontrolles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/Versionskontrolles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  createVersionskontrolle(expand: string | null, versionskontrolle: models.Versionskontrolle | null) : Observable<any> {
-    return this.odata.post(`/Versionskontrolles`, versionskontrolle, { expand }, []);
-  }
-
-  deleteVersionskontrolle(versionskontrolleId: number | null) : Observable<any> {
-    return this.odata.delete(`/Versionskontrolles(${versionskontrolleId})`, item => !(item.VersionskontrolleID == versionskontrolleId));
-  }
-
-  getVersionskontrolleByVersionskontrolleId(expand: string | null, versionskontrolleId: number | null) : Observable<any> {
-    return this.odata.getById(`/Versionskontrolles(${versionskontrolleId})`, { expand });
-  }
-
-  updateVersionskontrolle(expand: string | null, versionskontrolleId: number | null, versionskontrolle: models.Versionskontrolle | null) : Observable<any> {
-    return this.odata.patch(`/Versionskontrolles(${versionskontrolleId})`, versionskontrolle, item => item.VersionskontrolleID == versionskontrolleId, { expand }, []);
-  }
-
-  getVwAbrechnungBasisReststundens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwAbrechnungBasisReststundens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwAbrechnungKundenReststundens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwAbrechnungKundenReststundens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwAufgabens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwAufgabens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwAufgabenOffens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwAufgabenOffens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBases(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBases`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBaseBenutzers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBaseBenutzers`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBaseEreignisses(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBaseEreignisses`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBaseKontaktes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBaseKontaktes`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBaseKundens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBaseKundens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBaseMitarbeiters(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBaseMitarbeiters`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBaseStatistiks(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBaseStatistiks`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBaseSuchens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBaseSuchens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBaseUndKundens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBaseUndKundens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBaseVerweises(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBaseVerweises`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBenutzers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBenutzers`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBenutzerAnus(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBenutzerAnus`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBenutzerAuswahlNeues(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBenutzerAuswahlNeues`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBenutzerModules(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBenutzerModules`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwBenutzerSuchens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwBenutzerSuchens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwDashboardTermineGeplants(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwDashboardTermineGeplants`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwDienstplanEreignisses(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwDienstplanEreignisses`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwDienstplanKundenLeistungens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwDienstplanKundenLeistungens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwDokumentes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwDokumentes`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwDokumenteAnzahls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwDokumenteAnzahls`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisses(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisses`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseAlles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseAlles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseAntraeges(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseAntraeges`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseAntraegeUrlaubVerbrauchts(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseAntraegeUrlaubVerbrauchts`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseArtenDienstplans(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseArtenDienstplans`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseArtenManagements(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseArtenManagements`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseArtenMitTextAlles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseArtenMitTextAlles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseArtenModules(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseArtenModules`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseGesamts(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseGesamts`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseKundenBesuches(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseKundenBesuches`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseKundenbesucheHeutes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseKundenbesucheHeutes`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseKundenbesucheHeuteOffens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseKundenbesucheHeuteOffens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseMitTeilnehmers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseMitTeilnehmers`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseModulDashboards(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseModulDashboards`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseModulDashboardMobiles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseModulDashboardMobiles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseModulDienstplanListes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseModulDienstplanListes`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseModulDienstplanMobiles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseModulDienstplanMobiles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseModulKundens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseModulKundens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseModulManagements(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseModulManagements`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseModulMitarbeiters(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseModulMitarbeiters`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwEreignisseTeilnehmerListes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwEreignisseTeilnehmerListes`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwFeedbacks(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwFeedbacks`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwGeburtstages(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwGeburtstages`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenAuswahlNeus(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenAuswahlNeus`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenBases(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenBases`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenBescheideKontingentes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenBescheideKontingentes`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenBetreuers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenBetreuers`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenEreignisses(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenEreignisses`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenGeburtstages(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenGeburtstages`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenHauptbetreuers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenHauptbetreuers`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenKontingentes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenKontingentes`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenLeistungens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenLeistungens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenLeistungenBescheides(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenLeistungenBescheides`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenLeistungenBetreuers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenLeistungenBetreuers`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenLeistungenKontingentes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenLeistungenKontingentes`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenProBetreuers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenProBetreuers`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenSuchens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenSuchens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenTermineErledigts(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenTermineErledigts`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenTermineGeplants(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenTermineGeplants`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenTermineZusammenfassungs(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenTermineZusammenfassungs`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenUndBetreuers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenUndBetreuers`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenUndBetreuerAuswahls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenUndBetreuerAuswahls`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwKundenUndBetreuerUndLeistungenAuswahls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenUndBetreuerUndLeistungenAuswahls`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiters(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiters`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterArtenMitTextAlles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterArtenMitTextAlles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterAuswahlDashboards(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterAuswahlDashboards`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterAuswahlNeus(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterAuswahlNeus`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterAuswahlTermins(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterAuswahlTermins`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterEreignisses(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterEreignisses`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterFilterAuswahls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterFilterAuswahls`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterFilterListes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterFilterListes`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterFortbildungenSummenJahrs(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterFortbildungenSummenJahrs`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterFortbildungenSummenJahrArtens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterFortbildungenSummenJahrArtens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterFuerAuswahlMitTextAlles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterFuerAuswahlMitTextAlles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterGeburtstages(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterGeburtstages`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterKundenAnzahlAas(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterKundenAnzahlAas`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterKundenAnzahlBbs(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterKundenAnzahlBbs`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterKundenLeistungens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterKundenLeistungens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterKundenbudgetSummenJahrs(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterKundenbudgetSummenJahrs`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterKundenbudgetSummenJahrKategoriens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterKundenbudgetSummenJahrKategoriens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterMitTextAlles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterMitTextAlles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterSonderurlaubEinfaches(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterSonderurlaubEinfaches`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterStatusMitTextAlles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterStatusMitTextAlles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterSuchens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterSuchens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterTaetigkeitens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterTaetigkeitens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterTaetigkeitenMitTextAlles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterTaetigkeitenMitTextAlles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterTermineErledigts(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterTermineErledigts`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterTermineGeplants(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterTermineGeplants`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterTermineZusammenfassungs(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterTermineZusammenfassungs`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterUrlaubs(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterUrlaubs`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitarbeiterVerlaufDienstzeitens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitarbeiterVerlaufDienstzeitens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitteilungens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitteilungens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitteilungenOffens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitteilungenOffens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwMitteilungenVerteilers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwMitteilungenVerteilers`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwModuleAuswahlMitTextAlles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwModuleAuswahlMitTextAlles`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  getVwProtokollOffens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwProtokollOffens`, { filter, top, skip, orderby, count, expand, format, select });
+  getVwRollens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/VwRollens`, { filter, top, skip, orderby, count, expand, format, select });
   }
 }

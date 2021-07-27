@@ -63,16 +63,6 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       get;
       set;
     }
-    public string NameGesamt
-    {
-      get;
-      set;
-    }
-    public string NameVorNach
-    {
-      get;
-      set;
-    }
     public string NameKuerzel
     {
       get;
@@ -148,7 +138,7 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       get;
       set;
     }
-    public string Info
+    public string Notiz
     {
       get;
       set;

@@ -320,7 +320,8 @@
     "$upload-files-background-color": "#ffffff",
     "$upload-files-remove-background-color": "#dadfe2",
     "$upload-files-remove-color": "#3a474d",
-    "$warning": "#e6c54f"
+    "$warning": "#e6c54f",
+    "upgraded": true
   },
   "title": "SinDarElaMobile"
 }
