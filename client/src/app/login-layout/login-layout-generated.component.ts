@@ -13,6 +13,7 @@ import { NotificationService } from '@radzen/angular/dist/notification';
 import { BodyComponent } from '@radzen/angular/dist/body';
 import { CardComponent } from '@radzen/angular/dist/card';
 import { ImageComponent } from '@radzen/angular/dist/image';
+import { LabelComponent } from '@radzen/angular/dist/label';
 import { ContentContainerComponent } from '@radzen/angular/dist/content-container';
 
 import { ConfigService } from '../config.service';
@@ -23,7 +24,9 @@ export class LoginLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('body0') body0: BodyComponent;
   @ViewChild('card0') card0: CardComponent;
-  @ViewChild('image0') image0: ImageComponent;
+  @ViewChild('image1') image1: ImageComponent;
+  @ViewChild('label2') label2: LabelComponent;
+  @ViewChild('label5') label5: LabelComponent;
   @ViewChild('main') main: ContentContainerComponent;
 
   router: Router;
@@ -95,4 +98,11 @@ export class LoginLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
     }
   }
 
+
+  image1Click(event: any) {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
+    this.router.navigate(['dashboard']);
+  }
 }

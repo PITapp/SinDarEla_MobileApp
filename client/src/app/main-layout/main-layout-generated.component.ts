@@ -11,12 +11,10 @@ import { Subscription } from 'rxjs';
 import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dist/dialog';
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { HeaderComponent } from '@radzen/angular/dist/header';
-import { SidebarToggleComponent } from '@radzen/angular/dist/sidebar-toggle';
 import { ImageComponent } from '@radzen/angular/dist/image';
+import { LabelComponent } from '@radzen/angular/dist/label';
 import { BodyComponent } from '@radzen/angular/dist/body';
 import { ContentContainerComponent } from '@radzen/angular/dist/content-container';
-import { SidebarComponent } from '@radzen/angular/dist/sidebar';
-import { PanelMenuComponent } from '@radzen/angular/dist/panelmenu';
 
 import { ConfigService } from '../config.service';
 
@@ -25,13 +23,12 @@ import { SecurityService } from '../security.service';
 export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('header0') header0: HeaderComponent;
-  @ViewChild('sidebarToggle0') sidebarToggle0: SidebarToggleComponent;
   @ViewChild('image0') image0: ImageComponent;
+  @ViewChild('label2') label2: LabelComponent;
+  @ViewChild('label5') label5: LabelComponent;
   @ViewChild('image1') image1: ImageComponent;
   @ViewChild('body0') body0: BodyComponent;
   @ViewChild('main') main: ContentContainerComponent;
-  @ViewChild('sidebar0') sidebar0: SidebarComponent;
-  @ViewChild('panelmenu0') panelmenu0: PanelMenuComponent;
 
   router: Router;
 

@@ -3,9 +3,12 @@
 /* --- Kopfzeile: verlaufend dunkel --- */
 .header {
   border: none;
-  background-image: linear-gradient(#F1903C, #D86E13);
+  background-image: linear-gradient(#F1903C, #d66808);
 }
 
+.kopfzeileVerlaufend  {
+  background-image: linear-gradient(#F1903C, #d66808);
+}
 
 /* --- Umschalter für Seitenmenü links --- */
 .sidebar-toggle {

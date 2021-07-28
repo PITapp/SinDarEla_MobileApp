@@ -15,9 +15,6 @@ import { LabelModule } from '@radzen/angular/dist/label';
 import { LinkModule } from '@radzen/angular/dist/link';
 import { CardModule } from '@radzen/angular/dist/card';
 import { ImageModule } from '@radzen/angular/dist/image';
-import { SidebarToggleModule } from '@radzen/angular/dist/sidebar-toggle';
-import { SidebarModule } from '@radzen/angular/dist/sidebar';
-import { PanelMenuModule } from '@radzen/angular/dist/panelmenu';
 import { ContentModule } from '@radzen/angular/dist/content';
 import { HeadingModule } from '@radzen/angular/dist/heading';
 import { ProgressBarModule } from '@radzen/angular/dist/progressbar';
@@ -29,10 +26,7 @@ import { DataListModule } from '@radzen/angular/dist/datalist';
 import { TextAreaModule } from '@radzen/angular/dist/textarea';
 import { HtmlModule } from '@radzen/angular/dist/html';
 import { LoginModule } from '@radzen/angular/dist/login';
-import { FormModule } from '@radzen/angular/dist/form';
-import { PasswordModule } from '@radzen/angular/dist/password';
 import { TabsModule } from '@radzen/angular/dist/tabs';
-import { GridModule } from '@radzen/angular/dist/grid';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -47,16 +41,9 @@ import { BaseComponent } from './base/base.component';
 import { BaseDetailsComponent } from './base-details/base-details.component';
 import { AbmeldenComponent } from './abmelden/abmelden.component';
 import { LoginComponent } from './login/login.component';
-import { ProfileComponent } from './profile/profile.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { DienstplanComponent } from './dienstplan/dienstplan.component';
 import { KundenComponent } from './kunden/kunden.component';
-import { ApplicationUsersComponent } from './application-users/application-users.component';
-import { ApplicationRolesComponent } from './application-roles/application-roles.component';
-import { AddApplicationRoleComponent } from './add-application-role/add-application-role.component';
-import { RegisterApplicationUserComponent } from './register-application-user/register-application-user.component';
-import { AddApplicationUserComponent } from './add-application-user/add-application-user.component';
-import { EditApplicationUserComponent } from './edit-application-user/edit-application-user.component';
 import { KontakteComponent } from './kontakte/kontakte.component';
 import { NachrichtenComponent } from './nachrichten/nachrichten.component';
 import { FahrtenbuchComponent } from './fahrtenbuch/fahrtenbuch.component';
@@ -78,16 +65,9 @@ export const PageDeclarations = [
   BaseDetailsComponent,
   AbmeldenComponent,
   LoginComponent,
-  ProfileComponent,
   UnauthorizedComponent,
   DienstplanComponent,
   KundenComponent,
-  ApplicationUsersComponent,
-  ApplicationRolesComponent,
-  AddApplicationRoleComponent,
-  RegisterApplicationUserComponent,
-  AddApplicationUserComponent,
-  EditApplicationUserComponent,
   KontakteComponent,
   NachrichtenComponent,
   FahrtenbuchComponent,
@@ -145,9 +125,6 @@ export const AppImports = [
   LinkModule,
   CardModule,
   ImageModule,
-  SidebarToggleModule,
-  SidebarModule,
-  PanelMenuModule,
   ContentModule,
   HeadingModule,
   ProgressBarModule,
@@ -159,10 +136,7 @@ export const AppImports = [
   TextAreaModule,
   HtmlModule,
   LoginModule,
-  FormModule,
-  PasswordModule,
   TabsModule,
-  GridModule,
   SharedModule,
   NotificationModule,
   DialogModule,

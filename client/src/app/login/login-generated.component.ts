@@ -94,18 +94,15 @@ export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
 
 
   load() {
-
+    setTimeout(() => { document.getElementById('username').focus(); }, 500)
   }
 
   login0Login(event: any) {
     this.security.login(`${event.username}`, `${event.password}`)
     .subscribe((result: any) => {
-      if (this.dialogRef) {
-        this.dialogRef.close();
-      }
-      this.router.navigate(['dashboard']);
+
     }, (result: any) => {
-      this.notificationService.notify({ severity: "error", summary: `Error`, detail: `${result.error.message}` });
+      this.notificationService.notify({ severity: "error", summary: ``, detail: `${result.error.message}` });
     });
   }
 }

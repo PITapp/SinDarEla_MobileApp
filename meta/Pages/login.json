@@ -20,7 +20,7 @@
                           {
                             "detail": "${result.error.message}",
                             "severity": "error",
-                            "summary": "Error",
+                            "summary": "",
                             "type": "notify"
                           }
                         ],
@@ -35,24 +35,17 @@
                             "value": "${event.password}"
                           }
                         ],
-                        "then": [
-                          {
-                            "path": "dashboard",
-                            "type": "navigate"
-                          }
-                        ],
                         "type": "invoke"
                       }
                     ],
-                    "register": [],
-                    "resetPassword": []
+                    "register": []
                   },
                   "loginText": "Anmelden",
                   "name": "login0",
-                  "passwordRequired": "Passwort erforderlich",
+                  "passwordRequired": "Passwort erfoderlich",
                   "passwordText": "Passwort",
-                  "registerMessageText": "Don't have an account yet?",
-                  "registerText": "Sign up",
+                  "registerMessageText": "",
+                  "registerText": "",
                   "resetPasswordText": "Forgot password",
                   "type": "login",
                   "userRequired": "Benutzername erforderlich",
@@ -70,7 +63,12 @@
     }
   ],
   "events": {
-    "load": []
+    "load": [
+      {
+        "code": "setTimeout(() => { document.getElementById('username').focus(); }, 500)",
+        "type": "execute"
+      }
+    ]
   },
   "layout": "Login",
   "name": "Login"
