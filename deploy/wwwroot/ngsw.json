@@ -1,0 +1,121 @@
+{
+  "configVersion": 1,
+  "timestamp": 1628004729024,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/css/default.css",
+        "/assets/fonts/MaterialIcons-Regular.woff",
+        "/assets/fonts/MaterialIcons-Regular.woff2",
+        "/assets/fonts/SourceSansPro-Black.woff",
+        "/assets/fonts/SourceSansPro-BlackIt.woff",
+        "/assets/fonts/SourceSansPro-Bold.woff",
+        "/assets/fonts/SourceSansPro-BoldIt.woff",
+        "/assets/fonts/SourceSansPro-ExtraLight.woff",
+        "/assets/fonts/SourceSansPro-ExtraLightIt.woff",
+        "/assets/fonts/SourceSansPro-It.woff",
+        "/assets/fonts/SourceSansPro-Light.woff",
+        "/assets/fonts/SourceSansPro-LightIt.woff",
+        "/assets/fonts/SourceSansPro-Regular.woff",
+        "/assets/fonts/SourceSansPro-Semibold.woff",
+        "/assets/fonts/SourceSansPro-SemiboldIt.woff",
+        "/assets/fonts/roboto-regular.woff",
+        "/assets/fonts/roboto-v15-latin-300.woff",
+        "/assets/fonts/roboto-v15-latin-700.woff",
+        "/assets/fonts/roboto-v15-latin-regular.woff",
+        "/assets/icon-128x128.png",
+        "/assets/icon-152x152.png",
+        "/assets/icon-256x256.png",
+        "/assets/icon-512x512.png",
+        "/assets/images/IconDashboard.png",
+        "/assets/images/IconWidget.png",
+        "/assets/images/KeinBildPerson.png",
+        "/assets/images/LogoMitSchriftzug3.png",
+        "/assets/images/LogoMitSchriftzug4.png",
+        "/assets/images/LogoOhneSchriftzug2.png",
+        "/assets/images/LogoOhneSchriftzug3.png",
+        "/assets/images/LogoOhneSchriftzug4.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "auth",
+      "patterns": [
+        "\\/auth"
+      ],
+      "strategy": "freshness",
+      "maxSize": 0,
+      "maxAge": 0,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/assets/css/default.css": "d7843c0c886b7de4df2fbc73243df3be628d80a9",
+    "/assets/fonts/MaterialIcons-Regular.woff": "c77f37fb5b7d4188ffc6a40a9fac119bbb4783e0",
+    "/assets/fonts/MaterialIcons-Regular.woff2": "da997b8666bf8a967102c5089acac8d50c89ab4e",
+    "/assets/fonts/SourceSansPro-Black.woff": "aa02dc9ed0ab8c2f14080db6967bfda798a1d36e",
+    "/assets/fonts/SourceSansPro-BlackIt.woff": "090123649291f34a7f457d87e69cf3d07eade6aa",
+    "/assets/fonts/SourceSansPro-Bold.woff": "59b47397b88aaec2c6a769004468a1b7c53fb950",
+    "/assets/fonts/SourceSansPro-BoldIt.woff": "3a3063698de21aa6d092cee0c205f4f708defd33",
+    "/assets/fonts/SourceSansPro-ExtraLight.woff": "680de19d242741d7d4818af7cdcf76b12a49f313",
+    "/assets/fonts/SourceSansPro-ExtraLightIt.woff": "686711c8a11e25a7f364f629c2ab590f29963595",
+    "/assets/fonts/SourceSansPro-It.woff": "8198b854bd9f52e6e2d932435ec99aa8d8a09224",
+    "/assets/fonts/SourceSansPro-Light.woff": "3a7a464b171b14c53b21128da9b2704e5995a158",
+    "/assets/fonts/SourceSansPro-LightIt.woff": "0a9431870a34614a60ae3c4ee76c8b1be2210651",
+    "/assets/fonts/SourceSansPro-Regular.woff": "62ce99357ccaec3bb0ac703eee4458a9aaddf99a",
+    "/assets/fonts/SourceSansPro-Semibold.woff": "56169c245f04180410e67adc391c0c149ece4dc4",
+    "/assets/fonts/SourceSansPro-SemiboldIt.woff": "6295ff0e23df04f6c43e3811f9a2b9a3e3a66cd6",
+    "/assets/fonts/roboto-regular.woff": "42c8ae79841c592a26633f10ee9a26c75bcf9273",
+    "/assets/fonts/roboto-v15-latin-300.woff": "27c056b9c70dcfd55c43e954a898eb5bf706f730",
+    "/assets/fonts/roboto-v15-latin-700.woff": "24f9df68c500f7bbd1cb1c632de59936aa85b2e0",
+    "/assets/fonts/roboto-v15-latin-regular.woff": "940b859e4f02bd3e7cf7b6ce245c197b5470302a",
+    "/assets/icon-128x128.png": "68195053211bdfa256b8b35dc78982eb5c9d89ae",
+    "/assets/icon-152x152.png": "ebc864b56851eb5ec8b4ed856ad853aa3ef25a69",
+    "/assets/icon-256x256.png": "d13174fac52df5682b96c19a42c998a07956052a",
+    "/assets/icon-512x512.png": "9cb2cc4a5c55fdaae7f37b8b96fee4de16310c0c",
+    "/assets/images/IconDashboard.png": "d059f0206ab46c2485260e655164a9bc7cd04ac2",
+    "/assets/images/IconWidget.png": "fac7f8c27b5c8821a01e5c89b1ef561b19a93d48",
+    "/assets/images/KeinBildPerson.png": "99a382ffdd4ed46d95376a2a37eacf5da922febe",
+    "/assets/images/LogoMitSchriftzug3.png": "990ccc76961416be1ada89d612b99ae2c9388148",
+    "/assets/images/LogoMitSchriftzug4.png": "15e6a69d9ce56d84def83c1a5fee85bd864c881b",
+    "/assets/images/LogoOhneSchriftzug2.png": "14f843355c4d27a205ba82c68ced35f3a225d4cf",
+    "/assets/images/LogoOhneSchriftzug3.png": "a7a2ab8e6cd457d06d7f30c54300a50b6da24fab",
+    "/assets/images/LogoOhneSchriftzug4.png": "832146a33ec16722f16da44be85be75a4640fdd5",
+    "/favicon.ico": "69746a60226316785eb46aa5bac56b2d42931d36",
+    "/index.html": "17af55e2eaa3f3ae973ea331b7e7aebc0a1f2667"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

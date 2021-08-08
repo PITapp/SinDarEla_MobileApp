@@ -18,6 +18,7 @@ import { FahrtenbuchComponent } from './fahrtenbuch/fahrtenbuch.component';
 import { EinstellungenComponent } from './einstellungen/einstellungen.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
+import { VersionenComponent } from './versionen/versionen.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -112,6 +113,14 @@ export const routes: Routes = [
           roles: ['Authenticated'],
         },
         component: DatenschutzComponent
+      },
+      {
+        path: 'versionen',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: VersionenComponent
       },
     ]
   },

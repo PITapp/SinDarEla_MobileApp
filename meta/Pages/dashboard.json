@@ -277,6 +277,10 @@
                           {
                             "path": "dienstplan",
                             "type": "navigate"
+                          },
+                          {
+                            "code": "window.scroll(0,0);",
+                            "type": "execute"
                           }
                         ]
                       },
@@ -368,6 +372,10 @@
                           {
                             "path": "kunden",
                             "type": "navigate"
+                          },
+                          {
+                            "code": "window.scroll(0,0);",
+                            "type": "execute"
                           }
                         ]
                       },
@@ -468,6 +476,10 @@
                           {
                             "path": "kontakte",
                             "type": "navigate"
+                          },
+                          {
+                            "code": "window.scroll(0,0);",
+                            "type": "execute"
                           }
                         ]
                       },
@@ -558,6 +570,10 @@
                           {
                             "path": "nachrichten",
                             "type": "navigate"
+                          },
+                          {
+                            "code": "window.scroll(0,0);",
+                            "type": "execute"
                           }
                         ]
                       },
@@ -658,6 +674,10 @@
                           {
                             "path": "fahrtenbuch",
                             "type": "navigate"
+                          },
+                          {
+                            "code": "window.scroll(0,0);",
+                            "type": "execute"
                           }
                         ]
                       },
@@ -748,6 +768,10 @@
                           {
                             "path": "einstellungen",
                             "type": "navigate"
+                          },
+                          {
+                            "code": "window.scroll(0,0);",
+                            "type": "execute"
                           }
                         ]
                       },
@@ -847,6 +871,10 @@
                           {
                             "path": "impressum",
                             "type": "navigate"
+                          },
+                          {
+                            "code": "window.scroll(0,0);",
+                            "type": "execute"
                           }
                         ]
                       },
@@ -937,6 +965,10 @@
                           {
                             "path": "datenschutz",
                             "type": "navigate"
+                          },
+                          {
+                            "code": "window.scroll(0,0);",
+                            "type": "execute"
                           }
                         ]
                       },
@@ -1008,25 +1040,28 @@
                 "marginBottom": "0px",
                 "textAlign": "center"
               },
-              "text": "SinDarEla - MobileApp | Version 2.1.025",
+              "text": "© 2021 Soziale-Dienste-Ennstal",
               "type": "heading"
             },
             {
-              "name": "heading12",
-              "size": "H6",
+              "icon": "",
+              "name": "link0",
+              "path": "versionen",
               "style": {
-                "color": "#F1903C",
-                "textAlign": "center"
+                "float": "right",
+                "marginTop": "-2px",
+                "textAlign": "center",
+                "width": "100%"
               },
-              "text": "Created by PITapp",
-              "type": "heading"
+              "text": "Version 3.21.017",
+              "type": "link"
             }
           ],
           "name": "card8",
           "style": {
             "backgroundColor": "#FFFFFF",
             "display": "block",
-            "height": "60px",
+            "height": "65px",
             "paddingTop": "11px"
           },
           "type": "card",

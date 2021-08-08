@@ -19,6 +19,7 @@ import { SparklineComponent } from '@radzen/angular/dist/sparkline';
 import { ImageComponent } from '@radzen/angular/dist/image';
 import { IconComponent } from '@radzen/angular/dist/icon';
 import { ButtonComponent } from '@radzen/angular/dist/button';
+import { LinkComponent } from '@radzen/angular/dist/link';
 
 import { ConfigService } from '../config.service';
 
@@ -75,7 +76,7 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('heading14') heading14: HeadingComponent;
   @ViewChild('card8') card8: CardComponent;
   @ViewChild('heading8') heading8: HeadingComponent;
-  @ViewChild('heading12') heading12: HeadingComponent;
+  @ViewChild('link0') link0: LinkComponent;
 
   router: Router;
 
@@ -161,6 +162,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.dialogRef.close();
     }
     this.router.navigate(['dienstplan']);
+
+    window.scroll(0,0);
   }
 
   button0Click(event: any) {
@@ -168,6 +171,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.dialogRef.close();
     }
     this.router.navigate(['kunden']);
+
+    window.scroll(0,0);
   }
 
   button2Click(event: any) {
@@ -175,6 +180,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.dialogRef.close();
     }
     this.router.navigate(['kontakte']);
+
+    window.scroll(0,0);
   }
 
   button4Click(event: any) {
@@ -182,6 +189,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.dialogRef.close();
     }
     this.router.navigate(['nachrichten']);
+
+    window.scroll(0,0);
   }
 
   button3Click(event: any) {
@@ -189,6 +198,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.dialogRef.close();
     }
     this.router.navigate(['fahrtenbuch']);
+
+    window.scroll(0,0);
   }
 
   button5Click(event: any) {
@@ -196,6 +207,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.dialogRef.close();
     }
     this.router.navigate(['einstellungen']);
+
+    window.scroll(0,0);
   }
 
   button6Click(event: any) {
@@ -203,6 +216,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.dialogRef.close();
     }
     this.router.navigate(['impressum']);
+
+    window.scroll(0,0);
   }
 
   button7Click(event: any) {
@@ -210,5 +225,7 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.dialogRef.close();
     }
     this.router.navigate(['datenschutz']);
+
+    window.scroll(0,0);
   }
 }

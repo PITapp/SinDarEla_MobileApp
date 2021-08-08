@@ -50,6 +50,7 @@ import { FahrtenbuchComponent } from './fahrtenbuch/fahrtenbuch.component';
 import { EinstellungenComponent } from './einstellungen/einstellungen.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
+import { VersionenComponent } from './versionen/versionen.component';
 import { DetailsLayoutComponent } from './details-layout/details-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
@@ -74,6 +75,7 @@ export const PageDeclarations = [
   EinstellungenComponent,
   ImpressumComponent,
   DatenschutzComponent,
+  VersionenComponent,
 ];
 
 export const LayoutDeclarations = [

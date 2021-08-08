@@ -40,7 +40,8 @@
     "Fahrtenbuch",
     "Einstellungen",
     "Impressum",
-    "Datenschutz"
+    "Datenschutz",
+    "Versionen"
   ],
   "port": 8000,
   "security": {
