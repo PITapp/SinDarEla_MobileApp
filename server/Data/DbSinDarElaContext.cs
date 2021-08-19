@@ -439,6 +439,34 @@ namespace SinDarElaMobile.Data
                   .Property(p => p.Gelesen)
                   .HasDefaultValueSql("0");
 
+            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwBaseAlle>()
+                  .Property(p => p.BaseID)
+                  .HasDefaultValueSql("0");
+
+            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwBaseKontakte>()
+                  .Property(p => p.BaseID)
+                  .HasDefaultValueSql("0");
+
+            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwBaseKontakte>()
+                  .Property(p => p.KundenID)
+                  .HasDefaultValueSql("0");
+
+            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwBaseKontakte>()
+                  .Property(p => p.MitarbeiterID)
+                  .HasDefaultValueSql("0");
+
+            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwBaseKontakte>()
+                  .Property(p => p.BenutzerID)
+                  .HasDefaultValueSql("0");
+
+            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwBenutzerBase>()
+                  .Property(p => p.BenutzerID)
+                  .HasDefaultValueSql("0");
+
+            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwBenutzerRollen>()
+                  .Property(p => p.BenutzerID)
+                  .HasDefaultValueSql("0");
+
             this.OnModelBuilding(builder);
         }
 
@@ -762,6 +790,36 @@ namespace SinDarElaMobile.Data
         }
 
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.RegelnAbwesenheiten> RegelnAbwesenheitens
+        {
+          get;
+          set;
+        }
+
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.VwBaseAlle> VwBaseAlles
+        {
+          get;
+          set;
+        }
+
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.VwBaseKontakte> VwBaseKontaktes
+        {
+          get;
+          set;
+        }
+
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.VwBaseOrte> VwBaseOrtes
+        {
+          get;
+          set;
+        }
+
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.VwBasePlz> VwBasePlzs
+        {
+          get;
+          set;
+        }
+
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.VwBenutzerBase> VwBenutzerBases
         {
           get;
           set;

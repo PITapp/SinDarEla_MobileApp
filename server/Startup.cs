@@ -215,6 +215,11 @@ namespace SinDarElaMobile
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.MitteilungenVerteiler>("MitteilungenVerteilers");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Protokoll>("Protokolls");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.RegelnAbwesenheiten>("RegelnAbwesenheitens");
+          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBaseAlle>("VwBaseAlles");
+          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBaseKontakte>("VwBaseKontaktes");
+          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBaseOrte>("VwBaseOrtes");
+          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBasePlz>("VwBasePlzs");
+          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBenutzerBase>("VwBenutzerBases");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBenutzerRollen>("VwBenutzerRollens");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwRollen>("VwRollens");
 

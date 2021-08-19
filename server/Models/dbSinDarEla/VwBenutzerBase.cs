@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinDarElaMobile.Models.DbSinDarEla
 {
-  [Table("vwBenutzerRollen")]
-  public partial class VwBenutzerRollen
+  [Table("vwBenutzerBase")]
+  public partial class VwBenutzerBase
   {
     public int BenutzerID
     {
@@ -43,62 +43,102 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       get;
       set;
     }
-    public int? LetzteKundenID
+    public string Name1
     {
       get;
       set;
     }
-    public int? LetzteMitarbeiterID
+    public string Name2
     {
       get;
       set;
     }
-    public int? LetzteBaseID
+    public string NameGesamt
     {
       get;
       set;
     }
-    public int? LetzteBenutzerID
+    public string NameKuerzel
     {
       get;
       set;
     }
-    public string FilterKontakteName
+    public int? AnredeID
     {
       get;
       set;
     }
-    public string FilterKontakteStrasse
+    public string TitelVorne
     {
       get;
       set;
     }
-    public string FilterKontaktePlz
+    public string TitelHinten
     {
       get;
       set;
     }
-    public string FilterKontakteOrt
+    public string Strasse
     {
       get;
       set;
     }
-    public string FilterKontakteNotiz
+    public string PLZ
     {
       get;
       set;
     }
-    public string FilterKontakteVerlinkt
+    public string Ort
     {
       get;
       set;
     }
-    public string RoleId
+    public DateTime? Geburtsdatum
     {
       get;
       set;
     }
-    public string RolleTitel
+    public string Versicherungsnummer
+    {
+      get;
+      set;
+    }
+    public string Staatsangehoerigkeit
+    {
+      get;
+      set;
+    }
+    public string Telefon1
+    {
+      get;
+      set;
+    }
+    public string Telefon2
+    {
+      get;
+      set;
+    }
+    public string EMail1
+    {
+      get;
+      set;
+    }
+    public string EMail2
+    {
+      get;
+      set;
+    }
+    public string Webseite
+    {
+      get;
+      set;
+    }
+    public string BildURL
+    {
+      get;
+      set;
+    }
+    public string BaseNotiz
     {
       get;
       set;

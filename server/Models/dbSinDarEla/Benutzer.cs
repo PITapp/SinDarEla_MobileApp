@@ -8,12 +8,8 @@ namespace SinDarElaMobile.Models.DbSinDarEla
   public partial class Benutzer
   {
     [Key]
-    public string BenutzerID
-    {
-      get;
-      set;
-    }
-    public string AspNetUsers_Id
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int BenutzerID
     {
       get;
       set;
@@ -25,6 +21,11 @@ namespace SinDarElaMobile.Models.DbSinDarEla
     }
 
     public Base Base { get; set; }
+    public string AspNetUsers_Id
+    {
+      get;
+      set;
+    }
     public string Benutzername
     {
       get;
@@ -61,6 +62,36 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       set;
     }
     public int? LetzteBenutzerID
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteName
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteStrasse
+    {
+      get;
+      set;
+    }
+    public string FilterKontaktePlz
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteOrt
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteNotiz
+    {
+      get;
+      set;
+    }
+    public string FilterKontakteVerlinkt
     {
       get;
       set;

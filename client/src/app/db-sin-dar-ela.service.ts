@@ -205,16 +205,16 @@ export class DbSinDarElaService {
     return this.odata.post(`/Benutzers`, benutzer, { expand }, ['Base']);
   }
 
-  deleteBenutzer(benutzerId: string | null) : Observable<any> {
-    return this.odata.delete(`/Benutzers('${encodeURIComponent(benutzerId)}')`, item => !(item.BenutzerID == benutzerId));
+  deleteBenutzer(benutzerId: number | null) : Observable<any> {
+    return this.odata.delete(`/Benutzers(${benutzerId})`, item => !(item.BenutzerID == benutzerId));
   }
 
-  getBenutzerByBenutzerId(expand: string | null, benutzerId: string | null) : Observable<any> {
-    return this.odata.getById(`/Benutzers('${encodeURIComponent(benutzerId)}')`, { expand });
+  getBenutzerByBenutzerId(expand: string | null, benutzerId: number | null) : Observable<any> {
+    return this.odata.getById(`/Benutzers(${benutzerId})`, { expand });
   }
 
-  updateBenutzer(expand: string | null, benutzerId: string | null, benutzer: models.Benutzer | null) : Observable<any> {
-    return this.odata.patch(`/Benutzers('${encodeURIComponent(benutzerId)}')`, benutzer, item => item.BenutzerID == benutzerId, { expand }, ['Base']);
+  updateBenutzer(expand: string | null, benutzerId: number | null, benutzer: models.Benutzer | null) : Observable<any> {
+    return this.odata.patch(`/Benutzers(${benutzerId})`, benutzer, item => item.BenutzerID == benutzerId, { expand }, ['Base']);
   }
 
   getDebuggs(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
@@ -1095,6 +1095,26 @@ export class DbSinDarElaService {
 
   updateRegelnAbwesenheiten(expand: string | null, regelnAbwesenheitenId: number | null, regelnAbwesenheiten: models.RegelnAbwesenheiten | null) : Observable<any> {
     return this.odata.patch(`/RegelnAbwesenheitens(${regelnAbwesenheitenId})`, regelnAbwesenheiten, item => item.RegelnAbwesenheitenID == regelnAbwesenheitenId, { expand }, []);
+  }
+
+  getVwBaseAlles(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/VwBaseAlles`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  getVwBaseKontaktes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/VwBaseKontaktes`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  getVwBaseOrtes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/VwBaseOrtes`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  getVwBasePlzs(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/VwBasePlzs`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  getVwBenutzerBases(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/VwBenutzerBases`, { filter, top, skip, orderby, count, expand, format, select });
   }
 
   getVwBenutzerRollens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {

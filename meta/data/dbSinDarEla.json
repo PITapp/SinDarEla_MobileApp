@@ -723,23 +723,17 @@
       "x-table": "def.Benutzer",
       "resource": "Benutzers",
       "required": [
-        "BenutzerID",
-        "AspNetUsers_Id",
         "BaseID",
+        "AspNetUsers_Id",
         "Benutzername",
         "Initialen"
       ],
       "properties": {
         "BenutzerID": {
           "x-key": true,
+          "x-identity": true,
           "x-nullable": false,
-          "type": "string",
-          "length": 255
-        },
-        "AspNetUsers_Id": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 255
+          "type": "integer"
         },
         "Base": {
           "type": "object",
@@ -757,6 +751,11 @@
             "textProperty": "Name1",
             "navigationProperty": "Benutzers"
           }
+        },
+        "AspNetUsers_Id": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 255
         },
         "Benutzername": {
           "x-nullable": false,
@@ -787,6 +786,30 @@
         },
         "LetzteBenutzerID": {
           "type": "integer"
+        },
+        "FilterKontakteName": {
+          "type": "string",
+          "length": 100
+        },
+        "FilterKontakteStrasse": {
+          "type": "string",
+          "length": 50
+        },
+        "FilterKontaktePlz": {
+          "type": "string",
+          "length": 10
+        },
+        "FilterKontakteOrt": {
+          "type": "string",
+          "length": 50
+        },
+        "FilterKontakteNotiz": {
+          "type": "string",
+          "length": 255
+        },
+        "FilterKontakteVerlinkt": {
+          "type": "string",
+          "length": 20
         }
       }
     },
@@ -3829,12 +3852,373 @@
         }
       }
     },
+    "VwBaseAlle": {
+      "x-view": true,
+      "x-table": "def.vwBaseAlle",
+      "resource": "VwBaseAlles",
+      "required": [
+        "Name1"
+      ],
+      "properties": {
+        "BaseID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "Name1": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Name2": {
+          "type": "string",
+          "length": 30
+        },
+        "NameKuerzel": {
+          "type": "string",
+          "length": 5
+        },
+        "AnredeID": {
+          "type": "integer"
+        },
+        "TitelVorne": {
+          "type": "string",
+          "length": 20
+        },
+        "TitelHinten": {
+          "type": "string",
+          "length": 20
+        },
+        "Strasse": {
+          "type": "string",
+          "length": 70
+        },
+        "PLZ": {
+          "type": "string",
+          "length": 10
+        },
+        "Ort": {
+          "type": "string",
+          "length": 100
+        },
+        "Geburtsdatum": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Versicherungsnummer": {
+          "type": "string",
+          "length": 15
+        },
+        "Staatsangehoerigkeit": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon1": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon2": {
+          "type": "string",
+          "length": 30
+        },
+        "EMail1": {
+          "type": "string",
+          "length": 70
+        },
+        "EMail2": {
+          "type": "string",
+          "length": 70
+        },
+        "Webseite": {
+          "type": "string",
+          "length": 70
+        },
+        "BildURL": {
+          "type": "string",
+          "length": 16777215
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 65535
+        },
+        "NameGesamt": {
+          "type": "string",
+          "length": 131
+        }
+      }
+    },
+    "VwBaseKontakte": {
+      "x-view": true,
+      "x-table": "def.vwBaseKontakte",
+      "resource": "VwBaseKontaktes",
+      "required": [
+        "Name1"
+      ],
+      "properties": {
+        "BaseID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "Name1": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Name2": {
+          "type": "string",
+          "length": 30
+        },
+        "NameGesamt": {
+          "type": "string",
+          "length": 131
+        },
+        "NameKuerzel": {
+          "type": "string",
+          "length": 5
+        },
+        "AnredeID": {
+          "type": "integer"
+        },
+        "TitelVorne": {
+          "type": "string",
+          "length": 20
+        },
+        "TitelHinten": {
+          "type": "string",
+          "length": 20
+        },
+        "Strasse": {
+          "type": "string",
+          "length": 70
+        },
+        "PLZ": {
+          "type": "string",
+          "length": 10
+        },
+        "Ort": {
+          "type": "string",
+          "length": 100
+        },
+        "Geburtsdatum": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Versicherungsnummer": {
+          "type": "string",
+          "length": 15
+        },
+        "Staatsangehoerigkeit": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon1": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon2": {
+          "type": "string",
+          "length": 30
+        },
+        "EMail1": {
+          "type": "string",
+          "length": 70
+        },
+        "EMail2": {
+          "type": "string",
+          "length": 70
+        },
+        "Webseite": {
+          "type": "string",
+          "length": 70
+        },
+        "BildURL": {
+          "type": "string",
+          "length": 16777215
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 65535
+        },
+        "KundenID": {
+          "x-default-sql": "0",
+          "type": "integer"
+        },
+        "MitarbeiterID": {
+          "x-default-sql": "0",
+          "type": "integer"
+        },
+        "BenutzerID": {
+          "x-default-sql": "0",
+          "type": "integer"
+        }
+      }
+    },
+    "VwBaseOrte": {
+      "x-view": true,
+      "x-table": "def.vwBaseOrte",
+      "resource": "VwBaseOrtes",
+      "required": [],
+      "properties": {
+        "Ort": {
+          "type": "string",
+          "length": 100,
+          "x-key": true,
+          "x-virtual": true
+        }
+      }
+    },
+    "VwBasePlz": {
+      "x-view": true,
+      "x-table": "def.vwBasePlz",
+      "resource": "VwBasePlzs",
+      "required": [],
+      "properties": {
+        "PLZ": {
+          "type": "string",
+          "length": 10,
+          "x-key": true,
+          "x-virtual": true
+        }
+      }
+    },
+    "VwBenutzerBase": {
+      "x-view": true,
+      "x-table": "def.vwBenutzerBase",
+      "resource": "VwBenutzerBases",
+      "required": [
+        "AspNetUsers_Id",
+        "BaseID",
+        "Benutzername",
+        "Initialen",
+        "Name1"
+      ],
+      "properties": {
+        "BenutzerID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "AspNetUsers_Id": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 255,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "BaseID": {
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "Benutzername": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 130
+        },
+        "Initialen": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 2
+        },
+        "BenutzerEMail": {
+          "type": "string",
+          "length": 200
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 65535
+        },
+        "Name1": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Name2": {
+          "type": "string",
+          "length": 30
+        },
+        "NameGesamt": {
+          "type": "string",
+          "length": 131
+        },
+        "NameKuerzel": {
+          "type": "string",
+          "length": 5
+        },
+        "AnredeID": {
+          "type": "integer"
+        },
+        "TitelVorne": {
+          "type": "string",
+          "length": 20
+        },
+        "TitelHinten": {
+          "type": "string",
+          "length": 20
+        },
+        "Strasse": {
+          "type": "string",
+          "length": 70
+        },
+        "PLZ": {
+          "type": "string",
+          "length": 10
+        },
+        "Ort": {
+          "type": "string",
+          "length": 100
+        },
+        "Geburtsdatum": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Versicherungsnummer": {
+          "type": "string",
+          "length": 15
+        },
+        "Staatsangehoerigkeit": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon1": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon2": {
+          "type": "string",
+          "length": 30
+        },
+        "EMail1": {
+          "type": "string",
+          "length": 70
+        },
+        "EMail2": {
+          "type": "string",
+          "length": 70
+        },
+        "Webseite": {
+          "type": "string",
+          "length": 70
+        },
+        "BildURL": {
+          "type": "string",
+          "length": 16777215
+        },
+        "BaseNotiz": {
+          "type": "string",
+          "length": 65535
+        }
+      }
+    },
     "VwBenutzerRollen": {
       "x-view": true,
       "x-table": "def.vwBenutzerRollen",
       "resource": "VwBenutzerRollens",
       "required": [
-        "BenutzerID",
         "AspNetUsers_Id",
         "BaseID",
         "Benutzername",
@@ -3843,16 +4227,16 @@
       ],
       "properties": {
         "BenutzerID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "AspNetUsers_Id": {
           "x-nullable": false,
           "type": "string",
           "length": 255,
           "x-key": true,
           "x-virtual": true
-        },
-        "AspNetUsers_Id": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 255
         },
         "BaseID": {
           "x-nullable": false,
@@ -3887,6 +4271,30 @@
         },
         "LetzteBenutzerID": {
           "type": "integer"
+        },
+        "FilterKontakteName": {
+          "type": "string",
+          "length": 100
+        },
+        "FilterKontakteStrasse": {
+          "type": "string",
+          "length": 50
+        },
+        "FilterKontaktePlz": {
+          "type": "string",
+          "length": 10
+        },
+        "FilterKontakteOrt": {
+          "type": "string",
+          "length": 50
+        },
+        "FilterKontakteNotiz": {
+          "type": "string",
+          "length": 255
+        },
+        "FilterKontakteVerlinkt": {
+          "type": "string",
+          "length": 20
         },
         "RoleId": {
           "x-nullable": false,
@@ -9106,6 +9514,341 @@
         }
       }
     },
+    "/VwBaseAlles": {
+      "get": {
+        "operationId": "getVwBaseAlles",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwBaseAlle"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwBaseKontaktes": {
+      "get": {
+        "operationId": "getVwBaseKontaktes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwBaseKontakte"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwBaseOrtes": {
+      "get": {
+        "operationId": "getVwBaseOrtes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwBaseOrte"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwBasePlzs": {
+      "get": {
+        "operationId": "getVwBasePlzs",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwBasePlz"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwBenutzerBases": {
+      "get": {
+        "operationId": "getVwBenutzerBases",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwBenutzerBase"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/VwBenutzerRollens": {
       "get": {
         "operationId": "getVwBenutzerRollens",
@@ -9933,14 +10676,14 @@
         }
       }
     },
-    "/Benutzers('{BenutzerID}')": {
+    "/Benutzers({BenutzerID})": {
       "delete": {
         "operationId": "deleteBenutzer",
         "parameters": [
           {
             "in": "path",
             "name": "BenutzerID",
-            "type": "string"
+            "type": "integer"
           }
         ],
         "responses": {
@@ -9963,7 +10706,7 @@
           {
             "in": "path",
             "name": "BenutzerID",
-            "type": "string"
+            "type": "integer"
           }
         ],
         "responses": {
@@ -9990,7 +10733,7 @@
           {
             "in": "path",
             "name": "BenutzerID",
-            "type": "string"
+            "type": "integer"
           },
           {
             "in": "body",

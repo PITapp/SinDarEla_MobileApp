@@ -104,9 +104,9 @@ export interface BaseKontakte {
 }
 
 export interface Benutzer {
-  BenutzerID: string;
-  AspNetUsers_Id: string;
+  BenutzerID: number;
   BaseID: number;
+  AspNetUsers_Id: string;
   Benutzername: string;
   Initialen: string;
   BenutzerEMail: string;
@@ -115,6 +115,12 @@ export interface Benutzer {
   LetzteMitarbeiterID: number;
   LetzteBaseID: number;
   LetzteBenutzerID: number;
+  FilterKontakteName: string;
+  FilterKontakteStrasse: string;
+  FilterKontaktePlz: string;
+  FilterKontakteOrt: string;
+  FilterKontakteNotiz: string;
+  FilterKontakteVerlinkt: string;
 }
 
 export interface Debugg {
@@ -561,8 +567,97 @@ export interface RegelnAbwesenheiten {
   Beschreibung: string;
 }
 
+export interface VwBaseAlle {
+  BaseID: number;
+  Name1: string;
+  Name2: string;
+  NameKuerzel: string;
+  AnredeID: number;
+  TitelVorne: string;
+  TitelHinten: string;
+  Strasse: string;
+  PLZ: string;
+  Ort: string;
+  Geburtsdatum: string;
+  Versicherungsnummer: string;
+  Staatsangehoerigkeit: string;
+  Telefon1: string;
+  Telefon2: string;
+  EMail1: string;
+  EMail2: string;
+  Webseite: string;
+  BildURL: string;
+  Notiz: string;
+  NameGesamt: string;
+}
+
+export interface VwBaseKontakte {
+  BaseID: number;
+  Name1: string;
+  Name2: string;
+  NameGesamt: string;
+  NameKuerzel: string;
+  AnredeID: number;
+  TitelVorne: string;
+  TitelHinten: string;
+  Strasse: string;
+  PLZ: string;
+  Ort: string;
+  Geburtsdatum: string;
+  Versicherungsnummer: string;
+  Staatsangehoerigkeit: string;
+  Telefon1: string;
+  Telefon2: string;
+  EMail1: string;
+  EMail2: string;
+  Webseite: string;
+  BildURL: string;
+  Notiz: string;
+  KundenID: number;
+  MitarbeiterID: number;
+  BenutzerID: number;
+}
+
+export interface VwBaseOrte {
+  Ort: string;
+}
+
+export interface VwBasePlz {
+  PLZ: string;
+}
+
+export interface VwBenutzerBase {
+  BenutzerID: number;
+  AspNetUsers_Id: string;
+  BaseID: number;
+  Benutzername: string;
+  Initialen: string;
+  BenutzerEMail: string;
+  Notiz: string;
+  Name1: string;
+  Name2: string;
+  NameGesamt: string;
+  NameKuerzel: string;
+  AnredeID: number;
+  TitelVorne: string;
+  TitelHinten: string;
+  Strasse: string;
+  PLZ: string;
+  Ort: string;
+  Geburtsdatum: string;
+  Versicherungsnummer: string;
+  Staatsangehoerigkeit: string;
+  Telefon1: string;
+  Telefon2: string;
+  EMail1: string;
+  EMail2: string;
+  Webseite: string;
+  BildURL: string;
+  BaseNotiz: string;
+}
+
 export interface VwBenutzerRollen {
-  BenutzerID: string;
+  BenutzerID: number;
   AspNetUsers_Id: string;
   BaseID: number;
   Benutzername: string;
@@ -573,6 +668,12 @@ export interface VwBenutzerRollen {
   LetzteMitarbeiterID: number;
   LetzteBaseID: number;
   LetzteBenutzerID: number;
+  FilterKontakteName: string;
+  FilterKontakteStrasse: string;
+  FilterKontaktePlz: string;
+  FilterKontakteOrt: string;
+  FilterKontakteNotiz: string;
+  FilterKontakteVerlinkt: string;
   RoleId: string;
   RolleTitel: string;
 }
