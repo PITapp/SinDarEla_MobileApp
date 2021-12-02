@@ -12,7 +12,7 @@
   <rz-card #card0 [style]="{'backgroundColor': '#ffffff', 'borderRadius': '', 'display': 'block', 'height': '200px', 'marginBottom': '10px', 'paddingLeft': '15px'}">
     <div [ngStyle]="{'marginBottom': '20px'}" class="row">
       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{}">
-        <rz-heading #heading0 size="H5" [style]="{'display': 'inline'}" text="Dienste">
+        <rz-heading #heading0 size="H5" [style]="{'display': 'inline'}" text="Returlaub / Mehrarbeitsstunden">
         </rz-heading>
         <rz-progressbar #progressbar0 [showValue]="false" [style]="{'height': '8px', 'marginBottom': '10px', 'marginTop': '10px'}" value="75">
         </rz-progressbar>
@@ -20,7 +20,7 @@
         </rz-heading>
       </div>
       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingLeft': '23px'}">
-        <rz-heading #heading19 size="H5" [style]="{'display': 'inline'}" text="Kunden">
+        <rz-heading #heading19 size="H5" [style]="{'display': 'inline'}" text="Noch zu bestätigen">
         </rz-heading>
         <rz-gauge #gauge0 [max]="100" [min]="0" [style]="{'float': 'right', 'height': '67px'}" text="+74%" [value]="74">
         </rz-gauge>
@@ -38,7 +38,7 @@
       <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingLeft': '23px'}">
         <rz-heading #heading24 size="H5" [style]="{'display': 'inline', 'marginLeft': '0px', 'marginTop': '10px'}" text="Info">
         </rz-heading>
-        <rz-image #image0 path="/assets/images/KeinBildPerson.png" [style]="{'borderRadius': '50%', 'float': 'right', 'height': '54px', 'textAlign': 'left', 'verticalAlign': 'top', 'width': '54px'}">
+        <rz-image #image0 path="assets/images/KeinBildPerson.png" [style]="{'borderRadius': '50%', 'float': 'right', 'height': '54px', 'textAlign': 'left', 'verticalAlign': 'top', 'width': '54px'}">
         </rz-image>
       </div>
     </div>
@@ -52,7 +52,7 @@
             </rz-icon>
           </div>
         </div>
-        <rz-button #button1 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Dienstplan" (click)="button1Click($event)">
+        <rz-button #button1 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Termine" (click)="button1Click($event)">
         </rz-button>
         <rz-heading #heading1 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Termine 3 | Offen 1">
         </rz-heading>
@@ -82,7 +82,7 @@
             </rz-icon>
           </div>
         </div>
-        <rz-button #button2 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Kontakte" (click)="button2Click($event)">
+        <rz-button #button2 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Mitarbeiter" (click)="button2Click($event)">
         </rz-button>
         <rz-heading #heading4 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Gruppe 12">
         </rz-heading>
@@ -96,7 +96,7 @@
             </rz-icon>
           </div>
         </div>
-        <rz-button #button4 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Nachrichten" (click)="button4Click($event)">
+        <rz-button #button4 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Mitteilungen" (click)="button4Click($event)">
         </rz-button>
         <rz-heading #heading6 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Neu 3 | Offen 2">
         </rz-heading>
@@ -142,7 +142,7 @@
             </rz-icon>
           </div>
         </div>
-        <rz-button #button6 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Impressum" (click)="button6Click($event)">
+        <rz-button #button6 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Urlaub / ZA Antrag" (click)="button6Click($event)">
         </rz-button>
         <rz-heading #heading13 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Inhalt App">
         </rz-heading>
@@ -156,7 +156,7 @@
             </rz-icon>
           </div>
         </div>
-        <rz-button #button7 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Datenschutz" (click)="button7Click($event)">
+        <rz-button #button7 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Arbeitsaufzeichnung" (click)="button7Click($event)">
         </rz-button>
         <rz-heading #heading14 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Schutz Privatsphäre">
         </rz-heading>

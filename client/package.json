@@ -21,10 +21,9 @@
     "@angular/router": "7.2.15",
     "@angular/service-worker": "7.2.15",
     "@auth0/angular-jwt": "^2.1.0",
-    "@radzen/angular": "^2.62.1",
+    "@radzen/angular": "^2.63.7",
     "classlist.js": "1.1.20150312",
     "core-js": "^2.5.1",
-    "quill": "^1.3.7",
     "rxjs": "~6.3.3",
     "web-animations-js": "2.3.1",
     "zone.js": "^0.8.4"

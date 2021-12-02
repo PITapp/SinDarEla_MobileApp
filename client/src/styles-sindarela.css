@@ -203,17 +203,3 @@ input:focus {
 .ui-dialog-titlebar-close .pi-times:before {
   color: whitesmoke;
 }
-
-
-/* --- Quill Editor --- */
-.ql-toolbar.ql-snow {
-  border: 1px solid #dadfe2;
-  border-radius: 4px 4px 0px 0px;
-}
-
-.ql-container {
-  font-family: 'Open Sans', sans-serif, Helvetica, Arial;
-  font-size: 14px;
-  border: 1px solid #dadfe2;
-  border-radius: 0px 0px 4px 4px;
-}

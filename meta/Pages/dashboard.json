@@ -76,7 +76,7 @@
                       "style": {
                         "display": "inline"
                       },
-                      "text": "Dienste",
+                      "text": "Returlaub / Mehrarbeitsstunden",
                       "type": "heading"
                     },
                     {
@@ -114,7 +114,7 @@
                       "style": {
                         "display": "inline"
                       },
-                      "text": "Kunden",
+                      "text": "Noch zu bestätigen",
                       "type": "heading"
                     },
                     {
@@ -296,7 +296,7 @@
                         "textAlign": "left",
                         "width": "100%"
                       },
-                      "text": "Dienstplan",
+                      "text": "Termine",
                       "tooltip": "",
                       "type": "button"
                     },
@@ -495,7 +495,7 @@
                         "textAlign": "left",
                         "width": "100%"
                       },
-                      "text": "Kontakte",
+                      "text": "Mitarbeiter",
                       "tooltip": "",
                       "type": "button"
                     },
@@ -589,7 +589,7 @@
                         "textAlign": "left",
                         "width": "100%"
                       },
-                      "text": "Nachrichten",
+                      "text": "Mitteilungen",
                       "tooltip": "",
                       "type": "button"
                     },
@@ -890,7 +890,7 @@
                         "textAlign": "left",
                         "width": "100%"
                       },
-                      "text": "Impressum",
+                      "text": "Urlaub / ZA Antrag",
                       "tooltip": "",
                       "type": "button"
                     },
@@ -984,7 +984,7 @@
                         "textAlign": "left",
                         "width": "100%"
                       },
-                      "text": "Datenschutz",
+                      "text": "Arbeitsaufzeichnung",
                       "tooltip": "",
                       "type": "button"
                     },
