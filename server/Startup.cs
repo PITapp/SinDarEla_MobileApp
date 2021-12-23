@@ -12,9 +12,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNet.OData.Builder;
+
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Hosting;
@@ -73,8 +75,10 @@ namespace SinDarElaMobile
       }).AddNewtonsoftJson();
 
       services.AddAuthorization();
-      services.AddOData();
-      services.AddODataQueryFilter();
+      
+          services.AddOData();
+          services.AddODataQueryFilter();
+
       services.AddHttpContextAccessor();
       var tokenValidationParameters = new TokenValidationParameters
       {
@@ -149,15 +153,16 @@ namespace SinDarElaMobile
 
       app.UseMvc(builder =>
       {
-          builder.Count().Filter().OrderBy().Expand().Select().MaxTop(null).SetTimeZoneInfo(TimeZoneInfo.Utc);
+        if (env.EnvironmentName == "Development")
+        {
+            builder.MapRoute(name: "default",
+              template: "{controller}/{action}/{id?}",
+              defaults: new { controller = "Home", action = "Index" }
+            );
+        }
 
-          if (env.EnvironmentName == "Development")
-          {
-              builder.MapRoute(name: "default",
-                template: "{controller}/{action}/{id?}",
-                defaults: new { controller = "Home", action = "Index" }
-              );
-          }
+          builder.Count().Filter().OrderBy().Expand().Select().MaxTop(null).SetTimeZoneInfo(TimeZoneInfo.Utc);
+        
 
           var oDataBuilder = new ODataConventionModelBuilder(provider);
 
@@ -236,6 +241,7 @@ namespace SinDarElaMobile
 
           builder.MapODataServiceRoute("auth", "auth", model);
       });
+
 
       if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("RADZEN")) && env.IsDevelopment())
       {

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNet.OData.Routing;
+using Microsoft.AspNet.OData.Query;
 using Newtonsoft.Json.Linq;
 
 using SinDarElaMobile.Data;

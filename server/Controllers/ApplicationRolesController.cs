@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNet.OData.Routing;
+using Microsoft.AspNet.OData.Query;
+
 
 namespace SinDarElaMobile.Controllers
 {

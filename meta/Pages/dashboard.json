@@ -1040,7 +1040,7 @@
                 "marginBottom": "0px",
                 "textAlign": "center"
               },
-              "text": "© 2021 Soziale-Dienste-Ennstal",
+              "text": "© 2022 Soziale-Dienste-Ennstal",
               "type": "heading"
             },
             {
@@ -1053,7 +1053,7 @@
                 "textAlign": "center",
                 "width": "100%"
               },
-              "text": "Version 3.21.017",
+              "text": "Version 3.012",
               "type": "link"
             }
           ],
