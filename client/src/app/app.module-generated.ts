@@ -15,18 +15,21 @@ import { LabelModule } from '@radzen/angular/dist/label';
 import { LinkModule } from '@radzen/angular/dist/link';
 import { CardModule } from '@radzen/angular/dist/card';
 import { ImageModule } from '@radzen/angular/dist/image';
+import { IconModule } from '@radzen/angular/dist/icon';
 import { ContentModule } from '@radzen/angular/dist/content';
 import { HeadingModule } from '@radzen/angular/dist/heading';
-import { ProgressBarModule } from '@radzen/angular/dist/progressbar';
-import { GaugeModule } from '@radzen/angular/dist/gauge';
-import { SparklineModule } from '@radzen/angular/dist/sparkline';
-import { IconModule } from '@radzen/angular/dist/icon';
 import { TextBoxModule } from '@radzen/angular/dist/textbox';
 import { DataListModule } from '@radzen/angular/dist/datalist';
 import { TextAreaModule } from '@radzen/angular/dist/textarea';
 import { HtmlModule } from '@radzen/angular/dist/html';
 import { LoginModule } from '@radzen/angular/dist/login';
 import { TabsModule } from '@radzen/angular/dist/tabs';
+import { SwitchModule } from '@radzen/angular/dist/switch';
+import { PanelModule } from '@radzen/angular/dist/panel';
+import { DropDownModule } from '@radzen/angular/dist/dropdown';
+import { ProgressBarModule } from '@radzen/angular/dist/progressbar';
+import { GaugeModule } from '@radzen/angular/dist/gauge';
+import { SparklineModule } from '@radzen/angular/dist/sparkline';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -51,9 +54,11 @@ import { EinstellungenComponent } from './einstellungen/einstellungen.component'
 import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 import { VersionenComponent } from './versionen/versionen.component';
+import { ZzDashboard1Component } from './zz-dashboard-1/zz-dashboard-1.component';
 import { DetailsLayoutComponent } from './details-layout/details-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
+import { KundenLayoutComponent } from './kunden-layout/kunden-layout.component';
 
 import { DbSinDarElaService } from './db-sin-dar-ela.service';
 import { SecurityService, UserService } from './security.service';
@@ -76,12 +81,14 @@ export const PageDeclarations = [
   ImpressumComponent,
   DatenschutzComponent,
   VersionenComponent,
+  ZzDashboard1Component,
 ];
 
 export const LayoutDeclarations = [
   DetailsLayoutComponent,
   LoginLayoutComponent,
   MainLayoutComponent,
+  KundenLayoutComponent,
 ];
 
 export const AppDeclarations = [
@@ -127,18 +134,21 @@ export const AppImports = [
   LinkModule,
   CardModule,
   ImageModule,
+  IconModule,
   ContentModule,
   HeadingModule,
-  ProgressBarModule,
-  GaugeModule,
-  SparklineModule,
-  IconModule,
   TextBoxModule,
   DataListModule,
   TextAreaModule,
   HtmlModule,
   LoginModule,
   TabsModule,
+  SwitchModule,
+  PanelModule,
+  DropDownModule,
+  ProgressBarModule,
+  GaugeModule,
+  SparklineModule,
   SharedModule,
   NotificationModule,
   DialogModule,

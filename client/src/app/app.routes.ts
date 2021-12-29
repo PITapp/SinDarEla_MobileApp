@@ -4,6 +4,7 @@ import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { DetailsLayoutComponent } from './details-layout/details-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
+import { KundenLayoutComponent } from './kunden-layout/kunden-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BaseComponent } from './base/base.component';
 import { BaseDetailsComponent } from './base-details/base-details.component';
@@ -19,6 +20,7 @@ import { EinstellungenComponent } from './einstellungen/einstellungen.component'
 import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 import { VersionenComponent } from './versionen/versionen.component';
+import { ZzDashboard1Component } from './zz-dashboard-1/zz-dashboard-1.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -57,14 +59,6 @@ export const routes: Routes = [
           roles: ['Authenticated'],
         },
         component: DienstplanComponent
-      },
-      {
-        path: 'kunden',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: KundenComponent
       },
       {
         path: 'kontakte',
@@ -122,6 +116,14 @@ export const routes: Routes = [
         },
         component: VersionenComponent
       },
+      {
+        path: 'zz-dashboard-1',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: ZzDashboard1Component
+      },
     ]
   },
   {
@@ -156,6 +158,20 @@ export const routes: Routes = [
           roles: ['Everybody'],
         },
         component: LoginComponent
+      },
+    ]
+  },
+  {
+    path: '',
+    component: KundenLayoutComponent,
+    children: [
+      {
+        path: 'kunden',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: KundenComponent
       },
     ]
   },

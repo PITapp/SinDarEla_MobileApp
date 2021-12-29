@@ -1,124 +1,68 @@
 <rz-content #content1 container="main">
-  <div [ngStyle]="{'backgroundColor': '#ffc16b'}" class="row">
-    <div class="col-9">
-      <rz-label #label30 [style]="{'color': '#3a474d', 'display': 'inline-block', 'fontStyle': 'normal', 'fontWeight': 'normal', 'textAlign': 'left'}" [text]="security?.user?.name">
-      </rz-label>
-    </div>
-    <div class="col-3" [ngStyle]="{'textAlign': 'right'}">
-      <rz-label #label31 [style]="{'color': '#5d717b', 'display': 'inline-block', 'fontStyle': 'normal', 'fontWeight': 'normal', 'textAlign': 'right'}" [text]="dateHeute | utcDate:'dd.MM.yyyy'">
-      </rz-label>
-    </div>
-  </div>
-  <div [ngStyle]="{'backgroundColor': '#ffc16b'}" class="row">
-    <div class="col-3">
-      <rz-label #label29 [style]="{'color': '#598087', 'fontSize': '28px'}" text="12">
-      </rz-label>
-      <rz-label #label35 [style]="{'display': 'block', 'fontSize': '14px'}" text="Mitteilungen">
-      </rz-label>
-    </div>
-    <div class="col-3" [ngStyle]="{}">
-      <rz-label #label32 [style]="{'color': '#f5f5f5', 'fontSize': '28px', 'fontWeight': 'normal'}" text="12">
-      </rz-label>
-    </div>
-    <div class="col-3" [ngStyle]="{}">
-      <rz-label #label33 [style]="{'fontSize': '28px'}" text="12">
-      </rz-label>
-    </div>
-    <div class="col-3" [ngStyle]="{}">
-      <rz-label #label34 [style]="{'fontSize': '28px'}" text="12">
-      </rz-label>
-    </div>
-  </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'marginBottom': '10px'}" class="row">
-    <div class="col-6" [ngStyle]="{'borderBottom': '1px solid #f1903c', 'borderRight': '1px solid #f1903c', 'paddingBottom': '5px', 'paddingLeft': '25px', 'paddingTop': '10px'}">
-      <rz-icon #icon23 icon="event" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
-      </rz-icon>
-      <rz-label #label36 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': '600', 'textAlign': 'left', 'width': '100%'}" text="Termine">
-      </rz-label>
-    </div>
-    <div class="col-6" [ngStyle]="{'borderBottom': '1px solid #f1903c', 'borderRight': '1px solid #f1903c', 'paddingBottom': '5px', 'paddingLeft': '25px', 'paddingTop': '10px'}">
-      <rz-icon #icon24 icon="face" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
-      </rz-icon>
-      <rz-label #label37 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': '600', 'textAlign': 'left', 'width': '100%'}" text="Kunden">
-      </rz-label>
-    </div>
-  </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'marginBottom': '10px'}" class="row">
-    <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '25px'}">
-      <rz-icon #icon25 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
-      </rz-icon>
-    </div>
-    <div class="col-10" [ngStyle]="{'marginTop': '2px', 'paddingRight': '30px'}">
-      <rz-label #label38 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
-      </rz-label>
-      <rz-label #label39 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
-      </rz-label>
-    </div>
-  </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'marginBottom': '10px'}" class="row">
-    <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '25px'}">
-      <rz-icon #icon26 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
-      </rz-icon>
-    </div>
-    <div class="col-10" [ngStyle]="{'marginTop': '2px', 'paddingRight': '100px'}">
-      <rz-label #label40 [style]="{'color': '#5d717b', 'display': 'inline-block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
-      </rz-label>
-      <rz-label #label41 [style]="{'color': '#3a474d', 'display': 'inline-block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
-      </rz-label>
-      <rz-icon #icon27 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '30px', 'marginTop': '5px', 'position': 'absolute', 'right': '30px', 'top': '5px'}">
-      </rz-icon>
+  <div [ngStyle]="{'marginTop': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
+    <div class="col-md-12">
+      <rz-card #card0 [style]="{'backgroundColor': '#ffffff', 'borderRadius': '', 'display': 'block', 'height': '200px', 'marginBottom': '10px', 'paddingLeft': '15px'}">
+        <div [ngStyle]="{'marginBottom': '20px'}" class="row">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{}">
+            <rz-heading #heading0 size="H5" [style]="{'display': 'inline'}" text="Returlaub / Mehrarbeitsstunden">
+            </rz-heading>
+            <rz-progressbar #progressbar0 [showValue]="false" [style]="{'height': '8px', 'marginBottom': '10px', 'marginTop': '10px'}" value="75">
+            </rz-progressbar>
+            <rz-heading #heading15 size="H5" [style]="{'color': '#5d717b', 'display': 'inline'}" text="Gesamtansicht">
+            </rz-heading>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingLeft': '23px'}">
+            <rz-heading #heading19 size="H5" [style]="{'display': 'inline'}" text="Noch zu bestätigen">
+            </rz-heading>
+            <rz-gauge #gauge0 [max]="100" [min]="0" [style]="{'float': 'right', 'height': '67px'}" text="+74%" [value]="74">
+            </rz-gauge>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <rz-heading #heading20 size="H5" [style]="{'display': 'inline'}" text="Aktivitäten">
+            </rz-heading>
+            <rz-heading #heading21 size="H4" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5dbf74', 'display': 'block', 'float': 'right', 'fontWeight': 'normal', 'marginBottom': '0px', 'textAlign': 'right'}" text="139">
+            </rz-heading>
+            <rz-sparkline #sparkline0 color="#5dbf74" [data]="customers" [style]="{'display': 'inline-block', 'marginTop': '10px', 'width': '100%'}">
+            </rz-sparkline>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingLeft': '23px'}">
+            <rz-heading #heading9 size="H6" [style]="{'color': '#6d787d', 'display': 'inline', 'float': 'none', 'width': ''}" [text]="security?.user?.name" >
+            </rz-heading>
+            <rz-image #image0 path="assets/images/KeinBildPerson.png" [style]="{'borderRadius': '50%', 'float': 'right', 'height': '54px', 'textAlign': 'left', 'verticalAlign': 'top', 'width': '54px'}">
+            </rz-image>
+          </div>
+        </div>
+      </rz-card>
     </div>
   </div>
   <div [ngStyle]="{'marginBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
     <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingRight': '5px'}">
-      <rz-card #card1 [style]="{'backgroundColor': '#ffffff', 'border': '0px 0px 3px none none solid #f9f9f9', 'borderBottom': '3px solid rgb(241, 144, 60)', 'display': 'block', 'height': '95px', 'paddingLeft': '15px', 'paddingRight': '20px', 'paddingTop': '15px'}">
-        <div class="row" [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}">
-          <div class="col-12" [ngStyle]="{'paddingLeft': '12px'}">
-            <rz-icon #icon0 icon="event" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+      <rz-card #card1 [style]="{'backgroundColor': '#ffffff', 'border': '0px 0px 3px none none solid #f9f9f9', 'borderBottom': '3px solid rgb(241, 144, 60)', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
+        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <rz-icon #icon0 icon="assignment" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
             </rz-icon>
           </div>
         </div>
-        <rz-label #label26 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '20px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Termine">
-        </rz-label>
+        <rz-button #button1 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Termine" (click)="button1Click($event)">
+        </rz-button>
+        <rz-heading #heading1 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Termine 3 | Offen 1">
+        </rz-heading>
       </rz-card>
     </div>
     <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingLeft': '5px'}">
-      <rz-card #card6 [style]="{'backgroundColor': '#ffffff', 'border': '0px 0px 3px none none solid #f9f9f9', 'borderBottom': '3px solid rgb(241, 144, 60)', 'display': 'block', 'height': '95px', 'paddingLeft': '15px', 'paddingRight': '20px', 'paddingTop': '15px'}">
-        <div class="row" [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}">
-          <div class="col-12" [ngStyle]="{'paddingLeft': '12px'}">
+      <rz-card #card6 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
+        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
             <rz-icon #icon2 icon="face" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
             </rz-icon>
           </div>
         </div>
-        <rz-label #label28 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '20px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Kunden">
-        </rz-label>
-      </rz-card>
-    </div>
-  </div>
-  <div [ngStyle]="{'marginBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
-    <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingRight': '5px'}">
-      <rz-card #card23 [style]="{'backgroundColor': '#ffffff', 'border': '0px 0px 3px none none solid #f9f9f9', 'borderBottom': '3px solid rgb(241, 144, 60)', 'display': 'block', 'height': '95px', 'paddingLeft': '15px', 'paddingRight': '20px', 'paddingTop': '15px'}">
-        <div class="row" [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}">
-          <div class="col-12" [ngStyle]="{'paddingLeft': '12px'}">
-            <rz-icon #icon21 icon="event" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
-            </rz-icon>
-          </div>
-        </div>
-        <rz-label #label27 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '20px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Termine">
-        </rz-label>
-      </rz-card>
-    </div>
-    <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingLeft': '5px'}">
-      <rz-card #card24 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
-        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
-          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-            <rz-icon #icon22 icon="face" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
-            </rz-icon>
-          </div>
-        </div>
-        <rz-button #button1 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Kunden" (click)="button1Click($event)">
+        <rz-button #button0 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Kunden" (click)="button0Click($event)">
         </rz-button>
-        <rz-heading #heading1 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Aktiv 9 | Antrag 2">
+        <rz-heading #heading11 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Aktiv 9 | Antrag 2">
         </rz-heading>
       </rz-card>
     </div>

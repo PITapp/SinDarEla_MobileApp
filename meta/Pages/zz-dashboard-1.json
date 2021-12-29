@@ -8,532 +8,195 @@
         {
           "components": [
             {
-              "class": "col-9",
+              "class": "col-md-12",
               "components": [
                 {
-                  "name": "label30",
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
+                          "components": [
+                            {
+                              "name": "heading0",
+                              "size": "H5",
+                              "style": {
+                                "display": "inline"
+                              },
+                              "text": "Returlaub / Mehrarbeitsstunden",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "progressbar0",
+                              "showValue": false,
+                              "style": {
+                                "height": "8px",
+                                "marginBottom": "10px",
+                                "marginTop": "10px"
+                              },
+                              "type": "progressbar",
+                              "value": "75"
+                            },
+                            {
+                              "name": "heading15",
+                              "size": "H5",
+                              "style": {
+                                "color": "#5d717b",
+                                "display": "inline"
+                              },
+                              "text": "Gesamtansicht",
+                              "type": "heading"
+                            }
+                          ],
+                          "name": "col1",
+                          "style": {},
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
+                          "components": [
+                            {
+                              "name": "heading19",
+                              "size": "H5",
+                              "style": {
+                                "display": "inline"
+                              },
+                              "text": "Noch zu bestätigen",
+                              "type": "heading"
+                            },
+                            {
+                              "max": 100,
+                              "min": 0,
+                              "name": "gauge0",
+                              "style": {
+                                "float": "right",
+                                "height": "67px"
+                              },
+                              "text": "+74%",
+                              "type": "gauge",
+                              "value": 74
+                            }
+                          ],
+                          "name": "col15",
+                          "style": {
+                            "paddingLeft": "23px"
+                          },
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row0",
+                      "style": {
+                        "marginBottom": "20px"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
+                          "components": [
+                            {
+                              "name": "heading20",
+                              "size": "H5",
+                              "style": {
+                                "display": "inline"
+                              },
+                              "text": "Aktivitäten",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "heading21",
+                              "size": "H4",
+                              "style": {
+                                "backgroundColor": "rgba(0, 0, 0, 0)",
+                                "color": "#5dbf74",
+                                "display": "block",
+                                "float": "right",
+                                "fontWeight": "normal",
+                                "marginBottom": "0px",
+                                "textAlign": "right"
+                              },
+                              "text": "139",
+                              "type": "heading"
+                            },
+                            {
+                              "color": "#5dbf74",
+                              "data": "${customers}",
+                              "name": "sparkline0",
+                              "style": {
+                                "display": "inline-block",
+                                "marginTop": "10px",
+                                "width": "100%"
+                              },
+                              "type": "sparkline"
+                            }
+                          ],
+                          "name": "col35",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
+                          "components": [
+                            {
+                              "attributes": [
+                                {}
+                              ],
+                              "name": "heading9",
+                              "size": "H6",
+                              "style": {
+                                "color": "#6d787d",
+                                "display": "inline",
+                                "float": "none",
+                                "width": ""
+                              },
+                              "text": "${security.user.name}",
+                              "type": "heading"
+                            },
+                            {
+                              "name": "image0",
+                              "path": "/assets/images/KeinBildPerson.png",
+                              "style": {
+                                "borderRadius": "50%",
+                                "float": "right",
+                                "height": "54px",
+                                "textAlign": "left",
+                                "verticalAlign": "top",
+                                "width": "54px"
+                              },
+                              "type": "image"
+                            }
+                          ],
+                          "name": "col36",
+                          "style": {
+                            "paddingLeft": "23px"
+                          },
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row1",
+                      "type": "row"
+                    }
+                  ],
+                  "name": "card0",
                   "style": {
-                    "color": "#3a474d",
-                    "display": "inline-block",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "textAlign": "left"
-                  },
-                  "text": "${security.user.name}",
-                  "type": "label"
-                }
-              ],
-              "name": "col65",
-              "type": "col"
-            },
-            {
-              "class": "col-3",
-              "components": [
-                {
-                  "name": "label31",
-                  "style": {
-                    "color": "#5d717b",
-                    "display": "inline-block",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "textAlign": "right"
-                  },
-                  "text": "${dateHeute  | utcDate : 'dd.MM.yyyy'}",
-                  "type": "label"
-                }
-              ],
-              "name": "col66",
-              "style": {
-                "textAlign": "right"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row45",
-          "style": {
-            "backgroundColor": "#ffc16b"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-3",
-              "components": [
-                {
-                  "name": "label29",
-                  "style": {
-                    "color": "#598087",
-                    "fontSize": "28px"
-                  },
-                  "text": "12",
-                  "type": "label"
-                },
-                {
-                  "name": "label35",
-                  "style": {
+                    "backgroundColor": "#ffffff",
+                    "borderRadius": "",
                     "display": "block",
-                    "fontSize": "14px"
+                    "height": "200px",
+                    "marginBottom": "10px",
+                    "paddingLeft": "15px"
                   },
-                  "text": "Mitteilungen",
-                  "type": "label"
-                }
-              ],
-              "name": "col1",
-              "type": "col"
-            },
-            {
-              "class": "col-3",
-              "components": [
-                {
-                  "name": "label32",
-                  "style": {
-                    "color": "#f5f5f5",
-                    "fontSize": "28px",
-                    "fontWeight": "normal"
-                  },
-                  "text": "12",
-                  "type": "label"
+                  "type": "card",
+                  "visible": true
                 }
               ],
               "name": "col4",
-              "style": {},
-              "type": "col"
-            },
-            {
-              "class": "col-3",
-              "components": [
-                {
-                  "name": "label33",
-                  "style": {
-                    "fontSize": "28px"
-                  },
-                  "text": "12",
-                  "type": "label"
-                }
-              ],
-              "name": "col35",
-              "style": {},
-              "type": "col"
-            },
-            {
-              "class": "col-3",
-              "components": [
-                {
-                  "name": "label34",
-                  "style": {
-                    "fontSize": "28px"
-                  },
-                  "text": "12",
-                  "type": "label"
-                }
-              ],
-              "name": "col15",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row0",
-          "style": {
-            "backgroundColor": "#ffc16b"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-6",
-              "components": [
-                {
-                  "icon": "event",
-                  "name": "icon23",
-                  "style": {
-                    "color": "#F1903C",
-                    "fontSize": "36px"
-                  },
-                  "type": "icon"
-                },
-                {
-                  "name": "label36",
-                  "style": {
-                    "color": "#5d717b",
-                    "display": "block",
-                    "fontSize": "18px",
-                    "fontStyle": "normal",
-                    "fontWeight": "600",
-                    "textAlign": "left",
-                    "width": "100%"
-                  },
-                  "text": "Termine",
-                  "type": "label"
-                }
-              ],
-              "name": "col36",
-              "style": {
-                "borderBottom": "1px solid #f1903c",
-                "borderRight": "1px solid #f1903c",
-                "paddingBottom": "5px",
-                "paddingLeft": "25px",
-                "paddingTop": "10px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-6",
-              "components": [
-                {
-                  "icon": "face",
-                  "name": "icon24",
-                  "style": {
-                    "color": "#F1903C",
-                    "fontSize": "36px"
-                  },
-                  "type": "icon"
-                },
-                {
-                  "name": "label37",
-                  "style": {
-                    "color": "#5d717b",
-                    "display": "block",
-                    "fontSize": "18px",
-                    "fontStyle": "normal",
-                    "fontWeight": "600",
-                    "textAlign": "left",
-                    "width": "100%"
-                  },
-                  "text": "Kunden",
-                  "type": "label"
-                }
-              ],
-              "name": "col67",
-              "style": {
-                "borderBottom": "1px solid #f1903c",
-                "borderRight": "1px solid #f1903c",
-                "paddingBottom": "5px",
-                "paddingLeft": "25px",
-                "paddingTop": "10px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row1",
-          "style": {
-            "backgroundColor": "#F5F5F6",
-            "marginBottom": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-2",
-              "components": [
-                {
-                  "icon": "assignment_turned_in",
-                  "name": "icon25",
-                  "style": {
-                    "color": "#F1903C",
-                    "fontSize": "36px",
-                    "marginTop": "5px"
-                  },
-                  "type": "icon"
-                }
-              ],
-              "name": "col68",
-              "style": {
-                "display": "block",
-                "paddingLeft": "25px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-10",
-              "components": [
-                {
-                  "name": "label38",
-                  "style": {
-                    "color": "#5d717b",
-                    "display": "block",
-                    "fontSize": "18px",
-                    "fontStyle": "normal",
-                    "fontWeight": "bold",
-                    "textAlign": "right",
-                    "width": "100%"
-                  },
-                  "text": "Erfassen",
-                  "type": "label"
-                },
-                {
-                  "name": "label39",
-                  "style": {
-                    "color": "#3a474d",
-                    "display": "block",
-                    "fontSize": "14px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "lineHeight": "14px",
-                    "position": "static",
-                    "textAlign": "right",
-                    "width": "100%"
-                  },
-                  "text": "Artikel für einen Lagerort erfassen",
-                  "type": "label"
-                }
-              ],
-              "name": "col69",
-              "style": {
-                "marginTop": "2px",
-                "paddingRight": "30px"
-              },
               "type": "col"
             }
           ],
           "name": "row15",
           "style": {
-            "backgroundColor": "#F5F5F6",
-            "borderBottom": "1px dotted #f1903c",
-            "marginBottom": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-2",
-              "components": [
-                {
-                  "icon": "assignment_turned_in",
-                  "name": "icon26",
-                  "style": {
-                    "color": "#F1903C",
-                    "fontSize": "36px",
-                    "marginTop": "5px"
-                  },
-                  "type": "icon"
-                }
-              ],
-              "name": "col70",
-              "style": {
-                "display": "block",
-                "paddingLeft": "25px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-10",
-              "components": [
-                {
-                  "name": "label40",
-                  "style": {
-                    "color": "#5d717b",
-                    "display": "inline-block",
-                    "float": "none",
-                    "fontSize": "18px",
-                    "fontStyle": "normal",
-                    "fontWeight": "bold",
-                    "textAlign": "right",
-                    "width": "100%"
-                  },
-                  "text": "Erfassen",
-                  "type": "label"
-                },
-                {
-                  "name": "label41",
-                  "style": {
-                    "color": "#3a474d",
-                    "display": "inline-block",
-                    "float": "none",
-                    "fontSize": "14px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "lineHeight": "14px",
-                    "position": "static",
-                    "textAlign": "right",
-                    "width": "100%"
-                  },
-                  "text": "Artikel für einen Lagerort erfassen",
-                  "type": "label"
-                },
-                {
-                  "icon": "navigate_next",
-                  "name": "icon27",
-                  "style": {
-                    "color": "#F1903C",
-                    "display": "none",
-                    "float": "none",
-                    "fontSize": "30px",
-                    "marginTop": "5px",
-                    "position": "absolute",
-                    "right": "30px",
-                    "top": "5px"
-                  },
-                  "type": "icon"
-                }
-              ],
-              "name": "col71",
-              "style": {
-                "marginTop": "2px",
-                "paddingRight": "100px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row44",
-          "style": {
-            "backgroundColor": "#F5F5F6",
-            "borderBottom": "1px dotted #f1903c",
-            "marginBottom": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "class": "",
-                      "components": [
-                        {
-                          "class": "col-12",
-                          "components": [
-                            {
-                              "icon": "event",
-                              "name": "icon0",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col5",
-                          "style": {
-                            "paddingLeft": "12px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row5",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "name": "label26",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "20px",
-                        "fontStyle": "normal",
-                        "fontWeight": "bold",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Termine",
-                      "type": "label"
-                    }
-                  ],
-                  "name": "card1",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "border": "0px 0px 3px none none solid #f9f9f9",
-                    "borderBottom": "3px solid rgb(241, 144, 60)",
-                    "display": "block",
-                    "height": "95px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px",
-                    "paddingTop": "15px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col10",
-              "style": {
-                "paddingRight": "5px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "class": "",
-                      "components": [
-                        {
-                          "class": "col-12",
-                          "components": [
-                            {
-                              "icon": "face",
-                              "name": "icon2",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col3",
-                          "style": {
-                            "paddingLeft": "12px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row3",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "name": "label28",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "20px",
-                        "fontStyle": "normal",
-                        "fontWeight": "bold",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Kunden",
-                      "type": "label"
-                    }
-                  ],
-                  "name": "card6",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "border": "0px 0px 3px none none solid #f9f9f9",
-                    "borderBottom": "3px solid rgb(241, 144, 60)",
-                    "display": "block",
-                    "height": "95px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px",
-                    "paddingTop": "15px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col14",
-              "style": {
-                "paddingLeft": "5px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row11",
-          "style": {
-            "marginBottom": "10px",
+            "marginTop": "10px",
             "paddingLeft": "10px",
             "paddingRight": "10px"
           },
@@ -547,84 +210,13 @@
                 {
                   "components": [
                     {
-                      "class": "",
-                      "components": [
-                        {
-                          "class": "col-12",
-                          "components": [
-                            {
-                              "icon": "event",
-                              "name": "icon21",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col62",
-                          "style": {
-                            "paddingLeft": "12px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row42",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "name": "label27",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "20px",
-                        "fontStyle": "normal",
-                        "fontWeight": "bold",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Termine",
-                      "type": "label"
-                    }
-                  ],
-                  "name": "card23",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "border": "0px 0px 3px none none solid #f9f9f9",
-                    "borderBottom": "3px solid rgb(241, 144, 60)",
-                    "display": "block",
-                    "height": "95px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px",
-                    "paddingTop": "15px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col61",
-              "style": {
-                "paddingRight": "5px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
                       "components": [
                         {
                           "class": "col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
                           "components": [
                             {
-                              "icon": "face",
-                              "name": "icon22",
+                              "icon": "assignment",
+                              "name": "icon0",
                               "style": {
                                 "color": "#F1903C",
                                 "fontSize": "36px"
@@ -632,11 +224,11 @@
                               "type": "icon"
                             }
                           ],
-                          "name": "col64",
+                          "name": "col5",
                           "type": "col"
                         }
                       ],
-                      "name": "row43",
+                      "name": "row5",
                       "style": {
                         "paddingBottom": "0px",
                         "paddingTop": "0px"
@@ -647,7 +239,7 @@
                       "events": {
                         "click": [
                           {
-                            "path": "kunden",
+                            "path": "dienstplan",
                             "type": "navigate"
                           },
                           {
@@ -668,7 +260,7 @@
                         "textAlign": "left",
                         "width": "100%"
                       },
-                      "text": "Kunden",
+                      "text": "Termine",
                       "tooltip": "",
                       "type": "button"
                     },
@@ -683,11 +275,106 @@
                         "paddingLeft": "3px",
                         "textAlign": "left"
                       },
+                      "text": "Termine 3 | Offen 1",
+                      "type": "heading"
+                    }
+                  ],
+                  "name": "card1",
+                  "style": {
+                    "backgroundColor": "#ffffff",
+                    "border": "0px 0px 3px none none solid #f9f9f9",
+                    "borderBottom": "3px solid rgb(241, 144, 60)",
+                    "display": "block",
+                    "height": "120px",
+                    "paddingLeft": "15px",
+                    "paddingRight": "20px"
+                  },
+                  "type": "card",
+                  "visible": true
+                }
+              ],
+              "name": "col10",
+              "style": {
+                "paddingRight": "5px"
+              },
+              "type": "col"
+            },
+            {
+              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
+                          "components": [
+                            {
+                              "icon": "face",
+                              "name": "icon2",
+                              "style": {
+                                "color": "#F1903C",
+                                "fontSize": "36px"
+                              },
+                              "type": "icon"
+                            }
+                          ],
+                          "name": "col3",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row3",
+                      "style": {
+                        "paddingBottom": "0px",
+                        "paddingTop": "0px"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "events": {
+                        "click": [
+                          {
+                            "path": "kunden",
+                            "type": "navigate"
+                          },
+                          {
+                            "code": "window.scroll(0,0);",
+                            "type": "execute"
+                          }
+                        ]
+                      },
+                      "name": "button0",
+                      "size": "sm",
+                      "style": {
+                        "backgroundColor": "rgba(0, 0, 0, 0)",
+                        "color": "#5d717b",
+                        "fontSize": "18px",
+                        "fontWeight": "600",
+                        "paddingLeft": "3px",
+                        "position": "static",
+                        "textAlign": "left",
+                        "width": "100%"
+                      },
+                      "text": "Kunden",
+                      "tooltip": "",
+                      "type": "button"
+                    },
+                    {
+                      "name": "heading11",
+                      "size": "H4",
+                      "style": {
+                        "color": "#5d717b",
+                        "display": "block",
+                        "fontSize": "12px",
+                        "fontWeight": "normal",
+                        "paddingLeft": "3px",
+                        "textAlign": "left"
+                      },
                       "text": "Aktiv 9 | Antrag 2",
                       "type": "heading"
                     }
                   ],
-                  "name": "card24",
+                  "name": "card6",
                   "style": {
                     "backgroundColor": "#ffffff",
                     "borderBottom": "3px solid #f1903c",
@@ -700,14 +387,14 @@
                   "visible": true
                 }
               ],
-              "name": "col63",
+              "name": "col14",
               "style": {
                 "paddingLeft": "5px"
               },
               "type": "col"
             }
           ],
-          "name": "row41",
+          "name": "row11",
           "style": {
             "marginBottom": "10px",
             "paddingLeft": "10px",
@@ -2837,5 +2524,5 @@
     ]
   },
   "layout": "Main",
-  "name": "Dashboard"
+  "name": "zzDashboard 1"
 }

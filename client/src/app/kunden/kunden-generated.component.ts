@@ -13,6 +13,11 @@ import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
 import { TabsComponent } from '@radzen/angular/dist/tabs';
+import { ButtonComponent } from '@radzen/angular/dist/button';
+import { TextBoxComponent } from '@radzen/angular/dist/textbox';
+import { SwitchComponent } from '@radzen/angular/dist/switch';
+import { PanelComponent } from '@radzen/angular/dist/panel';
+import { DropDownComponent } from '@radzen/angular/dist/dropdown';
 
 import { ConfigService } from '../config.service';
 
@@ -26,6 +31,11 @@ export class KundenGenerated implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('heading3') heading3: HeadingComponent;
   @ViewChild('tabs0') tabs0: TabsComponent;
   @ViewChild('heading0') heading0: HeadingComponent;
+  @ViewChild('button0') button0: ButtonComponent;
+  @ViewChild('textbox0') textbox0: TextBoxComponent;
+  @ViewChild('switch0') switch0: SwitchComponent;
+  @ViewChild('panel0') panel0: PanelComponent;
+  @ViewChild('dropdown0') dropdown0: DropDownComponent;
 
   router: Router;
 

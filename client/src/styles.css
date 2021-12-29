@@ -5,6 +5,3 @@
 
 /* Import the Radzen CSS files */
 @import './styles-generated.css';
-
-/* Import Spezielle Einstellungen für SinDarEla */
-@import './styles-sindarela.css';

@@ -12,13 +12,15 @@
     "client\\src\\assets\\icon-128x128.png",
     "client\\src\\assets\\icon-152x152.png",
     "client\\src\\assets\\icon-256x256.png",
-    "client\\src\\assets\\icon-512x512.png"
+    "client\\src\\assets\\icon-512x512.png",
+    "client\\src\\assets\\css\\default.css"
   ],
   "javaScriptFiles": [],
   "layouts": [
     "Details",
     "Login",
-    "Main"
+    "Main",
+    "Kunden"
   ],
   "logo": "",
   "name": "SinDarElaMobile",
@@ -41,7 +43,8 @@
     "Einstellungen",
     "Impressum",
     "Datenschutz",
-    "Versionen"
+    "Versionen",
+    "zzDashboard 1"
   ],
   "port": 8000,
   "security": {

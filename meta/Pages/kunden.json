@@ -74,6 +74,32 @@
                   },
                   "text": "Hier ist etwas im Entstehen...",
                   "type": "heading"
+                },
+                {
+                  "name": "button0",
+                  "text": "",
+                  "type": "button"
+                },
+                {
+                  "name": "textbox0",
+                  "type": "textbox",
+                  "value": ""
+                },
+                {
+                  "name": "switch0",
+                  "type": "switch",
+                  "value": ""
+                },
+                {
+                  "components": [
+                    {
+                      "name": "dropdown0",
+                      "type": "dropdown"
+                    }
+                  ],
+                  "name": "panel0",
+                  "text": "Panel",
+                  "type": "panel"
                 }
               ],
               "selected": true,
@@ -101,6 +127,6 @@
   "events": {
     "load": []
   },
-  "layout": "Main",
+  "layout": "Kunden",
   "name": "Kunden"
 }
