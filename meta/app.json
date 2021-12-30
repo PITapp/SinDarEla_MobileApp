@@ -44,7 +44,8 @@
     "Impressum",
     "Datenschutz",
     "Versionen",
-    "zzDashboard 1"
+    "zzDashboard 1",
+    "zzDashboard 2"
   ],
   "port": 8000,
   "security": {

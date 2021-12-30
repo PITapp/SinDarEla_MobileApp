@@ -1,0 +1,470 @@
+<rz-content #content1 container="main">
+  <div [ngStyle]="{'backgroundColor': '#ffc16b'}" class="row">
+    <div class="col-9">
+      <rz-label #label30 [style]="{'color': '#3a474d', 'display': 'inline-block', 'fontStyle': 'normal', 'fontWeight': 'normal', 'textAlign': 'left'}" [text]="security?.user?.name">
+      </rz-label>
+    </div>
+    <div class="col-3" [ngStyle]="{'textAlign': 'right'}">
+      <rz-label #label31 [style]="{'color': '#5d717b', 'display': 'inline-block', 'fontStyle': 'normal', 'fontWeight': 'normal', 'textAlign': 'right'}" [text]="dateHeute | utcDate:'dd.MM.yyyy'">
+      </rz-label>
+    </div>
+  </div>
+  <div [ngStyle]="{'backgroundColor': '#ffc16b'}" class="row">
+    <div class="col-3">
+      <rz-label #label29 [style]="{'color': '#598087', 'fontSize': '28px'}" text="12">
+      </rz-label>
+      <rz-label #label35 [style]="{'display': 'block', 'fontSize': '14px'}" text="Mitteilungen">
+      </rz-label>
+    </div>
+    <div class="col-3" [ngStyle]="{}">
+      <rz-label #label32 [style]="{'color': '#f5f5f5', 'fontSize': '28px', 'fontWeight': 'normal'}" text="12">
+      </rz-label>
+    </div>
+    <div class="col-3" [ngStyle]="{}">
+      <rz-label #label33 [style]="{'fontSize': '28px'}" text="12">
+      </rz-label>
+    </div>
+    <div class="col-3" [ngStyle]="{}">
+      <rz-label #label34 [style]="{'fontSize': '28px'}" text="12">
+      </rz-label>
+    </div>
+  </div>
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'marginBottom': '10px'}" class="row">
+    <div class="col-6" [ngStyle]="{'borderBottom': '1px solid #f1903c', 'borderRight': '1px solid #f1903c', 'paddingBottom': '5px', 'paddingLeft': '25px', 'paddingTop': '10px'}">
+      <rz-icon #icon23 icon="event" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+      </rz-icon>
+      <rz-label #label36 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': '600', 'textAlign': 'left', 'width': '100%'}" text="Termine">
+      </rz-label>
+    </div>
+    <div class="col-6" [ngStyle]="{'borderBottom': '1px solid #f1903c', 'borderRight': '1px solid #f1903c', 'paddingBottom': '5px', 'paddingLeft': '25px', 'paddingTop': '10px'}">
+      <rz-icon #icon24 icon="face" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+      </rz-icon>
+      <rz-label #label37 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': '600', 'textAlign': 'left', 'width': '100%'}" text="Kunden">
+      </rz-label>
+    </div>
+  </div>
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c'}" class="row">
+    <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '25px'}">
+      <rz-icon #icon25 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+      </rz-icon>
+    </div>
+    <div class="col-10" [ngStyle]="{'marginTop': '2px', 'paddingRight': '30px'}">
+      <rz-label #label38 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+      </rz-label>
+      <rz-label #label39 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+      </rz-label>
+    </div>
+  </div>
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c'}" class="row">
+    <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '25px'}">
+      <rz-icon #icon26 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+      </rz-icon>
+    </div>
+    <div class="col-10" [ngStyle]="{'marginTop': '2px', 'paddingRight': '100px'}">
+      <rz-label #label40 [style]="{'color': '#5d717b', 'display': 'inline-block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Erfassen">
+      </rz-label>
+      <rz-label #label41 [style]="{'color': '#3a474d', 'display': 'inline-block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+      </rz-label>
+      <rz-icon #icon27 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '30px', 'position': 'absolute', 'right': '30px', 'top': '5px'}">
+      </rz-icon>
+    </div>
+  </div>
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'paddingRight': ''}" class="row">
+    <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '5px'}">
+      <rz-label #label42 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Erfassen">
+      </rz-label>
+      <rz-label #label43 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+      </rz-label>
+      <rz-icon #icon28 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '36px', 'left': '25px', 'marginTop': '5px', 'position': 'absolute', 'top': '7px'}">
+      </rz-icon>
+      <rz-icon #icon29 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '13px'}">
+      </rz-icon>
+    </div>
+  </div>
+  <div [ngStyle]="{'marginBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
+    <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingRight': '5px'}">
+      <rz-card #card1 [style]="{'backgroundColor': '#ffffff', 'border': '0px 0px 3px none none solid #f9f9f9', 'borderBottom': '3px solid rgb(241, 144, 60)', 'display': 'block', 'height': '95px', 'paddingLeft': '15px', 'paddingRight': '20px', 'paddingTop': '15px'}">
+        <div class="row" [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}">
+          <div class="col-12" [ngStyle]="{'paddingLeft': '12px'}">
+            <rz-icon #icon0 icon="event" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-label #label26 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '20px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Termine">
+        </rz-label>
+      </rz-card>
+    </div>
+    <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingLeft': '5px'}">
+      <rz-card #card6 [style]="{'backgroundColor': '#ffffff', 'border': '0px 0px 3px none none solid #f9f9f9', 'borderBottom': '3px solid rgb(241, 144, 60)', 'display': 'block', 'height': '95px', 'paddingLeft': '15px', 'paddingRight': '20px', 'paddingTop': '15px'}">
+        <div class="row" [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}">
+          <div class="col-12" [ngStyle]="{'paddingLeft': '12px'}">
+            <rz-icon #icon2 icon="face" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-label #label28 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '20px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Kunden">
+        </rz-label>
+      </rz-card>
+    </div>
+  </div>
+  <div [ngStyle]="{'marginBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
+    <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingRight': '5px'}">
+      <rz-card #card23 [style]="{'backgroundColor': '#ffffff', 'border': '0px 0px 3px none none solid #f9f9f9', 'borderBottom': '3px solid rgb(241, 144, 60)', 'display': 'block', 'height': '95px', 'paddingLeft': '15px', 'paddingRight': '20px', 'paddingTop': '15px'}">
+        <div class="row" [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}">
+          <div class="col-12" [ngStyle]="{'paddingLeft': '12px'}">
+            <rz-icon #icon21 icon="event" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-label #label27 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '20px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Termine">
+        </rz-label>
+      </rz-card>
+    </div>
+    <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingLeft': '5px'}">
+      <rz-card #card24 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
+        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <rz-icon #icon22 icon="face" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-button #button1 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Kunden" (click)="button1Click($event)">
+        </rz-button>
+        <rz-heading #heading1 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Aktiv 9 | Antrag 2">
+        </rz-heading>
+      </rz-card>
+    </div>
+  </div>
+  <div [ngStyle]="{'marginBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
+    <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingRight': '5px'}">
+      <rz-card #card2 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid rgb(241, 144, 60)', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
+        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <rz-icon #icon1 icon="book" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-button #button2 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Mitarbeiter" (click)="button2Click($event)">
+        </rz-button>
+        <rz-heading #heading4 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Gruppe 12">
+        </rz-heading>
+      </rz-card>
+    </div>
+    <div class="col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6" [ngStyle]="{'paddingLeft': '5px'}">
+      <rz-card #card4 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
+        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <rz-icon #icon4 icon="email" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-button #button4 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Mitteilungen" (click)="button4Click($event)">
+        </rz-button>
+        <rz-heading #heading6 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Neu 3 | Offen 2">
+        </rz-heading>
+      </rz-card>
+    </div>
+  </div>
+  <div [ngStyle]="{'marginBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingRight': '5px'}">
+      <rz-card #card3 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
+        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <rz-icon #icon3 icon="directions_car" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-button #button3 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Fahrtenbuch" (click)="button3Click($event)">
+        </rz-button>
+        <rz-heading #heading5 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Einträge 7">
+        </rz-heading>
+      </rz-card>
+    </div>
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingLeft': '5px'}">
+      <rz-card #card5 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
+        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <rz-icon #icon5 icon="settings" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-button #button5 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Einstellungen" (click)="button5Click($event)">
+        </rz-button>
+        <rz-heading #heading7 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Dein Profil">
+        </rz-heading>
+      </rz-card>
+    </div>
+  </div>
+  <div [ngStyle]="{'marginBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingRight': '5px'}">
+      <rz-card #card7 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
+        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <rz-icon #icon6 icon="account_balance" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-button #button6 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Urlaub / ZA Antrag" (click)="button6Click($event)">
+        </rz-button>
+        <rz-heading #heading13 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Inhalt App">
+        </rz-heading>
+      </rz-card>
+    </div>
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingLeft': '5px'}">
+      <rz-card #card9 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '120px', 'paddingLeft': '15px', 'paddingRight': '20px'}">
+        <div [ngStyle]="{'paddingBottom': '0px', 'paddingTop': '0px'}" class="row">
+          <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <rz-icon #icon7 icon="verified_user" [style]="{'color': '#F1903C', 'fontSize': '36px'}">
+            </rz-icon>
+          </div>
+        </div>
+        <rz-button #button7 size="sm" [style]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'color': '#5d717b', 'fontSize': '18px', 'fontWeight': '600', 'paddingLeft': '3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Arbeitsaufzeichnung" (click)="button7Click($event)">
+        </rz-button>
+        <rz-heading #heading14 size="H4" [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '12px', 'fontWeight': 'normal', 'paddingLeft': '3px', 'textAlign': 'left'}" text="Schutz Privatsphäre">
+        </rz-heading>
+      </rz-card>
+    </div>
+  </div>
+  <div [ngStyle]="{'marginBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingRight': '5px'}">
+      <rz-card #card21 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-1" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon19 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-11" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label22 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label23 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="erfassen...">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" [ngStyle]="{'paddingLeft': '5px'}">
+      <rz-card #card22 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon20 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label24 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label25 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="erfassen...">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card14 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon11 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label14 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label15 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card20 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon18 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label20 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label21 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card19 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon17 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label18 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label19 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card18 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon16 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label16 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label17 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card17 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon15 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label12 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label13 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card16 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon14 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label10 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label11 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card15 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon13 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label8 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label9 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card13 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon12 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label6 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label7 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card12 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon10 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label4 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label5 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card11 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon9 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label2 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label3 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div class="row" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px'}">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" [ngStyle]="{}">
+      <rz-card #card10 [style]="{'backgroundColor': '#ffffff', 'borderBottom': '3px solid #f1903c', 'display': 'block', 'height': '60px', 'marginBottom': '10px', 'paddingBottom': '15px', 'paddingLeft': '15px', 'paddingRight': '15px', 'paddingTop': '7px', 'verticalAlign': 'baseline'}" (click)="onClickStartErfassen({InventurID: 0})">
+        <div [ngStyle]="{}" class="row">
+          <div class="col-2" [ngStyle]="{'display': 'block', 'paddingLeft': '13px'}">
+            <rz-icon #icon8 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'fontSize': '36px', 'marginTop': '5px'}">
+            </rz-icon>
+          </div>
+          <div class="col-10" [ngStyle]="{'marginTop': '2px'}">
+            <rz-label #label0 [style]="{'color': '#5d717b', 'display': 'block', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'right', 'width': '100%'}" text="Erfassen">
+            </rz-label>
+            <rz-label #label1 [style]="{'color': '#3a474d', 'display': 'block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'lineHeight': '14px', 'position': 'static', 'textAlign': 'right', 'width': '100%'}" text="Artikel für einen Lagerort erfassen">
+            </rz-label>
+          </div>
+        </div>
+      </rz-card>
+    </div>
+  </div>
+  <div [ngStyle]="{'marginBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px'}" class="row">
+    <div class="col-md-12">
+      <rz-card #card8 [style]="{'backgroundColor': '#FFFFFF', 'display': 'block', 'height': '65px', 'paddingTop': '10px'}">
+        <rz-heading #heading8 size="H6" [style]="{'color': '#5d717b', 'fontWeight': 'normal', 'marginBottom': '0px', 'textAlign': 'center'}" text="© 2022 Soziale-Dienste-Ennstal">
+        </rz-heading>
+        <rz-link #link0 path="versionen" [style]="{'float': 'right', 'marginTop': '-2px', 'textAlign': 'center', 'width': '100%'}" text="Version 3.012">
+        </rz-link>
+      </rz-card>
+    </div>
+  </div>
+</rz-content>

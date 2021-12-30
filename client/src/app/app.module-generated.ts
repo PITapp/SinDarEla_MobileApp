@@ -55,6 +55,7 @@ import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 import { VersionenComponent } from './versionen/versionen.component';
 import { ZzDashboard1Component } from './zz-dashboard-1/zz-dashboard-1.component';
+import { ZzDashboard2Component } from './zz-dashboard-2/zz-dashboard-2.component';
 import { DetailsLayoutComponent } from './details-layout/details-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
@@ -82,6 +83,7 @@ export const PageDeclarations = [
   DatenschutzComponent,
   VersionenComponent,
   ZzDashboard1Component,
+  ZzDashboard2Component,
 ];
 
 export const LayoutDeclarations = [

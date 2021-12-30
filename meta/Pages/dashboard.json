@@ -13,8 +13,9 @@
                 {
                   "name": "label30",
                   "style": {
-                    "color": "#3a474d",
+                    "color": "#f5f5f5",
                     "display": "inline-block",
+                    "fontSize": "14px",
                     "fontStyle": "normal",
                     "fontWeight": "normal",
                     "textAlign": "left"
@@ -24,6 +25,9 @@
                 }
               ],
               "name": "col65",
+              "style": {
+                "paddingLeft": "30px"
+              },
               "type": "col"
             },
             {
@@ -32,8 +36,9 @@
                 {
                   "name": "label31",
                   "style": {
-                    "color": "#5d717b",
+                    "color": "#4C7DA5",
                     "display": "inline-block",
+                    "fontSize": "12px",
                     "fontStyle": "normal",
                     "fontWeight": "normal",
                     "textAlign": "right"
@@ -44,6 +49,7 @@
               ],
               "name": "col66",
               "style": {
+                "paddingRight": "30px",
                 "textAlign": "right"
               },
               "type": "col"
@@ -51,7 +57,7 @@
           ],
           "name": "row45",
           "style": {
-            "backgroundColor": "#ffc16b"
+            "backgroundColor": "#b96205"
           },
           "type": "row"
         },
@@ -63,23 +69,34 @@
                 {
                   "name": "label29",
                   "style": {
-                    "color": "#598087",
-                    "fontSize": "28px"
+                    "color": "#1B507C",
+                    "display": "block",
+                    "fontSize": "28px",
+                    "textAlign": "center",
+                    "verticalAlign": "baseline",
+                    "width": "100%"
                   },
                   "text": "12",
                   "type": "label"
                 },
                 {
-                  "name": "label35",
+                  "name": "label3",
                   "style": {
+                    "color": "#1B507C",
                     "display": "block",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "textAlign": "center"
                   },
                   "text": "Mitteilungen",
                   "type": "label"
                 }
               ],
               "name": "col1",
+              "style": {
+                "display": "inline-block",
+                "textAlign": "left",
+                "verticalAlign": "baseline"
+              },
               "type": "col"
             },
             {
@@ -94,6 +111,16 @@
                   },
                   "text": "12",
                   "type": "label"
+                },
+                {
+                  "name": "label0",
+                  "style": {
+                    "color": "#1B507C",
+                    "display": "block",
+                    "fontSize": "14px"
+                  },
+                  "text": "Mitteilungen",
+                  "type": "label"
                 }
               ],
               "name": "col4",
@@ -106,9 +133,20 @@
                 {
                   "name": "label33",
                   "style": {
+                    "color": "#282686",
                     "fontSize": "28px"
                   },
                   "text": "12",
+                  "type": "label"
+                },
+                {
+                  "name": "label1",
+                  "style": {
+                    "color": "#1B507C",
+                    "display": "block",
+                    "fontSize": "14px"
+                  },
+                  "text": "Mitteilungen",
                   "type": "label"
                 }
               ],
@@ -122,9 +160,20 @@
                 {
                   "name": "label34",
                   "style": {
+                    "color": "#4C7DA5",
                     "fontSize": "28px"
                   },
                   "text": "12",
+                  "type": "label"
+                },
+                {
+                  "name": "label2",
+                  "style": {
+                    "color": "#1B507C",
+                    "display": "block",
+                    "fontSize": "14px"
+                  },
+                  "text": "Mitteilungen",
                   "type": "label"
                 }
               ],
@@ -135,83 +184,178 @@
           ],
           "name": "row0",
           "style": {
-            "backgroundColor": "#ffc16b"
+            "backgroundColor": "#ffc16b",
+            "height": "120px",
+            "marginBottom": "0",
+            "marginLeft": "0",
+            "marginRight": "0",
+            "marginTop": "0"
           },
           "type": "row"
         },
         {
           "components": [
             {
-              "class": "col-6",
+              "class": "col-12",
               "components": [
                 {
-                  "icon": "event",
-                  "name": "icon23",
+                  "name": "label42",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Erfassen",
+                  "type": "label"
+                },
+                {
+                  "name": "label43",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Artikel für einen Lagerort erfassen",
+                  "type": "label"
+                },
+                {
+                  "icon": "assignment_turned_in",
+                  "name": "icon28",
                   "style": {
                     "color": "#F1903C",
-                    "fontSize": "36px"
+                    "display": "block",
+                    "fontSize": "36px",
+                    "left": "25px",
+                    "marginTop": "5px",
+                    "position": "absolute",
+                    "top": "7px"
                   },
                   "type": "icon"
                 },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon29",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "13px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col72",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "5px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row46",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "borderTop": "1px dotted #f1903c",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
                 {
                   "name": "label36",
                   "style": {
                     "color": "#5d717b",
                     "display": "block",
+                    "float": "none",
                     "fontSize": "18px",
                     "fontStyle": "normal",
-                    "fontWeight": "600",
+                    "fontWeight": "bold",
                     "textAlign": "left",
                     "width": "100%"
                   },
-                  "text": "Termine",
+                  "text": "Erfassen",
                   "type": "label"
-                }
-              ],
-              "name": "col36",
-              "style": {
-                "borderBottom": "1px solid #f1903c",
-                "borderRight": "1px solid #f1903c",
-                "paddingBottom": "5px",
-                "paddingLeft": "25px",
-                "paddingTop": "10px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-6",
-              "components": [
-                {
-                  "icon": "face",
-                  "name": "icon24",
-                  "style": {
-                    "color": "#F1903C",
-                    "fontSize": "36px"
-                  },
-                  "type": "icon"
                 },
                 {
                   "name": "label37",
                   "style": {
-                    "color": "#5d717b",
+                    "color": "#3a474d",
                     "display": "block",
-                    "fontSize": "18px",
+                    "float": "none",
+                    "fontSize": "14px",
                     "fontStyle": "normal",
-                    "fontWeight": "600",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
                     "textAlign": "left",
                     "width": "100%"
                   },
-                  "text": "Kunden",
+                  "text": "Artikel für einen Lagerort erfassen",
                   "type": "label"
+                },
+                {
+                  "icon": "assignment_turned_in",
+                  "name": "icon23",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "36px",
+                    "left": "25px",
+                    "marginTop": "5px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon24",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "13px"
+                  },
+                  "type": "icon"
                 }
               ],
-              "name": "col67",
+              "name": "col36",
               "style": {
-                "borderBottom": "1px solid #f1903c",
-                "borderRight": "1px solid #f1903c",
+                "display": "block",
                 "paddingBottom": "5px",
-                "paddingLeft": "25px",
-                "paddingTop": "10px"
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "5px"
               },
               "type": "col"
             }
@@ -219,170 +363,54 @@
           "name": "row1",
           "style": {
             "backgroundColor": "#F5F5F6",
-            "marginBottom": "10px"
+            "borderBottom": "1px dotted #f1903c",
+            "paddingRight": ""
           },
           "type": "row"
         },
         {
+          "class": "align-items-center",
           "components": [
             {
-              "class": "col-2",
+              "class": "col-12",
               "components": [
                 {
-                  "icon": "assignment_turned_in",
-                  "name": "icon25",
-                  "style": {
-                    "color": "#F1903C",
-                    "fontSize": "36px",
-                    "marginTop": "5px"
-                  },
-                  "type": "icon"
-                }
-              ],
-              "name": "col68",
-              "style": {
-                "display": "block",
-                "paddingLeft": "25px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-10",
-              "components": [
-                {
-                  "name": "label38",
+                  "name": "heading8",
+                  "size": "H6",
                   "style": {
                     "color": "#5d717b",
-                    "display": "block",
-                    "fontSize": "18px",
-                    "fontStyle": "normal",
-                    "fontWeight": "bold",
-                    "textAlign": "right",
-                    "width": "100%"
+                    "fontWeight": "normal",
+                    "marginBottom": "0px",
+                    "textAlign": "center"
                   },
-                  "text": "Erfassen",
-                  "type": "label"
+                  "text": "© 2022 Soziale-Dienste-Ennstal",
+                  "type": "heading"
                 },
                 {
-                  "name": "label39",
+                  "name": "heading2",
+                  "size": "H6",
                   "style": {
-                    "color": "#3a474d",
-                    "display": "block",
-                    "fontSize": "14px",
-                    "fontStyle": "normal",
+                    "color": "#6264A7",
                     "fontWeight": "normal",
-                    "lineHeight": "14px",
-                    "position": "static",
-                    "textAlign": "right",
-                    "width": "100%"
+                    "marginBottom": "0px",
+                    "textAlign": "center"
                   },
-                  "text": "Artikel für einen Lagerort erfassen",
-                  "type": "label"
+                  "text": "Version 3.012",
+                  "type": "heading"
                 }
               ],
-              "name": "col69",
+              "name": "col13",
               "style": {
-                "marginTop": "2px",
-                "paddingRight": "30px"
+                "display": "block"
               },
               "type": "col"
             }
           ],
-          "name": "row15",
+          "name": "row10",
           "style": {
             "backgroundColor": "#F5F5F6",
-            "borderBottom": "1px dotted #f1903c",
-            "marginBottom": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-2",
-              "components": [
-                {
-                  "icon": "assignment_turned_in",
-                  "name": "icon26",
-                  "style": {
-                    "color": "#F1903C",
-                    "fontSize": "36px",
-                    "marginTop": "5px"
-                  },
-                  "type": "icon"
-                }
-              ],
-              "name": "col70",
-              "style": {
-                "display": "block",
-                "paddingLeft": "25px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-10",
-              "components": [
-                {
-                  "name": "label40",
-                  "style": {
-                    "color": "#5d717b",
-                    "display": "inline-block",
-                    "float": "none",
-                    "fontSize": "18px",
-                    "fontStyle": "normal",
-                    "fontWeight": "bold",
-                    "textAlign": "right",
-                    "width": "100%"
-                  },
-                  "text": "Erfassen",
-                  "type": "label"
-                },
-                {
-                  "name": "label41",
-                  "style": {
-                    "color": "#3a474d",
-                    "display": "inline-block",
-                    "float": "none",
-                    "fontSize": "14px",
-                    "fontStyle": "normal",
-                    "fontWeight": "normal",
-                    "lineHeight": "14px",
-                    "position": "static",
-                    "textAlign": "right",
-                    "width": "100%"
-                  },
-                  "text": "Artikel für einen Lagerort erfassen",
-                  "type": "label"
-                },
-                {
-                  "icon": "navigate_next",
-                  "name": "icon27",
-                  "style": {
-                    "color": "#F1903C",
-                    "display": "none",
-                    "float": "none",
-                    "fontSize": "30px",
-                    "marginTop": "5px",
-                    "position": "absolute",
-                    "right": "30px",
-                    "top": "5px"
-                  },
-                  "type": "icon"
-                }
-              ],
-              "name": "col71",
-              "style": {
-                "marginTop": "2px",
-                "paddingRight": "100px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row44",
-          "style": {
-            "backgroundColor": "#F5F5F6",
-            "borderBottom": "1px dotted #f1903c",
-            "marginBottom": "10px"
+            "height": "70px",
+            "paddingRight": ""
           },
           "type": "row"
         },
@@ -532,182 +560,6 @@
             }
           ],
           "name": "row11",
-          "style": {
-            "marginBottom": "10px",
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "class": "",
-                      "components": [
-                        {
-                          "class": "col-12",
-                          "components": [
-                            {
-                              "icon": "event",
-                              "name": "icon21",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col62",
-                          "style": {
-                            "paddingLeft": "12px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row42",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "name": "label27",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "20px",
-                        "fontStyle": "normal",
-                        "fontWeight": "bold",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Termine",
-                      "type": "label"
-                    }
-                  ],
-                  "name": "card23",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "border": "0px 0px 3px none none solid #f9f9f9",
-                    "borderBottom": "3px solid rgb(241, 144, 60)",
-                    "display": "block",
-                    "height": "95px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px",
-                    "paddingTop": "15px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col61",
-              "style": {
-                "paddingRight": "5px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
-                          "components": [
-                            {
-                              "icon": "face",
-                              "name": "icon22",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col64",
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row43",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "events": {
-                        "click": [
-                          {
-                            "path": "kunden",
-                            "type": "navigate"
-                          },
-                          {
-                            "code": "window.scroll(0,0);",
-                            "type": "execute"
-                          }
-                        ]
-                      },
-                      "name": "button1",
-                      "size": "sm",
-                      "style": {
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
-                        "color": "#5d717b",
-                        "fontSize": "18px",
-                        "fontWeight": "600",
-                        "paddingLeft": "3px",
-                        "position": "static",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Kunden",
-                      "tooltip": "",
-                      "type": "button"
-                    },
-                    {
-                      "name": "heading1",
-                      "size": "H4",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "12px",
-                        "fontWeight": "normal",
-                        "paddingLeft": "3px",
-                        "textAlign": "left"
-                      },
-                      "text": "Aktiv 9 | Antrag 2",
-                      "type": "heading"
-                    }
-                  ],
-                  "name": "card24",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "120px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col63",
-              "style": {
-                "paddingLeft": "5px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row41",
           "style": {
             "marginBottom": "10px",
             "paddingLeft": "10px",
@@ -1315,1505 +1167,37 @@
         {
           "components": [
             {
-              "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
+              "class": "col-6",
               "components": [
                 {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-1",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon19",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col56",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-11",
-                          "components": [
-                            {
-                              "name": "label22",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label23",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "erfassen...",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col58",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row39",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card21",
+                  "name": "label4",
                   "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
+                    "width": "100%"
                   },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col55",
-              "style": {
-                "paddingRight": "5px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
-              "components": [
+                  "text": "1111",
+                  "type": "label"
+                },
                 {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon20",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col59",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label24",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label25",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "erfassen...",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col60",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row40",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card22",
+                  "name": "label5",
                   "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
+                    "width": "100%"
                   },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col57",
-              "style": {
-                "paddingLeft": "5px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row38",
-          "style": {
-            "marginBottom": "10px",
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon11",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col32",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label14",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label15",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col33",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row18",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card14",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
+                  "text": "2222",
+                  "type": "label"
                 }
               ],
               "name": "col20",
-              "style": {},
               "type": "col"
-            }
-          ],
-          "name": "row16",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
+            },
             {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon18",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col53",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label20",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label21",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col54",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row37",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card20",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col52",
-              "style": {},
+              "class": "col-6",
+              "name": "col21",
               "type": "col"
             }
           ],
-          "name": "row36",
+          "name": "row15",
           "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon17",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col50",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label18",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label19",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col51",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row35",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card19",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col49",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row34",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon16",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col47",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label16",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label17",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col48",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row33",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card18",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col46",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row32",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon15",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col44",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label12",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label13",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col45",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row31",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card17",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col43",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row30",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon14",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col41",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label10",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label11",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col42",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row29",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card16",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col40",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row28",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon13",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col38",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label8",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label9",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col39",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row27",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card15",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col37",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row26",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon12",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col31",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label6",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label7",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col34",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row25",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card13",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col30",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row24",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon10",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col28",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label4",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label5",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col29",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row23",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card12",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col27",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row22",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon9",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col25",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label2",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label3",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col26",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row21",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card11",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col23",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row20",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "class": "",
-          "components": [
-            {
-              "class": "col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12",
-              "components": [
-                {
-                  "attributes": [
-                    {
-                      "name": "(click)",
-                      "value": "onClickStartErfassen({InventurID: 0})"
-                    }
-                  ],
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-2",
-                          "components": [
-                            {
-                              "icon": "assignment_turned_in",
-                              "name": "icon8",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px",
-                                "marginTop": "5px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col21",
-                          "style": {
-                            "display": "block",
-                            "paddingLeft": "13px"
-                          },
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-10",
-                          "components": [
-                            {
-                              "name": "label0",
-                              "style": {
-                                "color": "#5d717b",
-                                "display": "block",
-                                "fontSize": "18px",
-                                "fontStyle": "normal",
-                                "fontWeight": "bold",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Erfassen",
-                              "type": "label"
-                            },
-                            {
-                              "name": "label1",
-                              "style": {
-                                "color": "#3a474d",
-                                "display": "block",
-                                "fontSize": "14px",
-                                "fontStyle": "normal",
-                                "fontWeight": "normal",
-                                "lineHeight": "14px",
-                                "position": "static",
-                                "textAlign": "right",
-                                "width": "100%"
-                              },
-                              "text": "Artikel für einen Lagerort erfassen",
-                              "type": "label"
-                            }
-                          ],
-                          "name": "col22",
-                          "style": {
-                            "marginTop": "2px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row17",
-                      "style": {},
-                      "type": "row"
-                    }
-                  ],
-                  "name": "card10",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "60px",
-                    "marginBottom": "10px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "15px",
-                    "paddingTop": "7px",
-                    "verticalAlign": "baseline"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col13",
-              "style": {},
-              "type": "col"
-            }
-          ],
-          "name": "row10",
-          "style": {
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-md-12",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "name": "heading8",
-                      "size": "H6",
-                      "style": {
-                        "color": "#5d717b",
-                        "fontWeight": "normal",
-                        "marginBottom": "0px",
-                        "textAlign": "center"
-                      },
-                      "text": "© 2022 Soziale-Dienste-Ennstal",
-                      "type": "heading"
-                    },
-                    {
-                      "icon": "",
-                      "name": "link0",
-                      "path": "versionen",
-                      "style": {
-                        "float": "right",
-                        "marginTop": "-2px",
-                        "textAlign": "center",
-                        "width": "100%"
-                      },
-                      "text": "Version 3.012",
-                      "type": "link"
-                    }
-                  ],
-                  "name": "card8",
-                  "style": {
-                    "backgroundColor": "#FFFFFF",
-                    "display": "block",
-                    "height": "65px",
-                    "paddingTop": "10px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col24",
-              "type": "col"
-            }
-          ],
-          "name": "row19",
-          "style": {
-            "marginBottom": "10px",
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
+            "height": "100px"
           },
           "type": "row"
         }

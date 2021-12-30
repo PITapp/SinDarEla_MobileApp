@@ -21,6 +21,7 @@ import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 import { VersionenComponent } from './versionen/versionen.component';
 import { ZzDashboard1Component } from './zz-dashboard-1/zz-dashboard-1.component';
+import { ZzDashboard2Component } from './zz-dashboard-2/zz-dashboard-2.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -123,6 +124,14 @@ export const routes: Routes = [
           roles: ['Authenticated'],
         },
         component: ZzDashboard1Component
+      },
+      {
+        path: 'zz-dashboard-2',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: ZzDashboard2Component
       },
     ]
   },
