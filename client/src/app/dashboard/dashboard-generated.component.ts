@@ -14,8 +14,6 @@ import { ContentComponent } from '@radzen/angular/dist/content';
 import { LabelComponent } from '@radzen/angular/dist/label';
 import { IconComponent } from '@radzen/angular/dist/icon';
 import { HeadingComponent } from '@radzen/angular/dist/heading';
-import { CardComponent } from '@radzen/angular/dist/card';
-import { ButtonComponent } from '@radzen/angular/dist/button';
 
 import { ConfigService } from '../config.service';
 
@@ -28,54 +26,60 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('label31') label31: LabelComponent;
   @ViewChild('label29') label29: LabelComponent;
   @ViewChild('label3') label3: LabelComponent;
-  @ViewChild('label32') label32: LabelComponent;
-  @ViewChild('label0') label0: LabelComponent;
-  @ViewChild('label33') label33: LabelComponent;
-  @ViewChild('label1') label1: LabelComponent;
-  @ViewChild('label34') label34: LabelComponent;
   @ViewChild('label2') label2: LabelComponent;
+  @ViewChild('label6') label6: LabelComponent;
+  @ViewChild('label0') label0: LabelComponent;
+  @ViewChild('label1') label1: LabelComponent;
   @ViewChild('label42') label42: LabelComponent;
   @ViewChild('label43') label43: LabelComponent;
   @ViewChild('icon28') icon28: IconComponent;
   @ViewChild('icon29') icon29: IconComponent;
-  @ViewChild('label36') label36: LabelComponent;
-  @ViewChild('label37') label37: LabelComponent;
-  @ViewChild('icon23') icon23: IconComponent;
-  @ViewChild('icon24') icon24: IconComponent;
-  @ViewChild('heading8') heading8: HeadingComponent;
-  @ViewChild('heading2') heading2: HeadingComponent;
-  @ViewChild('card1') card1: CardComponent;
-  @ViewChild('icon0') icon0: IconComponent;
-  @ViewChild('label26') label26: LabelComponent;
-  @ViewChild('card6') card6: CardComponent;
-  @ViewChild('icon2') icon2: IconComponent;
-  @ViewChild('label28') label28: LabelComponent;
-  @ViewChild('card2') card2: CardComponent;
-  @ViewChild('icon1') icon1: IconComponent;
-  @ViewChild('button2') button2: ButtonComponent;
-  @ViewChild('heading4') heading4: HeadingComponent;
-  @ViewChild('card4') card4: CardComponent;
-  @ViewChild('icon4') icon4: IconComponent;
-  @ViewChild('button4') button4: ButtonComponent;
-  @ViewChild('heading6') heading6: HeadingComponent;
-  @ViewChild('card3') card3: CardComponent;
-  @ViewChild('icon3') icon3: IconComponent;
-  @ViewChild('button3') button3: ButtonComponent;
-  @ViewChild('heading5') heading5: HeadingComponent;
-  @ViewChild('card5') card5: CardComponent;
-  @ViewChild('icon5') icon5: IconComponent;
-  @ViewChild('button5') button5: ButtonComponent;
-  @ViewChild('heading7') heading7: HeadingComponent;
-  @ViewChild('card7') card7: CardComponent;
-  @ViewChild('icon6') icon6: IconComponent;
-  @ViewChild('button6') button6: ButtonComponent;
-  @ViewChild('heading13') heading13: HeadingComponent;
-  @ViewChild('card9') card9: CardComponent;
-  @ViewChild('icon7') icon7: IconComponent;
-  @ViewChild('button7') button7: ButtonComponent;
-  @ViewChild('heading14') heading14: HeadingComponent;
+  @ViewChild('label7') label7: LabelComponent;
+  @ViewChild('label8') label8: LabelComponent;
+  @ViewChild('icon8') icon8: IconComponent;
+  @ViewChild('icon9') icon9: IconComponent;
   @ViewChild('label4') label4: LabelComponent;
   @ViewChild('label5') label5: LabelComponent;
+  @ViewChild('icon20') icon20: IconComponent;
+  @ViewChild('icon21') icon21: IconComponent;
+  @ViewChild('label19') label19: LabelComponent;
+  @ViewChild('label20') label20: LabelComponent;
+  @ViewChild('icon1') icon1: IconComponent;
+  @ViewChild('icon4') icon4: IconComponent;
+  @ViewChild('label21') label21: LabelComponent;
+  @ViewChild('label22') label22: LabelComponent;
+  @ViewChild('icon18') icon18: IconComponent;
+  @ViewChild('icon19') icon19: IconComponent;
+  @ViewChild('label25') label25: LabelComponent;
+  @ViewChild('label26') label26: LabelComponent;
+  @ViewChild('icon24') icon24: IconComponent;
+  @ViewChild('icon25') icon25: IconComponent;
+  @ViewChild('label17') label17: LabelComponent;
+  @ViewChild('label18') label18: LabelComponent;
+  @ViewChild('icon16') icon16: IconComponent;
+  @ViewChild('icon17') icon17: IconComponent;
+  @ViewChild('label15') label15: LabelComponent;
+  @ViewChild('label16') label16: LabelComponent;
+  @ViewChild('icon14') icon14: IconComponent;
+  @ViewChild('icon15') icon15: IconComponent;
+  @ViewChild('label13') label13: LabelComponent;
+  @ViewChild('label14') label14: LabelComponent;
+  @ViewChild('icon12') icon12: IconComponent;
+  @ViewChild('icon13') icon13: IconComponent;
+  @ViewChild('label23') label23: LabelComponent;
+  @ViewChild('label24') label24: LabelComponent;
+  @ViewChild('icon22') icon22: IconComponent;
+  @ViewChild('icon23') icon23: IconComponent;
+  @ViewChild('label11') label11: LabelComponent;
+  @ViewChild('label12') label12: LabelComponent;
+  @ViewChild('icon10') icon10: IconComponent;
+  @ViewChild('icon11') icon11: IconComponent;
+  @ViewChild('label9') label9: LabelComponent;
+  @ViewChild('label10') label10: LabelComponent;
+  @ViewChild('icon0') icon0: IconComponent;
+  @ViewChild('icon2') icon2: IconComponent;
+  @ViewChild('heading8') heading8: HeadingComponent;
+  @ViewChild('heading2') heading2: HeadingComponent;
 
   router: Router;
 
@@ -154,59 +158,5 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
     this.dateHeute = new Date();
 
     this.customers = [134, 193, 156, 123, 192, 155, 132, 163, 143, 182, 192, 233, 129, 183, 233, 150, 113, 233, 323, 354, 433, 425, 365, 322, 280, 321, 393, 436,530,553,576];
-  }
-
-  button2Click(event: any) {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-    this.router.navigate(['kontakte']);
-
-    window.scroll(0,0);
-  }
-
-  button4Click(event: any) {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-    this.router.navigate(['nachrichten']);
-
-    window.scroll(0,0);
-  }
-
-  button3Click(event: any) {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-    this.router.navigate(['fahrtenbuch']);
-
-    window.scroll(0,0);
-  }
-
-  button5Click(event: any) {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-    this.router.navigate(['einstellungen']);
-
-    window.scroll(0,0);
-  }
-
-  button6Click(event: any) {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-    this.router.navigate(['impressum']);
-
-    window.scroll(0,0);
-  }
-
-  button7Click(event: any) {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-    this.router.navigate(['datenschutz']);
-
-    window.scroll(0,0);
   }
 }

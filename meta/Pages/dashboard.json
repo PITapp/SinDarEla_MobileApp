@@ -26,7 +26,7 @@
               ],
               "name": "col65",
               "style": {
-                "paddingLeft": "30px"
+                "paddingLeft": "31px"
               },
               "type": "col"
             },
@@ -36,7 +36,7 @@
                 {
                   "name": "label31",
                   "style": {
-                    "color": "#4C7DA5",
+                    "color": "#f5f5f5",
                     "display": "inline-block",
                     "fontSize": "12px",
                     "fontStyle": "normal",
@@ -49,7 +49,7 @@
               ],
               "name": "col66",
               "style": {
-                "paddingRight": "30px",
+                "paddingRight": "33px",
                 "textAlign": "right"
               },
               "type": "col"
@@ -57,34 +57,38 @@
           ],
           "name": "row45",
           "style": {
-            "backgroundColor": "#b96205"
+            "backgroundColor": "#b96205",
+            "height": "27px"
           },
           "type": "row"
         },
         {
           "components": [
             {
-              "class": "col-3",
+              "class": "col-4",
               "components": [
                 {
                   "name": "label29",
                   "style": {
-                    "color": "#1B507C",
+                    "color": "#4C7DA5",
                     "display": "block",
+                    "fontFamily": "verdana,geneva,sans-serif",
                     "fontSize": "28px",
+                    "fontWeight": "normal",
                     "textAlign": "center",
                     "verticalAlign": "baseline",
                     "width": "100%"
                   },
-                  "text": "12",
+                  "text": "7",
                   "type": "label"
                 },
                 {
                   "name": "label3",
                   "style": {
-                    "color": "#1B507C",
+                    "color": "#3a474d",
                     "display": "block",
-                    "fontSize": "14px",
+                    "fontFamily": "verdana,geneva,sans-serif",
+                    "fontWeight": "normal",
                     "textAlign": "center"
                   },
                   "text": "Mitteilungen",
@@ -94,47 +98,66 @@
               "name": "col1",
               "style": {
                 "display": "inline-block",
+                "paddingTop": "8px",
                 "textAlign": "left",
                 "verticalAlign": "baseline"
               },
               "type": "col"
             },
             {
-              "class": "col-3",
+              "class": "col-4",
               "components": [
                 {
-                  "name": "label32",
+                  "name": "label2",
                   "style": {
-                    "color": "#f5f5f5",
+                    "color": "#4C7DA5",
+                    "display": "block",
+                    "fontFamily": "verdana,geneva,sans-serif",
                     "fontSize": "28px",
-                    "fontWeight": "normal"
+                    "fontWeight": "normal",
+                    "textAlign": "center",
+                    "verticalAlign": "baseline",
+                    "width": "100%"
                   },
-                  "text": "12",
+                  "text": "0",
                   "type": "label"
                 },
                 {
-                  "name": "label0",
+                  "name": "label6",
                   "style": {
-                    "color": "#1B507C",
+                    "color": "#3a474d",
                     "display": "block",
-                    "fontSize": "14px"
+                    "fontFamily": "verdana,geneva,sans-serif",
+                    "fontWeight": "normal",
+                    "textAlign": "center"
                   },
-                  "text": "Mitteilungen",
+                  "text": "Aufgaben",
                   "type": "label"
                 }
               ],
-              "name": "col4",
-              "style": {},
+              "name": "col15",
+              "style": {
+                "display": "inline-block",
+                "paddingTop": "8px",
+                "textAlign": "left",
+                "verticalAlign": "baseline"
+              },
               "type": "col"
             },
             {
-              "class": "col-3",
+              "class": "col-4",
               "components": [
                 {
-                  "name": "label33",
+                  "name": "label0",
                   "style": {
-                    "color": "#282686",
-                    "fontSize": "28px"
+                    "color": "#4C7DA5",
+                    "display": "block",
+                    "fontFamily": "verdana,geneva,sans-serif",
+                    "fontSize": "28px",
+                    "fontWeight": "normal",
+                    "textAlign": "center",
+                    "verticalAlign": "baseline",
+                    "width": "100%"
                   },
                   "text": "12",
                   "type": "label"
@@ -142,50 +165,31 @@
                 {
                   "name": "label1",
                   "style": {
-                    "color": "#1B507C",
+                    "color": "#3a474d",
                     "display": "block",
-                    "fontSize": "14px"
+                    "fontFamily": "verdana,geneva,sans-serif",
+                    "fontWeight": "normal",
+                    "textAlign": "center"
                   },
-                  "text": "Mitteilungen",
+                  "text": "Protokolle",
                   "type": "label"
                 }
               ],
-              "name": "col35",
-              "style": {},
-              "type": "col"
-            },
-            {
-              "class": "col-3",
-              "components": [
-                {
-                  "name": "label34",
-                  "style": {
-                    "color": "#4C7DA5",
-                    "fontSize": "28px"
-                  },
-                  "text": "12",
-                  "type": "label"
-                },
-                {
-                  "name": "label2",
-                  "style": {
-                    "color": "#1B507C",
-                    "display": "block",
-                    "fontSize": "14px"
-                  },
-                  "text": "Mitteilungen",
-                  "type": "label"
-                }
-              ],
-              "name": "col15",
-              "style": {},
+              "name": "col4",
+              "style": {
+                "display": "inline-block",
+                "paddingTop": "8px",
+                "textAlign": "left",
+                "verticalAlign": "baseline"
+              },
               "type": "col"
             }
           ],
           "name": "row0",
           "style": {
             "backgroundColor": "#ffc16b",
-            "height": "120px",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "85px",
             "marginBottom": "0",
             "marginLeft": "0",
             "marginRight": "0",
@@ -210,7 +214,7 @@
                     "textAlign": "left",
                     "width": "100%"
                   },
-                  "text": "Erfassen",
+                  "text": "Dienstplan",
                   "type": "label"
                 },
                 {
@@ -228,18 +232,18 @@
                     "textAlign": "left",
                     "width": "100%"
                   },
-                  "text": "Artikel für einen Lagerort erfassen",
+                  "text": "Heute 3 Kundenbesuche geplant",
                   "type": "label"
                 },
                 {
-                  "icon": "assignment_turned_in",
+                  "icon": "event",
                   "name": "icon28",
                   "style": {
                     "color": "#F1903C",
                     "display": "block",
-                    "fontSize": "36px",
+                    "fontSize": "32px",
                     "left": "25px",
-                    "marginTop": "5px",
+                    "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
                   },
@@ -256,7 +260,7 @@
                     "fontWeight": "normal",
                     "position": "absolute",
                     "right": "30px",
-                    "top": "13px"
+                    "top": "16px"
                   },
                   "type": "icon"
                 }
@@ -267,7 +271,7 @@
                 "paddingBottom": "5px",
                 "paddingLeft": "80px",
                 "paddingRight": "50px",
-                "paddingTop": "5px"
+                "paddingTop": "9px"
               },
               "type": "col"
             }
@@ -276,7 +280,7 @@
           "style": {
             "backgroundColor": "#F5F5F6",
             "borderBottom": "1px dotted #f1903c",
-            "borderTop": "1px dotted #f1903c",
+            "height": "65px",
             "paddingRight": ""
           },
           "type": "row"
@@ -287,7 +291,7 @@
               "class": "col-12",
               "components": [
                 {
-                  "name": "label36",
+                  "name": "label7",
                   "style": {
                     "color": "#5d717b",
                     "display": "block",
@@ -298,11 +302,11 @@
                     "textAlign": "left",
                     "width": "100%"
                   },
-                  "text": "Erfassen",
+                  "text": "Kunden",
                   "type": "label"
                 },
                 {
-                  "name": "label37",
+                  "name": "label8",
                   "style": {
                     "color": "#3a474d",
                     "display": "block",
@@ -316,18 +320,18 @@
                     "textAlign": "left",
                     "width": "100%"
                   },
-                  "text": "Artikel für einen Lagerort erfassen",
+                  "text": "Achtung 3 Verträge erneuern",
                   "type": "label"
                 },
                 {
-                  "icon": "assignment_turned_in",
-                  "name": "icon23",
+                  "icon": "face",
+                  "name": "icon8",
                   "style": {
                     "color": "#F1903C",
                     "display": "block",
-                    "fontSize": "36px",
+                    "fontSize": "32px",
                     "left": "25px",
-                    "marginTop": "5px",
+                    "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
                   },
@@ -335,7 +339,7 @@
                 },
                 {
                   "icon": "navigate_next",
-                  "name": "icon24",
+                  "name": "icon9",
                   "style": {
                     "color": "#F1903C",
                     "display": "none",
@@ -344,18 +348,18 @@
                     "fontWeight": "normal",
                     "position": "absolute",
                     "right": "30px",
-                    "top": "13px"
+                    "top": "16px"
                   },
                   "type": "icon"
                 }
               ],
-              "name": "col36",
+              "name": "col22",
               "style": {
                 "display": "block",
                 "paddingBottom": "5px",
                 "paddingLeft": "80px",
                 "paddingRight": "50px",
-                "paddingTop": "5px"
+                "paddingTop": "9px"
               },
               "type": "col"
             }
@@ -364,6 +368,887 @@
           "style": {
             "backgroundColor": "#F5F5F6",
             "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label4",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Mitarbeiter",
+                  "type": "label"
+                },
+                {
+                  "name": "label5",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Diese Woche 2 Geburtstage",
+                  "type": "label"
+                },
+                {
+                  "icon": "assignment_ind",
+                  "name": "icon20",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon21",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col20",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row15",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label19",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Arbeitsaufzeichnung",
+                  "type": "label"
+                },
+                {
+                  "name": "label20",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Diese Woche 24 Stunden erfasst",
+                  "type": "label"
+                },
+                {
+                  "icon": "work",
+                  "name": "icon1",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon4",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col2",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row2",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label21",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Fahrtenbuch",
+                  "type": "label"
+                },
+                {
+                  "name": "label22",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "In diesem Monat 752 KM erfasst",
+                  "type": "label"
+                },
+                {
+                  "icon": "directions_car",
+                  "name": "icon18",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon19",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col6",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row6",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label25",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Anträge Urlaub und ZA",
+                  "type": "label"
+                },
+                {
+                  "name": "label26",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Du hast 20 Stunden Zeitausgleich beantragt",
+                  "type": "label"
+                },
+                {
+                  "icon": "description",
+                  "name": "icon24",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon25",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col11",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row18",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label17",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Mitteilungen",
+                  "type": "label"
+                },
+                {
+                  "name": "label18",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Du hast 7 neue Mitteilungen",
+                  "type": "label"
+                },
+                {
+                  "icon": "email",
+                  "name": "icon16",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon17",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col23",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row17",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label15",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Aufgaben",
+                  "type": "label"
+                },
+                {
+                  "name": "label16",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Du hast keine offenen Aufgaben",
+                  "type": "label"
+                },
+                {
+                  "icon": "assignment_turned_in",
+                  "name": "icon14",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon15",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col14",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row16",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label13",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Protokolle",
+                  "type": "label"
+                },
+                {
+                  "name": "label14",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Du hast 12 ungelesene Protokolle",
+                  "type": "label"
+                },
+                {
+                  "icon": "assignment",
+                  "name": "icon12",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon13",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col10",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row11",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label23",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Feedback",
+                  "type": "label"
+                },
+                {
+                  "name": "label24",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Es sind keine Antworten offen",
+                  "type": "label"
+                },
+                {
+                  "icon": "error",
+                  "name": "icon22",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon23",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col7",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row8",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label11",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Benutzerprofil",
+                  "type": "label"
+                },
+                {
+                  "name": "label12",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Deine persönlichen Daten",
+                  "type": "label"
+                },
+                {
+                  "icon": "account_circle",
+                  "name": "icon10",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon11",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col5",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row5",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label9",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Einstellungen",
+                  "type": "label"
+                },
+                {
+                  "name": "label10",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Alle Parameter rund um SinDarEla",
+                  "type": "label"
+                },
+                {
+                  "icon": "settings",
+                  "name": "icon0",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "25px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon2",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col3",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row3",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
             "paddingRight": ""
           },
           "type": "row"
@@ -411,793 +1296,6 @@
             "backgroundColor": "#F5F5F6",
             "height": "70px",
             "paddingRight": ""
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "class": "",
-                      "components": [
-                        {
-                          "class": "col-12",
-                          "components": [
-                            {
-                              "icon": "event",
-                              "name": "icon0",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col5",
-                          "style": {
-                            "paddingLeft": "12px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row5",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "name": "label26",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "20px",
-                        "fontStyle": "normal",
-                        "fontWeight": "bold",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Termine",
-                      "type": "label"
-                    }
-                  ],
-                  "name": "card1",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "border": "0px 0px 3px none none solid #f9f9f9",
-                    "borderBottom": "3px solid rgb(241, 144, 60)",
-                    "display": "block",
-                    "height": "95px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px",
-                    "paddingTop": "15px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col10",
-              "style": {
-                "paddingRight": "5px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "class": "",
-                      "components": [
-                        {
-                          "class": "col-12",
-                          "components": [
-                            {
-                              "icon": "face",
-                              "name": "icon2",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col3",
-                          "style": {
-                            "paddingLeft": "12px"
-                          },
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row3",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "name": "label28",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "20px",
-                        "fontStyle": "normal",
-                        "fontWeight": "bold",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Kunden",
-                      "type": "label"
-                    }
-                  ],
-                  "name": "card6",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "border": "0px 0px 3px none none solid #f9f9f9",
-                    "borderBottom": "3px solid rgb(241, 144, 60)",
-                    "display": "block",
-                    "height": "95px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px",
-                    "paddingTop": "15px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col14",
-              "style": {
-                "paddingLeft": "5px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row11",
-          "style": {
-            "marginBottom": "10px",
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
-                          "components": [
-                            {
-                              "icon": "book",
-                              "name": "icon1",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col7",
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row6",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "events": {
-                        "click": [
-                          {
-                            "path": "kontakte",
-                            "type": "navigate"
-                          },
-                          {
-                            "code": "window.scroll(0,0);",
-                            "type": "execute"
-                          }
-                        ]
-                      },
-                      "name": "button2",
-                      "size": "sm",
-                      "style": {
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
-                        "color": "#5d717b",
-                        "fontSize": "18px",
-                        "fontWeight": "600",
-                        "paddingLeft": "3px",
-                        "position": "static",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Mitarbeiter",
-                      "tooltip": "",
-                      "type": "button"
-                    },
-                    {
-                      "name": "heading4",
-                      "size": "H4",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "12px",
-                        "fontWeight": "normal",
-                        "paddingLeft": "3px",
-                        "textAlign": "left"
-                      },
-                      "text": "Gruppe 12",
-                      "type": "heading"
-                    }
-                  ],
-                  "name": "card2",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid rgb(241, 144, 60)",
-                    "display": "block",
-                    "height": "120px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col2",
-              "style": {
-                "paddingRight": "5px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-lg-6    col-6 col-sm-6 col-md-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
-                          "components": [
-                            {
-                              "icon": "email",
-                              "name": "icon4",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col11",
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row8",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "events": {
-                        "click": [
-                          {
-                            "path": "nachrichten",
-                            "type": "navigate"
-                          },
-                          {
-                            "code": "window.scroll(0,0);",
-                            "type": "execute"
-                          }
-                        ]
-                      },
-                      "name": "button4",
-                      "size": "sm",
-                      "style": {
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
-                        "color": "#5d717b",
-                        "fontSize": "18px",
-                        "fontWeight": "600",
-                        "paddingLeft": "3px",
-                        "position": "static",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Mitteilungen",
-                      "tooltip": "",
-                      "type": "button"
-                    },
-                    {
-                      "name": "heading6",
-                      "size": "H4",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "12px",
-                        "fontWeight": "normal",
-                        "paddingLeft": "3px",
-                        "textAlign": "left"
-                      },
-                      "text": "Neu 3 | Offen 2",
-                      "type": "heading"
-                    }
-                  ],
-                  "name": "card4",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "120px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col6",
-              "style": {
-                "paddingLeft": "5px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row2",
-          "style": {
-            "marginBottom": "10px",
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
-                          "components": [
-                            {
-                              "icon": "directions_car",
-                              "name": "icon3",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col9",
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row7",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "events": {
-                        "click": [
-                          {
-                            "path": "fahrtenbuch",
-                            "type": "navigate"
-                          },
-                          {
-                            "code": "window.scroll(0,0);",
-                            "type": "execute"
-                          }
-                        ]
-                      },
-                      "name": "button3",
-                      "size": "sm",
-                      "style": {
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
-                        "color": "#5d717b",
-                        "fontSize": "18px",
-                        "fontWeight": "600",
-                        "paddingLeft": "3px",
-                        "position": "static",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Fahrtenbuch",
-                      "tooltip": "",
-                      "type": "button"
-                    },
-                    {
-                      "name": "heading5",
-                      "size": "H4",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "12px",
-                        "fontWeight": "normal",
-                        "paddingLeft": "3px",
-                        "textAlign": "left"
-                      },
-                      "text": "Einträge 7",
-                      "type": "heading"
-                    }
-                  ],
-                  "name": "card3",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "120px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col0",
-              "style": {
-                "paddingRight": "5px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
-                          "components": [
-                            {
-                              "icon": "settings",
-                              "name": "icon5",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col12",
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row9",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "events": {
-                        "click": [
-                          {
-                            "path": "einstellungen",
-                            "type": "navigate"
-                          },
-                          {
-                            "code": "window.scroll(0,0);",
-                            "type": "execute"
-                          }
-                        ]
-                      },
-                      "name": "button5",
-                      "size": "sm",
-                      "style": {
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
-                        "color": "#5d717b",
-                        "fontSize": "18px",
-                        "fontWeight": "600",
-                        "paddingLeft": "3px",
-                        "position": "static",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Einstellungen",
-                      "tooltip": "",
-                      "type": "button"
-                    },
-                    {
-                      "name": "heading7",
-                      "size": "H4",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "12px",
-                        "fontWeight": "normal",
-                        "paddingLeft": "3px",
-                        "textAlign": "left"
-                      },
-                      "text": "Dein Profil",
-                      "type": "heading"
-                    }
-                  ],
-                  "name": "card5",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "120px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col8",
-              "style": {
-                "paddingLeft": "5px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row4",
-          "style": {
-            "marginBottom": "10px",
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
-                          "components": [
-                            {
-                              "icon": "account_balance",
-                              "name": "icon6",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col17",
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row13",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "events": {
-                        "click": [
-                          {
-                            "path": "impressum",
-                            "type": "navigate"
-                          },
-                          {
-                            "code": "window.scroll(0,0);",
-                            "type": "execute"
-                          }
-                        ]
-                      },
-                      "name": "button6",
-                      "size": "sm",
-                      "style": {
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
-                        "color": "#5d717b",
-                        "fontSize": "18px",
-                        "fontWeight": "600",
-                        "paddingLeft": "3px",
-                        "position": "static",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Urlaub / ZA Antrag",
-                      "tooltip": "",
-                      "type": "button"
-                    },
-                    {
-                      "name": "heading13",
-                      "size": "H4",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "12px",
-                        "fontWeight": "normal",
-                        "paddingLeft": "3px",
-                        "textAlign": "left"
-                      },
-                      "text": "Inhalt App",
-                      "type": "heading"
-                    }
-                  ],
-                  "name": "card7",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "120px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col16",
-              "style": {
-                "paddingRight": "5px"
-              },
-              "type": "col"
-            },
-            {
-              "class": "col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6",
-              "components": [
-                {
-                  "components": [
-                    {
-                      "components": [
-                        {
-                          "class": "col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
-                          "components": [
-                            {
-                              "icon": "verified_user",
-                              "name": "icon7",
-                              "style": {
-                                "color": "#F1903C",
-                                "fontSize": "36px"
-                              },
-                              "type": "icon"
-                            }
-                          ],
-                          "name": "col19",
-                          "type": "col"
-                        }
-                      ],
-                      "name": "row14",
-                      "style": {
-                        "paddingBottom": "0px",
-                        "paddingTop": "0px"
-                      },
-                      "type": "row"
-                    },
-                    {
-                      "events": {
-                        "click": [
-                          {
-                            "path": "datenschutz",
-                            "type": "navigate"
-                          },
-                          {
-                            "code": "window.scroll(0,0);",
-                            "type": "execute"
-                          }
-                        ]
-                      },
-                      "name": "button7",
-                      "size": "sm",
-                      "style": {
-                        "backgroundColor": "rgba(0, 0, 0, 0)",
-                        "color": "#5d717b",
-                        "fontSize": "18px",
-                        "fontWeight": "600",
-                        "paddingLeft": "3px",
-                        "position": "static",
-                        "textAlign": "left",
-                        "width": "100%"
-                      },
-                      "text": "Arbeitsaufzeichnung",
-                      "tooltip": "",
-                      "type": "button"
-                    },
-                    {
-                      "name": "heading14",
-                      "size": "H4",
-                      "style": {
-                        "color": "#5d717b",
-                        "display": "block",
-                        "fontSize": "12px",
-                        "fontWeight": "normal",
-                        "paddingLeft": "3px",
-                        "textAlign": "left"
-                      },
-                      "text": "Schutz Privatsphäre",
-                      "type": "heading"
-                    }
-                  ],
-                  "name": "card9",
-                  "style": {
-                    "backgroundColor": "#ffffff",
-                    "borderBottom": "3px solid #f1903c",
-                    "display": "block",
-                    "height": "120px",
-                    "paddingLeft": "15px",
-                    "paddingRight": "20px"
-                  },
-                  "type": "card",
-                  "visible": true
-                }
-              ],
-              "name": "col18",
-              "style": {
-                "paddingLeft": "5px"
-              },
-              "type": "col"
-            }
-          ],
-          "name": "row12",
-          "style": {
-            "marginBottom": "10px",
-            "paddingLeft": "10px",
-            "paddingRight": "10px"
-          },
-          "type": "row"
-        },
-        {
-          "components": [
-            {
-              "class": "col-6",
-              "components": [
-                {
-                  "name": "label4",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "text": "1111",
-                  "type": "label"
-                },
-                {
-                  "name": "label5",
-                  "style": {
-                    "width": "100%"
-                  },
-                  "text": "2222",
-                  "type": "label"
-                }
-              ],
-              "name": "col20",
-              "type": "col"
-            },
-            {
-              "class": "col-6",
-              "name": "col21",
-              "type": "col"
-            }
-          ],
-          "name": "row15",
-          "style": {
-            "height": "100px"
           },
           "type": "row"
         }
