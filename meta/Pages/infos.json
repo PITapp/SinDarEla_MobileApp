@@ -1,0 +1,97 @@
+{
+  "access": [
+    "Authenticated"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "items": [
+            {
+              "components": [
+                {
+                  "content": "<div innerHTML='${htmlVersionen}'></div>",
+                  "name": "html1",
+                  "type": "html"
+                }
+              ],
+              "selected": false,
+              "text": "Version"
+            },
+            {
+              "components": [
+                {
+                  "class": "col-md-12",
+                  "components": [
+                    {
+                      "content": "<div innerHTML='${htmlHandbuch}'></div>",
+                      "name": "html0",
+                      "type": "html"
+                    }
+                  ],
+                  "name": "col0",
+                  "type": "col"
+                }
+              ],
+              "icon": "",
+              "selected": false,
+              "text": "Handbuch"
+            },
+            {
+              "icon": "",
+              "text": "Kontakt"
+            }
+          ],
+          "name": "tabs0",
+          "selectedIndex": "",
+          "style": {
+            "float": "none"
+          },
+          "type": "tabs"
+        }
+      ],
+      "container": "contentContainer0",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "dbSinDarEla.getInfotexteHtmls",
+        "parameters": [
+          {
+            "name": "$filter",
+            "value": "Code eq 'VersionenMobile'"
+          }
+        ],
+        "then": [
+          {
+            "name": "htmlVersionen",
+            "type": "set",
+            "value": "${result.value[0].Inhalt}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "dbSinDarEla.getInfotexteHtmls",
+        "parameters": [
+          {
+            "name": "$filter",
+            "value": "Code eq 'MobileHandbuch'"
+          }
+        ],
+        "then": [
+          {
+            "name": "htmlHandbuch",
+            "type": "set",
+            "value": "${result.value[0].Inhalt}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "layout": "Infos",
+  "name": "Infos"
+}

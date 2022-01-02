@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1629100118358,
+  "timestamp": 1640963720645,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -18,6 +18,7 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
+        "/assets/css/default copy.css",
         "/assets/css/default.css",
         "/assets/fonts/MaterialIcons-Regular.woff",
         "/assets/fonts/MaterialIcons-Regular.woff2",
@@ -46,6 +47,7 @@
         "/assets/images/KeinBildPerson.png",
         "/assets/images/LogoMitSchriftzug3.png",
         "/assets/images/LogoMitSchriftzug4.png",
+        "/assets/images/LogoNeu6.png",
         "/assets/images/LogoOhneSchriftzug2.png",
         "/assets/images/LogoOhneSchriftzug3.png",
         "/assets/images/LogoOhneSchriftzug4.png"
@@ -66,8 +68,9 @@
     }
   ],
   "hashTable": {
-    "/assets/css/default.css": "d7843c0c886b7de4df2fbc73243df3be628d80a9",
-    "/assets/fonts/MaterialIcons-Regular.woff": "c77f37fb5b7d4188ffc6a40a9fac119bbb4783e0",
+    "/assets/css/default copy.css": "c60ad5d3c246e133c8ad90058272851cd8a33785",
+    "/assets/css/default.css": "5b614425f2342928c7e418d8be4ff43779de6893",
+    "/assets/fonts/MaterialIcons-Regular.woff": "bc91d406c6998d02e0806d675ea4ea2693f3208d",
     "/assets/fonts/MaterialIcons-Regular.woff2": "da997b8666bf8a967102c5089acac8d50c89ab4e",
     "/assets/fonts/SourceSansPro-Black.woff": "aa02dc9ed0ab8c2f14080db6967bfda798a1d36e",
     "/assets/fonts/SourceSansPro-BlackIt.woff": "090123649291f34a7f457d87e69cf3d07eade6aa",
@@ -94,11 +97,12 @@
     "/assets/images/KeinBildPerson.png": "99a382ffdd4ed46d95376a2a37eacf5da922febe",
     "/assets/images/LogoMitSchriftzug3.png": "990ccc76961416be1ada89d612b99ae2c9388148",
     "/assets/images/LogoMitSchriftzug4.png": "15e6a69d9ce56d84def83c1a5fee85bd864c881b",
+    "/assets/images/LogoNeu6.png": "811546beea26bc50343d5900b660524f61cf037e",
     "/assets/images/LogoOhneSchriftzug2.png": "14f843355c4d27a205ba82c68ced35f3a225d4cf",
     "/assets/images/LogoOhneSchriftzug3.png": "a7a2ab8e6cd457d06d7f30c54300a50b6da24fab",
     "/assets/images/LogoOhneSchriftzug4.png": "832146a33ec16722f16da44be85be75a4640fdd5",
     "/favicon.ico": "69746a60226316785eb46aa5bac56b2d42931d36",
-    "/index.html": "e6137e697b9583a56084c0f27760135903da1fac"
+    "/index.html": "e7316facb9b816f58626b4433401202f5d0c4b26"
   },
   "navigationUrls": [
     {

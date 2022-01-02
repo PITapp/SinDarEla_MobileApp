@@ -51,6 +51,7 @@ export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   _subscription: Subscription;
 
   security: SecurityService;
+  onClickStartInfos: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -87,6 +88,7 @@ export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -97,6 +99,15 @@ export class MainLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
     }
   }
 
+
+  load() {
+    this.onClickStartInfos = () => {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
+    this.router.navigate(['infos']);
+};
+  }
 
   image0Click(event: any) {
     if (this.dialogRef) {

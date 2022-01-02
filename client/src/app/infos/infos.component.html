@@ -1,0 +1,18 @@
+<rz-content #content1 container="contentContainer0">
+  <rz-tabs #tabs0 [style]="{'float': 'none'}">
+    <rz-tabs-item [selected]="false" text="Version">
+      <rz-html #html1>
+        <div innerHTML='{{htmlVersionen}}'></div>
+      </rz-html>
+    </rz-tabs-item>
+    <rz-tabs-item [selected]="false" text="Handbuch">
+      <div class="col-md-12">
+        <rz-html #html0>
+          <div innerHTML='{{htmlHandbuch}}'></div>
+        </rz-html>
+      </div>
+    </rz-tabs-item>
+    <rz-tabs-item text="Kontakt">
+    </rz-tabs-item>
+  </rz-tabs>
+</rz-content>

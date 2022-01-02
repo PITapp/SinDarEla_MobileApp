@@ -1,9 +1,11 @@
 <rz-content #content1 container="main">
-  <div [ngStyle]="{'backgroundColor': '#ffc16b', 'height': '30px', 'paddingLeft': '30px', 'paddingRight': '30px'}" class="row">
-    <div class="col-12" [ngStyle]="{'borderBottom': '1px dashed #598087', 'paddingLeft': '0', 'paddingRight': '0'}">
-      <rz-label #label27 [style]="{'color': '#3a474d', 'display': 'inline-block', 'float': 'left', 'fontFamily': 'verdana,geneva,sans-serif', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginTop': '4px', 'textAlign': 'left'}" [text]="security?.user?.name">
+  <div [ngStyle]="{'backgroundColor': '#b96205', 'height': '27px'}" class="row">
+    <div class="col-9" [ngStyle]="{'paddingLeft': '31px'}">
+      <rz-label #label30 [style]="{'color': '#f5f5f5', 'display': 'inline-block', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'textAlign': 'left'}" [text]="security?.user?.name">
       </rz-label>
-      <rz-label #label28 [style]="{'color': '#3a474d', 'display': 'inline-block', 'float': 'right', 'fontFamily': 'verdana,geneva,sans-serif', 'fontSize': '12px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginTop': '7px', 'textAlign': 'right'}" [text]="dateHeute | utcDate:'dd.MM.yyyy'">
+    </div>
+    <div class="col-3" [ngStyle]="{'paddingRight': '33px', 'textAlign': 'right'}">
+      <rz-label #label31 [style]="{'color': '#f5f5f5', 'display': 'inline-block', 'fontSize': '12px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'textAlign': 'right'}" [text]="dateHeute | utcDate:'dd.MM.yyyy'">
       </rz-label>
     </div>
   </div>
@@ -33,7 +35,7 @@
       </rz-label>
       <rz-label #label43 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Heute 3 Kundenbesuche geplant">
       </rz-label>
-      <rz-icon #icon28 icon="event" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon28 icon="event" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon29 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -45,7 +47,7 @@
       </rz-label>
       <rz-label #label8 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Achtung 3 Verträge erneuern">
       </rz-label>
-      <rz-icon #icon8 icon="face" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon8 icon="face" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon9 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -57,7 +59,7 @@
       </rz-label>
       <rz-label #label5 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Diese Woche 2 Geburtstage">
       </rz-label>
-      <rz-icon #icon20 icon="assignment_ind" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon20 icon="assignment_ind" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon21 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -69,7 +71,7 @@
       </rz-label>
       <rz-label #label20 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Diese Woche 24 Stunden erfasst">
       </rz-label>
-      <rz-icon #icon1 icon="work" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon1 icon="work" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon4 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -81,7 +83,7 @@
       </rz-label>
       <rz-label #label22 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="In diesem Monat 752 KM erfasst">
       </rz-label>
-      <rz-icon #icon18 icon="directions_car" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon18 icon="directions_car" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon19 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -93,7 +95,7 @@
       </rz-label>
       <rz-label #label26 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Du hast 20 Stunden Zeitausgleich beantragt">
       </rz-label>
-      <rz-icon #icon24 icon="description" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon24 icon="description" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon25 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -105,7 +107,7 @@
       </rz-label>
       <rz-label #label18 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Du hast 7 neue Mitteilungen">
       </rz-label>
-      <rz-icon #icon16 icon="email" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon16 icon="email" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon17 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -117,7 +119,7 @@
       </rz-label>
       <rz-label #label16 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Du hast keine offenen Aufgaben">
       </rz-label>
-      <rz-icon #icon14 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon14 icon="assignment_turned_in" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon15 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -129,7 +131,7 @@
       </rz-label>
       <rz-label #label14 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Du hast 12 ungelesene Protokolle">
       </rz-label>
-      <rz-icon #icon12 icon="assignment" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon12 icon="assignment" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon13 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -141,7 +143,7 @@
       </rz-label>
       <rz-label #label24 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Es sind keine Antworten offen">
       </rz-label>
-      <rz-icon #icon22 icon="error" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon22 icon="error" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon23 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -153,7 +155,7 @@
       </rz-label>
       <rz-label #label12 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Deine persönlichen Daten">
       </rz-label>
-      <rz-icon #icon10 icon="account_circle" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon10 icon="account_circle" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon11 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
@@ -165,13 +167,13 @@
       </rz-label>
       <rz-label #label10 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Alle Parameter rund um SinDarEla">
       </rz-label>
-      <rz-icon #icon0 icon="settings" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      <rz-icon #icon0 icon="settings" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '25px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
       </rz-icon>
       <rz-icon #icon2 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
       </rz-icon>
     </div>
   </div>
-  <div class="row align-items-center" [ngStyle]="{'backgroundColor': '#F5F5F6', 'height': '70px', 'paddingRight': ''}" (click)="onClickStartInfos()">
+  <div class="row align-items-center" [ngStyle]="{'backgroundColor': '#F5F5F6', 'height': '70px', 'paddingRight': ''}">
     <div class="col-12" [ngStyle]="{'display': 'block'}">
       <rz-heading #heading8 size="H6" [style]="{'color': '#5d717b', 'fontWeight': 'normal', 'marginBottom': '0px', 'textAlign': 'center'}" text="© 2022 Soziale-Dienste-Ennstal">
       </rz-heading>

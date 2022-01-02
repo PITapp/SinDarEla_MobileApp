@@ -5,6 +5,7 @@ import { DetailsLayoutComponent } from './details-layout/details-layout.componen
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { KundenLayoutComponent } from './kunden-layout/kunden-layout.component';
+import { InfosLayoutComponent } from './infos-layout/infos-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BaseComponent } from './base/base.component';
 import { BaseDetailsComponent } from './base-details/base-details.component';
@@ -13,15 +14,13 @@ import { LoginComponent } from './login/login.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { DienstplanComponent } from './dienstplan/dienstplan.component';
 import { KundenComponent } from './kunden/kunden.component';
-import { KontakteComponent } from './kontakte/kontakte.component';
-import { NachrichtenComponent } from './nachrichten/nachrichten.component';
 import { FahrtenbuchComponent } from './fahrtenbuch/fahrtenbuch.component';
 import { EinstellungenComponent } from './einstellungen/einstellungen.component';
-import { ImpressumComponent } from './impressum/impressum.component';
-import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 import { VersionenComponent } from './versionen/versionen.component';
 import { ZzDashboard1Component } from './zz-dashboard-1/zz-dashboard-1.component';
 import { ZzDashboard2Component } from './zz-dashboard-2/zz-dashboard-2.component';
+import { ZzDashboard3Component } from './zz-dashboard-3/zz-dashboard-3.component';
+import { InfosComponent } from './infos/infos.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -62,22 +61,6 @@ export const routes: Routes = [
         component: DienstplanComponent
       },
       {
-        path: 'kontakte',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: KontakteComponent
-      },
-      {
-        path: 'nachrichten',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: NachrichtenComponent
-      },
-      {
         path: 'fahrtenbuch',
         canActivate: [AuthGuard],
         data: {
@@ -92,22 +75,6 @@ export const routes: Routes = [
           roles: ['Authenticated'],
         },
         component: EinstellungenComponent
-      },
-      {
-        path: 'impressum',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: ImpressumComponent
-      },
-      {
-        path: 'datenschutz',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: DatenschutzComponent
       },
       {
         path: 'versionen',
@@ -132,6 +99,14 @@ export const routes: Routes = [
           roles: ['Authenticated'],
         },
         component: ZzDashboard2Component
+      },
+      {
+        path: 'zz-dashboard-3',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: ZzDashboard3Component
       },
     ]
   },
@@ -181,6 +156,20 @@ export const routes: Routes = [
           roles: ['Authenticated'],
         },
         component: KundenComponent
+      },
+    ]
+  },
+  {
+    path: '',
+    component: InfosLayoutComponent,
+    children: [
+      {
+        path: 'infos',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: InfosComponent
       },
     ]
   },

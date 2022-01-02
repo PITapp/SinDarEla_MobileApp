@@ -3,6 +3,12 @@
     {
       "components": [
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStartInfos()"
+            }
+          ],
           "class": "justify-content-start align-items-center",
           "components": [
             {
@@ -98,5 +104,14 @@
       "type": "body"
     }
   ],
+  "events": {
+    "load": [
+      {
+        "name": "onClickStartInfos",
+        "type": "set",
+        "value": "() => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this.router.navigate(['infos']);\n}"
+      }
+    ]
+  },
   "name": "Main"
 }

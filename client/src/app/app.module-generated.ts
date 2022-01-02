@@ -47,19 +47,18 @@ import { LoginComponent } from './login/login.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { DienstplanComponent } from './dienstplan/dienstplan.component';
 import { KundenComponent } from './kunden/kunden.component';
-import { KontakteComponent } from './kontakte/kontakte.component';
-import { NachrichtenComponent } from './nachrichten/nachrichten.component';
 import { FahrtenbuchComponent } from './fahrtenbuch/fahrtenbuch.component';
 import { EinstellungenComponent } from './einstellungen/einstellungen.component';
-import { ImpressumComponent } from './impressum/impressum.component';
-import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 import { VersionenComponent } from './versionen/versionen.component';
 import { ZzDashboard1Component } from './zz-dashboard-1/zz-dashboard-1.component';
 import { ZzDashboard2Component } from './zz-dashboard-2/zz-dashboard-2.component';
+import { ZzDashboard3Component } from './zz-dashboard-3/zz-dashboard-3.component';
+import { InfosComponent } from './infos/infos.component';
 import { DetailsLayoutComponent } from './details-layout/details-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { KundenLayoutComponent } from './kunden-layout/kunden-layout.component';
+import { InfosLayoutComponent } from './infos-layout/infos-layout.component';
 
 import { DbSinDarElaService } from './db-sin-dar-ela.service';
 import { SecurityService, UserService } from './security.service';
@@ -75,15 +74,13 @@ export const PageDeclarations = [
   UnauthorizedComponent,
   DienstplanComponent,
   KundenComponent,
-  KontakteComponent,
-  NachrichtenComponent,
   FahrtenbuchComponent,
   EinstellungenComponent,
-  ImpressumComponent,
-  DatenschutzComponent,
   VersionenComponent,
   ZzDashboard1Component,
   ZzDashboard2Component,
+  ZzDashboard3Component,
+  InfosComponent,
 ];
 
 export const LayoutDeclarations = [
@@ -91,6 +88,7 @@ export const LayoutDeclarations = [
   LoginLayoutComponent,
   MainLayoutComponent,
   KundenLayoutComponent,
+  InfosLayoutComponent,
 ];
 
 export const AppDeclarations = [

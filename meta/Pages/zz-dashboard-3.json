@@ -8,56 +8,57 @@
         {
           "components": [
             {
-              "class": "col-12",
+              "class": "col-9",
               "components": [
                 {
-                  "name": "label27",
+                  "name": "label30",
                   "style": {
-                    "color": "#3a474d",
+                    "color": "#f5f5f5",
                     "display": "inline-block",
-                    "float": "left",
-                    "fontFamily": "verdana,geneva,sans-serif",
                     "fontSize": "14px",
                     "fontStyle": "normal",
                     "fontWeight": "normal",
-                    "marginTop": "4px",
                     "textAlign": "left"
                   },
                   "text": "${security.user.name}",
                   "type": "label"
-                },
+                }
+              ],
+              "name": "col65",
+              "style": {
+                "paddingLeft": "31px"
+              },
+              "type": "col"
+            },
+            {
+              "class": "col-3",
+              "components": [
                 {
-                  "name": "label28",
+                  "name": "label31",
                   "style": {
-                    "color": "#3a474d",
+                    "color": "#f5f5f5",
                     "display": "inline-block",
-                    "float": "right",
-                    "fontFamily": "verdana,geneva,sans-serif",
                     "fontSize": "12px",
                     "fontStyle": "normal",
                     "fontWeight": "normal",
-                    "marginTop": "7px",
                     "textAlign": "right"
                   },
                   "text": "${dateHeute  | utcDate : 'dd.MM.yyyy'}",
                   "type": "label"
                 }
               ],
-              "name": "col0",
+              "name": "col66",
               "style": {
-                "borderBottom": "1px dashed #598087",
-                "paddingLeft": "0",
-                "paddingRight": "0"
+                "paddingRight": "33px",
+                "textAlign": "right"
               },
               "type": "col"
             }
           ],
-          "name": "row4",
+          "name": "row45",
           "style": {
-            "backgroundColor": "#ffc16b",
-            "height": "30px",
-            "paddingLeft": "30px",
-            "paddingRight": "30px"
+            "backgroundColor": "#b96205",
+            "height": "27px"
           },
           "type": "row"
         },
@@ -241,7 +242,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -329,7 +330,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -417,7 +418,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -505,7 +506,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -593,7 +594,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -681,7 +682,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -769,7 +770,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -857,7 +858,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -945,7 +946,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -1033,7 +1034,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -1121,7 +1122,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -1209,7 +1210,7 @@
                     "color": "#F1903C",
                     "display": "block",
                     "fontSize": "32px",
-                    "left": "30px",
+                    "left": "25px",
                     "marginTop": "10px",
                     "position": "absolute",
                     "top": "7px"
@@ -1253,12 +1254,6 @@
           "type": "row"
         },
         {
-          "attributes": [
-            {
-              "name": "(click)",
-              "value": "onClickStartInfos()"
-            }
-          ],
           "class": "align-items-center",
           "components": [
             {
@@ -1317,12 +1312,12 @@
         "value": "${new Date()}"
       },
       {
-        "name": "onClickStartInfos",
+        "name": "customers",
         "type": "set",
-        "value": "() => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this.router.navigate(['infos']);\n}"
+        "value": "[134, 193, 156, 123, 192, 155, 132, 163, 143, 182, 192, 233, 129, 183, 233, 150, 113, 233, 323, 354, 433, 425, 365, 322, 280, 321, 393, 436,530,553,576]"
       }
     ]
   },
   "layout": "Main",
-  "name": "Dashboard"
+  "name": "zzDashboard 3"
 }

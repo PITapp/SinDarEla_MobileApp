@@ -153,6 +153,7 @@ export class ZzDashboard1Generated implements AfterViewInit, OnInit, OnDestroy {
   security: SecurityService;
   dateHeute: any;
   customers: any;
+  onClickStartErfassen: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -205,6 +206,10 @@ export class ZzDashboard1Generated implements AfterViewInit, OnInit, OnDestroy {
     this.dateHeute = new Date();
 
     this.customers = [134, 193, 156, 123, 192, 155, 132, 163, 143, 182, 192, 233, 129, 183, 233, 150, 113, 233, 323, 354, 433, 425, 365, 322, 280, 321, 393, 436,530,553,576];
+
+    this.onClickStartErfassen = (data) => {
+
+};
   }
 
   button1Click(event: any) {

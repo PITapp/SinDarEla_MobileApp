@@ -8110,21 +8110,13 @@ a.fc-event {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.25) 0px 0px 4px inset; }
 
 
-/* -------------------------------------------------------------------- */
-/* ------- Ab hier werden die eigenen Einstellungen eingetragen ------- */
-/* ------- In Radzen wird in den sttings die Datei default.css von Code-Generierung ausgeschloassen ------- */
-/* -------------------------------------------------------------------- */
-
-/* --- Body ohne Überlauf --- */
-.body {
-  overflow: hidden;
-}
+/* --- Meine Einstellungen --- */
+/*=============================*/
 
 /* --- Kopfzeile: verlaufend dunkel --- */
 .header {
-  min-height: 50px;
-  border-bottom: 0;
-  background-color: #F1903C;
+  border: none;
+  background-image: linear-gradient(#F1903C, #d66808);
 }
 
 .kopfzeileVerlaufend  {
@@ -8173,6 +8165,62 @@ ul.profile-menu .navigation-menu .navigation-item-wrapper:hover .navigation-item
   color: whitesmoke;
 }
 
+/* --- Einstellungen Seitenmenü links --- */
+.panel-menu {
+  color: #212529;
+  background-color: #FFFFFF;
+}
+
+.panel-menu .navigation-item {
+  border-bottom: solid 1px #E6E5E5;
+}
+
+.panel-menu .navigation-item-wrapper:hover {
+  background-color: #f3f5f7;
+  color: #212529;
+}
+
+.panel-menu .navigation-item-icon {
+  color: #727272;
+}
+
+.panel-menu .navigation-item-wrapper-active {
+  background-color: #F4F5F7;
+  color: #546D99;
+  color: #D86E13;
+}
+
+.panel-menu .navigation-item-wrapper-active .navigation-item-icon {
+  color: #546D99;
+  color: #D86E13;
+}
+
+.panel-menu .navigation-item-wrapper-active:before {
+  width: 7px;
+  /* background-color: #F1903C; */
+  background-color: #546D99;
+  background-color: #D86E13;
+}
+
+/* --- Einstellungen Seitenmenü links | zweite Ebene --- */
+.panel-menu .navigation-item-active {
+  background-color: #ffffff;
+}
+
+.panel-menu .navigation-menu .navigation-item-wrapper {
+  background-color: #ffffff;
+}
+
+.panel-menu .navigation-menu .navigation-item-wrapper:hover {
+  background-color: #f3f5f7;
+}
+
+.panel-menu .navigation-menu .navigation-item-wrapper-active {
+  background-color: #F4F5F7;
+  color: #546D99;
+  color: #D86E13;
+}
+
 /* --- DataList --- */
 .ui-datalist-data>li,
 .ui-g>div {
@@ -8215,6 +8263,35 @@ input:focus {
   -webkit-box-shadow: 0px 0px 4px #F1903C;
 }
 
+.ui-tabview-nav .ui-tabview-selected {
+  outline: none;
+}
+
+/* --- In den Tabs wird der Zeiger zum Pointer --- */
+.ui-tabview-nav {
+  cursor: pointer;
+}
+
+/* --- Einstellungen in den Tabs --- */
+.ui-tabview-nav li:hover:not(.ui-tabview-selected):not(.ui-state-disabled) a {
+  color: #3a474d;
+}
+
+/*
+.ui-tabview-nav li {
+  border-top-width: 4px;
+}
+
+.ui-tabview-nav .ui-tabview-selected {
+  border-top-color: #D86E13;
+}
+*/
+
+/* --- Den Überlauf in den Tabs unsichtbat machen --- */
+.ui-tabview-panel {
+  overflow: hidden !important;
+}
+
 /* --- Kopfzeile in Dialogen --- */
 .ui-dialog-titlebar {
   background-color: #F1903C;
@@ -8229,71 +8306,3 @@ input:focus {
 .ui-dialog-titlebar-close .pi-times:before {
   color: whitesmoke;
 }
-
-/* --- Tabs: Einstellungen zB Strich unten und transparent --- */
-.ui-tabview {
-  display: flex;
-  flex-direction: column; }
-
-.ui-tabview-nav {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  cursor: pointer; }
-  .ui-tabview-nav li {
-    border: none;
-    border-bottom-color: #e6ecef;
-    background-color: transparent;
-    border-radius: 0; }
-    .ui-tabview-nav li:hover:not(.ui-tabview-selected):not(.ui-state-disabled) {
-      background-color: transparent;
-      border-top-color: #F1903C; }
-      .ui-tabview-nav li:hover:not(.ui-tabview-selected):not(.ui-state-disabled) a {
-        color: #F1903C; }
-    .ui-tabview-nav li a {
-      display: inline-flex;
-      align-items: center;
-      color: rgba(58, 71, 77, 0.5);
-      padding: 0.375rem 1.875rem;
-      font-weight: 600; }
-      .ui-tabview-nav li a:hover {
-        text-decoration: none; }
-    .ui-tabview-nav li.ui-state-disabled {
-      opacity: 0.5; }
-  .ui-tabview-nav .ui-tabview-selected {
-    background-color: transparent;
-    border-bottom-color: transparent;
-    margin-bottom: -1px;
-    position: relative;
-    border-top-color: #F1903C; }
-    .ui-tabview-nav .ui-tabview-selected a {
-      color: #3a474d; }
-
-.ui-tabview-panels {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  border-top: 1px solid #dfe7ec;
-  overflow: hidden !important; }
-
-
-  .ui-tabview .ui-tabview-nav .ui-tabview-selected {
-    border-top-width: 0;
-    border-bottom: 2px solid #F1903C;
-  }
-  
-  .ui-tabview .ui-tabview-panels {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-  
-  .rz-tabview .rz-tabview-nav .rz-tabview-selected {
-    border-top-width: 0;
-    border-bottom: 2px solid #F1903C;
-  }
-  
-  .rz-tabview .rz-tabview-panels {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-  
