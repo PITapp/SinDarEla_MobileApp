@@ -285,6 +285,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Kunden')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -1256,7 +1262,101 @@
           "attributes": [
             {
               "name": "(click)",
-              "value": "onClickStartInfos()"
+              "value": "onClickStart('Logout')"
+            }
+          ],
+          "components": [
+            {
+              "class": "col-12",
+              "components": [
+                {
+                  "name": "label30",
+                  "style": {
+                    "color": "#5d717b",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "18px",
+                    "fontStyle": "normal",
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Abmelden",
+                  "type": "label"
+                },
+                {
+                  "name": "label31",
+                  "style": {
+                    "color": "#3a474d",
+                    "display": "block",
+                    "float": "none",
+                    "fontSize": "14px",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "marginBottom": "2px",
+                    "marginTop": "-3px",
+                    "position": "static",
+                    "textAlign": "left",
+                    "width": "100%"
+                  },
+                  "text": "Aktuellen Benutzer abmelden",
+                  "type": "label"
+                },
+                {
+                  "icon": "power_settings_new",
+                  "name": "icon3",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "block",
+                    "fontSize": "32px",
+                    "left": "30px",
+                    "marginTop": "10px",
+                    "position": "absolute",
+                    "top": "7px"
+                  },
+                  "type": "icon"
+                },
+                {
+                  "icon": "navigate_next",
+                  "name": "icon5",
+                  "style": {
+                    "color": "#F1903C",
+                    "display": "none",
+                    "float": "none",
+                    "fontSize": "32px",
+                    "fontWeight": "normal",
+                    "position": "absolute",
+                    "right": "30px",
+                    "top": "16px"
+                  },
+                  "type": "icon"
+                }
+              ],
+              "name": "col8",
+              "style": {
+                "display": "block",
+                "paddingBottom": "5px",
+                "paddingLeft": "80px",
+                "paddingRight": "50px",
+                "paddingTop": "9px"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row7",
+          "style": {
+            "backgroundColor": "#F5F5F6",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "65px",
+            "paddingRight": ""
+          },
+          "type": "row"
+        },
+        {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Infos')"
             }
           ],
           "class": "align-items-center",
@@ -1317,9 +1417,9 @@
         "value": "${new Date()}"
       },
       {
-        "name": "onClickStartInfos",
+        "name": "onClickStart",
         "type": "set",
-        "value": "() => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this.router.navigate(['infos']);\n}"
+        "value": "(event) => {\n  if (this.dialogRef) {\n    this.dialogRef.close();\n  }\n  \n  switch (event) {\n    case \"Kunden\":\n      this.router.navigate(['kunden']);\n  \t  break;\n\n    case \"Logout\":\n      this.router.navigate(['abmelden']);\n  \t  break;\n\n    case \"Infos\":\n      this.router.navigate(['infos']);\n  \t  break;\n\n    default:\n\t  break;\n  }\n}"
       }
     ]
   },

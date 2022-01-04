@@ -10,10 +10,11 @@ import { Subscription } from 'rxjs';
 
 import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dist/dialog';
 import { NotificationService } from '@radzen/angular/dist/notification';
-import { HeaderComponent } from '@radzen/angular/dist/header';
-import { IconComponent } from '@radzen/angular/dist/icon';
-import { LabelComponent } from '@radzen/angular/dist/label';
 import { BodyComponent } from '@radzen/angular/dist/body';
+import { ContentContainerComponent } from '@radzen/angular/dist/content-container';
+import { HeaderComponent } from '@radzen/angular/dist/header';
+import { LabelComponent } from '@radzen/angular/dist/label';
+import { IconComponent } from '@radzen/angular/dist/icon';
 
 import { ConfigService } from '../config.service';
 
@@ -21,11 +22,11 @@ import { SecurityService } from '../security.service';
 
 export class KundenLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
+  @ViewChild('body') body: BodyComponent;
+  @ViewChild('contentContainer0') contentContainer0: ContentContainerComponent;
   @ViewChild('header0') header0: HeaderComponent;
-  @ViewChild('icon0') icon0: IconComponent;
   @ViewChild('label0') label0: LabelComponent;
-  @ViewChild('label1') label1: LabelComponent;
-  @ViewChild('body0') body0: BodyComponent;
+  @ViewChild('icon0') icon0: IconComponent;
 
   router: Router;
 
@@ -50,7 +51,7 @@ export class KundenLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   _subscription: Subscription;
 
   security: SecurityService;
-  onClickNavigateBack: any;
+  onClickStartDashboard: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -100,11 +101,11 @@ export class KundenLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
 
 
   load() {
-    this.onClickNavigateBack = () => {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-    this._location.back();
+    this.onClickStartDashboard = () => {
+  if (this.dialogRef) {
+    this.dialogRef.close();
+  }
+  this.router.navigate(['dashboard']);
 };
   }
 }

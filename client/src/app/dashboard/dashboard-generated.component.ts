@@ -78,6 +78,10 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('label10') label10: LabelComponent;
   @ViewChild('icon0') icon0: IconComponent;
   @ViewChild('icon2') icon2: IconComponent;
+  @ViewChild('label30') label30: LabelComponent;
+  @ViewChild('label31') label31: LabelComponent;
+  @ViewChild('icon3') icon3: IconComponent;
+  @ViewChild('icon5') icon5: IconComponent;
   @ViewChild('heading8') heading8: HeadingComponent;
   @ViewChild('heading2') heading2: HeadingComponent;
 
@@ -105,7 +109,7 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
 
   security: SecurityService;
   dateHeute: any;
-  onClickStartInfos: any;
+  onClickStart: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -157,11 +161,27 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
   load() {
     this.dateHeute = new Date();
 
-    this.onClickStartInfos = () => {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-    this.router.navigate(['infos']);
+    this.onClickStart = (event) => {
+  if (this.dialogRef) {
+    this.dialogRef.close();
+  }
+  
+  switch (event) {
+    case "Kunden":
+      this.router.navigate(['kunden']);
+  	  break;
+
+    case "Logout":
+      this.router.navigate(['abmelden']);
+  	  break;
+
+    case "Infos":
+      this.router.navigate(['infos']);
+  	  break;
+
+    default:
+	  break;
+  }
 };
   }
 }

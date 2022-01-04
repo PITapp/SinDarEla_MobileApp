@@ -1,6 +1,6 @@
 <rz-content #content1 container="contentContainer0">
   <rz-tabs #tabs0 [style]="{'float': 'none'}">
-    <rz-tabs-item [selected]="false" text="Version">
+    <rz-tabs-item [selected]="true" text="Version">
       <rz-html #html1>
         <div innerHTML='{{htmlVersionen}}'></div>
       </rz-html>
@@ -12,7 +12,7 @@
         </rz-html>
       </div>
     </rz-tabs-item>
-    <rz-tabs-item [selected]="true" text="Kontakt">
+    <rz-tabs-item [selected]="false" text="Kontakt">
       <div class="col-md-12">
         <rz-html #html2>
           <div innerHTML='{{htmlKontakt}}'></div>

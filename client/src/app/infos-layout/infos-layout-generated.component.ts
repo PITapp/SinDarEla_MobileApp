@@ -51,7 +51,7 @@ export class InfosLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   _subscription: Subscription;
 
   security: SecurityService;
-  onClickNavigateBack: any;
+  onClickStartDashboard: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -101,11 +101,11 @@ export class InfosLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
 
 
   load() {
-    this.onClickNavigateBack = () => {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-    this._location.back();
+    this.onClickStartDashboard = () => {
+  if (this.dialogRef) {
+    this.dialogRef.close();
+  }
+  this.router.navigate(['dashboard']);
 };
   }
 }

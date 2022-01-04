@@ -2,13 +2,17 @@
   <div class="row justify-content-center">
     <div class="justify-content-center  col-md-7 col-xl-4">
       <rz-card #card0 [style]="{'marginTop': '8rem', 'paddingBottom': '0px', 'paddingLeft': '0px', 'paddingRight': '0px', 'paddingTop': '0px'}">
-        <div class="col-md-12" [ngStyle]="{'backgroundColor': '#F1903C', 'marginLeft': '', 'marginRight': '', 'marginTop': '', 'paddingBottom': '18px', 'paddingLeft': '', 'paddingRight': '', 'paddingTop': '15px'}" class="kopfzeileVerlaufend">
-          <rz-image #image1 path="assets/images/LogoMitSchriftzug4.png" [style]="{'float': 'left', 'height': '30px', 'paddingLeft': '15px'}" (click)="image1Click($event)">
-          </rz-image>
-          <rz-label #label2 [style]="{'color': '#f5f5f5', 'float': 'none', 'fontSize': '12px', 'paddingLeft': '10px', 'paddingRight': '10px', 'paddingTop': '8px'}" text="|">
-          </rz-label>
-          <rz-label #label5 [style]="{'color': '#f5f5f5', 'float': 'none', 'fontSize': '14px', 'fontWeight': 'normal', 'paddingTop': '6px'}" text="SinDarEla">
-          </rz-label>
+        <div class="col-md-12" [ngStyle]="{'backgroundColor': '#F1903C', 'height': '50px', 'marginLeft': '', 'marginRight': '', 'marginTop': '', 'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '0', 'paddingTop': '0'}">
+          <div class="row justify-content-start align-items-center" [ngStyle]="{'height': '50px'}" (click)="onClickStartInfos()">
+            <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10" [ngStyle]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'marginLeft': '', 'marginRight': '', 'marginTop': '', 'paddingLeft': '', 'paddingRight': ''}">
+              <rz-image #image0 path="assets/images/LogoMitSchriftzug3.png" [style]="{'float': 'left', 'height': '30px', 'paddingLeft': '13px'}" (click)="image0Click($event)">
+              </rz-image>
+            </div>
+            <div class="text-lg-right           justify-content-end d-flex col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2" [ngStyle]="{'float': 'right', 'textAlign': 'right'}">
+              <rz-label #label5 [style]="{'color': '#f5f5f5', 'float': 'none', 'fontFamily': 'verdana,geneva,sans-serif', 'fontSize': '18px', 'fontWeight': 'normal', 'marginRight': '15px'}" text="SinDarEla">
+              </rz-label>
+            </div>
+          </div>
         </div>
         <div class="col-md-12" [ngStyle]="{'paddingBottom': '15px', 'paddingLeft': '25px', 'paddingRight': '25px', 'paddingTop': '25px'}">
           <rz-content-container #main name="main">

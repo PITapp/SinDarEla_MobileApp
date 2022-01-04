@@ -1,12 +1,10 @@
 <rz-content #content1 container="main">
-  <div [ngStyle]="{'marginBottom': '-3px', 'marginTop': '-7px', 'paddingLeft': '3px', 'paddingRight': '5px'}" class="row">
-    <div class="col-md-12">
-      <rz-heading #heading1 size="H2" [style]="{'color': '#5d717b', 'display': 'inline-block', 'width': ''}" text="Abmelden">
-      </rz-heading>
-      <rz-heading #heading2 size="H3" [style]="{'color': '#6d787d', 'display': 'inline-block', 'marginTop': '9px', 'paddingLeft': '5px', 'paddingRight': '5px'}" text="|">
-      </rz-heading>
-      <rz-heading #heading3 size="H6" [style]="{'color': '#6d787d', 'display': 'inline', 'width': ''}" text="Bis bald..." >
-      </rz-heading>
+  <div [ngStyle]="{'marginTop': '100px'}" class="row">
+    <div class="col-12" [ngStyle]="{'textAlign': 'center'}">
+      <rz-label #label0 [style]="{'display': 'block', 'fontSize': '32px', 'textAlign': 'center'}" text="Abmelden">
+      </rz-label>
+      <rz-label #label2 [style]="{'display': 'block', 'textAlign': 'center'}" text="bis bald...">
+      </rz-label>
     </div>
   </div>
 </rz-content>

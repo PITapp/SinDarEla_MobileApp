@@ -11,13 +11,6 @@ import { Subscription } from 'rxjs';
 import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dist/dialog';
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
-import { HeadingComponent } from '@radzen/angular/dist/heading';
-import { TabsComponent } from '@radzen/angular/dist/tabs';
-import { ButtonComponent } from '@radzen/angular/dist/button';
-import { TextBoxComponent } from '@radzen/angular/dist/textbox';
-import { SwitchComponent } from '@radzen/angular/dist/switch';
-import { PanelComponent } from '@radzen/angular/dist/panel';
-import { DropDownComponent } from '@radzen/angular/dist/dropdown';
 
 import { ConfigService } from '../config.service';
 
@@ -26,16 +19,6 @@ import { SecurityService } from '../security.service';
 export class KundenGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
-  @ViewChild('heading1') heading1: HeadingComponent;
-  @ViewChild('heading2') heading2: HeadingComponent;
-  @ViewChild('heading3') heading3: HeadingComponent;
-  @ViewChild('tabs0') tabs0: TabsComponent;
-  @ViewChild('heading0') heading0: HeadingComponent;
-  @ViewChild('button0') button0: ButtonComponent;
-  @ViewChild('textbox0') textbox0: TextBoxComponent;
-  @ViewChild('switch0') switch0: SwitchComponent;
-  @ViewChild('panel0') panel0: PanelComponent;
-  @ViewChild('dropdown0') dropdown0: DropDownComponent;
 
   router: Router;
 
@@ -96,7 +79,6 @@ export class KundenGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
-      this.load();
       this.cd.detectChanges();
     });
   }
@@ -107,8 +89,4 @@ export class KundenGenerated implements AfterViewInit, OnInit, OnDestroy {
     }
   }
 
-
-  load() {
-
-  }
 }

@@ -24,8 +24,7 @@ export class LoginLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('body0') body0: BodyComponent;
   @ViewChild('card0') card0: CardComponent;
-  @ViewChild('image1') image1: ImageComponent;
-  @ViewChild('label2') label2: LabelComponent;
+  @ViewChild('image0') image0: ImageComponent;
   @ViewChild('label5') label5: LabelComponent;
   @ViewChild('main') main: ContentContainerComponent;
 
@@ -99,7 +98,7 @@ export class LoginLayoutGenerated implements AfterViewInit, OnInit, OnDestroy {
   }
 
 
-  image1Click(event: any) {
+  image0Click(event: any) {
     if (this.dialogRef) {
       this.dialogRef.close();
     }

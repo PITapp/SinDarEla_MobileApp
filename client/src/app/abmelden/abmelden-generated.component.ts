@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dist/dialog';
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
-import { HeadingComponent } from '@radzen/angular/dist/heading';
+import { LabelComponent } from '@radzen/angular/dist/label';
 
 import { ConfigService } from '../config.service';
 
@@ -20,9 +20,8 @@ import { SecurityService } from '../security.service';
 export class AbmeldenGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
-  @ViewChild('heading1') heading1: HeadingComponent;
-  @ViewChild('heading2') heading2: HeadingComponent;
-  @ViewChild('heading3') heading3: HeadingComponent;
+  @ViewChild('label0') label0: LabelComponent;
+  @ViewChild('label2') label2: LabelComponent;
 
   router: Router;
 
@@ -96,16 +95,6 @@ export class AbmeldenGenerated implements AfterViewInit, OnInit, OnDestroy {
 
 
   load() {
-    Promise.resolve().then(() => {
-      this.security.logout()
-    }).then((result: any) => {
-      if (this.dialogRef) {
-        this.dialogRef.close();
-      } else {
-        this._location.back();
-      }
-    }, (result: any) => {
-
-    });
+    this.security.logout()
   }
 }

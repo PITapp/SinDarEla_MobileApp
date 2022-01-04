@@ -18,18 +18,12 @@ import { ImageModule } from '@radzen/angular/dist/image';
 import { IconModule } from '@radzen/angular/dist/icon';
 import { ContentModule } from '@radzen/angular/dist/content';
 import { HeadingModule } from '@radzen/angular/dist/heading';
-import { TextBoxModule } from '@radzen/angular/dist/textbox';
-import { DataListModule } from '@radzen/angular/dist/datalist';
-import { TextAreaModule } from '@radzen/angular/dist/textarea';
-import { HtmlModule } from '@radzen/angular/dist/html';
 import { LoginModule } from '@radzen/angular/dist/login';
-import { TabsModule } from '@radzen/angular/dist/tabs';
-import { SwitchModule } from '@radzen/angular/dist/switch';
-import { PanelModule } from '@radzen/angular/dist/panel';
-import { DropDownModule } from '@radzen/angular/dist/dropdown';
+import { HtmlModule } from '@radzen/angular/dist/html';
 import { ProgressBarModule } from '@radzen/angular/dist/progressbar';
 import { GaugeModule } from '@radzen/angular/dist/gauge';
 import { SparklineModule } from '@radzen/angular/dist/sparkline';
+import { TabsModule } from '@radzen/angular/dist/tabs';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -40,25 +34,20 @@ import { AppComponent } from './app.component';
 import { CacheInterceptor } from './cache.interceptor';
 export { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { BaseComponent } from './base/base.component';
-import { BaseDetailsComponent } from './base-details/base-details.component';
 import { AbmeldenComponent } from './abmelden/abmelden.component';
 import { LoginComponent } from './login/login.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
-import { DienstplanComponent } from './dienstplan/dienstplan.component';
-import { KundenComponent } from './kunden/kunden.component';
-import { FahrtenbuchComponent } from './fahrtenbuch/fahrtenbuch.component';
-import { EinstellungenComponent } from './einstellungen/einstellungen.component';
-import { VersionenComponent } from './versionen/versionen.component';
 import { ZzDashboard1Component } from './zz-dashboard-1/zz-dashboard-1.component';
 import { ZzDashboard2Component } from './zz-dashboard-2/zz-dashboard-2.component';
 import { ZzDashboard3Component } from './zz-dashboard-3/zz-dashboard-3.component';
 import { InfosComponent } from './infos/infos.component';
+import { KundenComponent } from './kunden/kunden.component';
 import { DetailsLayoutComponent } from './details-layout/details-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
-import { KundenLayoutComponent } from './kunden-layout/kunden-layout.component';
+import { KundenWeitereLayoutComponent } from './kunden-weitere-layout/kunden-weitere-layout.component';
 import { InfosLayoutComponent } from './infos-layout/infos-layout.component';
+import { KundenLayoutComponent } from './kunden-layout/kunden-layout.component';
 
 import { DbSinDarElaService } from './db-sin-dar-ela.service';
 import { SecurityService, UserService } from './security.service';
@@ -67,28 +56,23 @@ import { AuthGuard } from './auth.guard';
 
 export const PageDeclarations = [
   DashboardComponent,
-  BaseComponent,
-  BaseDetailsComponent,
   AbmeldenComponent,
   LoginComponent,
   UnauthorizedComponent,
-  DienstplanComponent,
-  KundenComponent,
-  FahrtenbuchComponent,
-  EinstellungenComponent,
-  VersionenComponent,
   ZzDashboard1Component,
   ZzDashboard2Component,
   ZzDashboard3Component,
   InfosComponent,
+  KundenComponent,
 ];
 
 export const LayoutDeclarations = [
   DetailsLayoutComponent,
   LoginLayoutComponent,
   MainLayoutComponent,
-  KundenLayoutComponent,
+  KundenWeitereLayoutComponent,
   InfosLayoutComponent,
+  KundenLayoutComponent,
 ];
 
 export const AppDeclarations = [
@@ -137,18 +121,12 @@ export const AppImports = [
   IconModule,
   ContentModule,
   HeadingModule,
-  TextBoxModule,
-  DataListModule,
-  TextAreaModule,
-  HtmlModule,
   LoginModule,
-  TabsModule,
-  SwitchModule,
-  PanelModule,
-  DropDownModule,
+  HtmlModule,
   ProgressBarModule,
   GaugeModule,
   SparklineModule,
+  TabsModule,
   SharedModule,
   NotificationModule,
   DialogModule,

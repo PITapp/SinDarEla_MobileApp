@@ -22,7 +22,7 @@
           "attributes": [
             {
               "name": "(click)",
-              "value": "onClickNavigateBack()"
+              "value": "onClickStartDashboard()"
             }
           ],
           "class": "justify-content-start align-items-center",
@@ -103,9 +103,9 @@
   "events": {
     "load": [
       {
-        "name": "onClickNavigateBack",
+        "name": "onClickStartDashboard",
         "type": "set",
-        "value": "() => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this._location.back();\n}"
+        "value": "() => {\n  if (this.dialogRef) {\n    this.dialogRef.close();\n  }\n  this.router.navigate(['dashboard']);\n}"
       }
     ]
   },

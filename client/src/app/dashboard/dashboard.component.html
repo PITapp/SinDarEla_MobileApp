@@ -39,7 +39,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '65px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '65px', 'paddingRight': ''}" class="row" (click)="onClickStart('Kunden')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '9px'}">
       <rz-label #label7 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Kunden">
       </rz-label>
@@ -171,7 +171,19 @@
       </rz-icon>
     </div>
   </div>
-  <div class="row align-items-center" [ngStyle]="{'backgroundColor': '#F5F5F6', 'height': '70px', 'paddingRight': ''}" (click)="onClickStartInfos()">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '65px', 'paddingRight': ''}" class="row" (click)="onClickStart('Logout')">
+    <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '9px'}">
+      <rz-label #label30 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Abmelden">
+      </rz-label>
+      <rz-label #label31 [style]="{'color': '#3a474d', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontStyle': 'normal', 'fontWeight': 'normal', 'marginBottom': '2px', 'marginTop': '-3px', 'position': 'static', 'textAlign': 'left', 'width': '100%'}" text="Aktuellen Benutzer abmelden">
+      </rz-label>
+      <rz-icon #icon3 icon="power_settings_new" [style]="{'color': '#F1903C', 'display': 'block', 'fontSize': '32px', 'left': '30px', 'marginTop': '10px', 'position': 'absolute', 'top': '7px'}">
+      </rz-icon>
+      <rz-icon #icon5 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '16px'}">
+      </rz-icon>
+    </div>
+  </div>
+  <div class="row align-items-center" [ngStyle]="{'backgroundColor': '#F5F5F6', 'height': '70px', 'paddingRight': ''}" (click)="onClickStart('Infos')">
     <div class="col-12" [ngStyle]="{'display': 'block'}">
       <rz-heading #heading8 size="H6" [style]="{'color': '#5d717b', 'fontWeight': 'normal', 'marginBottom': '0px', 'textAlign': 'center'}" text="© 2022 Soziale-Dienste-Ennstal">
       </rz-heading>

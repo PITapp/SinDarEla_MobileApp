@@ -15,7 +15,7 @@
                   "type": "html"
                 }
               ],
-              "selected": false,
+              "selected": true,
               "text": "Version"
             },
             {
@@ -68,7 +68,7 @@
                 }
               ],
               "icon": "",
-              "selected": true,
+              "selected": false,
               "text": "Kontakt"
             },
             {

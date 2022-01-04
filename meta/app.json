@@ -20,8 +20,9 @@
     "Details",
     "Login",
     "Main",
-    "Kunden",
-    "Infos"
+    "KundenWeitere",
+    "Infos",
+    "Kunden"
   ],
   "logo": "",
   "name": "SinDarElaMobile",
@@ -31,20 +32,14 @@
   ],
   "pages": [
     "Dashboard",
-    "Base",
-    "BaseDetails",
     "Abmelden",
     "Login",
     "Unauthorized",
-    "Dienstplan",
-    "Kunden",
-    "Fahrtenbuch",
-    "Einstellungen",
-    "Versionen",
     "zzDashboard 1",
     "zzDashboard 2",
     "zzDashboard 3",
-    "Infos"
+    "Infos",
+    "Kunden"
   ],
   "port": 8000,
   "security": {
