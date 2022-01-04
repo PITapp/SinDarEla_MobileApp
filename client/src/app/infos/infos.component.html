@@ -12,7 +12,22 @@
         </rz-html>
       </div>
     </rz-tabs-item>
-    <rz-tabs-item text="Kontakt">
+    <rz-tabs-item [selected]="true" text="Kontakt">
+      <div class="col-md-12">
+        <rz-html #html2>
+          <div innerHTML='{{htmlKontakt}}'></div>
+        </rz-html>
+      </div>
+      <div class="col-md-12">
+        <rz-image #image0 path="assets/images/Small - Logo links 10.png" [style]="{'height': '60px'}">
+        </rz-image>
+      </div>
+    </rz-tabs-item>
+    <rz-tabs-item text=" ">
+    </rz-tabs-item>
+    <rz-tabs-item text=" ">
+    </rz-tabs-item>
+    <rz-tabs-item text=" ">
     </rz-tabs-item>
   </rz-tabs>
 </rz-content>

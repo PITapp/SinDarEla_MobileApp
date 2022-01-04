@@ -38,8 +38,47 @@
               "text": "Handbuch"
             },
             {
+              "components": [
+                {
+                  "class": "col-md-12",
+                  "components": [
+                    {
+                      "content": "<div innerHTML='${htmlKontakt}'></div>",
+                      "name": "html2",
+                      "type": "html"
+                    }
+                  ],
+                  "name": "col1",
+                  "type": "col"
+                },
+                {
+                  "class": "col-md-12",
+                  "components": [
+                    {
+                      "name": "image0",
+                      "path": "/assets/images/Small - Logo links 10.png",
+                      "style": {
+                        "height": "60px"
+                      },
+                      "type": "image"
+                    }
+                  ],
+                  "name": "col2",
+                  "type": "col"
+                }
+              ],
               "icon": "",
+              "selected": true,
               "text": "Kontakt"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": " "
             }
           ],
           "name": "tabs0",
@@ -84,6 +123,23 @@
         "then": [
           {
             "name": "htmlHandbuch",
+            "type": "set",
+            "value": "${result.value[0].Inhalt}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "dbSinDarEla.getInfotexteHtmls",
+        "parameters": [
+          {
+            "name": "$filter",
+            "value": "Code eq 'KontaktWeb'"
+          }
+        ],
+        "then": [
+          {
+            "name": "htmlKontakt",
             "type": "set",
             "value": "${result.value[0].Inhalt}"
           }

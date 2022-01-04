@@ -13,6 +13,7 @@ import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { TabsComponent } from '@radzen/angular/dist/tabs';
 import { HtmlComponent } from '@radzen/angular/dist/html';
+import { ImageComponent } from '@radzen/angular/dist/image';
 
 import { ConfigService } from '../config.service';
 
@@ -25,6 +26,8 @@ export class InfosGenerated implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('tabs0') tabs0: TabsComponent;
   @ViewChild('html1') html1: HtmlComponent;
   @ViewChild('html0') html0: HtmlComponent;
+  @ViewChild('html2') html2: HtmlComponent;
+  @ViewChild('image0') image0: ImageComponent;
 
   router: Router;
 
@@ -53,6 +56,7 @@ export class InfosGenerated implements AfterViewInit, OnInit, OnDestroy {
   security: SecurityService;
   htmlVersionen: any;
   htmlHandbuch: any;
+  htmlKontakt: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -113,6 +117,13 @@ export class InfosGenerated implements AfterViewInit, OnInit, OnDestroy {
     this.dbSinDarEla.getInfotexteHtmls(`Code eq 'MobileHandbuch'`, null, null, null, null, null, null, null)
     .subscribe((result: any) => {
       this.htmlHandbuch = result.value[0].Inhalt;
+    }, (result: any) => {
+
+    });
+
+    this.dbSinDarEla.getInfotexteHtmls(`Code eq 'KontaktWeb'`, null, null, null, null, null, null, null)
+    .subscribe((result: any) => {
+      this.htmlKontakt = result.value[0].Inhalt;
     }, (result: any) => {
 
     });

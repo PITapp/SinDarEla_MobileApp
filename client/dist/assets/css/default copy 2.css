@@ -8243,14 +8243,14 @@ input:focus {
   cursor: pointer; }
   .ui-tabview-nav li {
     border: none;
-    border-bottom-color: #e6ecef;
+    border-bottom: 2px solid #A71330;
     background-color: transparent;
     border-radius: 0; }
     .ui-tabview-nav li:hover:not(.ui-tabview-selected):not(.ui-state-disabled) {
-      background-color: transparent;
-      border-top-color: #F1903C; }
+      background-color: #ffffff;
+      border-top-color: #479cc8; }
       .ui-tabview-nav li:hover:not(.ui-tabview-selected):not(.ui-state-disabled) a {
-        color: #F1903C; }
+        color: #479cc8; }
     .ui-tabview-nav li a {
       display: inline-flex;
       align-items: center;
@@ -8262,38 +8262,18 @@ input:focus {
     .ui-tabview-nav li.ui-state-disabled {
       opacity: 0.5; }
   .ui-tabview-nav .ui-tabview-selected {
-    background-color: transparent;
-    border-bottom-color: transparent;
+    background-color: #ffffff;
+    border-bottom-color: #ffffff;
     margin-bottom: -1px;
     position: relative;
-    border-top-color: #F1903C; }
+    border-top-color: #479cc8; }
     .ui-tabview-nav .ui-tabview-selected a {
       color: #3a474d; }
 
 .ui-tabview-panels {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  border-top: 1px solid #dfe7ec;
+  background-color: #ffffff;
+  border: solid 1px #dfe7ec;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.01);
+  flex: 1;
   overflow: hidden !important; }
-
-
-  .ui-tabview .ui-tabview-nav .ui-tabview-selected {
-    border-top-width: 0;
-    border-bottom: 2px solid #F1903C;
-  }
-  
-  .ui-tabview .ui-tabview-panels {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-  
-  .rz-tabview .rz-tabview-nav .rz-tabview-selected {
-    border-top-width: 0;
-    border-bottom: 2px solid #F1903C;
-  }
-  
-  .rz-tabview .rz-tabview-panels {
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-  }
-  
