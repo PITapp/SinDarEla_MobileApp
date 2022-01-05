@@ -4,7 +4,7 @@ import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { DetailsLayoutComponent } from './details-layout/details-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
-import { KundenWeitereLayoutComponent } from './kunden-weitere-layout/kunden-weitere-layout.component';
+import { KundenDatenLayoutComponent } from './kunden-daten-layout/kunden-daten-layout.component';
 import { InfosLayoutComponent } from './infos-layout/infos-layout.component';
 import { KundenLayoutComponent } from './kunden-layout/kunden-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,6 +16,7 @@ import { ZzDashboard2Component } from './zz-dashboard-2/zz-dashboard-2.component
 import { ZzDashboard3Component } from './zz-dashboard-3/zz-dashboard-3.component';
 import { InfosComponent } from './infos/infos.component';
 import { KundenComponent } from './kunden/kunden.component';
+import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -112,6 +113,20 @@ export const routes: Routes = [
           roles: ['Authenticated'],
         },
         component: KundenComponent
+      },
+    ]
+  },
+  {
+    path: '',
+    component: KundenDatenLayoutComponent,
+    children: [
+      {
+        path: 'kunden-daten',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: KundenDatenComponent
       },
     ]
   },

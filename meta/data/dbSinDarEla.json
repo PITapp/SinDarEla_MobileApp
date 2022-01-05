@@ -317,11 +317,6 @@
             },
             {
               "inversePropertyName": "Base",
-              "name": "BaseBankens",
-              "type": "BaseBanken"
-            },
-            {
-              "inversePropertyName": "Base",
               "name": "BaseKontaktes",
               "type": "BaseKontakte"
             },
@@ -471,16 +466,22 @@
           "type": "string",
           "length": 65535
         },
+        "KontoName": {
+          "type": "string",
+          "length": 50
+        },
+        "KontoNummer": {
+          "type": "string",
+          "length": 30
+        },
+        "KontoInfo": {
+          "type": "string",
+          "length": 65535
+        },
         "Aufgabens": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Aufgaben"
-          }
-        },
-        "BaseBankens": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/BaseBanken"
           }
         },
         "BaseKontaktes": {
@@ -574,11 +575,6 @@
               "inversePropertyName": "BaseAnreden",
               "name": "Bases",
               "type": "Base"
-            },
-            {
-              "inversePropertyName": "BaseAnreden",
-              "name": "BaseKontaktes",
-              "type": "BaseKontakte"
             }
           ]
         },
@@ -592,60 +588,6 @@
           "items": {
             "$ref": "#/definitions/Base"
           }
-        },
-        "BaseKontaktes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/BaseKontakte"
-          }
-        }
-      }
-    },
-    "BaseBanken": {
-      "x-table": "def.BaseBanken",
-      "resource": "BaseBankens",
-      "required": [
-        "BaseID",
-        "NameBank",
-        "Kontonummer"
-      ],
-      "properties": {
-        "BankID": {
-          "x-key": true,
-          "x-identity": true,
-          "x-nullable": false,
-          "type": "integer"
-        },
-        "Base": {
-          "type": "object",
-          "$ref": "#/definitions/Base"
-        },
-        "BaseID": {
-          "x-nullable": false,
-          "type": "integer",
-          "x-foreignKey": {
-            "parentTable": "Base",
-            "parentEntityType": "Base",
-            "type": "Base",
-            "principalKey": "BaseID",
-            "name": "Base",
-            "textProperty": "Name1",
-            "navigationProperty": "BaseBankens"
-          }
-        },
-        "NameBank": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 70
-        },
-        "Kontonummer": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 45
-        },
-        "Info": {
-          "type": "string",
-          "length": 16777215
         }
       }
     },
@@ -677,22 +619,6 @@
             "principalKey": "BaseID",
             "name": "Base",
             "textProperty": "Name1",
-            "navigationProperty": "BaseKontaktes"
-          }
-        },
-        "BaseAnreden": {
-          "type": "object",
-          "$ref": "#/definitions/BaseAnreden"
-        },
-        "AnredeID": {
-          "type": "integer",
-          "x-foreignKey": {
-            "parentTable": "BaseAnreden",
-            "parentEntityType": "BaseAnreden",
-            "type": "BaseAnreden",
-            "principalKey": "AnredeID",
-            "name": "BaseAnreden",
-            "textProperty": "Anrede",
             "navigationProperty": "BaseKontaktes"
           }
         },
@@ -849,7 +775,12 @@
       "required": [
         "DokumenteKategorieID",
         "Titel",
-        "DokumentURL"
+        "DokumentURL",
+        "DokumentName",
+        "DokumentNameUrsprung",
+        "DokumentTyp",
+        "DokumentErstelltVon",
+        "DokumentErstelltAm"
       ],
       "properties": {
         "DokumentID": {
@@ -887,37 +818,8 @@
             "navigationProperty": "Dokumentes"
           }
         },
-        "Kunden": {
-          "type": "object",
-          "$ref": "#/definitions/Kunden"
-        },
-        "KundenID": {
-          "type": "integer",
-          "x-foreignKey": {
-            "parentTable": "Kunden",
-            "parentEntityType": "Kunden",
-            "type": "Kunden",
-            "principalKey": "KundenID",
-            "name": "Kunden",
-            "textProperty": "Vorbemerkungen",
-            "navigationProperty": "Dokumentes"
-          }
-        },
-        "Mitarbeiter": {
-          "type": "object",
-          "$ref": "#/definitions/Mitarbeiter"
-        },
-        "MitarbeiterID": {
-          "type": "integer",
-          "x-foreignKey": {
-            "parentTable": "Mitarbeiter",
-            "parentEntityType": "Mitarbeiter",
-            "type": "Mitarbeiter",
-            "principalKey": "MitarbeiterID",
-            "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
-            "navigationProperty": "Dokumentes"
-          }
+        "LinkID": {
+          "type": "integer"
         },
         "Titel": {
           "x-nullable": false,
@@ -931,7 +833,32 @@
         "DokumentURL": {
           "x-nullable": false,
           "type": "string",
-          "length": 255
+          "length": 65535
+        },
+        "DokumentName": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "DokumentNameUrsprung": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "DokumentTyp": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 10
+        },
+        "DokumentErstelltVon": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "DokumentErstelltAm": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
         },
         "MitarbeiterFortbildungens": {
           "type": "array",
@@ -1599,18 +1526,8 @@
             },
             {
               "inversePropertyName": "Kunden",
-              "name": "Dokumentes",
-              "type": "Dokumente"
-            },
-            {
-              "inversePropertyName": "Kunden",
               "name": "Ereignisses",
               "type": "Ereignisse"
-            },
-            {
-              "inversePropertyName": "Kunden",
-              "name": "KundenInfos",
-              "type": "KundenInfo"
             },
             {
               "inversePropertyName": "Kunden",
@@ -1677,22 +1594,10 @@
             "$ref": "#/definitions/AbrechnungKundenReststunden"
           }
         },
-        "Dokumentes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dokumente"
-          }
-        },
         "Ereignisses": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Ereignisse"
-          }
-        },
-        "KundenInfos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/KundenInfo"
           }
         },
         "KundenKontaktes": {
@@ -1706,54 +1611,6 @@
           "items": {
             "$ref": "#/definitions/KundenLeistungen"
           }
-        }
-      }
-    },
-    "KundenInfo": {
-      "x-table": "def.KundenInfos",
-      "resource": "KundenInfos",
-      "required": [
-        "KundenID",
-        "InfoDatum",
-        "InfoTitel"
-      ],
-      "properties": {
-        "KundenInfoID": {
-          "x-key": true,
-          "x-identity": true,
-          "x-nullable": false,
-          "type": "integer"
-        },
-        "Kunden": {
-          "type": "object",
-          "$ref": "#/definitions/Kunden"
-        },
-        "KundenID": {
-          "x-nullable": false,
-          "type": "integer",
-          "x-foreignKey": {
-            "parentTable": "Kunden",
-            "parentEntityType": "Kunden",
-            "type": "Kunden",
-            "principalKey": "KundenID",
-            "name": "Kunden",
-            "textProperty": "Vorbemerkungen",
-            "navigationProperty": "KundenInfos"
-          }
-        },
-        "InfoDatum": {
-          "x-nullable": false,
-          "type": "string",
-          "format": "date-time"
-        },
-        "InfoTitel": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 100
-        },
-        "InfoText": {
-          "type": "string",
-          "length": 16777215
         }
       }
     },
@@ -2394,18 +2251,8 @@
           "x-navigation": [
             {
               "inversePropertyName": "Mitarbeiter",
-              "name": "Dokumentes",
-              "type": "Dokumente"
-            },
-            {
-              "inversePropertyName": "Mitarbeiter",
               "name": "MitarbeiterFortbildungens",
               "type": "MitarbeiterFortbildungen"
-            },
-            {
-              "inversePropertyName": "Mitarbeiter",
-              "name": "MitarbeiterInfos",
-              "type": "MitarbeiterInfo"
             },
             {
               "inversePropertyName": "Mitarbeiter",
@@ -2532,22 +2379,10 @@
           "type": "string",
           "length": 4294967295
         },
-        "Dokumentes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dokumente"
-          }
-        },
         "MitarbeiterFortbildungens": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/MitarbeiterFortbildungen"
-          }
-        },
-        "MitarbeiterInfos": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MitarbeiterInfo"
           }
         },
         "MitarbeiterKundenbudgets": {
@@ -2757,54 +2592,6 @@
           "items": {
             "$ref": "#/definitions/MitarbeiterFortbildungen"
           }
-        }
-      }
-    },
-    "MitarbeiterInfo": {
-      "x-table": "def.MitarbeiterInfos",
-      "resource": "MitarbeiterInfos",
-      "required": [
-        "MitarbeiterID",
-        "InfoDatum",
-        "InfoTitel"
-      ],
-      "properties": {
-        "MitarbeiterInfoID": {
-          "x-key": true,
-          "x-identity": true,
-          "x-nullable": false,
-          "type": "integer"
-        },
-        "Mitarbeiter": {
-          "type": "object",
-          "$ref": "#/definitions/Mitarbeiter"
-        },
-        "MitarbeiterID": {
-          "x-nullable": false,
-          "type": "integer",
-          "x-foreignKey": {
-            "parentTable": "Mitarbeiter",
-            "parentEntityType": "Mitarbeiter",
-            "type": "Mitarbeiter",
-            "principalKey": "MitarbeiterID",
-            "name": "Mitarbeiter",
-            "textProperty": "Notfallkontakt",
-            "navigationProperty": "MitarbeiterInfos"
-          }
-        },
-        "InfoDatum": {
-          "x-nullable": false,
-          "type": "string",
-          "format": "date-time"
-        },
-        "InfoTitel": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 100
-        },
-        "InfoText": {
-          "type": "string",
-          "length": 16777215
         }
       }
     },
@@ -3744,6 +3531,39 @@
         }
       }
     },
+    "Notizen": {
+      "x-table": "def.Notizen",
+      "resource": "Notizens",
+      "required": [
+        "Am",
+        "Titel"
+      ],
+      "properties": {
+        "NotizID": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "LinkID": {
+          "type": "integer"
+        },
+        "Am": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "Titel": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 16777215
+        }
+      }
+    },
     "Protokoll": {
       "x-table": "def.Protokoll",
       "resource": "Protokolls",
@@ -3943,7 +3763,20 @@
           "type": "string",
           "length": 65535
         },
+        "KontoName": {
+          "type": "string",
+          "length": 50
+        },
+        "KontoNummer": {
+          "type": "string",
+          "length": 30
+        },
+        "KontoInfo": {
+          "type": "string",
+          "length": 65535
+        },
         "NameGesamt": {
+          "x-nullable": false,
           "type": "string",
           "length": 131
         }
@@ -3974,6 +3807,7 @@
           "length": 30
         },
         "NameGesamt": {
+          "x-nullable": false,
           "type": "string",
           "length": 131
         },
@@ -3983,6 +3817,10 @@
         },
         "AnredeID": {
           "type": "integer"
+        },
+        "Anrede": {
+          "type": "string",
+          "length": 45
         },
         "TitelVorne": {
           "type": "string",
@@ -4041,6 +3879,18 @@
           "length": 16777215
         },
         "Notiz": {
+          "type": "string",
+          "length": 65535
+        },
+        "KontoName": {
+          "type": "string",
+          "length": 50
+        },
+        "KontoNummer": {
+          "type": "string",
+          "length": 30
+        },
+        "KontoInfo": {
           "type": "string",
           "length": 65535
         },
@@ -4142,6 +3992,7 @@
           "length": 30
         },
         "NameGesamt": {
+          "x-nullable": false,
           "type": "string",
           "length": 131
         },
@@ -4304,6 +4155,138 @@
         "RolleTitel": {
           "type": "string",
           "length": 256
+        }
+      }
+    },
+    "VwKundenUndBetreuer": {
+      "x-view": true,
+      "x-table": "def.vwKundenUndBetreuer",
+      "resource": "VwKundenUndBetreuers",
+      "required": [
+        "BaseID",
+        "KundenStatusID",
+        "Betreuungsbeginn",
+        "Status",
+        "Name1"
+      ],
+      "properties": {
+        "KundenID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "BaseID": {
+          "x-nullable": false,
+          "type": "integer",
+          "x-key": true,
+          "x-virtual": true
+        },
+        "KundenStatusID": {
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "BetreuerBaseID": {
+          "type": "integer"
+        },
+        "Betreuungsbeginn": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "Vorbemerkungen": {
+          "type": "string",
+          "length": 4294967295
+        },
+        "Info": {
+          "type": "string",
+          "length": 4294967295
+        },
+        "Status": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 45
+        },
+        "Name1": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Name2": {
+          "type": "string",
+          "length": 30
+        },
+        "NameGesamt": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        },
+        "NameKuerzel": {
+          "type": "string",
+          "length": 5
+        },
+        "Anrede": {
+          "type": "string",
+          "length": 45
+        },
+        "TitelVorne": {
+          "type": "string",
+          "length": 20
+        },
+        "TitelHinten": {
+          "type": "string",
+          "length": 20
+        },
+        "Strasse": {
+          "type": "string",
+          "length": 70
+        },
+        "PLZ": {
+          "type": "string",
+          "length": 10
+        },
+        "Ort": {
+          "type": "string",
+          "length": 100
+        },
+        "Geburtsdatum": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Versicherungsnummer": {
+          "type": "string",
+          "length": 15
+        },
+        "Staatsangehoerigkeit": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon1": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon2": {
+          "type": "string",
+          "length": 30
+        },
+        "EMail1": {
+          "type": "string",
+          "length": 70
+        },
+        "EMail2": {
+          "type": "string",
+          "length": 70
+        },
+        "Webseite": {
+          "type": "string",
+          "length": 70
+        },
+        "BildURL": {
+          "type": "string",
+          "length": 16777215
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 65535
         }
       }
     },
@@ -4992,102 +4975,6 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/BaseAnreden"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/BaseBankens": {
-      "get": {
-        "operationId": "getBaseBankens",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$filter",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "type": "boolean"
-          },
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "properties": {
-                "value": {
-                  "items": {
-                    "$ref": "#/definitions/BaseBanken"
-                  },
-                  "type": "array"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "createBaseBanken",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "BaseBanken",
-            "schema": {
-              "$ref": "#/definitions/BaseBanken"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "schema": {
-              "$ref": "#/definitions/BaseBanken"
             }
           },
           "default": {
@@ -6336,102 +6223,6 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/Kunden"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/KundenInfos": {
-      "get": {
-        "operationId": "getKundenInfos",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$filter",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "type": "boolean"
-          },
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "properties": {
-                "value": {
-                  "items": {
-                    "$ref": "#/definitions/KundenInfo"
-                  },
-                  "type": "array"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "createKundenInfo",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "KundenInfo",
-            "schema": {
-              "$ref": "#/definitions/KundenInfo"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "schema": {
-              "$ref": "#/definitions/KundenInfo"
             }
           },
           "default": {
@@ -7776,102 +7567,6 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/MitarbeiterFortbildungenArten"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/MitarbeiterInfos": {
-      "get": {
-        "operationId": "getMitarbeiterInfos",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$filter",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "type": "boolean"
-          },
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "properties": {
-                "value": {
-                  "items": {
-                    "$ref": "#/definitions/MitarbeiterInfo"
-                  },
-                  "type": "array"
-                }
-              },
-              "type": "object"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "createMitarbeiterInfo",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "MitarbeiterInfo",
-            "schema": {
-              "$ref": "#/definitions/MitarbeiterInfo"
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "schema": {
-              "$ref": "#/definitions/MitarbeiterInfo"
             }
           },
           "default": {
@@ -9322,6 +9017,102 @@
         }
       }
     },
+    "/Notizens": {
+      "get": {
+        "operationId": "getNotizens",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Notizen"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createNotizen",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Notizen",
+            "schema": {
+              "$ref": "#/definitions/Notizen"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Notizen"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Protokolls": {
       "get": {
         "operationId": "getProtokolls",
@@ -9901,6 +9692,73 @@
                 "value": {
                   "items": {
                     "$ref": "#/definitions/VwBenutzerRollen"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwKundenUndBetreuers": {
+      "get": {
+        "operationId": "getVwKundenUndBetreuers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwKundenUndBetreuer"
                   },
                   "type": "array"
                 }
@@ -10509,83 +10367,6 @@
             "name": "BaseAnreden",
             "schema": {
               "$ref": "#/definitions/BaseAnreden"
-            }
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/BaseBankens({BankID})": {
-      "delete": {
-        "operationId": "deleteBaseBanken",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "BankID",
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "get": {
-        "operationId": "getBaseBankenByBankID",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "BankID",
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": "#/definitions/BaseBanken"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "patch": {
-        "operationId": "updateBaseBanken",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "BankID",
-            "type": "integer"
-          },
-          {
-            "in": "body",
-            "name": "BaseBanken",
-            "schema": {
-              "$ref": "#/definitions/BaseBanken"
             }
           }
         ],
@@ -11587,83 +11368,6 @@
             "name": "Kunden",
             "schema": {
               "$ref": "#/definitions/Kunden"
-            }
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/KundenInfos({KundenInfoID})": {
-      "delete": {
-        "operationId": "deleteKundenInfo",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "KundenInfoID",
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "get": {
-        "operationId": "getKundenInfoByKundenInfoID",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "KundenInfoID",
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": "#/definitions/KundenInfo"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "patch": {
-        "operationId": "updateKundenInfo",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "KundenInfoID",
-            "type": "integer"
-          },
-          {
-            "in": "body",
-            "name": "KundenInfo",
-            "schema": {
-              "$ref": "#/definitions/KundenInfo"
             }
           }
         ],
@@ -12742,83 +12446,6 @@
             "name": "MitarbeiterFortbildungenArten",
             "schema": {
               "$ref": "#/definitions/MitarbeiterFortbildungenArten"
-            }
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      }
-    },
-    "/MitarbeiterInfos({MitarbeiterInfoID})": {
-      "delete": {
-        "operationId": "deleteMitarbeiterInfo",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "MitarbeiterInfoID",
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "204": {},
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "get": {
-        "operationId": "getMitarbeiterInfoByMitarbeiterInfoID",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "MitarbeiterInfoID",
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": "#/definitions/MitarbeiterInfo"
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "patch": {
-        "operationId": "updateMitarbeiterInfo",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$expand",
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "MitarbeiterInfoID",
-            "type": "integer"
-          },
-          {
-            "in": "body",
-            "name": "MitarbeiterInfo",
-            "schema": {
-              "$ref": "#/definitions/MitarbeiterInfo"
             }
           }
         ],
@@ -13974,6 +13601,83 @@
             "name": "MitteilungenVerteiler",
             "schema": {
               "$ref": "#/definitions/MitteilungenVerteiler"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Notizens({NotizID})": {
+      "delete": {
+        "operationId": "deleteNotizen",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "NotizID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getNotizenByNotizID",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "NotizID",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Notizen"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateNotizen",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "NotizID",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Notizen",
+            "schema": {
+              "$ref": "#/definitions/Notizen"
             }
           }
         ],

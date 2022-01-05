@@ -55,21 +55,11 @@ namespace SinDarElaMobile.Data
                   .WithMany(i => i.Bases)
                   .HasForeignKey(i => i.AnredeID)
                   .HasPrincipalKey(i => i.AnredeID);
-            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.BaseBanken>()
-                  .HasOne(i => i.Base)
-                  .WithMany(i => i.BaseBankens)
-                  .HasForeignKey(i => i.BaseID)
-                  .HasPrincipalKey(i => i.BaseID);
             builder.Entity<SinDarElaMobile.Models.DbSinDarEla.BaseKontakte>()
                   .HasOne(i => i.Base)
                   .WithMany(i => i.BaseKontaktes)
                   .HasForeignKey(i => i.BaseID)
                   .HasPrincipalKey(i => i.BaseID);
-            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.BaseKontakte>()
-                  .HasOne(i => i.BaseAnreden)
-                  .WithMany(i => i.BaseKontaktes)
-                  .HasForeignKey(i => i.AnredeID)
-                  .HasPrincipalKey(i => i.AnredeID);
             builder.Entity<SinDarElaMobile.Models.DbSinDarEla.Benutzer>()
                   .HasOne(i => i.Base)
                   .WithMany(i => i.Benutzers)
@@ -80,16 +70,6 @@ namespace SinDarElaMobile.Data
                   .WithMany(i => i.Dokumentes)
                   .HasForeignKey(i => i.DokumenteKategorieID)
                   .HasPrincipalKey(i => i.DokumenteKategorieID);
-            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.Dokumente>()
-                  .HasOne(i => i.Kunden)
-                  .WithMany(i => i.Dokumentes)
-                  .HasForeignKey(i => i.KundenID)
-                  .HasPrincipalKey(i => i.KundenID);
-            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.Dokumente>()
-                  .HasOne(i => i.Mitarbeiter)
-                  .WithMany(i => i.Dokumentes)
-                  .HasForeignKey(i => i.MitarbeiterID)
-                  .HasPrincipalKey(i => i.MitarbeiterID);
             builder.Entity<SinDarElaMobile.Models.DbSinDarEla.Ereignisse>()
                   .HasOne(i => i.Base)
                   .WithMany(i => i.Ereignisses)
@@ -145,11 +125,6 @@ namespace SinDarElaMobile.Data
                   .WithMany(i => i.Kundens)
                   .HasForeignKey(i => i.KundenStatusID)
                   .HasPrincipalKey(i => i.KundenStatusID);
-            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.KundenInfo>()
-                  .HasOne(i => i.Kunden)
-                  .WithMany(i => i.KundenInfos)
-                  .HasForeignKey(i => i.KundenID)
-                  .HasPrincipalKey(i => i.KundenID);
             builder.Entity<SinDarElaMobile.Models.DbSinDarEla.KundenKontakte>()
                   .HasOne(i => i.Base)
                   .WithMany(i => i.KundenKontaktes)
@@ -240,11 +215,6 @@ namespace SinDarElaMobile.Data
                   .WithMany(i => i.MitarbeiterFortbildungens)
                   .HasForeignKey(i => i.FortbildungArtID)
                   .HasPrincipalKey(i => i.FortbildungArtID);
-            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.MitarbeiterInfo>()
-                  .HasOne(i => i.Mitarbeiter)
-                  .WithMany(i => i.MitarbeiterInfos)
-                  .HasForeignKey(i => i.MitarbeiterID)
-                  .HasPrincipalKey(i => i.MitarbeiterID);
             builder.Entity<SinDarElaMobile.Models.DbSinDarEla.MitarbeiterKundenbudget>()
                   .HasOne(i => i.Mitarbeiter)
                   .WithMany(i => i.MitarbeiterKundenbudgets)
@@ -467,6 +437,10 @@ namespace SinDarElaMobile.Data
                   .Property(p => p.BenutzerID)
                   .HasDefaultValueSql("0");
 
+            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwKundenUndBetreuer>()
+                  .Property(p => p.KundenID)
+                  .HasDefaultValueSql("0");
+
             this.OnModelBuilding(builder);
         }
 
@@ -508,12 +482,6 @@ namespace SinDarElaMobile.Data
         }
 
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.BaseAnreden> BaseAnredens
-        {
-          get;
-          set;
-        }
-
-        public DbSet<SinDarElaMobile.Models.DbSinDarEla.BaseBanken> BaseBankens
         {
           get;
           set;
@@ -592,12 +560,6 @@ namespace SinDarElaMobile.Data
         }
 
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.Kunden> Kundens
-        {
-          get;
-          set;
-        }
-
-        public DbSet<SinDarElaMobile.Models.DbSinDarEla.KundenInfo> KundenInfos
         {
           get;
           set;
@@ -682,12 +644,6 @@ namespace SinDarElaMobile.Data
         }
 
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.MitarbeiterFortbildungenArten> MitarbeiterFortbildungenArtens
-        {
-          get;
-          set;
-        }
-
-        public DbSet<SinDarElaMobile.Models.DbSinDarEla.MitarbeiterInfo> MitarbeiterInfos
         {
           get;
           set;
@@ -783,6 +739,12 @@ namespace SinDarElaMobile.Data
           set;
         }
 
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.Notizen> Notizens
+        {
+          get;
+          set;
+        }
+
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.Protokoll> Protokolls
         {
           get;
@@ -826,6 +788,12 @@ namespace SinDarElaMobile.Data
         }
 
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.VwBenutzerRollen> VwBenutzerRollens
+        {
+          get;
+          set;
+        }
+
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.VwKundenUndBetreuer> VwKundenUndBetreuers
         {
           get;
           set;

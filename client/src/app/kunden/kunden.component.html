@@ -1,2 +1,38 @@
 <rz-content #content1 container="contentContainer0">
+  <div [ngStyle]="{'backgroundColor': '#ffc16b', 'borderBottom': '1px dotted #f1903c', 'height': '38px', 'marginBottom': '0', 'marginLeft': '0', 'marginRight': '0', 'marginTop': '0', 'position': 'fixed', 'width': '100%', 'zIndex': '999'}" class="row">
+    <div class="col-8" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px', 'paddingTop': '6px', 'position': 'static'}">
+      <rz-textbox #textboxSuchenKunden placeholder="Suchen" [style]="{'backgroundColor': '#f5f5f5', 'float': 'left', 'height': '25px', 'width': '100%'}" name="textboxSuchenKunden" (input)="this.datalistKunden.load();">
+      </rz-textbox>
+    </div>
+    <div class="col-2" [ngStyle]="{'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '10px', 'paddingTop': '6px', 'position': 'static'}">
+      <rz-button #buttonSuchenLoeschen buttonStyle="light" buttonType="button" icon="clear" size="md" [style]="{'backgroundColor': '#b96205', 'color': '#f5f5f5', 'fontSize': '28px', 'fontWeight': 'normal', 'height': '25px', 'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '0', 'paddingTop': '0', 'textAlign': 'center', 'verticalAlign': 'baseline', 'width': '100%'}" (click)="buttonSuchenLoeschenClick($event)" class="sde-button-icon-mitte">
+      </rz-button>
+    </div>
+    <div class="col-2" [ngStyle]="{'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '10px', 'paddingTop': '6px', 'position': 'static'}">
+      <rz-button #buttonSuchenTastatur buttonStyle="light" buttonType="button" icon="keyboard_hide" size="md" [style]="{'backgroundColor': '#b96205', 'color': '#f5f5f5', 'fontSize': '28px', 'fontWeight': 'normal', 'height': '25px', 'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '0', 'paddingTop': '0', 'textAlign': 'center', 'verticalAlign': 'baseline', 'width': '100%'}" class="sde-button-icon-mitte">
+      </rz-button>
+    </div>
+  </div>
+  <div [ngStyle]="{'paddingTop': '42px', 'position': 'static'}" class="row">
+    <div class="col-md-12">
+      <rz-datalist #datalistKunden [allowPaging]="false" [count]="rstKundenCount" [data]="rstKunden" defaultRowText="Template for index" emptyText="Keine Kunden gefunden" [pageSize]="20" [style]="{}" [wrapItems]="false" (loadData)="datalistKundenLoadData($event)">
+        <ng-template let-data datalistTemplate>
+          <div class="row">
+            <div class="col-6">
+              <rz-label #label0 [text]="data?.Name2">
+              </rz-label>
+              <rz-label #label1 [style]="{'marginLeft': '5px'}" [text]="data?.Name1">
+              </rz-label>
+            </div>
+            <div class="col-6">
+              <rz-button #button0 (click)="button0Click($event, data)">
+              </rz-button>
+            </div>
+          </div>
+        </ng-template>
+      </rz-datalist>
+    </div>
+  </div>
+  <rz-button #button2 buttonStyle="light">
+  </rz-button>
 </rz-content>

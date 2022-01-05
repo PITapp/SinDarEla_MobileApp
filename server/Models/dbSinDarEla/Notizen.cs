@@ -4,34 +4,32 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinDarElaMobile.Models.DbSinDarEla
 {
-  [Table("KundenInfos")]
-  public partial class KundenInfo
+  [Table("Notizen")]
+  public partial class Notizen
   {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int KundenInfoID
+    public int NotizID
     {
       get;
       set;
     }
-    public int KundenID
+    public int? LinkID
     {
       get;
       set;
     }
-
-    public Kunden Kunden { get; set; }
-    public DateTime InfoDatum
+    public DateTime Am
     {
       get;
       set;
     }
-    public string InfoTitel
+    public string Titel
     {
       get;
       set;
     }
-    public string InfoText
+    public string Notiz
     {
       get;
       set;

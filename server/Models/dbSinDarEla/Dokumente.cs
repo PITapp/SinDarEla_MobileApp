@@ -27,20 +27,11 @@ namespace SinDarElaMobile.Models.DbSinDarEla
     }
 
     public DokumenteKategorien DokumenteKategorien { get; set; }
-    public int? KundenID
+    public int? LinkID
     {
       get;
       set;
     }
-
-    public Kunden Kunden { get; set; }
-    public int? MitarbeiterID
-    {
-      get;
-      set;
-    }
-
-    public Mitarbeiter Mitarbeiter { get; set; }
     public string Titel
     {
       get;
@@ -52,6 +43,31 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       set;
     }
     public string DokumentURL
+    {
+      get;
+      set;
+    }
+    public string DokumentName
+    {
+      get;
+      set;
+    }
+    public string DokumentNameUrsprung
+    {
+      get;
+      set;
+    }
+    public string DokumentTyp
+    {
+      get;
+      set;
+    }
+    public string DokumentErstelltVon
+    {
+      get;
+      set;
+    }
+    public DateTime DokumentErstelltAm
     {
       get;
       set;

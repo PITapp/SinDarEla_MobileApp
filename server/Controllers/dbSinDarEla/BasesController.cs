@@ -74,7 +74,6 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 .Where(i => i.BaseID == key)
                 .Include(i => i.Aufgabens)
                 .Include(i => i.Aufgabens1)
-                .Include(i => i.BaseBankens)
                 .Include(i => i.BaseKontaktes)
                 .Include(i => i.Benutzers)
                 .Include(i => i.Ereignisses)

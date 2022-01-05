@@ -1,0 +1,58 @@
+{
+  "access": [
+    "Authenticated"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "items": [
+            {
+              "components": [],
+              "selected": true,
+              "text": "Daten"
+            },
+            {
+              "selected": false,
+              "text": "Leistungen"
+            },
+            {
+              "components": [
+                {
+                  "name": "datepicker0",
+                  "type": "datepicker"
+                },
+                {
+                  "defaultView": "agendaDay",
+                  "editable": true,
+                  "firstDayOfWeek": 1,
+                  "locale": "de",
+                  "name": "scheduler0",
+                  "type": "scheduler",
+                  "weekends": true
+                }
+              ],
+              "selected": false,
+              "text": "Termine"
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": " "
+            },
+            {
+              "text": " "
+            }
+          ],
+          "name": "tabs0",
+          "type": "tabs"
+        }
+      ],
+      "container": "contentContainer0",
+      "type": "content"
+    }
+  ],
+  "layout": "KundenDaten",
+  "name": "KundenDaten"
+}

@@ -73,7 +73,6 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
             var itemToDelete = this.context.BaseAnredens
                 .Where(i => i.AnredeID == key)
                 .Include(i => i.Bases)
-                .Include(i => i.BaseKontaktes)
                 .FirstOrDefault();
 
             if (itemToDelete == null)

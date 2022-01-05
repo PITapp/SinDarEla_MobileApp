@@ -17,11 +17,7 @@ namespace SinDarElaMobile.Models.DbSinDarEla
     }
 
 
-    public ICollection<Dokumente> Dokumentes { get; set; }
-
     public ICollection<MitarbeiterFortbildungen> MitarbeiterFortbildungens { get; set; }
-
-    public ICollection<MitarbeiterInfo> MitarbeiterInfos { get; set; }
 
     public ICollection<MitarbeiterKundenbudget> MitarbeiterKundenbudgets { get; set; }
 

@@ -108,6 +108,21 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       get;
       set;
     }
+    public string KontoName
+    {
+      get;
+      set;
+    }
+    public string KontoNummer
+    {
+      get;
+      set;
+    }
+    public string KontoInfo
+    {
+      get;
+      set;
+    }
     public string NameGesamt
     {
       get;

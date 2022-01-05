@@ -13,7 +13,7 @@
                   "value": "onClickNavigateBack()"
                 }
               ],
-              "class": "col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 align-items-start d-flex",
+              "class": "align-items-start d-flex col-10",
               "components": [
                 {
                   "icon": "arrow_back",
@@ -34,10 +34,10 @@
                     "fontFamily": "verdana,geneva,sans-serif",
                     "fontSize": "18px",
                     "fontWeight": "normal",
-                    "marginLeft": "25px",
+                    "marginLeft": "15px",
                     "marginTop": "5px"
                   },
-                  "text": "Kunden",
+                  "text": "Mareike Painsi",
                   "type": "label"
                 }
               ],
@@ -53,14 +53,24 @@
               "type": "col"
             },
             {
-              "class": "text-lg-right           justify-content-end d-flex           col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3",
+              "attributes": [
+                {
+                  "name": "(click)",
+                  "value": "onClickStartDashboard()"
+                }
+              ],
+              "class": "text-lg-right           justify-content-end d-flex col-2",
               "components": [
                 {
-                  "name": "label1",
+                  "icon": "dashboard",
+                  "name": "icon1",
                   "style": {
-                    "color": "#f5f5f5"
+                    "color": "#f5f5f5",
+                    "fontSize": "24px",
+                    "fontWeight": "normal",
+                    "marginTop": "8px"
                   },
-                  "type": "label"
+                  "type": "icon"
                 }
               ],
               "name": "rightCol",
@@ -68,6 +78,7 @@
                 "display": "inline-block",
                 "float": "right",
                 "marginTop": "-4px",
+                "paddingRight": "29px",
                 "textAlign": "right"
               },
               "type": "col"
@@ -87,7 +98,19 @@
       "type": "header"
     },
     {
+      "components": [
+        {
+          "name": "contentContainer0",
+          "type": "content-container"
+        }
+      ],
       "name": "body0",
+      "style": {
+        "paddingBottom": "0",
+        "paddingLeft": "0",
+        "paddingRight": "0",
+        "paddingTop": "0"
+      },
       "type": "body"
     }
   ],
@@ -97,8 +120,13 @@
         "name": "onClickNavigateBack",
         "type": "set",
         "value": "() => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this._location.back();\n}"
+      },
+      {
+        "name": "onClickStartDashboard",
+        "type": "set",
+        "value": "() => {\n  if (this.dialogRef) {\n    this.dialogRef.close();\n  }\n  this.router.navigate(['dashboard']);\n}"
       }
     ]
   },
-  "name": "KundenWeitere"
+  "name": "KundenDaten"
 }

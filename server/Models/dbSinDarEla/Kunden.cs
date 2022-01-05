@@ -19,11 +19,7 @@ namespace SinDarElaMobile.Models.DbSinDarEla
 
     public ICollection<AbrechnungKundenReststunden> AbrechnungKundenReststundens { get; set; }
 
-    public ICollection<Dokumente> Dokumentes { get; set; }
-
     public ICollection<Ereignisse> Ereignisses { get; set; }
-
-    public ICollection<KundenInfo> KundenInfos { get; set; }
 
     public ICollection<KundenKontakte> KundenKontaktes { get; set; }
 

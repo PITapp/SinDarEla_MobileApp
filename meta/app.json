@@ -20,7 +20,7 @@
     "Details",
     "Login",
     "Main",
-    "KundenWeitere",
+    "KundenDaten",
     "Infos",
     "Kunden"
   ],
@@ -39,7 +39,8 @@
     "zzDashboard 2",
     "zzDashboard 3",
     "Infos",
-    "Kunden"
+    "Kunden",
+    "KundenDaten"
   ],
   "port": 8000,
   "security": {

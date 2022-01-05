@@ -1,0 +1,20 @@
+<rz-content #content1 container="contentContainer0">
+  <rz-tabs #tabs0>
+    <rz-tabs-item [selected]="true" text="Daten">
+    </rz-tabs-item>
+    <rz-tabs-item [selected]="false" text="Leistungen">
+    </rz-tabs-item>
+    <rz-tabs-item [selected]="false" text="Termine">
+      <rz-datepicker #datepicker0 name="datepicker0">
+      </rz-datepicker>
+      <rz-scheduler #scheduler0 defaultView="agendaDay" [editable]="true" [firstDayOfWeek]="1" locale="de" [weekends]="true">
+      </rz-scheduler>
+    </rz-tabs-item>
+    <rz-tabs-item text=" ">
+    </rz-tabs-item>
+    <rz-tabs-item text=" ">
+    </rz-tabs-item>
+    <rz-tabs-item text=" ">
+    </rz-tabs-item>
+  </rz-tabs>
+</rz-content>

@@ -4,15 +4,50 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinDarElaMobile.Models.DbSinDarEla
 {
-  [Table("vwBaseKontakte")]
-  public partial class VwBaseKontakte
+  [Table("vwKundenUndBetreuer")]
+  public partial class VwKundenUndBetreuer
   {
-    public int BaseID
+    public int KundenID
     {
       get;
       set;
     }
     [Key]
+    public int BaseID
+    {
+      get;
+      set;
+    }
+    public int KundenStatusID
+    {
+      get;
+      set;
+    }
+    public int? BetreuerBaseID
+    {
+      get;
+      set;
+    }
+    public DateTime Betreuungsbeginn
+    {
+      get;
+      set;
+    }
+    public string Vorbemerkungen
+    {
+      get;
+      set;
+    }
+    public string Info
+    {
+      get;
+      set;
+    }
+    public string Status
+    {
+      get;
+      set;
+    }
     public string Name1
     {
       get;
@@ -29,11 +64,6 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       set;
     }
     public string NameKuerzel
-    {
-      get;
-      set;
-    }
-    public int? AnredeID
     {
       get;
       set;
@@ -114,36 +144,6 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       set;
     }
     public string Notiz
-    {
-      get;
-      set;
-    }
-    public string KontoName
-    {
-      get;
-      set;
-    }
-    public string KontoNummer
-    {
-      get;
-      set;
-    }
-    public string KontoInfo
-    {
-      get;
-      set;
-    }
-    public int? KundenID
-    {
-      get;
-      set;
-    }
-    public int? MitarbeiterID
-    {
-      get;
-      set;
-    }
-    public int? BenutzerID
     {
       get;
       set;

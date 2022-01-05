@@ -157,32 +157,12 @@ export class DbSinDarElaService {
     return this.odata.patch(`/BaseAnredens(${anredeId})`, baseAnreden, item => item.AnredeID == anredeId, { expand }, []);
   }
 
-  getBaseBankens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/BaseBankens`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  createBaseBanken(expand: string | null, baseBanken: models.BaseBanken | null) : Observable<any> {
-    return this.odata.post(`/BaseBankens`, baseBanken, { expand }, ['Base']);
-  }
-
-  deleteBaseBanken(bankId: number | null) : Observable<any> {
-    return this.odata.delete(`/BaseBankens(${bankId})`, item => !(item.BankID == bankId));
-  }
-
-  getBaseBankenByBankId(expand: string | null, bankId: number | null) : Observable<any> {
-    return this.odata.getById(`/BaseBankens(${bankId})`, { expand });
-  }
-
-  updateBaseBanken(expand: string | null, bankId: number | null, baseBanken: models.BaseBanken | null) : Observable<any> {
-    return this.odata.patch(`/BaseBankens(${bankId})`, baseBanken, item => item.BankID == bankId, { expand }, ['Base']);
-  }
-
   getBaseKontaktes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
     return this.odata.get(`/BaseKontaktes`, { filter, top, skip, orderby, count, expand, format, select });
   }
 
   createBaseKontakte(expand: string | null, baseKontakte: models.BaseKontakte | null) : Observable<any> {
-    return this.odata.post(`/BaseKontaktes`, baseKontakte, { expand }, ['Base', 'BaseAnreden']);
+    return this.odata.post(`/BaseKontaktes`, baseKontakte, { expand }, ['Base']);
   }
 
   deleteBaseKontakte(kontaktId: number | null) : Observable<any> {
@@ -194,7 +174,7 @@ export class DbSinDarElaService {
   }
 
   updateBaseKontakte(expand: string | null, kontaktId: number | null, baseKontakte: models.BaseKontakte | null) : Observable<any> {
-    return this.odata.patch(`/BaseKontaktes(${kontaktId})`, baseKontakte, item => item.KontaktID == kontaktId, { expand }, ['Base','BaseAnreden']);
+    return this.odata.patch(`/BaseKontaktes(${kontaktId})`, baseKontakte, item => item.KontaktID == kontaktId, { expand }, ['Base']);
   }
 
   getBenutzers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
@@ -242,7 +222,7 @@ export class DbSinDarElaService {
   }
 
   createDokumente(expand: string | null, dokumente: models.Dokumente | null) : Observable<any> {
-    return this.odata.post(`/Dokumentes`, dokumente, { expand }, ['DokumenteKategorien', 'Kunden', 'Mitarbeiter']);
+    return this.odata.post(`/Dokumentes`, dokumente, { expand }, ['DokumenteKategorien']);
   }
 
   deleteDokumente(dokumentId: number | null) : Observable<any> {
@@ -254,7 +234,7 @@ export class DbSinDarElaService {
   }
 
   updateDokumente(expand: string | null, dokumentId: number | null, dokumente: models.Dokumente | null) : Observable<any> {
-    return this.odata.patch(`/Dokumentes(${dokumentId})`, dokumente, item => item.DokumentID == dokumentId, { expand }, ['DokumenteKategorien','Kunden','Mitarbeiter']);
+    return this.odata.patch(`/Dokumentes(${dokumentId})`, dokumente, item => item.DokumentID == dokumentId, { expand }, ['DokumenteKategorien']);
   }
 
   getDokumenteKategoriens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
@@ -435,26 +415,6 @@ export class DbSinDarElaService {
 
   updateKunden(expand: string | null, kundenId: number | null, kunden: models.Kunden | null) : Observable<any> {
     return this.odata.patch(`/Kundens(${kundenId})`, kunden, item => item.KundenID == kundenId, { expand }, ['Base','KundenStatus']);
-  }
-
-  getKundenInfos(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/KundenInfos`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  createKundenInfo(expand: string | null, kundenInfo: models.KundenInfo | null) : Observable<any> {
-    return this.odata.post(`/KundenInfos`, kundenInfo, { expand }, ['Kunden']);
-  }
-
-  deleteKundenInfo(kundenInfoId: number | null) : Observable<any> {
-    return this.odata.delete(`/KundenInfos(${kundenInfoId})`, item => !(item.KundenInfoID == kundenInfoId));
-  }
-
-  getKundenInfoByKundenInfoId(expand: string | null, kundenInfoId: number | null) : Observable<any> {
-    return this.odata.getById(`/KundenInfos(${kundenInfoId})`, { expand });
-  }
-
-  updateKundenInfo(expand: string | null, kundenInfoId: number | null, kundenInfo: models.KundenInfo | null) : Observable<any> {
-    return this.odata.patch(`/KundenInfos(${kundenInfoId})`, kundenInfo, item => item.KundenInfoID == kundenInfoId, { expand }, ['Kunden']);
   }
 
   getKundenKontaktes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
@@ -735,26 +695,6 @@ export class DbSinDarElaService {
 
   updateMitarbeiterFortbildungenArten(expand: string | null, fortbildungArtId: number | null, mitarbeiterFortbildungenArten: models.MitarbeiterFortbildungenArten | null) : Observable<any> {
     return this.odata.patch(`/MitarbeiterFortbildungenArtens(${fortbildungArtId})`, mitarbeiterFortbildungenArten, item => item.FortbildungArtID == fortbildungArtId, { expand }, []);
-  }
-
-  getMitarbeiterInfos(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/MitarbeiterInfos`, { filter, top, skip, orderby, count, expand, format, select });
-  }
-
-  createMitarbeiterInfo(expand: string | null, mitarbeiterInfo: models.MitarbeiterInfo | null) : Observable<any> {
-    return this.odata.post(`/MitarbeiterInfos`, mitarbeiterInfo, { expand }, ['Mitarbeiter']);
-  }
-
-  deleteMitarbeiterInfo(mitarbeiterInfoId: number | null) : Observable<any> {
-    return this.odata.delete(`/MitarbeiterInfos(${mitarbeiterInfoId})`, item => !(item.MitarbeiterInfoID == mitarbeiterInfoId));
-  }
-
-  getMitarbeiterInfoByMitarbeiterInfoId(expand: string | null, mitarbeiterInfoId: number | null) : Observable<any> {
-    return this.odata.getById(`/MitarbeiterInfos(${mitarbeiterInfoId})`, { expand });
-  }
-
-  updateMitarbeiterInfo(expand: string | null, mitarbeiterInfoId: number | null, mitarbeiterInfo: models.MitarbeiterInfo | null) : Observable<any> {
-    return this.odata.patch(`/MitarbeiterInfos(${mitarbeiterInfoId})`, mitarbeiterInfo, item => item.MitarbeiterInfoID == mitarbeiterInfoId, { expand }, ['Mitarbeiter']);
   }
 
   getMitarbeiterKundenbudgets(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
@@ -1057,6 +997,26 @@ export class DbSinDarElaService {
     return this.odata.patch(`/MitteilungenVerteilers(${mitteilungVerteilerId})`, mitteilungenVerteiler, item => item.MitteilungVerteilerID == mitteilungVerteilerId, { expand }, ['Mitteilungen','Base']);
   }
 
+  getNotizens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/Notizens`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  createNotizen(expand: string | null, notizen: models.Notizen | null) : Observable<any> {
+    return this.odata.post(`/Notizens`, notizen, { expand }, []);
+  }
+
+  deleteNotizen(notizId: number | null) : Observable<any> {
+    return this.odata.delete(`/Notizens(${notizId})`, item => !(item.NotizID == notizId));
+  }
+
+  getNotizenByNotizId(expand: string | null, notizId: number | null) : Observable<any> {
+    return this.odata.getById(`/Notizens(${notizId})`, { expand });
+  }
+
+  updateNotizen(expand: string | null, notizId: number | null, notizen: models.Notizen | null) : Observable<any> {
+    return this.odata.patch(`/Notizens(${notizId})`, notizen, item => item.NotizID == notizId, { expand }, []);
+  }
+
   getProtokolls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
     return this.odata.get(`/Protokolls`, { filter, top, skip, orderby, count, expand, format, select });
   }
@@ -1119,6 +1079,10 @@ export class DbSinDarElaService {
 
   getVwBenutzerRollens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
     return this.odata.get(`/VwBenutzerRollens`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  getVwKundenUndBetreuers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/VwKundenUndBetreuers`, { filter, top, skip, orderby, count, expand, format, select });
   }
 
   getVwRollens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {

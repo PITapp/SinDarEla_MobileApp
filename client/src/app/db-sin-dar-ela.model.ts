@@ -77,6 +77,9 @@ export interface Base {
   Webseite: string;
   BildURL: string;
   Notiz: string;
+  KontoName: string;
+  KontoNummer: string;
+  KontoInfo: string;
 }
 
 export interface BaseAnreden {
@@ -84,18 +87,9 @@ export interface BaseAnreden {
   Anrede: string;
 }
 
-export interface BaseBanken {
-  BankID: number;
-  BaseID: number;
-  NameBank: string;
-  Kontonummer: string;
-  Info: string;
-}
-
 export interface BaseKontakte {
   KontaktID: number;
   BaseID: number;
-  AnredeID: number;
   NameKontakt: string;
   Handy: string;
   Telefon: string;
@@ -134,11 +128,15 @@ export interface Debugg {
 export interface Dokumente {
   DokumentID: number;
   DokumenteKategorieID: number;
-  KundenID: number;
-  MitarbeiterID: number;
+  LinkID: number;
   Titel: string;
   Beschreibung: string;
   DokumentURL: string;
+  DokumentName: string;
+  DokumentNameUrsprung: string;
+  DokumentTyp: string;
+  DokumentErstelltVon: string;
+  DokumentErstelltAm: string;
 }
 
 export interface DokumenteKategorien {
@@ -255,14 +253,6 @@ export interface Kunden {
   Betreuungsbeginn: string;
   Vorbemerkungen: string;
   Info: string;
-}
-
-export interface KundenInfo {
-  KundenInfoID: number;
-  KundenID: number;
-  InfoDatum: string;
-  InfoTitel: string;
-  InfoText: string;
 }
 
 export interface KundenKontakte {
@@ -383,14 +373,6 @@ export interface MitarbeiterFortbildungenArten {
   FortbildungArtID: number;
   Titel: string;
   Sortierung: number;
-}
-
-export interface MitarbeiterInfo {
-  MitarbeiterInfoID: number;
-  MitarbeiterID: number;
-  InfoDatum: string;
-  InfoTitel: string;
-  InfoText: string;
 }
 
 export interface MitarbeiterKundenbudget {
@@ -545,6 +527,14 @@ export interface MitteilungenVerteiler {
   Kommentar: string;
 }
 
+export interface Notizen {
+  NotizID: number;
+  LinkID: number;
+  Am: string;
+  Titel: string;
+  Notiz: string;
+}
+
 export interface Protokoll {
   ProtokollID: number;
   BaseID: number;
@@ -588,6 +578,9 @@ export interface VwBaseAlle {
   Webseite: string;
   BildURL: string;
   Notiz: string;
+  KontoName: string;
+  KontoNummer: string;
+  KontoInfo: string;
   NameGesamt: string;
 }
 
@@ -598,6 +591,7 @@ export interface VwBaseKontakte {
   NameGesamt: string;
   NameKuerzel: string;
   AnredeID: number;
+  Anrede: string;
   TitelVorne: string;
   TitelHinten: string;
   Strasse: string;
@@ -613,6 +607,9 @@ export interface VwBaseKontakte {
   Webseite: string;
   BildURL: string;
   Notiz: string;
+  KontoName: string;
+  KontoNummer: string;
+  KontoInfo: string;
   KundenID: number;
   MitarbeiterID: number;
   BenutzerID: number;
@@ -676,6 +673,37 @@ export interface VwBenutzerRollen {
   FilterKontakteVerlinkt: string;
   RoleId: string;
   RolleTitel: string;
+}
+
+export interface VwKundenUndBetreuer {
+  KundenID: number;
+  BaseID: number;
+  KundenStatusID: number;
+  BetreuerBaseID: number;
+  Betreuungsbeginn: string;
+  Vorbemerkungen: string;
+  Info: string;
+  Status: string;
+  Name1: string;
+  Name2: string;
+  NameGesamt: string;
+  NameKuerzel: string;
+  Anrede: string;
+  TitelVorne: string;
+  TitelHinten: string;
+  Strasse: string;
+  PLZ: string;
+  Ort: string;
+  Geburtsdatum: string;
+  Versicherungsnummer: string;
+  Staatsangehoerigkeit: string;
+  Telefon1: string;
+  Telefon2: string;
+  EMail1: string;
+  EMail2: string;
+  Webseite: string;
+  BildURL: string;
+  Notiz: string;
 }
 
 export interface VwRollen {

@@ -18,8 +18,6 @@ namespace SinDarElaMobile.Models.DbSinDarEla
 
 
     public ICollection<Base> Bases { get; set; }
-
-    public ICollection<BaseKontakte> BaseKontaktes { get; set; }
     public string Anrede
     {
       get;

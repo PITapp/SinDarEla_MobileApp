@@ -21,8 +21,6 @@ namespace SinDarElaMobile.Models.DbSinDarEla
 
     public ICollection<Aufgaben> Aufgabens1 { get; set; }
 
-    public ICollection<BaseBanken> BaseBankens { get; set; }
-
     public ICollection<BaseKontakte> BaseKontaktes { get; set; }
 
     public ICollection<Benutzer> Benutzers { get; set; }
@@ -139,6 +137,21 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       set;
     }
     public string Notiz
+    {
+      get;
+      set;
+    }
+    public string KontoName
+    {
+      get;
+      set;
+    }
+    public string KontoNummer
+    {
+      get;
+      set;
+    }
+    public string KontoInfo
     {
       get;
       set;

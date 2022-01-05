@@ -22,45 +22,45 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
   using Data;
   using Models.DbSinDarEla;
 
-  [ODataRoutePrefix("odata/dbSinDarEla/MitarbeiterInfos")]
-  [Route("mvc/odata/dbSinDarEla/MitarbeiterInfos")]
-  public partial class MitarbeiterInfosController : ODataController
+  [ODataRoutePrefix("odata/dbSinDarEla/Notizens")]
+  [Route("mvc/odata/dbSinDarEla/Notizens")]
+  public partial class NotizensController : ODataController
   {
     private Data.DbSinDarElaContext context;
 
-    public MitarbeiterInfosController(Data.DbSinDarElaContext context)
+    public NotizensController(Data.DbSinDarElaContext context)
     {
       this.context = context;
     }
-    // GET /odata/DbSinDarEla/MitarbeiterInfos
+    // GET /odata/DbSinDarEla/Notizens
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
     [HttpGet]
-    public IEnumerable<Models.DbSinDarEla.MitarbeiterInfo> GetMitarbeiterInfos()
+    public IEnumerable<Models.DbSinDarEla.Notizen> GetNotizens()
     {
-      var items = this.context.MitarbeiterInfos.AsQueryable<Models.DbSinDarEla.MitarbeiterInfo>();
-      this.OnMitarbeiterInfosRead(ref items);
+      var items = this.context.Notizens.AsQueryable<Models.DbSinDarEla.Notizen>();
+      this.OnNotizensRead(ref items);
 
       return items;
     }
 
-    partial void OnMitarbeiterInfosRead(ref IQueryable<Models.DbSinDarEla.MitarbeiterInfo> items);
+    partial void OnNotizensRead(ref IQueryable<Models.DbSinDarEla.Notizen> items);
 
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    [HttpGet("{MitarbeiterInfoID}")]
-    public SingleResult<MitarbeiterInfo> GetMitarbeiterInfo(int key)
+    [HttpGet("{NotizID}")]
+    public SingleResult<Notizen> GetNotizen(int key)
     {
-        var items = this.context.MitarbeiterInfos.Where(i=>i.MitarbeiterInfoID == key);
-        this.OnMitarbeiterInfosGet(ref items);
+        var items = this.context.Notizens.Where(i=>i.NotizID == key);
+        this.OnNotizensGet(ref items);
 
         return SingleResult.Create(items);
     }
 
-    partial void OnMitarbeiterInfosGet(ref IQueryable<Models.DbSinDarEla.MitarbeiterInfo> items);
+    partial void OnNotizensGet(ref IQueryable<Models.DbSinDarEla.Notizen> items);
 
-    partial void OnMitarbeiterInfoDeleted(Models.DbSinDarEla.MitarbeiterInfo item);
+    partial void OnNotizenDeleted(Models.DbSinDarEla.Notizen item);
 
-    [HttpDelete("{MitarbeiterInfoID}")]
-    public IActionResult DeleteMitarbeiterInfo(int key)
+    [HttpDelete("{NotizID}")]
+    public IActionResult DeleteNotizen(int key)
     {
         try
         {
@@ -70,8 +70,8 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
             }
 
 
-            var itemToDelete = this.context.MitarbeiterInfos
-                .Where(i => i.MitarbeiterInfoID == key)
+            var itemToDelete = this.context.Notizens
+                .Where(i => i.NotizID == key)
                 .FirstOrDefault();
 
             if (itemToDelete == null)
@@ -80,8 +80,8 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            this.OnMitarbeiterInfoDeleted(itemToDelete);
-            this.context.MitarbeiterInfos.Remove(itemToDelete);
+            this.OnNotizenDeleted(itemToDelete);
+            this.context.Notizens.Remove(itemToDelete);
             this.context.SaveChanges();
 
             return new NoContentResult();
@@ -93,11 +93,11 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
         }
     }
 
-    partial void OnMitarbeiterInfoUpdated(Models.DbSinDarEla.MitarbeiterInfo item);
+    partial void OnNotizenUpdated(Models.DbSinDarEla.Notizen item);
 
-    [HttpPut("{MitarbeiterInfoID}")]
+    [HttpPut("{NotizID}")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult PutMitarbeiterInfo(int key, [FromBody]Models.DbSinDarEla.MitarbeiterInfo newItem)
+    public IActionResult PutNotizen(int key, [FromBody]Models.DbSinDarEla.Notizen newItem)
     {
         try
         {
@@ -106,17 +106,16 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            if (newItem == null || (newItem.MitarbeiterInfoID != key))
+            if (newItem == null || (newItem.NotizID != key))
             {
                 return BadRequest();
             }
 
-            this.OnMitarbeiterInfoUpdated(newItem);
-            this.context.MitarbeiterInfos.Update(newItem);
+            this.OnNotizenUpdated(newItem);
+            this.context.Notizens.Update(newItem);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.MitarbeiterInfos.Where(i => i.MitarbeiterInfoID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Mitarbeiter");
+            var itemToReturn = this.context.Notizens.Where(i => i.NotizID == key);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -126,9 +125,9 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
         }
     }
 
-    [HttpPatch("{MitarbeiterInfoID}")]
+    [HttpPatch("{NotizID}")]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult PatchMitarbeiterInfo(int key, [FromBody]Delta<Models.DbSinDarEla.MitarbeiterInfo> patch)
+    public IActionResult PatchNotizen(int key, [FromBody]Delta<Models.DbSinDarEla.Notizen> patch)
     {
         try
         {
@@ -137,7 +136,7 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 return BadRequest(ModelState);
             }
 
-            var itemToUpdate = this.context.MitarbeiterInfos.Where(i => i.MitarbeiterInfoID == key).FirstOrDefault();
+            var itemToUpdate = this.context.Notizens.Where(i => i.NotizID == key).FirstOrDefault();
 
             if (itemToUpdate == null)
             {
@@ -147,12 +146,11 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
 
             patch.Patch(itemToUpdate);
 
-            this.OnMitarbeiterInfoUpdated(itemToUpdate);
-            this.context.MitarbeiterInfos.Update(itemToUpdate);
+            this.OnNotizenUpdated(itemToUpdate);
+            this.context.Notizens.Update(itemToUpdate);
             this.context.SaveChanges();
 
-            var itemToReturn = this.context.MitarbeiterInfos.Where(i => i.MitarbeiterInfoID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Mitarbeiter");
+            var itemToReturn = this.context.Notizens.Where(i => i.NotizID == key);
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -162,11 +160,11 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
         }
     }
 
-    partial void OnMitarbeiterInfoCreated(Models.DbSinDarEla.MitarbeiterInfo item);
+    partial void OnNotizenCreated(Models.DbSinDarEla.Notizen item);
 
     [HttpPost]
     [EnableQuery(MaxExpansionDepth=10,MaxAnyAllExpressionDepth=10,MaxNodeCount=1000)]
-    public IActionResult Post([FromBody] Models.DbSinDarEla.MitarbeiterInfo item)
+    public IActionResult Post([FromBody] Models.DbSinDarEla.Notizen item)
     {
         try
         {
@@ -180,20 +178,11 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 return BadRequest();
             }
 
-            this.OnMitarbeiterInfoCreated(item);
-            this.context.MitarbeiterInfos.Add(item);
+            this.OnNotizenCreated(item);
+            this.context.Notizens.Add(item);
             this.context.SaveChanges();
 
-            var key = item.MitarbeiterInfoID;
-
-            var itemToReturn = this.context.MitarbeiterInfos.Where(i => i.MitarbeiterInfoID == key);
-
-            Request.QueryString = Request.QueryString.Add("$expand", "Mitarbeiter");
-
-            return new ObjectResult(SingleResult.Create(itemToReturn))
-            {
-                StatusCode = 201
-            };
+            return Created($"odata/DbSinDarEla/Notizens/{item.NotizID}", item);
         }
         catch(Exception ex)
         {

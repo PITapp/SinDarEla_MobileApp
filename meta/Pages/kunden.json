@@ -4,11 +4,277 @@
   ],
   "components": [
     {
-      "components": [],
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-8",
+              "components": [
+                {
+                  "attributes": [
+                    {
+                      "name": "(input)",
+                      "value": "this.datalistKunden.load();"
+                    }
+                  ],
+                  "name": "textboxSuchenKunden",
+                  "placeholder": "Suchen",
+                  "style": {
+                    "backgroundColor": "#f5f5f5",
+                    "float": "left",
+                    "height": "25px",
+                    "width": "100%"
+                  },
+                  "type": "textbox",
+                  "value": ""
+                }
+              ],
+              "name": "col2",
+              "style": {
+                "paddingLeft": "10px",
+                "paddingRight": "10px",
+                "paddingTop": "6px",
+                "position": "static"
+              },
+              "type": "col"
+            },
+            {
+              "class": "col-2",
+              "components": [
+                {
+                  "attributes": [
+                    {
+                      "name": "class",
+                      "value": "sde-button-icon-mitte"
+                    }
+                  ],
+                  "buttonStyle": "light",
+                  "buttonType": "button",
+                  "events": {
+                    "click": [
+                      {
+                        "code": "this.textboxSuchenKunden.value = null;\nthis.datalistKunden.load();",
+                        "type": "execute"
+                      }
+                    ]
+                  },
+                  "icon": "clear",
+                  "name": "buttonSuchenLoeschen",
+                  "size": "md",
+                  "style": {
+                    "backgroundColor": "#b96205",
+                    "color": "#f5f5f5",
+                    "fontSize": "28px",
+                    "fontWeight": "normal",
+                    "height": "25px",
+                    "paddingBottom": "0",
+                    "paddingLeft": "0",
+                    "paddingRight": "0",
+                    "paddingTop": "0",
+                    "textAlign": "center",
+                    "verticalAlign": "baseline",
+                    "width": "100%"
+                  },
+                  "text": "",
+                  "tooltip": "",
+                  "type": "button"
+                }
+              ],
+              "name": "col3",
+              "style": {
+                "paddingBottom": "0",
+                "paddingLeft": "0",
+                "paddingRight": "10px",
+                "paddingTop": "6px",
+                "position": "static"
+              },
+              "type": "col"
+            },
+            {
+              "class": "col-2",
+              "components": [
+                {
+                  "attributes": [
+                    {
+                      "name": "class",
+                      "value": "sde-button-icon-mitte"
+                    }
+                  ],
+                  "buttonStyle": "light",
+                  "buttonType": "button",
+                  "events": {
+                    "click": []
+                  },
+                  "icon": "keyboard_hide",
+                  "name": "buttonSuchenTastatur",
+                  "size": "md",
+                  "style": {
+                    "backgroundColor": "#b96205",
+                    "color": "#f5f5f5",
+                    "fontSize": "28px",
+                    "fontWeight": "normal",
+                    "height": "25px",
+                    "paddingBottom": "0",
+                    "paddingLeft": "0",
+                    "paddingRight": "0",
+                    "paddingTop": "0",
+                    "textAlign": "center",
+                    "verticalAlign": "baseline",
+                    "width": "100%"
+                  },
+                  "text": "",
+                  "tooltip": "",
+                  "type": "button"
+                }
+              ],
+              "name": "col4",
+              "style": {
+                "paddingBottom": "0",
+                "paddingLeft": "0",
+                "paddingRight": "10px",
+                "paddingTop": "6px",
+                "position": "static"
+              },
+              "type": "col"
+            }
+          ],
+          "name": "row1",
+          "style": {
+            "backgroundColor": "#ffc16b",
+            "borderBottom": "1px dotted #f1903c",
+            "height": "38px",
+            "marginBottom": "0",
+            "marginLeft": "0",
+            "marginRight": "0",
+            "marginTop": "0",
+            "position": "fixed",
+            "width": "100%",
+            "zIndex": "999"
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "allowPaging": false,
+                  "count": "${rstKundenCount}",
+                  "data": "${rstKunden}",
+                  "defaultRowText": "Template for index",
+                  "emptyText": "Keine Kunden gefunden",
+                  "events": {
+                    "loadData": [
+                      {
+                        "name": "dbSinDarEla.getVwKundenUndBetreuers",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "contains(tolower(Name1),tolower('${this.textboxSuchenKunden.value || ''}')) OR contains(tolower(Name2),tolower('${this.textboxSuchenKunden.value || ''}'))"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "name": "rstKunden",
+                            "type": "set",
+                            "value": "${result.value}"
+                          },
+                          {
+                            "name": "rstKundenCount",
+                            "type": "set",
+                            "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "name": "datalistKunden",
+                  "pageSize": 20,
+                  "style": {},
+                  "template": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-6",
+                          "components": [
+                            {
+                              "name": "label0",
+                              "text": "${data.Name2}",
+                              "type": "label"
+                            },
+                            {
+                              "name": "label1",
+                              "style": {
+                                "marginLeft": "5px"
+                              },
+                              "text": "${data.Name1}",
+                              "type": "label"
+                            }
+                          ],
+                          "name": "col0",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-6",
+                          "components": [
+                            {
+                              "events": {
+                                "click": [
+                                  {
+                                    "path": "kunden-daten",
+                                    "type": "navigate"
+                                  }
+                                ]
+                              },
+                              "name": "button0",
+                              "text": "",
+                              "type": "button"
+                            }
+                          ],
+                          "name": "col1",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row0",
+                      "type": "row"
+                    }
+                  ],
+                  "type": "datalist",
+                  "wrapItems": false
+                }
+              ],
+              "name": "col5",
+              "type": "col"
+            }
+          ],
+          "name": "row2",
+          "style": {
+            "paddingTop": "42px",
+            "position": "static"
+          },
+          "type": "row"
+        },
+        {
+          "buttonStyle": "light",
+          "name": "button2",
+          "text": "",
+          "type": "button"
+        }
+      ],
       "container": "contentContainer0",
       "type": "content"
     }
   ],
+  "events": {
+    "load": [
+      {
+        "code": "this.datalistKunden.load();",
+        "type": "execute"
+      }
+    ]
+  },
   "layout": "Kunden",
   "name": "Kunden"
 }

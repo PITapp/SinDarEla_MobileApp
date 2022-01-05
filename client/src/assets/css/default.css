@@ -12637,3 +12637,8 @@ input:focus {
 .login .login-buttons {
   justify-content: flex-end !important;
 }
+
+/* --- Button: nachjustieren des Icons in die Mitte, weil Button kleiner gemacht wurde --- */
+.sde-button-icon-mitte .ui-button .pi {
+  margin-top: -18px;
+}

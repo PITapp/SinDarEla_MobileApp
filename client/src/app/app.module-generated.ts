@@ -24,6 +24,10 @@ import { ProgressBarModule } from '@radzen/angular/dist/progressbar';
 import { GaugeModule } from '@radzen/angular/dist/gauge';
 import { SparklineModule } from '@radzen/angular/dist/sparkline';
 import { TabsModule } from '@radzen/angular/dist/tabs';
+import { TextBoxModule } from '@radzen/angular/dist/textbox';
+import { DataListModule } from '@radzen/angular/dist/datalist';
+import { DatePickerModule } from '@radzen/angular/dist/datepicker';
+import { SchedulerModule } from '@radzen/angular/dist/scheduler';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -42,10 +46,11 @@ import { ZzDashboard2Component } from './zz-dashboard-2/zz-dashboard-2.component
 import { ZzDashboard3Component } from './zz-dashboard-3/zz-dashboard-3.component';
 import { InfosComponent } from './infos/infos.component';
 import { KundenComponent } from './kunden/kunden.component';
+import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
 import { DetailsLayoutComponent } from './details-layout/details-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
-import { KundenWeitereLayoutComponent } from './kunden-weitere-layout/kunden-weitere-layout.component';
+import { KundenDatenLayoutComponent } from './kunden-daten-layout/kunden-daten-layout.component';
 import { InfosLayoutComponent } from './infos-layout/infos-layout.component';
 import { KundenLayoutComponent } from './kunden-layout/kunden-layout.component';
 
@@ -64,13 +69,14 @@ export const PageDeclarations = [
   ZzDashboard3Component,
   InfosComponent,
   KundenComponent,
+  KundenDatenComponent,
 ];
 
 export const LayoutDeclarations = [
   DetailsLayoutComponent,
   LoginLayoutComponent,
   MainLayoutComponent,
-  KundenWeitereLayoutComponent,
+  KundenDatenLayoutComponent,
   InfosLayoutComponent,
   KundenLayoutComponent,
 ];
@@ -127,6 +133,10 @@ export const AppImports = [
   GaugeModule,
   SparklineModule,
   TabsModule,
+  TextBoxModule,
+  DataListModule,
+  DatePickerModule,
+  SchedulerModule,
   SharedModule,
   NotificationModule,
   DialogModule,

@@ -21,13 +21,6 @@ namespace SinDarElaMobile.Models.DbSinDarEla
     }
 
     public Base Base { get; set; }
-    public int? AnredeID
-    {
-      get;
-      set;
-    }
-
-    public BaseAnreden BaseAnreden { get; set; }
     public string NameKontakt
     {
       get;

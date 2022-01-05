@@ -72,9 +72,7 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
 
             var itemToDelete = this.context.Mitarbeiters
                 .Where(i => i.MitarbeiterID == key)
-                .Include(i => i.Dokumentes)
                 .Include(i => i.MitarbeiterFortbildungens)
-                .Include(i => i.MitarbeiterInfos)
                 .Include(i => i.MitarbeiterKundenbudgets)
                 .Include(i => i.MitarbeiterTaetigkeitens)
                 .Include(i => i.MitarbeiterUrlaubs)
