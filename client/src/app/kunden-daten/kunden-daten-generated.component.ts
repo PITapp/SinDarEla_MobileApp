@@ -12,10 +12,14 @@ import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dis
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { TabsComponent } from '@radzen/angular/dist/tabs';
+import { ButtonComponent } from '@radzen/angular/dist/button';
+import { PanelComponent } from '@radzen/angular/dist/panel';
+import { AccordionComponent } from '@radzen/angular/dist/accordion';
 import { DatePickerComponent } from '@radzen/angular/dist/datepicker';
 import { SchedulerComponent } from '@radzen/angular/dist/scheduler';
 
 import { ConfigService } from '../config.service';
+import { AddBaseComponent } from '../add-base/add-base.component';
 
 import { SecurityService } from '../security.service';
 
@@ -23,6 +27,10 @@ export class KundenDatenGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('tabs0') tabs0: TabsComponent;
+  @ViewChild('button0') button0: ButtonComponent;
+  @ViewChild('panel0') panel0: PanelComponent;
+  @ViewChild('button1') button1: ButtonComponent;
+  @ViewChild('accordion0') accordion0: AccordionComponent;
   @ViewChild('datepicker0') datepicker0: DatePickerComponent;
   @ViewChild('scheduler0') scheduler0: SchedulerComponent;
 
@@ -85,6 +93,7 @@ export class KundenDatenGenerated implements AfterViewInit, OnInit, OnDestroy {
       } else {
         this.parameters = parameters;
       }
+      this.load();
       this.cd.detectChanges();
     });
   }
@@ -95,4 +104,12 @@ export class KundenDatenGenerated implements AfterViewInit, OnInit, OnDestroy {
     }
   }
 
+
+  load() {
+
+  }
+
+  button0Click(event: any) {
+    this.dialogService.open(AddBaseComponent, { parameters: {}, height: 2000, title: `test base` });
+  }
 }

@@ -364,7 +364,8 @@
                 "paddingBottom": "5px",
                 "paddingLeft": "80px",
                 "paddingRight": "50px",
-                "paddingTop": "9px"
+                "paddingTop": "9px",
+                "position": "relative"
               },
               "type": "col"
             }

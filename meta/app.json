@@ -17,7 +17,6 @@
   ],
   "javaScriptFiles": [],
   "layouts": [
-    "Details",
     "Login",
     "Main",
     "KundenDaten",
@@ -28,7 +27,8 @@
   "name": "SinDarElaMobile",
   "namespaces": [],
   "navigation": [
-    "Dashboard"
+    "Dashboard",
+    "Base"
   ],
   "pages": [
     "Dashboard",
@@ -40,7 +40,10 @@
     "zzDashboard 3",
     "Infos",
     "Kunden",
-    "KundenDaten"
+    "KundenDaten",
+    "Base",
+    "Add Base",
+    "Edit Base"
   ],
   "port": 8000,
   "security": {

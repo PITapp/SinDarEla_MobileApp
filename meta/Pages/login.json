@@ -35,6 +35,30 @@
                             "value": "${event.password}"
                           }
                         ],
+                        "then": [
+                          {
+                            "error": [
+                              {
+                                "code": "localStorage.setItem(\"globalBenutzerBaseID\",\"0\");",
+                                "type": "execute"
+                              }
+                            ],
+                            "name": "dbSinDarEla.getBenutzers",
+                            "parameters": [
+                              {
+                                "name": "$filter",
+                                "value": "Benutzername eq '${event.username}'"
+                              }
+                            ],
+                            "then": [
+                              {
+                                "code": "localStorage.setItem(\"globalBenutzerBaseID\",${result.value[0].BaseID});",
+                                "type": "execute"
+                              }
+                            ],
+                            "type": "invoke"
+                          }
+                        ],
                         "type": "invoke"
                       }
                     ],

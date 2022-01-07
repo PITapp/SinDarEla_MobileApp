@@ -1,6 +1,26 @@
 <rz-content #content1 container="contentContainer0">
   <rz-tabs #tabs0>
     <rz-tabs-item [selected]="true" text="Daten">
+      <div class="row">
+        <div class="col-md-12">
+          <rz-button #button0 text="öffnen..." (click)="button0Click($event)">
+          </rz-button>
+          <rz-panel #panel0 [allowCollapse]="true" text="KundenID: {{parameters?.KundenID}}">
+            <rz-panel-footer>
+              <rz-button #button1>
+              </rz-button>
+            </rz-panel-footer>
+          </rz-panel>
+        </div>
+      </div>
+      <rz-accordion #accordion0 [multiple]="true">
+        <rz-accordion-item [selected]="true" text="1111111">
+        </rz-accordion-item>
+        <rz-accordion-item [selected]="true" text="222222222">
+        </rz-accordion-item>
+        <rz-accordion-item [selected]="true" text="3333333333">
+        </rz-accordion-item>
+      </rz-accordion>
     </rz-tabs-item>
     <rz-tabs-item [selected]="false" text="Leistungen">
     </rz-tabs-item>

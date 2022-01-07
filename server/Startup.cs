@@ -224,7 +224,7 @@ namespace SinDarElaMobile
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBasePlz>("VwBasePlzs");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBenutzerBase>("VwBenutzerBases");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBenutzerRollen>("VwBenutzerRollens");
-          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwKundenUndBetreuer>("VwKundenUndBetreuers");
+          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl>("VwKundenUndBetreuerAuswahls");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwRollen>("VwRollens");
 
           this.OnConfigureOData(oDataBuilder);

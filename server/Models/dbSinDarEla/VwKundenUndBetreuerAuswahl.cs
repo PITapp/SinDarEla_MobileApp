@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinDarElaMobile.Models.DbSinDarEla
 {
-  [Table("vwKundenUndBetreuer")]
-  public partial class VwKundenUndBetreuer
+  [Table("vwKundenUndBetreuerAuswahl")]
+  public partial class VwKundenUndBetreuerAuswahl
   {
     public int KundenID
     {

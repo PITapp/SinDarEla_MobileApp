@@ -1081,8 +1081,8 @@ export class DbSinDarElaService {
     return this.odata.get(`/VwBenutzerRollens`, { filter, top, skip, orderby, count, expand, format, select });
   }
 
-  getVwKundenUndBetreuers(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
-    return this.odata.get(`/VwKundenUndBetreuers`, { filter, top, skip, orderby, count, expand, format, select });
+  getVwKundenUndBetreuerAuswahls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/VwKundenUndBetreuerAuswahls`, { filter, top, skip, orderby, count, expand, format, select });
   }
 
   getVwRollens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {

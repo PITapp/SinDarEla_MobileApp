@@ -1,7 +1,6 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 
-import { DetailsLayoutComponent } from './details-layout/details-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { KundenDatenLayoutComponent } from './kunden-daten-layout/kunden-daten-layout.component';
@@ -17,6 +16,9 @@ import { ZzDashboard3Component } from './zz-dashboard-3/zz-dashboard-3.component
 import { InfosComponent } from './infos/infos.component';
 import { KundenComponent } from './kunden/kunden.component';
 import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
+import { BaseComponent } from './base/base.component';
+import { AddBaseComponent } from './add-base/add-base.component';
+import { EditBaseComponent } from './edit-base/edit-base.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -73,6 +75,30 @@ export const routes: Routes = [
         },
         component: ZzDashboard3Component
       },
+      {
+        path: 'base',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: BaseComponent
+      },
+      {
+        path: 'add-base',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: AddBaseComponent
+      },
+      {
+        path: 'edit-base/:BaseID',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: EditBaseComponent
+      },
     ]
   },
   {
@@ -121,7 +147,7 @@ export const routes: Routes = [
     component: KundenDatenLayoutComponent,
     children: [
       {
-        path: 'kunden-daten',
+        path: 'kunden-daten/:KundenID',
         canActivate: [AuthGuard],
         data: {
           roles: ['Authenticated'],

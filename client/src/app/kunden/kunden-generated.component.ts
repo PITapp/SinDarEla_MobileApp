@@ -14,7 +14,9 @@ import { ContentComponent } from '@radzen/angular/dist/content';
 import { TextBoxComponent } from '@radzen/angular/dist/textbox';
 import { ButtonComponent } from '@radzen/angular/dist/button';
 import { DataListComponent } from '@radzen/angular/dist/datalist';
+import { ImageComponent } from '@radzen/angular/dist/image';
 import { LabelComponent } from '@radzen/angular/dist/label';
+import { IconComponent } from '@radzen/angular/dist/icon';
 
 import { ConfigService } from '../config.service';
 
@@ -28,7 +30,8 @@ export class KundenGenerated implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('buttonSuchenLoeschen') buttonSuchenLoeschen: ButtonComponent;
   @ViewChild('buttonSuchenTastatur') buttonSuchenTastatur: ButtonComponent;
   @ViewChild('datalistKunden') datalistKunden: DataListComponent;
-  @ViewChild('button2') button2: ButtonComponent;
+  @ViewChild('label2') label2: LabelComponent;
+  @ViewChild('buttonNavigateToKundenDaten') buttonNavigateToKundenDaten: ButtonComponent;
 
   router: Router;
 
@@ -55,6 +58,8 @@ export class KundenGenerated implements AfterViewInit, OnInit, OnDestroy {
   dbSinDarEla: DbSinDarElaService;
 
   security: SecurityService;
+  globalBenutzerBaseID: any;
+  onClickStartKundenDaten: any;
   parameters: any;
   rstKunden: any;
   rstKundenCount: any;
@@ -107,7 +112,16 @@ export class KundenGenerated implements AfterViewInit, OnInit, OnDestroy {
 
 
   load() {
+    this.globalBenutzerBaseID = localStorage.getItem("globalBenutzerBaseID");;
+
     this.datalistKunden.load();
+
+    this.onClickStartKundenDaten = (data) => {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
+    this.router.navigate(['kunden-daten', data.KundenID]);
+};
   }
 
   buttonSuchenLoeschenClick(event: any) {
@@ -116,7 +130,7 @@ this.datalistKunden.load();
   }
 
   datalistKundenLoadData(event: any) {
-    this.dbSinDarEla.getVwKundenUndBetreuers(`contains(tolower(Name1),tolower('${this.textboxSuchenKunden.value || ''}')) OR contains(tolower(Name2),tolower('${this.textboxSuchenKunden.value || ''}'))`, null, null, null, null, null, null, null)
+    this.dbSinDarEla.getVwKundenUndBetreuerAuswahls(`BetreuerBaseID eq ${this.globalBenutzerBaseID} AND (contains(tolower(Name1),tolower('${this.textboxSuchenKunden.value || ''}')) OR contains(tolower(Name2),tolower('${this.textboxSuchenKunden.value || ''}')))`, null, null, null, null, null, null, null)
     .subscribe((result: any) => {
       this.rstKunden = result.value;
 
@@ -126,10 +140,10 @@ this.datalistKunden.load();
     });
   }
 
-  button0Click(event: any, data: any) {
+  buttonNavigateToKundenDatenClick(event: any) {
     if (this.dialogRef) {
       this.dialogRef.close();
     }
-    this.router.navigate(['kunden-daten']);
+    this.router.navigate(['kunden-daten', 0]);
   }
 }

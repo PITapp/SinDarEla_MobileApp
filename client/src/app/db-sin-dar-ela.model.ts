@@ -675,7 +675,7 @@ export interface VwBenutzerRollen {
   RolleTitel: string;
 }
 
-export interface VwKundenUndBetreuer {
+export interface VwKundenUndBetreuerAuswahl {
   KundenID: number;
   BaseID: number;
   KundenStatusID: number;

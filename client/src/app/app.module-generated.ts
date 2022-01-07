@@ -8,13 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BodyModule } from '@radzen/angular/dist/body';
-import { ContentContainerModule } from '@radzen/angular/dist/content-container';
-import { HeaderModule } from '@radzen/angular/dist/header';
-import { ButtonModule } from '@radzen/angular/dist/button';
-import { LabelModule } from '@radzen/angular/dist/label';
-import { LinkModule } from '@radzen/angular/dist/link';
 import { CardModule } from '@radzen/angular/dist/card';
 import { ImageModule } from '@radzen/angular/dist/image';
+import { LabelModule } from '@radzen/angular/dist/label';
+import { ContentContainerModule } from '@radzen/angular/dist/content-container';
+import { HeaderModule } from '@radzen/angular/dist/header';
 import { IconModule } from '@radzen/angular/dist/icon';
 import { ContentModule } from '@radzen/angular/dist/content';
 import { HeadingModule } from '@radzen/angular/dist/heading';
@@ -23,11 +21,19 @@ import { HtmlModule } from '@radzen/angular/dist/html';
 import { ProgressBarModule } from '@radzen/angular/dist/progressbar';
 import { GaugeModule } from '@radzen/angular/dist/gauge';
 import { SparklineModule } from '@radzen/angular/dist/sparkline';
+import { ButtonModule } from '@radzen/angular/dist/button';
+import { LinkModule } from '@radzen/angular/dist/link';
 import { TabsModule } from '@radzen/angular/dist/tabs';
 import { TextBoxModule } from '@radzen/angular/dist/textbox';
 import { DataListModule } from '@radzen/angular/dist/datalist';
+import { PanelModule } from '@radzen/angular/dist/panel';
+import { AccordionModule } from '@radzen/angular/dist/accordion';
 import { DatePickerModule } from '@radzen/angular/dist/datepicker';
 import { SchedulerModule } from '@radzen/angular/dist/scheduler';
+import { GridModule } from '@radzen/angular/dist/grid';
+import { TemplateFormModule } from '@radzen/angular/dist/template-form';
+import { DropDownDataGridModule } from '@radzen/angular/dist/dropdown-datagrid';
+import { RequiredValidatorModule } from '@radzen/angular/dist/required-validator';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -47,7 +53,9 @@ import { ZzDashboard3Component } from './zz-dashboard-3/zz-dashboard-3.component
 import { InfosComponent } from './infos/infos.component';
 import { KundenComponent } from './kunden/kunden.component';
 import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
-import { DetailsLayoutComponent } from './details-layout/details-layout.component';
+import { BaseComponent } from './base/base.component';
+import { AddBaseComponent } from './add-base/add-base.component';
+import { EditBaseComponent } from './edit-base/edit-base.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { KundenDatenLayoutComponent } from './kunden-daten-layout/kunden-daten-layout.component';
@@ -70,10 +78,12 @@ export const PageDeclarations = [
   InfosComponent,
   KundenComponent,
   KundenDatenComponent,
+  BaseComponent,
+  AddBaseComponent,
+  EditBaseComponent,
 ];
 
 export const LayoutDeclarations = [
-  DetailsLayoutComponent,
   LoginLayoutComponent,
   MainLayoutComponent,
   KundenDatenLayoutComponent,
@@ -117,13 +127,11 @@ export const AppImports = [
   FormsModule,
   HttpClientModule,
   BodyModule,
-  ContentContainerModule,
-  HeaderModule,
-  ButtonModule,
-  LabelModule,
-  LinkModule,
   CardModule,
   ImageModule,
+  LabelModule,
+  ContentContainerModule,
+  HeaderModule,
   IconModule,
   ContentModule,
   HeadingModule,
@@ -132,11 +140,19 @@ export const AppImports = [
   ProgressBarModule,
   GaugeModule,
   SparklineModule,
+  ButtonModule,
+  LinkModule,
   TabsModule,
   TextBoxModule,
   DataListModule,
+  PanelModule,
+  AccordionModule,
   DatePickerModule,
   SchedulerModule,
+  GridModule,
+  TemplateFormModule,
+  DropDownDataGridModule,
+  RequiredValidatorModule,
   SharedModule,
   NotificationModule,
   DialogModule,

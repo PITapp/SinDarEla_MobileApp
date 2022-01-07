@@ -8,7 +8,68 @@
         {
           "items": [
             {
-              "components": [],
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-12",
+                      "components": [
+                        {
+                          "events": {
+                            "click": [
+                              {
+                                "height": 2000,
+                                "path": "add-base",
+                                "title": "test base",
+                                "type": "popup"
+                              }
+                            ]
+                          },
+                          "name": "button0",
+                          "text": "öffnen...",
+                          "type": "button"
+                        },
+                        {
+                          "allowCollapse": true,
+                          "footerTemplate": [
+                            {
+                              "name": "button1",
+                              "text": "",
+                              "type": "button"
+                            }
+                          ],
+                          "name": "panel0",
+                          "text": "KundenID: ${parameters.KundenID}",
+                          "type": "panel"
+                        }
+                      ],
+                      "name": "col0",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row0",
+                  "type": "row"
+                },
+                {
+                  "items": [
+                    {
+                      "selected": true,
+                      "text": "1111111"
+                    },
+                    {
+                      "selected": true,
+                      "text": "222222222"
+                    },
+                    {
+                      "selected": true,
+                      "text": "3333333333"
+                    }
+                  ],
+                  "multiple": true,
+                  "name": "accordion0",
+                  "type": "accordion"
+                }
+              ],
               "selected": true,
               "text": "Daten"
             },
@@ -53,6 +114,9 @@
       "type": "content"
     }
   ],
+  "events": {
+    "load": []
+  },
   "layout": "KundenDaten",
   "name": "KundenDaten"
 }

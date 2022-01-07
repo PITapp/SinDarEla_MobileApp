@@ -13,26 +13,29 @@
       </rz-button>
     </div>
   </div>
-  <div [ngStyle]="{'paddingTop': '42px', 'position': 'static'}" class="row">
+  <div [ngStyle]="{'paddingTop': '38px', 'position': 'static'}" class="row">
     <div class="col-md-12">
-      <rz-datalist #datalistKunden [allowPaging]="false" [count]="rstKundenCount" [data]="rstKunden" defaultRowText="Template for index" emptyText="Keine Kunden gefunden" [pageSize]="20" [style]="{}" [wrapItems]="false" (loadData)="datalistKundenLoadData($event)">
+      <rz-datalist #datalistKunden [allowPaging]="false" [count]="rstKundenCount" [data]="rstKunden" defaultRowText="Template for index" emptyText="Kunden..." [pageSize]="20" [style]="{'border': '1px solid rgba(0, 0, 0, 0)'}" [wrapItems]="false" (loadData)="datalistKundenLoadData($event)">
         <ng-template let-data datalistTemplate>
-          <div class="row">
-            <div class="col-6">
-              <rz-label #label0 [text]="data?.Name2">
+          <div [ngStyle]="{'borderBottom': '1px solid #e6ecef', 'height': '60px'}" class="row" (click)="onClickStartKundenDaten(data)">
+            <div class="col-12" [ngStyle]="{'paddingLeft': '75px', 'paddingTop': '6px', 'position': 'relative', 'verticalAlign': 'baseline'}">
+              <rz-image #image0 [path]="data?.BildURL" [style]="{'borderRadius': '40px', 'height': '40px', 'left': '25px', 'position': 'absolute', 'top': '10px', 'width': '40px'}">
+              </rz-image>
+              <rz-label #label0 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'fontWeight': 'normal'}" text="{{data?.Name1}} {{data?.Name2}}">
               </rz-label>
-              <rz-label #label1 [style]="{'marginLeft': '5px'}" [text]="data?.Name1">
+              <rz-label #label1 [style]="{'color': '#88989b', 'display': 'block', 'fontSize': '14px', 'fontWeight': 'normal'}" text="{{data?.Ort}}, {{data?.Strasse}}">
               </rz-label>
-            </div>
-            <div class="col-6">
-              <rz-button #button0 (click)="button0Click($event, data)">
-              </rz-button>
+              <rz-icon #icon21 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '14px'}">
+              </rz-icon>
             </div>
           </div>
         </ng-template>
       </rz-datalist>
     </div>
   </div>
-  <rz-button #button2 buttonStyle="light">
+  <rz-label #label2 [style]="{'backgroundColor': '#ff6d41', 'color': '#ffffff', 'marginBottom': '10px', 'marginTop': '20px', 'paddingLeft': '10px', 'width': '100%'}" text="Diese Schaltflächen müssen da sein, damit beim Compilieren in der Navigation die Parameter erstellt werden! Sie werden auch als Funktionen genutzt, die über Click-Ereignisse aktiviert werden.
+  Siehe app.routes.ts" *ngIf="false">
+  </rz-label>
+  <rz-button #buttonNavigateToKundenDaten [style]="{}" text="NavigateTo - KundenDaten" *ngIf="false" (click)="buttonNavigateToKundenDatenClick($event)">
   </rz-button>
 </rz-content>

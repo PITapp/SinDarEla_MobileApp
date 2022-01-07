@@ -4158,10 +4158,10 @@
         }
       }
     },
-    "VwKundenUndBetreuer": {
+    "VwKundenUndBetreuerAuswahl": {
       "x-view": true,
-      "x-table": "def.vwKundenUndBetreuer",
-      "resource": "VwKundenUndBetreuers",
+      "x-table": "def.vwKundenUndBetreuerAuswahl",
+      "resource": "VwKundenUndBetreuerAuswahls",
       "required": [
         "BaseID",
         "KundenStatusID",
@@ -9707,9 +9707,9 @@
         }
       }
     },
-    "/VwKundenUndBetreuers": {
+    "/VwKundenUndBetreuerAuswahls": {
       "get": {
-        "operationId": "getVwKundenUndBetreuers",
+        "operationId": "getVwKundenUndBetreuerAuswahls",
         "parameters": [
           {
             "in": "query",
@@ -9758,7 +9758,7 @@
               "properties": {
                 "value": {
                   "items": {
-                    "$ref": "#/definitions/VwKundenUndBetreuer"
+                    "$ref": "#/definitions/VwKundenUndBetreuerAuswahl"
                   },
                   "type": "array"
                 }

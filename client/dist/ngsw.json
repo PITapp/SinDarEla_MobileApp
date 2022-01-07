@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1641196703912,
+  "timestamp": 1641569454014,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -51,7 +51,8 @@
         "/assets/images/LogoNeu6.png",
         "/assets/images/LogoOhneSchriftzug2.png",
         "/assets/images/LogoOhneSchriftzug3.png",
-        "/assets/images/LogoOhneSchriftzug4.png"
+        "/assets/images/LogoOhneSchriftzug4.png",
+        "/assets/images/Small - Logo links 10.png"
       ],
       "patterns": []
     }
@@ -71,7 +72,7 @@
   "hashTable": {
     "/assets/css/default copy 2.css": "4e75962a3dce12d0408aa95ca7f7be7878fe3f77",
     "/assets/css/default copy.css": "c60ad5d3c246e133c8ad90058272851cd8a33785",
-    "/assets/css/default.css": "698d87d4c248d643192457e9fc312388d15aad6a",
+    "/assets/css/default.css": "b24f86c5ef29dae2a0092d371fa56a7b7bea6fab",
     "/assets/fonts/MaterialIcons-Regular.woff": "bc91d406c6998d02e0806d675ea4ea2693f3208d",
     "/assets/fonts/MaterialIcons-Regular.woff2": "da997b8666bf8a967102c5089acac8d50c89ab4e",
     "/assets/fonts/SourceSansPro-Black.woff": "aa02dc9ed0ab8c2f14080db6967bfda798a1d36e",
@@ -103,8 +104,9 @@
     "/assets/images/LogoOhneSchriftzug2.png": "14f843355c4d27a205ba82c68ced35f3a225d4cf",
     "/assets/images/LogoOhneSchriftzug3.png": "a7a2ab8e6cd457d06d7f30c54300a50b6da24fab",
     "/assets/images/LogoOhneSchriftzug4.png": "832146a33ec16722f16da44be85be75a4640fdd5",
+    "/assets/images/Small - Logo links 10.png": "cdd558e313bbaa25281debe6f1795da5fcdf6d01",
     "/favicon.ico": "69746a60226316785eb46aa5bac56b2d42931d36",
-    "/index.html": "95dde45230705f900ec826f33a0af2d37d1e0884"
+    "/index.html": "081833ca1d2ec045ceefb51163d8925dd99b5845"
   },
   "navigationUrls": [
     {

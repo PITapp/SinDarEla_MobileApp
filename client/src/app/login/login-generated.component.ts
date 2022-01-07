@@ -15,6 +15,7 @@ import { LoginComponent } from '@radzen/angular/dist/login';
 
 import { ConfigService } from '../config.service';
 
+import { DbSinDarElaService } from '../db-sin-dar-ela.service';
 import { SecurityService } from '../security.service';
 
 export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
@@ -44,6 +45,8 @@ export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
 
   _subscription: Subscription;
 
+  dbSinDarEla: DbSinDarElaService;
+
   security: SecurityService;
   parameters: any;
 
@@ -71,6 +74,7 @@ export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
 
     this.httpClient = this.injector.get(HttpClient);
 
+    this.dbSinDarEla = this.injector.get(DbSinDarElaService);
     this.security = this.injector.get(SecurityService);
   }
 
@@ -100,7 +104,12 @@ export class LoginGenerated implements AfterViewInit, OnInit, OnDestroy {
   login0Login(event: any) {
     this.security.login(`${event.username}`, `${event.password}`)
     .subscribe((result: any) => {
-
+      this.dbSinDarEla.getBenutzers(`Benutzername eq '${event.username}'`, null, null, null, null, null, null, null)
+      .subscribe((result: any) => {
+        localStorage.setItem("globalBenutzerBaseID",result.value[0].BaseID);
+      }, (result: any) => {
+        localStorage.setItem("globalBenutzerBaseID","0");
+      });
     }, (result: any) => {
       this.notificationService.notify({ severity: "error", summary: ``, detail: `${result.error.message}` });
     });

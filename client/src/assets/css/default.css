@@ -12521,7 +12521,6 @@ input:focus {
 /* --- Kopfzeile in Dialogen --- */
 .ui-dialog-titlebar {
   background-color: #F1903C;
-  background-image: linear-gradient(#F1903C, #D86E13);
   color: whitesmoke;
 }
 
@@ -12641,4 +12640,11 @@ input:focus {
 /* --- Button: nachjustieren des Icons in die Mitte, weil Button kleiner gemacht wurde --- */
 .sde-button-icon-mitte .ui-button .pi {
   margin-top: -18px;
+}
+
+/* --- Dialog: Höhe auf 100% --- */
+@media (max-width: 768px) {
+  .ui-dialog:not(.ui-confirmdialog) {
+    height: 100% !important;
+  }
 }

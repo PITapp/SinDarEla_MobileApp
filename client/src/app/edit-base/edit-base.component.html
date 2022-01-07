@@ -1,0 +1,242 @@
+<rz-content #content1 container="main">
+  <div class="row">
+    <div class="col-md-12">
+      <rz-template-form #form0 (submit)="form0Submit($event)">
+        <rz-tabs #tabs0>
+          <rz-tabs-item text="Tab 1">
+          </rz-tabs-item>
+        </rz-tabs>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #anredeIdLabel component="AnredeID" [style]="{'width': '100%'}" text="Base Anreden">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-dropdown-datagrid #anredeId [count]="getBaseAnredensForAnredeIDCount" [data]="getBaseAnredensForAnredeIDResult" emptyText="No records to display." [pageSize]="getBaseAnredensForAnredeIDPageSize" placeholder="Choose BaseAnreden" searchText="Search..." [selectedValue]="getByBaseAnredensForAnredeIDResult" [style]="{'width': '100%'}" textProperty="Anrede" [(ngModel)]="base && base.AnredeID" valueProperty="AnredeID" name="AnredeID" (loadData)="AnredeIDLoadData($event)">
+            </rz-dropdown-datagrid>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #name1Label component="Name1" [style]="{'width': '100%'}" text="Name 1">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #name1 [maxLength]="100" [style]="{'display': 'block', 'width': '100%'}" [(ngModel)]="base && base.Name1" name="Name1">
+            </rz-textbox>
+            <rz-required-validator #name1RequiredValidator [component]="name1" [style]="{'position': 'absolute'}" text="Name1 is required">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #name2Label component="Name2" [style]="{'width': '100%'}" text="Name 2">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #name2 [maxLength]="30" [style]="{'width': '100%'}" [(ngModel)]="base && base.Name2" name="Name2">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #nameKuerzelLabel component="NameKuerzel" [style]="{'width': '100%'}" text="Name Kuerzel">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #nameKuerzel [maxLength]="5" [style]="{'width': '100%'}" [(ngModel)]="base && base.NameKuerzel" name="NameKuerzel">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #titelVorneLabel component="TitelVorne" [style]="{'width': '100%'}" text="Titel Vorne">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #titelVorne [maxLength]="20" [style]="{'width': '100%'}" [(ngModel)]="base && base.TitelVorne" name="TitelVorne">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #titelHintenLabel component="TitelHinten" [style]="{'width': '100%'}" text="Titel Hinten">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #titelHinten [maxLength]="20" [style]="{'width': '100%'}" [(ngModel)]="base && base.TitelHinten" name="TitelHinten">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #strasseLabel component="Strasse" [style]="{'width': '100%'}" text="Strasse">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #strasse [maxLength]="70" [style]="{'width': '100%'}" [(ngModel)]="base && base.Strasse" name="Strasse">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #plzLabel component="PLZ" [style]="{'width': '100%'}" text="Plz">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #plz [maxLength]="10" [style]="{'width': '100%'}" [(ngModel)]="base && base.PLZ" name="PLZ">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #ortLabel component="Ort" [style]="{'width': '100%'}" text="Ort">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #ort [maxLength]="100" [style]="{'width': '100%'}" [(ngModel)]="base && base.Ort" name="Ort">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #geburtsdatumLabel component="Geburtsdatum" [style]="{'width': '100%'}" text="Geburtsdatum">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-datepicker #geburtsdatum [style]="{'width': '100%'}" [(ngModel)]="base && base.Geburtsdatum" name="Geburtsdatum">
+            </rz-datepicker>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #versicherungsnummerLabel component="Versicherungsnummer" [style]="{'width': '100%'}" text="Versicherungsnummer">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #versicherungsnummer [maxLength]="15" [style]="{'width': '100%'}" [(ngModel)]="base && base.Versicherungsnummer" name="Versicherungsnummer">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #staatsangehoerigkeitLabel component="Staatsangehoerigkeit" [style]="{'width': '100%'}" text="Staatsangehoerigkeit">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #staatsangehoerigkeit [maxLength]="30" [style]="{'width': '100%'}" [(ngModel)]="base && base.Staatsangehoerigkeit" name="Staatsangehoerigkeit">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #telefon1Label component="Telefon1" [style]="{'width': '100%'}" text="Telefon 1">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #telefon1 [maxLength]="30" [style]="{'width': '100%'}" [(ngModel)]="base && base.Telefon1" name="Telefon1">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #telefon2Label component="Telefon2" [style]="{'width': '100%'}" text="Telefon 2">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #telefon2 [maxLength]="30" [style]="{'width': '100%'}" [(ngModel)]="base && base.Telefon2" name="Telefon2">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #eMail1Label component="EMail1" [style]="{'width': '100%'}" text="E Mail 1">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #eMail1 [maxLength]="70" [style]="{'width': '100%'}" [(ngModel)]="base && base.EMail1" name="EMail1">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #eMail2Label component="EMail2" [style]="{'width': '100%'}" text="E Mail 2">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #eMail2 [maxLength]="70" [style]="{'width': '100%'}" [(ngModel)]="base && base.EMail2" name="EMail2">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #webseiteLabel component="Webseite" [style]="{'width': '100%'}" text="Webseite">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #webseite [maxLength]="70" [style]="{'width': '100%'}" [(ngModel)]="base && base.Webseite" name="Webseite">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #bildUrlLabel component="BildURL" [style]="{'width': '100%'}" text="Bild Url">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #bildUrl [maxLength]="16777215" [style]="{'width': '100%'}" [(ngModel)]="base && base.BildURL" name="BildURL">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #notizLabel component="Notiz" [style]="{'width': '100%'}" text="Notiz">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #notiz [maxLength]="65535" [style]="{'width': '100%'}" [(ngModel)]="base && base.Notiz" name="Notiz">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #kontoNameLabel component="KontoName" [style]="{'width': '100%'}" text="Konto Name">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #kontoName [maxLength]="50" [style]="{'width': '100%'}" [(ngModel)]="base && base.KontoName" name="KontoName">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #kontoNummerLabel component="KontoNummer" [style]="{'width': '100%'}" text="Konto Nummer">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #kontoNummer [maxLength]="30" [style]="{'width': '100%'}" [(ngModel)]="base && base.KontoNummer" name="KontoNummer">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #kontoInfoLabel component="KontoInfo" [style]="{'width': '100%'}" text="Konto Info">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #kontoInfo [maxLength]="65535" [style]="{'width': '100%'}" [(ngModel)]="base && base.KontoInfo" name="KontoInfo">
+            </rz-textbox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col offset-sm-3">
+            <rz-button #button1 buttonStyle="primary" buttonType="submit" icon="save" text="Save">
+            </rz-button>
+            <rz-button #button2 buttonStyle="light" [style]="{'marginLeft': '1rem'}" text="Cancel" (click)="button2Click($event)">
+            </rz-button>
+          </div>
+        </div>
+      </rz-template-form>
+    </div>
+  </div>
+</rz-content>

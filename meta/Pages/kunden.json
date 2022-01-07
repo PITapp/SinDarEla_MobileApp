@@ -163,15 +163,15 @@
                   "count": "${rstKundenCount}",
                   "data": "${rstKunden}",
                   "defaultRowText": "Template for index",
-                  "emptyText": "Keine Kunden gefunden",
+                  "emptyText": "Kunden...",
                   "events": {
                     "loadData": [
                       {
-                        "name": "dbSinDarEla.getVwKundenUndBetreuers",
+                        "name": "dbSinDarEla.getVwKundenUndBetreuerAuswahls",
                         "parameters": [
                           {
                             "name": "$filter",
-                            "value": "contains(tolower(Name1),tolower('${this.textboxSuchenKunden.value || ''}')) OR contains(tolower(Name2),tolower('${this.textboxSuchenKunden.value || ''}'))"
+                            "value": "BetreuerBaseID eq ${globalBenutzerBaseID} AND (contains(tolower(Name1),tolower('${this.textboxSuchenKunden.value || ''}')) OR contains(tolower(Name2),tolower('${this.textboxSuchenKunden.value || ''}')))"
                           }
                         ],
                         "then": [
@@ -192,52 +192,86 @@
                   },
                   "name": "datalistKunden",
                   "pageSize": 20,
-                  "style": {},
+                  "style": {
+                    "border": "1px solid rgba(0, 0, 0, 0)"
+                  },
                   "template": [
                     {
+                      "attributes": [
+                        {
+                          "name": "(click)",
+                          "value": "onClickStartKundenDaten(data)"
+                        }
+                      ],
                       "components": [
                         {
-                          "class": "col-6",
+                          "class": "col-12",
                           "components": [
                             {
+                              "name": "image0",
+                              "path": "${data.BildURL}",
+                              "style": {
+                                "borderRadius": "40px",
+                                "height": "40px",
+                                "left": "25px",
+                                "position": "absolute",
+                                "top": "10px",
+                                "width": "40px"
+                              },
+                              "type": "image"
+                            },
+                            {
                               "name": "label0",
-                              "text": "${data.Name2}",
+                              "style": {
+                                "color": "rgb(33, 37, 41)",
+                                "display": "block",
+                                "fontWeight": "normal"
+                              },
+                              "text": "${data.Name1} ${data.Name2}",
                               "type": "label"
                             },
                             {
                               "name": "label1",
                               "style": {
-                                "marginLeft": "5px"
+                                "color": "#88989b",
+                                "display": "block",
+                                "fontSize": "14px",
+                                "fontWeight": "normal"
                               },
-                              "text": "${data.Name1}",
+                              "text": "${data.Ort}, ${data.Strasse}",
                               "type": "label"
+                            },
+                            {
+                              "icon": "navigate_next",
+                              "name": "icon21",
+                              "style": {
+                                "color": "#F1903C",
+                                "display": "none",
+                                "float": "none",
+                                "fontSize": "32px",
+                                "fontWeight": "normal",
+                                "position": "absolute",
+                                "right": "30px",
+                                "top": "14px"
+                              },
+                              "type": "icon"
                             }
                           ],
                           "name": "col0",
-                          "type": "col"
-                        },
-                        {
-                          "class": "col-6",
-                          "components": [
-                            {
-                              "events": {
-                                "click": [
-                                  {
-                                    "path": "kunden-daten",
-                                    "type": "navigate"
-                                  }
-                                ]
-                              },
-                              "name": "button0",
-                              "text": "",
-                              "type": "button"
-                            }
-                          ],
-                          "name": "col1",
+                          "style": {
+                            "paddingLeft": "75px",
+                            "paddingTop": "6px",
+                            "position": "relative",
+                            "verticalAlign": "baseline"
+                          },
                           "type": "col"
                         }
                       ],
                       "name": "row0",
+                      "style": {
+                        "borderBottom": "1px solid #e6ecef",
+                        "height": "60px"
+                      },
                       "type": "row"
                     }
                   ],
@@ -251,16 +285,46 @@
           ],
           "name": "row2",
           "style": {
-            "paddingTop": "42px",
+            "paddingTop": "38px",
             "position": "static"
           },
           "type": "row"
         },
         {
-          "buttonStyle": "light",
-          "name": "button2",
-          "text": "",
-          "type": "button"
+          "name": "label2",
+          "style": {
+            "backgroundColor": "#ff6d41",
+            "color": "#ffffff",
+            "marginBottom": "10px",
+            "marginTop": "20px",
+            "paddingLeft": "10px",
+            "width": "100%"
+          },
+          "text": "Diese Schaltflächen müssen da sein, damit beim Compilieren in der Navigation die Parameter erstellt werden! Sie werden auch als Funktionen genutzt, die über Click-Ereignisse aktiviert werden.\nSiehe app.routes.ts",
+          "type": "label",
+          "visible": false
+        },
+        {
+          "events": {
+            "click": [
+              {
+                "parameters": [
+                  {
+                    "name": "KundenID",
+                    "value": "0"
+                  }
+                ],
+                "path": "kunden-daten",
+                "type": "navigate"
+              }
+            ]
+          },
+          "name": "buttonNavigateToKundenDaten",
+          "style": {},
+          "text": "NavigateTo - KundenDaten",
+          "tooltip": "",
+          "type": "button",
+          "visible": false
         }
       ],
       "container": "contentContainer0",
@@ -270,8 +334,18 @@
   "events": {
     "load": [
       {
+        "name": "globalBenutzerBaseID",
+        "type": "set",
+        "value": "localStorage.getItem(\"globalBenutzerBaseID\");"
+      },
+      {
         "code": "this.datalistKunden.load();",
         "type": "execute"
+      },
+      {
+        "name": "onClickStartKundenDaten",
+        "type": "set",
+        "value": "(data) => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this.router.navigate(['kunden-daten', data.KundenID]);\n}"
       }
     ]
   },
