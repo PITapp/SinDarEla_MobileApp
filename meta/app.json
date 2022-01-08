@@ -28,7 +28,8 @@
   "namespaces": [],
   "navigation": [
     "Dashboard",
-    "Base"
+    "Base",
+    "aaKunden"
   ],
   "pages": [
     "Dashboard",
@@ -43,7 +44,10 @@
     "KundenDaten",
     "Base",
     "Add Base",
-    "Edit Base"
+    "Edit Base",
+    "aaKunden",
+    "Add aaKunden",
+    "Edit aaKunden"
   ],
   "port": 8000,
   "security": {

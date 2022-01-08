@@ -1,0 +1,344 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Base",
+                              "component": "BaseID",
+                              "name": "BaseIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getBasesResult}",
+                              "textProperty": "Name1",
+                              "valueProperty": "BaseID",
+                              "placeholder": "Choose Basis",
+                              "type": "dropdown",
+                              "name": "BaseID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "multipleItemsSelectedText": "{0} items selected",
+                              "emptyFilterText": "No results found"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "BaseIDRequiredValidator",
+                              "component": "BaseID",
+                              "text": "BaseID is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Kunden Status",
+                              "component": "KundenStatusID",
+                              "name": "KundenStatusIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getKundenStatusesResult}",
+                              "textProperty": "Status",
+                              "valueProperty": "KundenStatusID",
+                              "placeholder": "Choose KundenStatus",
+                              "type": "dropdown",
+                              "name": "KundenStatusID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "multipleItemsSelectedText": "{0} items selected",
+                              "emptyFilterText": "No results found"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "KundenStatusIDRequiredValidator",
+                              "component": "KundenStatusID",
+                              "text": "KundenStatusID is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Betreuungsbeginn",
+                              "component": "Betreuungsbeginn",
+                              "name": "BetreuungsbeginnLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "type": "datepicker",
+                              "name": "Betreuungsbeginn",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              }
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "BetreuungsbeginnRequiredValidator",
+                              "component": "Betreuungsbeginn",
+                              "text": "Betreuungsbeginn is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Vorbemerkungen",
+                              "component": "Vorbemerkungen",
+                              "name": "VorbemerkungenLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 4294967295,
+                              "type": "textbox",
+                              "name": "Vorbemerkungen",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Info",
+                              "component": "Info",
+                              "name": "InfoLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 4294967295,
+                              "type": "textbox",
+                              "name": "Info",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "back"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new Kunden!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "dbSinDarEla.createKunden",
+                        "parameters": [
+                          {
+                            "name": "Kunden",
+                            "value": "${event}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "back"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "dbSinDarEla.getBases",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getBasesResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "dbSinDarEla.getKundenStatuses",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getKundenStatusesResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Add Aa Kunden",
+  "access": [
+    "Authenticated"
+  ],
+  "layout": "Main"
+}

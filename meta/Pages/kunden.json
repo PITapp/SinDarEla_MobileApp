@@ -302,7 +302,7 @@
       {
         "name": "onClickStartKundenDaten",
         "type": "set",
-        "value": "(data) => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this.router.navigate(['kunden-daten', data.KundenID]);\n}"
+        "value": "(data) => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    localStorage.setItem(\"globalKundenName\", data.NameGesamt);\n    this.router.navigate(['kunden-daten', data.KundenID]);\n}"
       }
     ]
   },

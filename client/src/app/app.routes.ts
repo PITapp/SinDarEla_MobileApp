@@ -19,6 +19,9 @@ import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
 import { BaseComponent } from './base/base.component';
 import { AddBaseComponent } from './add-base/add-base.component';
 import { EditBaseComponent } from './edit-base/edit-base.component';
+import { AaKundenComponent } from './aa-kunden/aa-kunden.component';
+import { AddAaKundenComponent } from './add-aa-kunden/add-aa-kunden.component';
+import { EditAaKundenComponent } from './edit-aa-kunden/edit-aa-kunden.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -98,6 +101,30 @@ export const routes: Routes = [
           roles: ['Authenticated'],
         },
         component: EditBaseComponent
+      },
+      {
+        path: 'aa-kunden',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: AaKundenComponent
+      },
+      {
+        path: 'add-aa-kunden',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: AddAaKundenComponent
+      },
+      {
+        path: 'edit-aa-kunden/:KundenID',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: EditAaKundenComponent
       },
     ]
   },

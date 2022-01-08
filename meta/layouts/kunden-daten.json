@@ -37,7 +37,7 @@
                     "marginLeft": "15px",
                     "marginTop": "5px"
                   },
-                  "text": "Mareike Painsi",
+                  "text": "${globalKundenName}",
                   "type": "label"
                 }
               ],
@@ -116,6 +116,11 @@
   ],
   "events": {
     "load": [
+      {
+        "name": "globalKundenName",
+        "type": "set",
+        "value": "localStorage.getItem(\"globalKundenName\");"
+      },
       {
         "name": "onClickNavigateBack",
         "type": "set",

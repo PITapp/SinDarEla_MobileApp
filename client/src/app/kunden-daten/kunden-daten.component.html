@@ -3,24 +3,30 @@
     <rz-tabs-item [selected]="true" text="Daten">
       <div class="row">
         <div class="col-md-12">
-          <rz-button #button0 text="öffnen..." (click)="button0Click($event)">
-          </rz-button>
-          <rz-panel #panel0 [allowCollapse]="true" text="KundenID: {{parameters?.KundenID}}">
-            <rz-panel-footer>
-              <rz-button #button1>
-              </rz-button>
-            </rz-panel-footer>
+          <rz-panel #panel0 [allowCollapse]="true" text="Adresse">
+          </rz-panel>
+          <rz-panel #panel4 [allowCollapse]="true" text="Betreuung">
+          </rz-panel>
+          <rz-panel #panel3 [allowCollapse]="true" text="Kontaktpersonen">
+          </rz-panel>
+          <rz-panel #panel2 [allowCollapse]="true" text="Betreuer">
+            <rz-datalist #datalistKundenBetreuer [allowPaging]="false" [count]="rstKundenBetreuerCount" [data]="rstKundenBetreuer" defaultRowText="Template for index" emptyText="..." [pageSize]="20" [style]="{'border': '1px solid rgba(0, 0, 0, 0)'}" [wrapItems]="false" (loadData)="datalistKundenBetreuerLoadData($event)">
+              <ng-template let-data datalistTemplate>
+                <div [ngStyle]="{'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickStartKundenDaten(data)">
+                  <div class="col-12" [ngStyle]="{'borderBottom': '1px dotted #e6ecef', 'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
+                    <rz-label #label0 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'fontWeight': 'normal'}" [text]="data?.NameGesamtBetreuer">
+                    </rz-label>
+                    <rz-label #label1 [style]="{'color': '#88989b', 'display': 'block', 'fontSize': '14px', 'fontWeight': 'normal'}" text="{{data?.Leistungsart}}, {{data?.Betreuungsart}}">
+                    </rz-label>
+                  </div>
+                </div>
+              </ng-template>
+            </rz-datalist>
+          </rz-panel>
+          <rz-panel #panel1 [allowCollapse]="true" text="Notizen">
           </rz-panel>
         </div>
       </div>
-      <rz-accordion #accordion0 [multiple]="true">
-        <rz-accordion-item [selected]="true" text="1111111">
-        </rz-accordion-item>
-        <rz-accordion-item [selected]="true" text="222222222">
-        </rz-accordion-item>
-        <rz-accordion-item [selected]="true" text="3333333333">
-        </rz-accordion-item>
-      </rz-accordion>
     </rz-tabs-item>
     <rz-tabs-item [selected]="false" text="Leistungen">
     </rz-tabs-item>

@@ -15,31 +15,135 @@
                       "class": "col-md-12",
                       "components": [
                         {
-                          "events": {
-                            "click": [
-                              {
-                                "height": 2000,
-                                "path": "add-base",
-                                "title": "test base",
-                                "type": "popup"
-                              }
-                            ]
-                          },
-                          "name": "button0",
-                          "text": "öffnen...",
-                          "type": "button"
+                          "allowCollapse": true,
+                          "components": [],
+                          "footerTemplate": [],
+                          "name": "panel0",
+                          "text": "Adresse",
+                          "type": "panel"
                         },
                         {
                           "allowCollapse": true,
-                          "footerTemplate": [
+                          "footerTemplate": [],
+                          "name": "panel4",
+                          "text": "Betreuung",
+                          "type": "panel"
+                        },
+                        {
+                          "allowCollapse": true,
+                          "footerTemplate": [],
+                          "name": "panel3",
+                          "text": "Kontaktpersonen",
+                          "type": "panel"
+                        },
+                        {
+                          "allowCollapse": true,
+                          "components": [
                             {
-                              "name": "button1",
-                              "text": "",
-                              "type": "button"
+                              "allowPaging": false,
+                              "count": "${rstKundenBetreuerCount}",
+                              "data": "${rstKundenBetreuer}",
+                              "defaultRowText": "Template for index",
+                              "emptyText": "...",
+                              "events": {
+                                "loadData": [
+                                  {
+                                    "name": "dbSinDarEla.getVwKundenBetreuers",
+                                    "parameters": [
+                                      {
+                                        "name": "$filter",
+                                        "value": "KundenID eq ${parameters.KundenID}"
+                                      }
+                                    ],
+                                    "then": [
+                                      {
+                                        "name": "rstKundenBetreuer",
+                                        "type": "set",
+                                        "value": "${result.value}"
+                                      },
+                                      {
+                                        "name": "rstKundenBetreuerCount",
+                                        "type": "set",
+                                        "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                                      }
+                                    ],
+                                    "type": "invoke"
+                                  }
+                                ]
+                              },
+                              "name": "datalistKundenBetreuer",
+                              "pageSize": 20,
+                              "style": {
+                                "border": "1px solid rgba(0, 0, 0, 0)"
+                              },
+                              "template": [
+                                {
+                                  "attributes": [
+                                    {
+                                      "name": "(click)",
+                                      "value": "onClickStartKundenDaten(data)"
+                                    }
+                                  ],
+                                  "components": [
+                                    {
+                                      "class": "col-12",
+                                      "components": [
+                                        {
+                                          "name": "label0",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.NameGesamtBetreuer}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "name": "label1",
+                                          "style": {
+                                            "color": "#88989b",
+                                            "display": "block",
+                                            "fontSize": "14px",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Leistungsart}, ${data.Betreuungsart}",
+                                          "type": "label"
+                                        }
+                                      ],
+                                      "name": "col0",
+                                      "style": {
+                                        "borderBottom": "1px dotted #e6ecef",
+                                        "paddingLeft": "0",
+                                        "paddingRight": "0",
+                                        "position": "relative",
+                                        "verticalAlign": "baseline"
+                                      },
+                                      "type": "col"
+                                    }
+                                  ],
+                                  "name": "row0",
+                                  "style": {
+                                    "marginLeft": "0",
+                                    "marginRight": "0"
+                                  },
+                                  "type": "row"
+                                }
+                              ],
+                              "type": "datalist",
+                              "wrapItems": false
                             }
                           ],
-                          "name": "panel0",
-                          "text": "KundenID: ${parameters.KundenID}",
+                          "footerTemplate": [],
+                          "name": "panel2",
+                          "text": "Betreuer",
+                          "type": "panel"
+                        },
+                        {
+                          "allowCollapse": true,
+                          "footerTemplate": [],
+                          "icon": "",
+                          "name": "panel1",
+                          "text": "Notizen",
                           "type": "panel"
                         }
                       ],
@@ -49,25 +153,6 @@
                   ],
                   "name": "row0",
                   "type": "row"
-                },
-                {
-                  "items": [
-                    {
-                      "selected": true,
-                      "text": "1111111"
-                    },
-                    {
-                      "selected": true,
-                      "text": "222222222"
-                    },
-                    {
-                      "selected": true,
-                      "text": "3333333333"
-                    }
-                  ],
-                  "multiple": true,
-                  "name": "accordion0",
-                  "type": "accordion"
                 }
               ],
               "selected": true,
@@ -115,7 +200,12 @@
     }
   ],
   "events": {
-    "load": []
+    "load": [
+      {
+        "code": "this.datalistKundenBetreuer.load();",
+        "type": "execute"
+      }
+    ]
   },
   "layout": "KundenDaten",
   "name": "KundenDaten"

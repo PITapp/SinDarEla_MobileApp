@@ -4158,6 +4158,39 @@
         }
       }
     },
+    "VwKundenBetreuer": {
+      "x-view": true,
+      "x-table": "def.vwKundenBetreuer",
+      "resource": "VwKundenBetreuers",
+      "required": [
+        "Betreuungsart",
+        "Leistungsart"
+      ],
+      "properties": {
+        "KundenID": {
+          "x-default-sql": "0",
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "NameGesamtBetreuer": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        },
+        "Betreuungsart": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 45,
+          "x-key": true,
+          "x-virtual": true
+        },
+        "Leistungsart": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 70
+        }
+      }
+    },
     "VwKundenUndBetreuerAuswahl": {
       "x-view": true,
       "x-table": "def.vwKundenUndBetreuerAuswahl",
@@ -9692,6 +9725,73 @@
                 "value": {
                   "items": {
                     "$ref": "#/definitions/VwBenutzerRollen"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VwKundenBetreuers": {
+      "get": {
+        "operationId": "getVwKundenBetreuers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/VwKundenBetreuer"
                   },
                   "type": "array"
                 }

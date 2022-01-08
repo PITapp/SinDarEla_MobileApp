@@ -27,13 +27,13 @@ import { TabsModule } from '@radzen/angular/dist/tabs';
 import { TextBoxModule } from '@radzen/angular/dist/textbox';
 import { DataListModule } from '@radzen/angular/dist/datalist';
 import { PanelModule } from '@radzen/angular/dist/panel';
-import { AccordionModule } from '@radzen/angular/dist/accordion';
 import { DatePickerModule } from '@radzen/angular/dist/datepicker';
 import { SchedulerModule } from '@radzen/angular/dist/scheduler';
 import { GridModule } from '@radzen/angular/dist/grid';
 import { TemplateFormModule } from '@radzen/angular/dist/template-form';
 import { DropDownDataGridModule } from '@radzen/angular/dist/dropdown-datagrid';
 import { RequiredValidatorModule } from '@radzen/angular/dist/required-validator';
+import { DropDownModule } from '@radzen/angular/dist/dropdown';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -56,6 +56,9 @@ import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
 import { BaseComponent } from './base/base.component';
 import { AddBaseComponent } from './add-base/add-base.component';
 import { EditBaseComponent } from './edit-base/edit-base.component';
+import { AaKundenComponent } from './aa-kunden/aa-kunden.component';
+import { AddAaKundenComponent } from './add-aa-kunden/add-aa-kunden.component';
+import { EditAaKundenComponent } from './edit-aa-kunden/edit-aa-kunden.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { KundenDatenLayoutComponent } from './kunden-daten-layout/kunden-daten-layout.component';
@@ -81,6 +84,9 @@ export const PageDeclarations = [
   BaseComponent,
   AddBaseComponent,
   EditBaseComponent,
+  AaKundenComponent,
+  AddAaKundenComponent,
+  EditAaKundenComponent,
 ];
 
 export const LayoutDeclarations = [
@@ -146,13 +152,13 @@ export const AppImports = [
   TextBoxModule,
   DataListModule,
   PanelModule,
-  AccordionModule,
   DatePickerModule,
   SchedulerModule,
   GridModule,
   TemplateFormModule,
   DropDownDataGridModule,
   RequiredValidatorModule,
+  DropDownModule,
   SharedModule,
   NotificationModule,
   DialogModule,

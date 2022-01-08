@@ -437,6 +437,10 @@ namespace SinDarElaMobile.Data
                   .Property(p => p.BenutzerID)
                   .HasDefaultValueSql("0");
 
+            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwKundenBetreuer>()
+                  .Property(p => p.KundenID)
+                  .HasDefaultValueSql("0");
+
             builder.Entity<SinDarElaMobile.Models.DbSinDarEla.VwKundenUndBetreuerAuswahl>()
                   .Property(p => p.KundenID)
                   .HasDefaultValueSql("0");
@@ -788,6 +792,12 @@ namespace SinDarElaMobile.Data
         }
 
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.VwBenutzerRollen> VwBenutzerRollens
+        {
+          get;
+          set;
+        }
+
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.VwKundenBetreuer> VwKundenBetreuers
         {
           get;
           set;

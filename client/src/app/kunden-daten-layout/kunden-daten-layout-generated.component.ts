@@ -52,6 +52,7 @@ export class KundenDatenLayoutGenerated implements AfterViewInit, OnInit, OnDest
   _subscription: Subscription;
 
   security: SecurityService;
+  globalKundenName: any;
   onClickNavigateBack: any;
   onClickStartDashboard: any;
   parameters: any;
@@ -103,6 +104,8 @@ export class KundenDatenLayoutGenerated implements AfterViewInit, OnInit, OnDest
 
 
   load() {
+    this.globalKundenName = localStorage.getItem("globalKundenName");;
+
     this.onClickNavigateBack = () => {
     if (this.dialogRef) {
       this.dialogRef.close();
