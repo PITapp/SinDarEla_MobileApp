@@ -1,31 +1,31 @@
 <rz-content #content1 container="contentContainer0">
-  <div [ngStyle]="{'backgroundColor': '#ffc16b', 'borderBottom': '1px dotted #f1903c', 'height': '38px', 'marginBottom': '0', 'marginLeft': '0', 'marginRight': '0', 'marginTop': '0', 'position': 'fixed', 'width': '100%', 'zIndex': '999'}" class="row">
-    <div class="col-8" [ngStyle]="{'paddingLeft': '10px', 'paddingRight': '10px', 'paddingTop': '6px', 'position': 'static'}">
-      <rz-textbox #textboxSuchenKunden placeholder="Suchen" [style]="{'backgroundColor': '#f5f5f5', 'float': 'left', 'height': '25px', 'width': '100%'}" name="textboxSuchenKunden" (input)="this.datalistKunden.load();">
+  <div [ngStyle]="{'backgroundColor': '#ffc16b', 'borderBottom': '1px dotted #f1903c', 'marginBottom': '0', 'marginLeft': '0', 'marginRight': '0', 'marginTop': '0', 'position': 'fixed', 'width': '100%', 'zIndex': '999'}" class="row">
+    <div class="col-8" [ngStyle]="{'paddingBottom': '10px', 'paddingLeft': '10px', 'paddingRight': '10px', 'paddingTop': '10px', 'position': 'static'}">
+      <rz-textbox #textboxSuchenKunden placeholder="Suchen" [style]="{'backgroundColor': '#f5f5f5', 'float': 'left', 'fontWeight': 'normal', 'width': '100%'}" name="textboxSuchenKunden" (input)="this.datalistKunden.load();">
       </rz-textbox>
     </div>
-    <div class="col-2" [ngStyle]="{'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '10px', 'paddingTop': '6px', 'position': 'static'}">
-      <rz-button #buttonSuchenLoeschen buttonStyle="light" buttonType="button" icon="clear" size="md" [style]="{'backgroundColor': '#b96205', 'color': '#f5f5f5', 'fontSize': '28px', 'fontWeight': 'normal', 'height': '25px', 'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '0', 'paddingTop': '0', 'textAlign': 'center', 'verticalAlign': 'baseline', 'width': '100%'}" (click)="buttonSuchenLoeschenClick($event)" class="sde-button-icon-mitte">
+    <div class="col-2" [ngStyle]="{'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '10px', 'paddingTop': '10px', 'position': 'static'}">
+      <rz-button #buttonSuchenLoeschen icon="clear" [style]="{'color': '#f5f5f5', 'width': '100%'}" (click)="buttonSuchenLoeschenClick($event)">
       </rz-button>
     </div>
-    <div class="col-2" [ngStyle]="{'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '10px', 'paddingTop': '6px', 'position': 'static'}">
-      <rz-button #buttonSuchenTastatur buttonStyle="light" buttonType="button" icon="keyboard_hide" size="md" [style]="{'backgroundColor': '#b96205', 'color': '#f5f5f5', 'fontSize': '28px', 'fontWeight': 'normal', 'height': '25px', 'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '0', 'paddingTop': '0', 'textAlign': 'center', 'verticalAlign': 'baseline', 'width': '100%'}" class="sde-button-icon-mitte">
+    <div class="col-2" [ngStyle]="{'paddingBottom': '0', 'paddingLeft': '0', 'paddingRight': '10px', 'paddingTop': '10px', 'position': 'static'}">
+      <rz-button #buttonSuchenTastatur icon="keyboard_hide" [style]="{'color': '#f5f5f5', 'width': '100%'}">
       </rz-button>
     </div>
   </div>
-  <div [ngStyle]="{'paddingTop': '38px', 'position': 'static'}" class="row">
+  <div [ngStyle]="{'paddingTop': '55px', 'position': 'static'}" class="row">
     <div class="col-md-12">
-      <rz-datalist #datalistKunden [allowPaging]="false" [count]="rstKundenCount" [data]="rstKunden" defaultRowText="Template for index" emptyText="Kunden..." [pageSize]="20" [style]="{'border': '1px solid rgba(0, 0, 0, 0)'}" [wrapItems]="false" (loadData)="datalistKundenLoadData($event)">
+      <rz-datalist #datalistKunden [allowPaging]="false" [count]="rstKundenCount" [data]="rstKunden" defaultRowText="Template for index" emptyText="..." [pageSize]="20" [style]="{'border': '1px solid rgba(0, 0, 0, 0)'}" [wrapItems]="false" (loadData)="datalistKundenLoadData($event)">
         <ng-template let-data datalistTemplate>
-          <div [ngStyle]="{'borderBottom': '1px solid #e6ecef', 'height': '60px'}" class="row" (click)="onClickStartKundenDaten(data)">
-            <div class="col-12" [ngStyle]="{'paddingLeft': '75px', 'paddingTop': '6px', 'position': 'relative', 'verticalAlign': 'baseline'}">
-              <rz-image #image0 [path]="data?.BildURL" [style]="{'borderRadius': '40px', 'height': '40px', 'left': '25px', 'position': 'absolute', 'top': '10px', 'width': '40px'}">
+          <div [ngStyle]="{'borderBottom': '1px solid #e6ecef', 'height': '70px'}" class="row" (click)="onClickStartKundenDaten(data)">
+            <div class="col-12" [ngStyle]="{'paddingLeft': '80px', 'paddingTop': '11px', 'position': 'relative', 'verticalAlign': 'baseline'}">
+              <rz-image #image0 [path]="data?.BildURL" [style]="{'borderRadius': '40px', 'height': '40px', 'left': '25px', 'position': 'absolute', 'top': '15px', 'width': '40px'}">
               </rz-image>
               <rz-label #label0 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'fontWeight': 'normal'}" text="{{data?.Name1}} {{data?.Name2}}">
               </rz-label>
               <rz-label #label1 [style]="{'color': '#88989b', 'display': 'block', 'fontSize': '14px', 'fontWeight': 'normal'}" text="{{data?.Ort}}, {{data?.Strasse}}">
               </rz-label>
-              <rz-icon #icon21 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '14px'}">
+              <rz-icon #icon21 icon="navigate_next" [style]="{'color': '#F1903C', 'display': 'none', 'float': 'none', 'fontSize': '32px', 'fontWeight': 'normal', 'position': 'absolute', 'right': '30px', 'top': '19px'}">
               </rz-icon>
             </div>
           </div>
@@ -33,7 +33,7 @@
       </rz-datalist>
     </div>
   </div>
-  <rz-label #label2 [style]="{'backgroundColor': '#ff6d41', 'color': '#ffffff', 'marginBottom': '10px', 'marginTop': '20px', 'paddingLeft': '10px', 'width': '100%'}" text="Diese Schaltflächen müssen da sein, damit beim Compilieren in der Navigation die Parameter erstellt werden! Sie werden auch als Funktionen genutzt, die über Click-Ereignisse aktiviert werden.
+  <rz-label #label2 [style]="{'backgroundColor': '#479cc8', 'color': '#ffffff', 'marginBottom': '10px', 'marginTop': '20px', 'paddingLeft': '10px', 'width': '100%'}" text="Diese Schaltflächen müssen da sein, damit beim Compilieren in der Navigation die Parameter erstellt werden! Sie werden auch als Funktionen genutzt, die über Click-Ereignisse aktiviert werden.
   Siehe app.routes.ts" *ngIf="false">
   </rz-label>
   <rz-button #buttonNavigateToKundenDaten [style]="{}" text="NavigateTo - KundenDaten" *ngIf="false" (click)="buttonNavigateToKundenDatenClick($event)">

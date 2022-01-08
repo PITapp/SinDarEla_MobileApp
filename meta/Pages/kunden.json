@@ -22,7 +22,7 @@
                   "style": {
                     "backgroundColor": "#f5f5f5",
                     "float": "left",
-                    "height": "25px",
+                    "fontWeight": "normal",
                     "width": "100%"
                   },
                   "type": "textbox",
@@ -31,9 +31,10 @@
               ],
               "name": "col2",
               "style": {
+                "paddingBottom": "10px",
                 "paddingLeft": "10px",
                 "paddingRight": "10px",
-                "paddingTop": "6px",
+                "paddingTop": "10px",
                 "position": "static"
               },
               "type": "col"
@@ -42,14 +43,6 @@
               "class": "col-2",
               "components": [
                 {
-                  "attributes": [
-                    {
-                      "name": "class",
-                      "value": "sde-button-icon-mitte"
-                    }
-                  ],
-                  "buttonStyle": "light",
-                  "buttonType": "button",
                   "events": {
                     "click": [
                       {
@@ -60,23 +53,11 @@
                   },
                   "icon": "clear",
                   "name": "buttonSuchenLoeschen",
-                  "size": "md",
                   "style": {
-                    "backgroundColor": "#b96205",
                     "color": "#f5f5f5",
-                    "fontSize": "28px",
-                    "fontWeight": "normal",
-                    "height": "25px",
-                    "paddingBottom": "0",
-                    "paddingLeft": "0",
-                    "paddingRight": "0",
-                    "paddingTop": "0",
-                    "textAlign": "center",
-                    "verticalAlign": "baseline",
                     "width": "100%"
                   },
                   "text": "",
-                  "tooltip": "",
                   "type": "button"
                 }
               ],
@@ -85,7 +66,7 @@
                 "paddingBottom": "0",
                 "paddingLeft": "0",
                 "paddingRight": "10px",
-                "paddingTop": "6px",
+                "paddingTop": "10px",
                 "position": "static"
               },
               "type": "col"
@@ -94,36 +75,13 @@
               "class": "col-2",
               "components": [
                 {
-                  "attributes": [
-                    {
-                      "name": "class",
-                      "value": "sde-button-icon-mitte"
-                    }
-                  ],
-                  "buttonStyle": "light",
-                  "buttonType": "button",
-                  "events": {
-                    "click": []
-                  },
                   "icon": "keyboard_hide",
                   "name": "buttonSuchenTastatur",
-                  "size": "md",
                   "style": {
-                    "backgroundColor": "#b96205",
                     "color": "#f5f5f5",
-                    "fontSize": "28px",
-                    "fontWeight": "normal",
-                    "height": "25px",
-                    "paddingBottom": "0",
-                    "paddingLeft": "0",
-                    "paddingRight": "0",
-                    "paddingTop": "0",
-                    "textAlign": "center",
-                    "verticalAlign": "baseline",
                     "width": "100%"
                   },
                   "text": "",
-                  "tooltip": "",
                   "type": "button"
                 }
               ],
@@ -132,7 +90,7 @@
                 "paddingBottom": "0",
                 "paddingLeft": "0",
                 "paddingRight": "10px",
-                "paddingTop": "6px",
+                "paddingTop": "10px",
                 "position": "static"
               },
               "type": "col"
@@ -142,7 +100,6 @@
           "style": {
             "backgroundColor": "#ffc16b",
             "borderBottom": "1px dotted #f1903c",
-            "height": "38px",
             "marginBottom": "0",
             "marginLeft": "0",
             "marginRight": "0",
@@ -163,7 +120,7 @@
                   "count": "${rstKundenCount}",
                   "data": "${rstKunden}",
                   "defaultRowText": "Template for index",
-                  "emptyText": "Kunden...",
+                  "emptyText": "...",
                   "events": {
                     "loadData": [
                       {
@@ -215,7 +172,7 @@
                                 "height": "40px",
                                 "left": "25px",
                                 "position": "absolute",
-                                "top": "10px",
+                                "top": "15px",
                                 "width": "40px"
                               },
                               "type": "image"
@@ -252,15 +209,15 @@
                                 "fontWeight": "normal",
                                 "position": "absolute",
                                 "right": "30px",
-                                "top": "14px"
+                                "top": "19px"
                               },
                               "type": "icon"
                             }
                           ],
                           "name": "col0",
                           "style": {
-                            "paddingLeft": "75px",
-                            "paddingTop": "6px",
+                            "paddingLeft": "80px",
+                            "paddingTop": "11px",
                             "position": "relative",
                             "verticalAlign": "baseline"
                           },
@@ -270,7 +227,7 @@
                       "name": "row0",
                       "style": {
                         "borderBottom": "1px solid #e6ecef",
-                        "height": "60px"
+                        "height": "70px"
                       },
                       "type": "row"
                     }
@@ -285,7 +242,7 @@
           ],
           "name": "row2",
           "style": {
-            "paddingTop": "38px",
+            "paddingTop": "55px",
             "position": "static"
           },
           "type": "row"
@@ -293,7 +250,7 @@
         {
           "name": "label2",
           "style": {
-            "backgroundColor": "#ff6d41",
+            "backgroundColor": "#479cc8",
             "color": "#ffffff",
             "marginBottom": "10px",
             "marginTop": "20px",

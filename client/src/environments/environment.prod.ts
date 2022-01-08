@@ -1,7 +1,7 @@
 export const environment = {
-  serverMethodsUrl: '/',
-  dbSinDarEla: '/odata/dbSinDarEla',
+  serverMethodsUrl: 'http://localhost:5000/',
+  dbSinDarEla: 'http://localhost:5000/odata/dbSinDarEla',
 
-  securityUrl: '/auth',
+  securityUrl: 'http://localhost:5000/auth',
   production: true
 };
