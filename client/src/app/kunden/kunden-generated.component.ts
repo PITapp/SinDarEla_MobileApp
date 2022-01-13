@@ -112,6 +112,8 @@ export class KundenGenerated implements AfterViewInit, OnInit, OnDestroy {
 
 
   load() {
+    window.scrollTo(0, 0);
+
     this.globalBenutzerBaseID = localStorage.getItem("globalBenutzerBaseID");;
 
     this.datalistKunden.load();
@@ -121,7 +123,7 @@ export class KundenGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.dialogRef.close();
     }
     localStorage.setItem("globalKundenName", data.NameGesamt);
-    this.router.navigate(['kunden-daten', data.KundenID]);
+    this.router.navigate(['kunden-daten', data.KundenID, this.globalBenutzerBaseID]);
 };
   }
 
@@ -145,6 +147,6 @@ this.datalistKunden.load();
     if (this.dialogRef) {
       this.dialogRef.close();
     }
-    this.router.navigate(['kunden-daten', 0]);
+    this.router.navigate(['kunden-daten', 0, 0]);
   }
 }

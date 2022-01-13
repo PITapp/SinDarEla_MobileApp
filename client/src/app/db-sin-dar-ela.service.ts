@@ -422,7 +422,7 @@ export class DbSinDarElaService {
   }
 
   createKundenKontakte(expand: string | null, kundenKontakte: models.KundenKontakte | null) : Observable<any> {
-    return this.odata.post(`/KundenKontaktes`, kundenKontakte, { expand }, ['Base', 'Kunden', 'KundenKontakteArten']);
+    return this.odata.post(`/KundenKontaktes`, kundenKontakte, { expand }, ['Kunden', 'KundenKontakteArten']);
   }
 
   deleteKundenKontakte(kundenKontaktId: number | null) : Observable<any> {
@@ -434,7 +434,7 @@ export class DbSinDarElaService {
   }
 
   updateKundenKontakte(expand: string | null, kundenKontaktId: number | null, kundenKontakte: models.KundenKontakte | null) : Observable<any> {
-    return this.odata.patch(`/KundenKontaktes(${kundenKontaktId})`, kundenKontakte, item => item.KundenKontaktID == kundenKontaktId, { expand }, ['Base','Kunden','KundenKontakteArten']);
+    return this.odata.patch(`/KundenKontaktes(${kundenKontaktId})`, kundenKontakte, item => item.KundenKontaktID == kundenKontaktId, { expand }, ['Kunden','KundenKontakteArten']);
   }
 
   getKundenKontakteArtens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {

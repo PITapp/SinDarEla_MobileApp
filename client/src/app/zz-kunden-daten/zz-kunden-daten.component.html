@@ -1,0 +1,124 @@
+<rz-content #content1 container="contentContainer0">
+  <rz-tabs #tabs0>
+    <rz-tabs-item [selected]="true" text="Daten">
+      <div class="row">
+        <div class="col-md-12">
+          <rz-label #label15 [style]="{'width': '100%'}" text="Das ist eine Animation beim Clicken" ID="labelQualm" (click)="onClickAnimation('labelQualm')">
+          </rz-label>
+          <rz-panel #panel0 [allowCollapse]="true" text="Details">
+            <div [ngStyle]="{'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickBearbeitenNotiz(dsoKundenBetreuerBase)">
+              <div class="col-12" [ngStyle]="{'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
+                <rz-label #label8 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'left', 'fontWeight': 'normal'}" [text]="dsoKundenBetreuerBase?.NameGesamt">
+                </rz-label>
+                <rz-label #label10 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'right', 'fontSize': '14px', 'fontWeight': 'normal'}" text="{{dsoKundenBetreuerBase?.Geburtsdatum | utcDate:'dd.MM.yyyy'}} ({{intAlterKunde}})">
+                </rz-label>
+              </div>
+            </div>
+            <div [ngStyle]="{'marginBottom': '10px', 'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickBearbeitenNotiz(dsoKundenBetreuerBase)">
+              <div class="col-12" [ngStyle]="{'borderBottom': '1px dotted #e6ecef', 'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
+                <rz-label #label11 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="dsoKundenBetreuerBase?.Adresse">
+                </rz-label>
+                <rz-label #label12 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="dsoKundenBetreuerBase?.Telefon">
+                </rz-label>
+                <rz-label #label13 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="dsoKundenBetreuerBase?.EMail">
+                </rz-label>
+                <rz-label #label14 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="dsoKundenBetreuerBase?.Info">
+                </rz-label>
+              </div>
+            </div>
+          </rz-panel>
+          <rz-panel #panel4 [allowCollapse]="true" text="Betreuung">
+          </rz-panel>
+          <rz-panel #panel3 [allowCollapse]="true" text="Kontakte">
+            <rz-datalist #datalistKundenKontakte [allowPaging]="false" [count]="rstKundenKontakteCount" [data]="rstKundenKontakte" defaultRowText="Template for index" emptyText="..." [pageSize]="20" [style]="{'border': '1px solid rgba(0, 0, 0, 0)'}" [wrapItems]="false" (loadData)="datalistKundenKontakteLoadData($event)">
+              <ng-template let-data datalistTemplate>
+                <div [ngStyle]="{'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickBearbeitenNotiz(data)">
+                  <div class="col-12" [ngStyle]="{'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
+                    <rz-label #label0 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'left', 'fontWeight': 'normal'}" [text]="data?.Name">
+                    </rz-label>
+                    <rz-label #label2 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'right', 'fontSize': '14px', 'fontWeight': 'normal'}" text="{{data?.KundenKontakteArten?.Bezeichnung}}{{((data?.Hauptansprechpartner == true) ? (' · Hauptkontakt') : (''))}}">
+                    </rz-label>
+                  </div>
+                </div>
+                <div [ngStyle]="{'marginBottom': '10px', 'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickBearbeitenNotiz(data)">
+                  <div class="col-12" [ngStyle]="{'borderBottom': '1px dotted #e6ecef', 'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
+                    <rz-label #label6 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="data?.Adresse">
+                    </rz-label>
+                    <rz-label #label5 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="data?.Telefon">
+                    </rz-label>
+                    <rz-label #label4 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="data?.EMail">
+                    </rz-label>
+                    <rz-label #label7 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="data?.Info">
+                    </rz-label>
+                  </div>
+                </div>
+              </ng-template>
+            </rz-datalist>
+            <rz-panel-footer>
+              <div [ngStyle]="{'paddingLeft': '25px', 'paddingRight': '25px'}" class="row">
+                <div class="col-md-12" [ngStyle]="{'borderBottom': '1px dotted #e6ecef', 'paddingBottom': '11px', 'paddingLeft': '0', 'paddingRight': '0', 'paddingTop': '0'}">
+                  <rz-button #button1 icon="add" size="sm" [style]="{'float': 'right'}" text="Neuer Kontakt">
+                  </rz-button>
+                </div>
+              </div>
+            </rz-panel-footer>
+          </rz-panel>
+          <rz-panel #panel2 [allowCollapse]="true" text="Betreuer">
+            <rz-datalist #datalistKundenBetreuer [allowPaging]="false" [count]="rstKundenBetreuerCount" [data]="rstKundenBetreuer" defaultRowText="Template for index" emptyText="..." [pageSize]="20" [style]="{'border': '1px solid rgba(0, 0, 0, 0)'}" [wrapItems]="false" (loadData)="datalistKundenBetreuerLoadData($event)">
+              <ng-template let-data datalistTemplate>
+                <div [ngStyle]="{'marginBottom': '5px', 'marginLeft': '0', 'marginRight': '0'}" class="row">
+                  <div class="col-12" [ngStyle]="{'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
+                    <rz-label #label0 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'left', 'fontWeight': 'normal'}" [text]="data?.NameGesamtBetreuer">
+                    </rz-label>
+                    <rz-label #label1 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'right', 'fontSize': '14px', 'fontWeight': 'normal'}" [text]="data?.Betreuungsart">
+                    </rz-label>
+                  </div>
+                  <div class="col-12" [ngStyle]="{'borderBottom': '1px dotted #e6ecef', 'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
+                    <rz-label #label9 [style]="{'color': '#88989b', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontWeight': 'normal'}" [text]="data?.Leistungsart">
+                    </rz-label>
+                  </div>
+                </div>
+              </ng-template>
+            </rz-datalist>
+          </rz-panel>
+          <rz-panel #panel1 [allowCollapse]="true" text="Notizen">
+            <rz-datalist #datalistKundenNotizen [allowPaging]="false" [count]="rstKundenNotizenCount" [data]="rstKundenNotizen" defaultRowText="Template for index" emptyText="..." [pageSize]="20" [style]="{'border': '1px solid rgba(0, 0, 0, 0)'}" [wrapItems]="false" (loadData)="datalistKundenNotizenLoadData($event)">
+              <ng-template let-data datalistTemplate>
+                <div [ngStyle]="{'marginBottom': '10px', 'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickBearbeitenNotiz(data)">
+                  <div class="col-12" [ngStyle]="{'borderBottom': '1px dotted #e6ecef', 'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
+                    <rz-label #label0 [style]="{'color': '#F1903C', 'display': 'block', 'float': 'none', 'fontSize': '14px', 'fontWeight': 'normal'}" [text]="data?.Titel">
+                    </rz-label>
+                    <rz-label #label3 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="data?.Notiz">
+                    </rz-label>
+                  </div>
+                </div>
+              </ng-template>
+            </rz-datalist>
+            <rz-panel-footer>
+              <div [ngStyle]="{'paddingLeft': '25px', 'paddingRight': '25px'}" class="row">
+                <div class="col-md-12" [ngStyle]="{'borderBottom': '1px dotted #e6ecef', 'paddingBottom': '11px', 'paddingLeft': '0', 'paddingRight': '0', 'paddingTop': '0'}">
+                  <rz-button #button0 icon="add" size="sm" [style]="{'float': 'right'}" text="Neue Notiz">
+                  </rz-button>
+                </div>
+              </div>
+            </rz-panel-footer>
+          </rz-panel>
+        </div>
+      </div>
+    </rz-tabs-item>
+    <rz-tabs-item [selected]="false" text="Leistungen">
+    </rz-tabs-item>
+    <rz-tabs-item [selected]="false" text="Termine">
+      <rz-datepicker #datepicker0 name="datepicker0">
+      </rz-datepicker>
+      <rz-scheduler #scheduler0 defaultView="agendaDay" [editable]="true" [firstDayOfWeek]="1" locale="de" [weekends]="true">
+      </rz-scheduler>
+    </rz-tabs-item>
+    <rz-tabs-item text=" ">
+    </rz-tabs-item>
+    <rz-tabs-item text=" ">
+    </rz-tabs-item>
+    <rz-tabs-item text=" ">
+    </rz-tabs-item>
+  </rz-tabs>
+</rz-content>

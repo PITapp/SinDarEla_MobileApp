@@ -80,7 +80,6 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
                 .Include(i => i.EreignisseTeilnehmers)
                 .Include(i => i.Feedbacks)
                 .Include(i => i.Kundens)
-                .Include(i => i.KundenKontaktes)
                 .Include(i => i.KundenLeistungenBetreuers)
                 .Include(i => i.Mitarbeiters)
                 .Include(i => i.Mitteilungens)

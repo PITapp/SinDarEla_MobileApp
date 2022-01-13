@@ -168,6 +168,7 @@
                               "name": "image0",
                               "path": "${data.BildURL}",
                               "style": {
+                                "border": "1px solid #e6ecef",
                                 "borderRadius": "40px",
                                 "height": "40px",
                                 "left": "25px",
@@ -269,6 +270,10 @@
                   {
                     "name": "KundenID",
                     "value": "0"
+                  },
+                  {
+                    "name": "BetreuerBaseID",
+                    "value": "0"
                   }
                 ],
                 "path": "kunden-daten",
@@ -291,6 +296,10 @@
   "events": {
     "load": [
       {
+        "code": "window.scrollTo(0, 0);",
+        "type": "execute"
+      },
+      {
         "name": "globalBenutzerBaseID",
         "type": "set",
         "value": "localStorage.getItem(\"globalBenutzerBaseID\");"
@@ -302,7 +311,7 @@
       {
         "name": "onClickStartKundenDaten",
         "type": "set",
-        "value": "(data) => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    localStorage.setItem(\"globalKundenName\", data.NameGesamt);\n    this.router.navigate(['kunden-daten', data.KundenID]);\n}"
+        "value": "(data) => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    localStorage.setItem(\"globalKundenName\", data.NameGesamt);\n    this.router.navigate(['kunden-daten', data.KundenID, this.globalBenutzerBaseID]);\n}"
       }
     ]
   },

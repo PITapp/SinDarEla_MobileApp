@@ -22,6 +22,10 @@ import { EditBaseComponent } from './edit-base/edit-base.component';
 import { AaKundenComponent } from './aa-kunden/aa-kunden.component';
 import { AddAaKundenComponent } from './add-aa-kunden/add-aa-kunden.component';
 import { EditAaKundenComponent } from './edit-aa-kunden/edit-aa-kunden.component';
+import { AaKundenKontakteComponent } from './aa-kunden-kontakte/aa-kunden-kontakte.component';
+import { AddAaKundenKontakteComponent } from './add-aa-kunden-kontakte/add-aa-kunden-kontakte.component';
+import { EditAaKundenKontakteComponent } from './edit-aa-kunden-kontakte/edit-aa-kunden-kontakte.component';
+import { ZzKundenDatenComponent } from './zz-kunden-daten/zz-kunden-daten.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -126,6 +130,30 @@ export const routes: Routes = [
         },
         component: EditAaKundenComponent
       },
+      {
+        path: 'aa-kunden-kontakte',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: AaKundenKontakteComponent
+      },
+      {
+        path: 'add-aa-kunden-kontakte',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: AddAaKundenKontakteComponent
+      },
+      {
+        path: 'edit-aa-kunden-kontakte/:KundenKontaktID',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: EditAaKundenKontakteComponent
+      },
     ]
   },
   {
@@ -174,12 +202,20 @@ export const routes: Routes = [
     component: KundenDatenLayoutComponent,
     children: [
       {
-        path: 'kunden-daten/:KundenID',
+        path: 'kunden-daten/:KundenID/:BetreuerBaseID',
         canActivate: [AuthGuard],
         data: {
           roles: ['Authenticated'],
         },
         component: KundenDatenComponent
+      },
+      {
+        path: 'zz-kunden-daten',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: ZzKundenDatenComponent
       },
     ]
   },

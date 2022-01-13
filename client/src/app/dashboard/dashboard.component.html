@@ -8,26 +8,26 @@
     </div>
   </div>
   <div [ngStyle]="{'backgroundColor': '#ffc16b', 'borderBottom': '1px dotted #f1903c', 'height': '85px', 'marginBottom': '0', 'marginLeft': '0', 'marginRight': '0', 'marginTop': '0'}" class="row">
-    <div class="col-4" [ngStyle]="{'display': 'inline-block', 'paddingTop': '8px', 'textAlign': 'left', 'verticalAlign': 'baseline'}">
+    <div class="col-4" [ngStyle]="{'display': 'inline-block', 'paddingTop': '8px', 'textAlign': 'left', 'verticalAlign': 'baseline'}" (click)="onClickStart('Mitteilungen')">
       <rz-label #label29 [style]="{'color': '#4C7DA5', 'display': 'block', 'fontFamily': 'verdana,geneva,sans-serif', 'fontSize': '28px', 'fontWeight': 'normal', 'textAlign': 'center', 'verticalAlign': 'baseline', 'width': '100%'}" text="7">
       </rz-label>
       <rz-label #label3 [style]="{'color': '#3a474d', 'display': 'block', 'fontFamily': 'verdana,geneva,sans-serif', 'fontWeight': 'normal', 'textAlign': 'center'}" text="Mitteilungen">
       </rz-label>
     </div>
-    <div class="col-4" [ngStyle]="{'display': 'inline-block', 'paddingTop': '8px', 'textAlign': 'left', 'verticalAlign': 'baseline'}">
+    <div class="col-4" [ngStyle]="{'display': 'inline-block', 'paddingTop': '8px', 'textAlign': 'left', 'verticalAlign': 'baseline'}" (click)="onClickStart('Aufgaben')">
       <rz-label #label2 [style]="{'color': '#4C7DA5', 'display': 'block', 'fontFamily': 'verdana,geneva,sans-serif', 'fontSize': '28px', 'fontWeight': 'normal', 'textAlign': 'center', 'verticalAlign': 'baseline', 'width': '100%'}" text="0">
       </rz-label>
       <rz-label #label6 [style]="{'color': '#3a474d', 'display': 'block', 'fontFamily': 'verdana,geneva,sans-serif', 'fontWeight': 'normal', 'textAlign': 'center'}" text="Aufgaben">
       </rz-label>
     </div>
-    <div class="col-4" [ngStyle]="{'display': 'inline-block', 'paddingTop': '8px', 'textAlign': 'left', 'verticalAlign': 'baseline'}">
+    <div class="col-4" [ngStyle]="{'display': 'inline-block', 'paddingTop': '8px', 'textAlign': 'left', 'verticalAlign': 'baseline'}" (click)="onClickStart('Protokolle')">
       <rz-label #label0 [style]="{'color': '#4C7DA5', 'display': 'block', 'fontFamily': 'verdana,geneva,sans-serif', 'fontSize': '28px', 'fontWeight': 'normal', 'textAlign': 'center', 'verticalAlign': 'baseline', 'width': '100%'}" text="12">
       </rz-label>
       <rz-label #label1 [style]="{'color': '#3a474d', 'display': 'block', 'fontFamily': 'verdana,geneva,sans-serif', 'fontWeight': 'normal', 'textAlign': 'center'}" text="Protokolle">
       </rz-label>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Dienstplan')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label42 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Dienstplan">
       </rz-label>
@@ -51,7 +51,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Mitarbeiter')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label4 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Mitarbeiter">
       </rz-label>
@@ -63,7 +63,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Arbeitsaufzeichnung')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label19 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Arbeitsaufzeichnung">
       </rz-label>
@@ -75,7 +75,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Fahrtenbuch')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label21 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Fahrtenbuch">
       </rz-label>
@@ -87,7 +87,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Anträge')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label25 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Anträge Urlaub und ZA">
       </rz-label>
@@ -99,7 +99,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Mitteilungen')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label17 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Mitteilungen">
       </rz-label>
@@ -111,7 +111,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Aufgaben')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label15 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Aufgaben">
       </rz-label>
@@ -123,7 +123,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Protokolle')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label13 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Protokolle">
       </rz-label>
@@ -135,7 +135,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Feedback')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label23 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Feedback">
       </rz-label>
@@ -147,7 +147,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Benutzerprofil')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label11 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Benutzerprofil">
       </rz-label>
@@ -159,7 +159,7 @@
       </rz-icon>
     </div>
   </div>
-  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row">
+  <div [ngStyle]="{'backgroundColor': '#F5F5F6', 'borderBottom': '1px dotted #f1903c', 'height': '70px', 'paddingRight': ''}" class="row" (click)="onClickStart('Einstellungen')">
     <div class="col-12" [ngStyle]="{'display': 'block', 'paddingBottom': '5px', 'paddingLeft': '80px', 'paddingRight': '50px', 'paddingTop': '12px'}">
       <rz-label #label9 [style]="{'color': '#5d717b', 'display': 'block', 'float': 'none', 'fontSize': '18px', 'fontStyle': 'normal', 'fontWeight': 'bold', 'textAlign': 'left', 'width': '100%'}" text="Einstellungen">
       </rz-label>

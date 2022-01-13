@@ -33,8 +33,6 @@ namespace SinDarElaMobile.Models.DbSinDarEla
 
     public ICollection<Kunden> Kundens { get; set; }
 
-    public ICollection<KundenKontakte> KundenKontaktes { get; set; }
-
     public ICollection<KundenLeistungenBetreuer> KundenLeistungenBetreuers { get; set; }
 
     public ICollection<Mitarbeiter> Mitarbeiters { get; set; }

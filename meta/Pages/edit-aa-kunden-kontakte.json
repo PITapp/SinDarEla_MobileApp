@@ -1,0 +1,186 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Edit Aa Kunden Kontakte"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "data": "${kundenkontakte}",
+                  "events": {
+                    "cancel": [
+                      {
+                        "type": "back"
+                      }
+                    ],
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update KundenKontakte",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "dbSinDarEla.updateKundenKontakte",
+                        "parameters": [
+                          {
+                            "name": "KundenKontaktID",
+                            "value": "${parameters.KundenKontaktID}"
+                          },
+                          {
+                            "name": "KundenKontakte",
+                            "value": "${event}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "back"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "fields": [
+                    {
+                      "data": "${getKundensResult}",
+                      "property": "KundenID",
+                      "required": true,
+                      "textProperty": "Vorbemerkungen",
+                      "title": "Kunden",
+                      "type": "lookup",
+                      "valueProperty": "KundenID",
+                      "placeholder": "Choose Kunden"
+                    },
+                    {
+                      "data": "${getKundenKontakteArtensResult}",
+                      "property": "KundenKontaktArtID",
+                      "required": true,
+                      "textProperty": "Bezeichnung",
+                      "title": "Kunden Kontakte Arten",
+                      "type": "lookup",
+                      "valueProperty": "KundenKontaktArtID",
+                      "placeholder": "Choose KundenKontakteArten"
+                    },
+                    {
+                      "property": "Name",
+                      "required": true,
+                      "title": "Name",
+                      "type": "string",
+                      "maxLength": 80
+                    },
+                    {
+                      "property": "Adresse",
+                      "required": false,
+                      "title": "Adresse",
+                      "type": "string",
+                      "maxLength": 150
+                    },
+                    {
+                      "property": "Telefon",
+                      "required": false,
+                      "title": "Telefon",
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    {
+                      "property": "EMail",
+                      "required": false,
+                      "title": "E Mail",
+                      "type": "string",
+                      "maxLength": 70
+                    },
+                    {
+                      "property": "BaseID",
+                      "required": false,
+                      "title": "Base Id",
+                      "type": "integer"
+                    },
+                    {
+                      "property": "Hauptansprechpartner",
+                      "title": "Hauptansprechpartner",
+                      "type": "boolean"
+                    },
+                    {
+                      "property": "Info",
+                      "required": false,
+                      "title": "Info",
+                      "type": "string",
+                      "maxLength": 16777215
+                    }
+                  ],
+                  "name": "form0",
+                  "type": "form",
+                  "visible": "kundenkontakte"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "dbSinDarEla.getKundenKontakteByKundenKontaktID",
+        "parameters": [
+          {
+            "name": "KundenKontaktID",
+            "value": "${parameters.KundenKontaktID}"
+          }
+        ],
+        "then": [
+          {
+            "name": "kundenkontakte",
+            "type": "set",
+            "value": "${result}"
+          }
+        ],
+        "error": [],
+        "type": "invoke"
+      },
+      {
+        "name": "dbSinDarEla.getKundens",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getKundensResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "dbSinDarEla.getKundenKontakteArtens",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getKundenKontakteArtensResult",
+            "type": "set",
+            "value": "${result.value}"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Edit Aa Kunden Kontakte",
+  "access": "Authenticated",
+  "layout": "Main"
+}

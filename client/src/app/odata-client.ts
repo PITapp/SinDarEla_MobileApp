@@ -294,7 +294,7 @@ export class ODataClient {
     }, new HttpParams());
 
 
-    return this.http.request('get', Location.joinWithSlash(this.basePath, path), {
+    return this.http.request('get', Location.joinWithSlash(this.basePath, path.replace("'null'", null)), {
       responseType: 'blob',
       params: odataParams ? params : undefined,
       headers,

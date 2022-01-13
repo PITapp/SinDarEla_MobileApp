@@ -347,11 +347,6 @@
             },
             {
               "inversePropertyName": "Base",
-              "name": "KundenKontaktes",
-              "type": "KundenKontakte"
-            },
-            {
-              "inversePropertyName": "Base",
               "name": "KundenLeistungenBetreuers",
               "type": "KundenLeistungenBetreuer"
             },
@@ -518,12 +513,6 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Kunden"
-          }
-        },
-        "KundenKontaktes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/KundenKontakte"
           }
         },
         "KundenLeistungenBetreuers": {
@@ -1618,9 +1607,9 @@
       "x-table": "def.KundenKontakte",
       "resource": "KundenKontaktes",
       "required": [
-        "BaseID",
         "KundenID",
-        "KundenKontaktArtID"
+        "KundenKontaktArtID",
+        "Name"
       ],
       "properties": {
         "KundenKontaktID": {
@@ -1635,23 +1624,6 @@
               "type": "KundenLeistungenBescheide"
             }
           ]
-        },
-        "Base": {
-          "type": "object",
-          "$ref": "#/definitions/Base"
-        },
-        "BaseID": {
-          "x-nullable": false,
-          "type": "integer",
-          "x-foreignKey": {
-            "parentTable": "Base",
-            "parentEntityType": "Base",
-            "type": "Base",
-            "principalKey": "BaseID",
-            "name": "Base",
-            "textProperty": "Name1",
-            "navigationProperty": "KundenKontaktes"
-          }
         },
         "Kunden": {
           "type": "object",
@@ -1686,6 +1658,26 @@
             "textProperty": "Bezeichnung",
             "navigationProperty": "KundenKontaktes"
           }
+        },
+        "Name": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 80
+        },
+        "Adresse": {
+          "type": "string",
+          "length": 150
+        },
+        "Telefon": {
+          "type": "string",
+          "length": 30
+        },
+        "EMail": {
+          "type": "string",
+          "length": 70
+        },
+        "BaseID": {
+          "type": "integer"
         },
         "Hauptansprechpartner": {
           "x-nullable": false,
@@ -1911,7 +1903,7 @@
             "type": "KundenKontakte",
             "principalKey": "KundenKontaktID",
             "name": "KundenKontakte",
-            "textProperty": "Info",
+            "textProperty": "Name",
             "navigationProperty": "KundenLeistungenBescheides"
           }
         },
@@ -3535,6 +3527,8 @@
       "x-table": "def.Notizen",
       "resource": "Notizens",
       "required": [
+        "Modul",
+        "LinkID",
         "Am",
         "Titel"
       ],
@@ -3545,7 +3539,13 @@
           "x-nullable": false,
           "type": "integer"
         },
+        "Modul": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 45
+        },
         "LinkID": {
+          "x-nullable": false,
           "type": "integer"
         },
         "Am": {

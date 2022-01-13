@@ -14,7 +14,12 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       get;
       set;
     }
-    public int? LinkID
+    public string Modul
+    {
+      get;
+      set;
+    }
+    public int LinkID
     {
       get;
       set;

@@ -9,9 +9,14 @@
             {
               "attributes": [
                 {
+                  "name": "id",
+                  "value": "colNavigateBack"
+                },
+                {
                   "name": "(click)",
-                  "value": "onClickNavigateBack()"
-                }
+                  "value": "onClickNavigateBack('colNavigateBack')"
+                },
+                {}
               ],
               "class": "align-items-start d-flex col-10",
               "components": [
@@ -124,7 +129,7 @@
       {
         "name": "onClickNavigateBack",
         "type": "set",
-        "value": "() => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this._location.back();\n}"
+        "value": "(ElementId) => {\n    document.getElementById(ElementId).style.animation = \"touchClick 2s linear 1\";\n    setTimeout(() => { \n        document.getElementById(ElementId).style.animation = \"\"; \n    }, 2000)  \n\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this._location.back();\n}"
       },
       {
         "name": "onClickStartDashboard",

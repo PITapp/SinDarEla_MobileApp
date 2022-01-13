@@ -34,6 +34,7 @@ import { TemplateFormModule } from '@radzen/angular/dist/template-form';
 import { DropDownDataGridModule } from '@radzen/angular/dist/dropdown-datagrid';
 import { RequiredValidatorModule } from '@radzen/angular/dist/required-validator';
 import { DropDownModule } from '@radzen/angular/dist/dropdown';
+import { FormModule } from '@radzen/angular/dist/form';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -59,6 +60,10 @@ import { EditBaseComponent } from './edit-base/edit-base.component';
 import { AaKundenComponent } from './aa-kunden/aa-kunden.component';
 import { AddAaKundenComponent } from './add-aa-kunden/add-aa-kunden.component';
 import { EditAaKundenComponent } from './edit-aa-kunden/edit-aa-kunden.component';
+import { AaKundenKontakteComponent } from './aa-kunden-kontakte/aa-kunden-kontakte.component';
+import { AddAaKundenKontakteComponent } from './add-aa-kunden-kontakte/add-aa-kunden-kontakte.component';
+import { EditAaKundenKontakteComponent } from './edit-aa-kunden-kontakte/edit-aa-kunden-kontakte.component';
+import { ZzKundenDatenComponent } from './zz-kunden-daten/zz-kunden-daten.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { KundenDatenLayoutComponent } from './kunden-daten-layout/kunden-daten-layout.component';
@@ -87,6 +92,10 @@ export const PageDeclarations = [
   AaKundenComponent,
   AddAaKundenComponent,
   EditAaKundenComponent,
+  AaKundenKontakteComponent,
+  AddAaKundenKontakteComponent,
+  EditAaKundenKontakteComponent,
+  ZzKundenDatenComponent,
 ];
 
 export const LayoutDeclarations = [
@@ -159,6 +168,7 @@ export const AppImports = [
   DropDownDataGridModule,
   RequiredValidatorModule,
   DropDownModule,
+  FormModule,
   SharedModule,
   NotificationModule,
   DialogModule,

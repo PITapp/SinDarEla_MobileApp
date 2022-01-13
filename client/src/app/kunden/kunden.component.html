@@ -19,7 +19,7 @@
         <ng-template let-data datalistTemplate>
           <div [ngStyle]="{'borderBottom': '1px solid #e6ecef', 'height': '70px'}" class="row" (click)="onClickStartKundenDaten(data)">
             <div class="col-12" [ngStyle]="{'paddingLeft': '80px', 'paddingTop': '11px', 'position': 'relative', 'verticalAlign': 'baseline'}">
-              <rz-image #image0 [path]="data?.BildURL" [style]="{'borderRadius': '40px', 'height': '40px', 'left': '25px', 'position': 'absolute', 'top': '15px', 'width': '40px'}">
+              <rz-image #image0 [path]="data?.BildURL" [style]="{'border': '1px solid #e6ecef', 'borderRadius': '40px', 'height': '40px', 'left': '25px', 'position': 'absolute', 'top': '15px', 'width': '40px'}">
               </rz-image>
               <rz-label #label0 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'fontWeight': 'normal'}" text="{{data?.Name1}} {{data?.Name2}}">
               </rz-label>

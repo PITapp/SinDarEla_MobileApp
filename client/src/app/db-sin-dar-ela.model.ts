@@ -257,9 +257,13 @@ export interface Kunden {
 
 export interface KundenKontakte {
   KundenKontaktID: number;
-  BaseID: number;
   KundenID: number;
   KundenKontaktArtID: number;
+  Name: string;
+  Adresse: string;
+  Telefon: string;
+  EMail: string;
+  BaseID: number;
   Hauptansprechpartner: boolean;
   Info: string;
 }
@@ -529,6 +533,7 @@ export interface MitteilungenVerteiler {
 
 export interface Notizen {
   NotizID: number;
+  Modul: string;
   LinkID: number;
   Am: string;
   Titel: string;

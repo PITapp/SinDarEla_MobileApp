@@ -106,7 +106,12 @@ export class KundenDatenLayoutGenerated implements AfterViewInit, OnInit, OnDest
   load() {
     this.globalKundenName = localStorage.getItem("globalKundenName");;
 
-    this.onClickNavigateBack = () => {
+    this.onClickNavigateBack = (ElementId) => {
+    document.getElementById(ElementId).style.animation = "touchClick 2s linear 1";
+    setTimeout(() => { 
+        document.getElementById(ElementId).style.animation = ""; 
+    }, 2000)  
+
     if (this.dialogRef) {
       this.dialogRef.close();
     }

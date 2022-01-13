@@ -64,6 +64,12 @@
         {
           "components": [
             {
+              "attributes": [
+                {
+                  "name": "(click)",
+                  "value": "onClickStart('Mitteilungen')"
+                }
+              ],
               "class": "col-4",
               "components": [
                 {
@@ -104,6 +110,12 @@
               "type": "col"
             },
             {
+              "attributes": [
+                {
+                  "name": "(click)",
+                  "value": "onClickStart('Aufgaben')"
+                }
+              ],
               "class": "col-4",
               "components": [
                 {
@@ -144,6 +156,12 @@
               "type": "col"
             },
             {
+              "attributes": [
+                {
+                  "name": "(click)",
+                  "value": "onClickStart('Protokolle')"
+                }
+              ],
               "class": "col-4",
               "components": [
                 {
@@ -197,6 +215,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Dienstplan')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -378,6 +402,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Mitarbeiter')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -465,6 +495,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Arbeitsaufzeichnung')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -552,6 +588,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Fahrtenbuch')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -639,6 +681,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Anträge')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -726,6 +774,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Mitteilungen')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -813,6 +867,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Aufgaben')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -900,6 +960,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Protokolle')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -987,6 +1053,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Feedback')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -1074,6 +1146,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Benutzerprofil')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -1161,6 +1239,12 @@
           "type": "row"
         },
         {
+          "attributes": [
+            {
+              "name": "(click)",
+              "value": "onClickStart('Einstellungen')"
+            }
+          ],
           "components": [
             {
               "class": "col-12",
@@ -1400,6 +1484,10 @@
   "events": {
     "load": [
       {
+        "code": "window.scrollTo(0, 0); ",
+        "type": "execute"
+      },
+      {
         "name": "dateHeute",
         "type": "set",
         "value": "${new Date()}"
@@ -1407,7 +1495,7 @@
       {
         "name": "onClickStart",
         "type": "set",
-        "value": "(event) => {\n  if (this.dialogRef) {\n    this.dialogRef.close();\n  }\n  \n  switch (event) {\n    case \"Kunden\":\n      this.router.navigate(['kunden']);\n  \t  break;\n\n    case \"Logout\":\n      this.router.navigate(['abmelden']);\n  \t  break;\n\n    case \"Infos\":\n      this.router.navigate(['infos']);\n  \t  break;\n\n    default:\n\t  break;\n  }\n}"
+        "value": "(event) => {\n  if (this.dialogRef) {\n    this.dialogRef.close();\n  }\n  \n  switch (event) {\n    case \"Kunden\":\n      this.router.navigate(['kunden']);\n  \t  break;\n\n    case \"Logout\":\n      this.router.navigate(['abmelden']);\n  \t  break;\n\n    case \"Infos\":\n      this.router.navigate(['infos']);\n  \t  break;\n\n    default:\n      this.notificationService.notify({ severity: \"error\", summary: ``, detail: `Das Modul '` + event + `' wurde noch nicht aktiviert!` });\n\t  break;\n  }\n}"
       }
     ]
   },

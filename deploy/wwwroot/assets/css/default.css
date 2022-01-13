@@ -12648,3 +12648,53 @@ input:focus {
     height: 100% !important;
   }
 }
+
+/* --- Panel: kein Rand; keine Abrundung der Ecken --- */
+.ui-tabview-panel {
+  padding: 0;
+}
+
+.ui-panel {
+  border-radius: 0px;
+  padding: 10px;
+}
+
+.ui-panel-titlebar {
+  background-color: #e6ecef;
+  color: #4C7DA5;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ui-panel-content {
+  margin: 5px 0 0 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* --- Notification: Position und Größe festlegen --- */
+.ui-growl {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  min-width: 20rem;
+  width: 100%;
+}
+
+.ui-growl-item {
+  margin: 0 0 1rem 0;
+  border-radius: 0;
+}
+
+.qualm {
+  animation-name: smoke;                /** Name der Animation **/
+  animation-duration: 5s;               /** Dauer der Animation **/
+  animation-iteration-count: infinite;  /** Anzahl der Wiederholungen **/
+  background-color: red;
+}
+
+/* --- Animation beim Clicken auf ein Element --- */
+@keyframes touchClick {
+	from {opacity:0} to {opacity:1}
+}

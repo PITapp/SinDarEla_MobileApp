@@ -18,13 +18,6 @@ namespace SinDarElaMobile.Models.DbSinDarEla
 
 
     public ICollection<KundenLeistungenBescheide> KundenLeistungenBescheides { get; set; }
-    public int BaseID
-    {
-      get;
-      set;
-    }
-
-    public Base Base { get; set; }
     public int KundenID
     {
       get;
@@ -39,6 +32,31 @@ namespace SinDarElaMobile.Models.DbSinDarEla
     }
 
     public KundenKontakteArten KundenKontakteArten { get; set; }
+    public string Name
+    {
+      get;
+      set;
+    }
+    public string Adresse
+    {
+      get;
+      set;
+    }
+    public string Telefon
+    {
+      get;
+      set;
+    }
+    public string EMail
+    {
+      get;
+      set;
+    }
+    public int? BaseID
+    {
+      get;
+      set;
+    }
     public bool Hauptansprechpartner
     {
       get;

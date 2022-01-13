@@ -13,8 +13,9 @@ import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
 import { TabsComponent } from '@radzen/angular/dist/tabs';
 import { PanelComponent } from '@radzen/angular/dist/panel';
-import { DataListComponent } from '@radzen/angular/dist/datalist';
 import { LabelComponent } from '@radzen/angular/dist/label';
+import { DataListComponent } from '@radzen/angular/dist/datalist';
+import { ButtonComponent } from '@radzen/angular/dist/button';
 import { DatePickerComponent } from '@radzen/angular/dist/datepicker';
 import { SchedulerComponent } from '@radzen/angular/dist/scheduler';
 
@@ -28,11 +29,21 @@ export class KundenDatenGenerated implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('content1') content1: ContentComponent;
   @ViewChild('tabs0') tabs0: TabsComponent;
   @ViewChild('panel0') panel0: PanelComponent;
+  @ViewChild('label8') label8: LabelComponent;
+  @ViewChild('label10') label10: LabelComponent;
+  @ViewChild('label11') label11: LabelComponent;
+  @ViewChild('label12') label12: LabelComponent;
+  @ViewChild('label13') label13: LabelComponent;
+  @ViewChild('label14') label14: LabelComponent;
   @ViewChild('panel4') panel4: PanelComponent;
   @ViewChild('panel3') panel3: PanelComponent;
+  @ViewChild('datalistKundenKontakte') datalistKundenKontakte: DataListComponent;
+  @ViewChild('button1') button1: ButtonComponent;
   @ViewChild('panel2') panel2: PanelComponent;
   @ViewChild('datalistKundenBetreuer') datalistKundenBetreuer: DataListComponent;
   @ViewChild('panel1') panel1: PanelComponent;
+  @ViewChild('datalistKundenNotizen') datalistKundenNotizen: DataListComponent;
+  @ViewChild('button0') button0: ButtonComponent;
   @ViewChild('datepicker0') datepicker0: DatePickerComponent;
   @ViewChild('scheduler0') scheduler0: SchedulerComponent;
 
@@ -61,9 +72,17 @@ export class KundenDatenGenerated implements AfterViewInit, OnInit, OnDestroy {
   dbSinDarEla: DbSinDarElaService;
 
   security: SecurityService;
+  dsoKundenBetreuerBase: any;
+  intAlterKunde: any;
+  onClickBearbeitenNotiz: any;
+  onClickAnimation: any;
   parameters: any;
+  rstKundenKontakte: any;
+  rstKundenKontakteCount: any;
   rstKundenBetreuer: any;
   rstKundenBetreuerCount: any;
+  rstKundenNotizen: any;
+  rstKundenNotizenCount: any;
 
   constructor(private injector: Injector) {
   }
@@ -113,7 +132,53 @@ export class KundenDatenGenerated implements AfterViewInit, OnInit, OnDestroy {
 
 
   load() {
+    window.scrollTo(0, 0);
+
     this.datalistKundenBetreuer.load();
+this.datalistKundenKontakte.load();
+this.datalistKundenNotizen.load();
+
+    this.dbSinDarEla.getVwKundenUndBetreuerAuswahls(`KundenID eq ${this.parameters.KundenID} AND BetreuerBaseID eq ${this.parameters.BetreuerBaseID}`, null, null, null, null, null, null, null)
+    .subscribe((result: any) => {
+      this.dsoKundenBetreuerBase = result.value[0];
+
+      this.intAlterKunde = 0;
+
+      var birthDate = new Date(this.dsoKundenBetreuerBase.Geburtsdatum);
+var ageDifMs = Date.now() - birthDate.getTime();
+var ageDate = new Date(ageDifMs); // miliseconds from Epoch
+this.intAlterKunde = Math.abs(ageDate.getUTCFullYear() - 1970);
+    }, (result: any) => {
+
+    });
+
+    this.onClickBearbeitenNotiz = (data) => {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
+    this.notificationService.notify({ severity: "error", summary: ``, detail: `Noch nicht aktiviert!` });
+};
+
+    this.onClickAnimation = (ElementId) => {
+  document.getElementById(ElementId).style.animation = "touchClick 2s linear 1";
+  
+  setTimeout(() => { 
+    document.getElementById(ElementId).style.animation = ""; 
+  }, 2000)  
+  
+  
+};
+  }
+
+  datalistKundenKontakteLoadData(event: any) {
+    this.dbSinDarEla.getKundenKontaktes(`KundenID eq ${this.parameters.KundenID}`, null, null, `KundenKontakteArten/Sortierung, Name`, null, `KundenKontakteArten`, null, null)
+    .subscribe((result: any) => {
+      this.rstKundenKontakte = result.value;
+
+      this.rstKundenKontakteCount = event.top != null && event.skip != null ? result['@odata.count'] : result.value.length;
+    }, (result: any) => {
+
+    });
   }
 
   datalistKundenBetreuerLoadData(event: any) {
@@ -122,6 +187,17 @@ export class KundenDatenGenerated implements AfterViewInit, OnInit, OnDestroy {
       this.rstKundenBetreuer = result.value;
 
       this.rstKundenBetreuerCount = event.top != null && event.skip != null ? result['@odata.count'] : result.value.length;
+    }, (result: any) => {
+
+    });
+  }
+
+  datalistKundenNotizenLoadData(event: any) {
+    this.dbSinDarEla.getNotizens(`LinkID eq ${this.parameters.KundenID} AND Modul eq 'Kunden'`, null, null, `Am, Titel`, null, null, null, null)
+    .subscribe((result: any) => {
+      this.rstKundenNotizen = result.value;
+
+      this.rstKundenNotizenCount = event.top != null && event.skip != null ? result['@odata.count'] : result.value.length;
     }, (result: any) => {
 
     });

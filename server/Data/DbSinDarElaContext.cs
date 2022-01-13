@@ -126,11 +126,6 @@ namespace SinDarElaMobile.Data
                   .HasForeignKey(i => i.KundenStatusID)
                   .HasPrincipalKey(i => i.KundenStatusID);
             builder.Entity<SinDarElaMobile.Models.DbSinDarEla.KundenKontakte>()
-                  .HasOne(i => i.Base)
-                  .WithMany(i => i.KundenKontaktes)
-                  .HasForeignKey(i => i.BaseID)
-                  .HasPrincipalKey(i => i.BaseID);
-            builder.Entity<SinDarElaMobile.Models.DbSinDarEla.KundenKontakte>()
                   .HasOne(i => i.Kunden)
                   .WithMany(i => i.KundenKontaktes)
                   .HasForeignKey(i => i.KundenID)

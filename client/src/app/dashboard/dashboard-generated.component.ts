@@ -159,6 +159,8 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
 
 
   load() {
+    window.scrollTo(0, 0); 
+
     this.dateHeute = new Date();
 
     this.onClickStart = (event) => {
@@ -180,6 +182,7 @@ export class DashboardGenerated implements AfterViewInit, OnInit, OnDestroy {
   	  break;
 
     default:
+      this.notificationService.notify({ severity: "error", summary: ``, detail: `Das Modul '` + event + `' wurde noch nicht aktiviert!` });
 	  break;
   }
 };

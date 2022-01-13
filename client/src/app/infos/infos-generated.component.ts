@@ -107,6 +107,8 @@ export class InfosGenerated implements AfterViewInit, OnInit, OnDestroy {
 
 
   load() {
+    window.scrollTo(0, 0);
+
     this.dbSinDarEla.getInfotexteHtmls(`Code eq 'VersionenMobile'`, null, null, null, null, null, null, null)
     .subscribe((result: any) => {
       this.htmlVersionen = result.value[0].Inhalt;

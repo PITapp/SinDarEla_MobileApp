@@ -117,7 +117,7 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
             this.context.SaveChanges();
 
             var itemToReturn = this.context.KundenKontaktes.Where(i => i.KundenKontaktID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Base,Kunden,KundenKontakteArten");
+            Request.QueryString = Request.QueryString.Add("$expand", "Kunden,KundenKontakteArten");
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -153,7 +153,7 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
             this.context.SaveChanges();
 
             var itemToReturn = this.context.KundenKontaktes.Where(i => i.KundenKontaktID == key);
-            Request.QueryString = Request.QueryString.Add("$expand", "Base,Kunden,KundenKontakteArten");
+            Request.QueryString = Request.QueryString.Add("$expand", "Kunden,KundenKontakteArten");
             return new ObjectResult(SingleResult.Create(itemToReturn));
         }
         catch(Exception ex)
@@ -189,7 +189,7 @@ namespace SinDarElaMobile.Controllers.DbSinDarEla
 
             var itemToReturn = this.context.KundenKontaktes.Where(i => i.KundenKontaktID == key);
 
-            Request.QueryString = Request.QueryString.Add("$expand", "Base,Kunden,KundenKontakteArten");
+            Request.QueryString = Request.QueryString.Add("$expand", "Kunden,KundenKontakteArten");
 
             return new ObjectResult(SingleResult.Create(itemToReturn))
             {

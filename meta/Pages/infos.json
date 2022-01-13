@@ -96,6 +96,10 @@
   "events": {
     "load": [
       {
+        "code": "window.scrollTo(0, 0);",
+        "type": "execute"
+      },
+      {
         "name": "dbSinDarEla.getInfotexteHtmls",
         "parameters": [
           {

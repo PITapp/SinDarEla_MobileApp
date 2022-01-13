@@ -16,10 +16,142 @@
                       "components": [
                         {
                           "allowCollapse": true,
-                          "components": [],
+                          "components": [
+                            {
+                              "attributes": [
+                                {
+                                  "name": "(click)",
+                                  "value": "onClickBearbeitenNotiz(dsoKundenBetreuerBase)"
+                                }
+                              ],
+                              "components": [
+                                {
+                                  "class": "col-12",
+                                  "components": [
+                                    {
+                                      "name": "label8",
+                                      "style": {
+                                        "color": "#F1903C",
+                                        "display": "block",
+                                        "float": "left",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.NameGesamt}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "name": "label10",
+                                      "style": {
+                                        "color": "#F1903C",
+                                        "display": "block",
+                                        "float": "right",
+                                        "fontSize": "14px",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Geburtsdatum | utcDate : 'dd.MM.yyyy'} (${intAlterKunde})",
+                                      "type": "label"
+                                    }
+                                  ],
+                                  "name": "col5",
+                                  "style": {
+                                    "paddingLeft": "0",
+                                    "paddingRight": "0",
+                                    "position": "relative",
+                                    "verticalAlign": "baseline"
+                                  },
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row2",
+                              "style": {
+                                "marginLeft": "0",
+                                "marginRight": "0"
+                              },
+                              "type": "row"
+                            },
+                            {
+                              "attributes": [
+                                {
+                                  "name": "(click)",
+                                  "value": "onClickBearbeitenNotiz(dsoKundenBetreuerBase)"
+                                }
+                              ],
+                              "components": [
+                                {
+                                  "class": "col-12",
+                                  "components": [
+                                    {
+                                      "attributes": [],
+                                      "name": "label11",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Strasse}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "attributes": [],
+                                      "name": "label12",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Telefon1}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "attributes": [],
+                                      "name": "label13",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.EMail1}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "attributes": [],
+                                      "name": "label14",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Notiz}",
+                                      "type": "label"
+                                    }
+                                  ],
+                                  "name": "col6",
+                                  "style": {
+                                    "borderBottom": "1px dotted #e6ecef",
+                                    "paddingLeft": "0",
+                                    "paddingRight": "0",
+                                    "position": "relative",
+                                    "verticalAlign": "baseline"
+                                  },
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row3",
+                              "style": {
+                                "marginBottom": "10px",
+                                "marginLeft": "0",
+                                "marginRight": "0"
+                              },
+                              "type": "row"
+                            }
+                          ],
                           "footerTemplate": [],
                           "name": "panel0",
-                          "text": "Adresse",
+                          "text": "Details",
                           "type": "panel"
                         },
                         {
@@ -31,9 +163,227 @@
                         },
                         {
                           "allowCollapse": true,
-                          "footerTemplate": [],
+                          "components": [
+                            {
+                              "allowPaging": false,
+                              "count": "${rstKundenKontakteCount}",
+                              "data": "${rstKundenKontakte}",
+                              "defaultRowText": "Template for index",
+                              "emptyText": "...",
+                              "events": {
+                                "loadData": [
+                                  {
+                                    "name": "dbSinDarEla.getKundenKontaktes",
+                                    "parameters": [
+                                      {
+                                        "name": "$filter",
+                                        "value": "KundenID eq ${parameters.KundenID}"
+                                      },
+                                      {
+                                        "name": "$orderby",
+                                        "value": "KundenKontakteArten/Sortierung, Name"
+                                      },
+                                      {
+                                        "name": "$expand",
+                                        "value": "KundenKontakteArten"
+                                      }
+                                    ],
+                                    "then": [
+                                      {
+                                        "name": "rstKundenKontakte",
+                                        "type": "set",
+                                        "value": "${result.value}"
+                                      },
+                                      {
+                                        "name": "rstKundenKontakteCount",
+                                        "type": "set",
+                                        "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                                      }
+                                    ],
+                                    "type": "invoke"
+                                  }
+                                ]
+                              },
+                              "name": "datalistKundenKontakte",
+                              "pageSize": 20,
+                              "style": {
+                                "border": "1px solid rgba(0, 0, 0, 0)"
+                              },
+                              "template": [
+                                {
+                                  "attributes": [
+                                    {
+                                      "name": "(click)",
+                                      "value": "onClickBearbeitenNotiz(data)"
+                                    }
+                                  ],
+                                  "components": [
+                                    {
+                                      "class": "col-12",
+                                      "components": [
+                                        {
+                                          "name": "label0",
+                                          "style": {
+                                            "color": "#F1903C",
+                                            "display": "block",
+                                            "float": "left",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Name}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "name": "label2",
+                                          "style": {
+                                            "color": "#F1903C",
+                                            "display": "block",
+                                            "float": "right",
+                                            "fontSize": "14px",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.KundenKontakteArten.Bezeichnung}${data.Hauptansprechpartner == true ? ' · Hauptkontakt' : ''}",
+                                          "type": "label"
+                                        }
+                                      ],
+                                      "name": "col0",
+                                      "style": {
+                                        "paddingLeft": "0",
+                                        "paddingRight": "0",
+                                        "position": "relative",
+                                        "verticalAlign": "baseline"
+                                      },
+                                      "type": "col"
+                                    }
+                                  ],
+                                  "name": "row0",
+                                  "style": {
+                                    "marginLeft": "0",
+                                    "marginRight": "0"
+                                  },
+                                  "type": "row"
+                                },
+                                {
+                                  "attributes": [
+                                    {
+                                      "name": "(click)",
+                                      "value": "onClickBearbeitenNotiz(data)"
+                                    }
+                                  ],
+                                  "components": [
+                                    {
+                                      "class": "col-12",
+                                      "components": [
+                                        {
+                                          "attributes": [],
+                                          "name": "label6",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Adresse}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label5",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Telefon}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label4",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.EMail}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label7",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Info}",
+                                          "type": "label"
+                                        }
+                                      ],
+                                      "name": "col2",
+                                      "style": {
+                                        "borderBottom": "1px dotted #e6ecef",
+                                        "paddingLeft": "0",
+                                        "paddingRight": "0",
+                                        "position": "relative",
+                                        "verticalAlign": "baseline"
+                                      },
+                                      "type": "col"
+                                    }
+                                  ],
+                                  "name": "row1",
+                                  "style": {
+                                    "marginBottom": "10px",
+                                    "marginLeft": "0",
+                                    "marginRight": "0"
+                                  },
+                                  "type": "row"
+                                }
+                              ],
+                              "type": "datalist",
+                              "wrapItems": false
+                            }
+                          ],
+                          "footerTemplate": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-12",
+                                  "components": [
+                                    {
+                                      "icon": "add",
+                                      "name": "button1",
+                                      "size": "sm",
+                                      "style": {
+                                        "float": "right"
+                                      },
+                                      "text": "Neuer Kontakt",
+                                      "type": "button"
+                                    }
+                                  ],
+                                  "name": "col3",
+                                  "style": {
+                                    "borderBottom": "1px dotted #e6ecef",
+                                    "paddingBottom": "11px",
+                                    "paddingLeft": "0",
+                                    "paddingRight": "0",
+                                    "paddingTop": "0"
+                                  },
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row2",
+                              "style": {
+                                "paddingLeft": "25px",
+                                "paddingRight": "25px"
+                              },
+                              "type": "row"
+                            }
+                          ],
                           "name": "panel3",
-                          "text": "Kontaktpersonen",
+                          "text": "Kontakte",
                           "type": "panel"
                         },
                         {
@@ -78,12 +428,7 @@
                               },
                               "template": [
                                 {
-                                  "attributes": [
-                                    {
-                                      "name": "(click)",
-                                      "value": "onClickStartKundenDaten(data)"
-                                    }
-                                  ],
+                                  "attributes": [],
                                   "components": [
                                     {
                                       "class": "col-12",
@@ -91,8 +436,9 @@
                                         {
                                           "name": "label0",
                                           "style": {
-                                            "color": "rgb(33, 37, 41)",
+                                            "color": "#F1903C",
                                             "display": "block",
+                                            "float": "left",
                                             "fontWeight": "normal"
                                           },
                                           "text": "${data.NameGesamtBetreuer}",
@@ -101,16 +447,42 @@
                                         {
                                           "name": "label1",
                                           "style": {
-                                            "color": "#88989b",
+                                            "color": "#F1903C",
                                             "display": "block",
+                                            "float": "right",
                                             "fontSize": "14px",
                                             "fontWeight": "normal"
                                           },
-                                          "text": "${data.Leistungsart}, ${data.Betreuungsart}",
+                                          "text": "${data.Betreuungsart}",
                                           "type": "label"
                                         }
                                       ],
                                       "name": "col0",
+                                      "style": {
+                                        "paddingLeft": "0",
+                                        "paddingRight": "0",
+                                        "position": "relative",
+                                        "verticalAlign": "baseline"
+                                      },
+                                      "type": "col"
+                                    },
+                                    {
+                                      "class": "col-12",
+                                      "components": [
+                                        {
+                                          "name": "label9",
+                                          "style": {
+                                            "color": "#88989b",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontSize": "14px",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Leistungsart}",
+                                          "type": "label"
+                                        }
+                                      ],
+                                      "name": "col4",
                                       "style": {
                                         "borderBottom": "1px dotted #e6ecef",
                                         "paddingLeft": "0",
@@ -123,6 +495,7 @@
                                   ],
                                   "name": "row0",
                                   "style": {
+                                    "marginBottom": "5px",
                                     "marginLeft": "0",
                                     "marginRight": "0"
                                   },
@@ -140,7 +513,146 @@
                         },
                         {
                           "allowCollapse": true,
-                          "footerTemplate": [],
+                          "components": [
+                            {
+                              "allowPaging": false,
+                              "count": "${rstKundenNotizenCount}",
+                              "data": "${rstKundenNotizen}",
+                              "defaultRowText": "Template for index",
+                              "emptyText": "...",
+                              "events": {
+                                "loadData": [
+                                  {
+                                    "name": "dbSinDarEla.getNotizens",
+                                    "parameters": [
+                                      {
+                                        "name": "$filter",
+                                        "value": "LinkID eq ${parameters.KundenID} AND Modul eq 'Kunden'"
+                                      },
+                                      {
+                                        "name": "$orderby",
+                                        "value": "Am, Titel"
+                                      }
+                                    ],
+                                    "then": [
+                                      {
+                                        "name": "rstKundenNotizen",
+                                        "type": "set",
+                                        "value": "${result.value}"
+                                      },
+                                      {
+                                        "name": "rstKundenNotizenCount",
+                                        "type": "set",
+                                        "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                                      }
+                                    ],
+                                    "type": "invoke"
+                                  }
+                                ]
+                              },
+                              "name": "datalistKundenNotizen",
+                              "pageSize": 20,
+                              "style": {
+                                "border": "1px solid rgba(0, 0, 0, 0)"
+                              },
+                              "template": [
+                                {
+                                  "attributes": [
+                                    {
+                                      "name": "(click)",
+                                      "value": "onClickBearbeitenNotiz(data)"
+                                    }
+                                  ],
+                                  "components": [
+                                    {
+                                      "class": "col-12",
+                                      "components": [
+                                        {
+                                          "name": "label0",
+                                          "style": {
+                                            "color": "#F1903C",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontSize": "14px",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Titel}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label3",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Notiz}",
+                                          "type": "label"
+                                        }
+                                      ],
+                                      "name": "col0",
+                                      "style": {
+                                        "borderBottom": "1px dotted #e6ecef",
+                                        "paddingLeft": "0",
+                                        "paddingRight": "0",
+                                        "position": "relative",
+                                        "verticalAlign": "baseline"
+                                      },
+                                      "type": "col"
+                                    }
+                                  ],
+                                  "name": "row0",
+                                  "style": {
+                                    "marginBottom": "10px",
+                                    "marginLeft": "0",
+                                    "marginRight": "0"
+                                  },
+                                  "type": "row"
+                                }
+                              ],
+                              "type": "datalist",
+                              "wrapItems": false
+                            }
+                          ],
+                          "footerTemplate": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-12",
+                                  "components": [
+                                    {
+                                      "icon": "add",
+                                      "name": "button0",
+                                      "size": "sm",
+                                      "style": {
+                                        "float": "right"
+                                      },
+                                      "text": "Neue Notiz",
+                                      "type": "button"
+                                    }
+                                  ],
+                                  "name": "col1",
+                                  "style": {
+                                    "borderBottom": "1px dotted #e6ecef",
+                                    "paddingBottom": "11px",
+                                    "paddingLeft": "0",
+                                    "paddingRight": "0",
+                                    "paddingTop": "0"
+                                  },
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row2",
+                              "style": {
+                                "paddingLeft": "25px",
+                                "paddingRight": "25px"
+                              },
+                              "type": "row"
+                            }
+                          ],
+                          "headerTemplate": "",
                           "icon": "",
                           "name": "panel1",
                           "text": "Notizen",
@@ -202,8 +714,48 @@
   "events": {
     "load": [
       {
-        "code": "this.datalistKundenBetreuer.load();",
+        "code": "window.scrollTo(0, 0);",
         "type": "execute"
+      },
+      {
+        "code": "this.datalistKundenBetreuer.load();\nthis.datalistKundenKontakte.load();\nthis.datalistKundenNotizen.load();",
+        "type": "execute"
+      },
+      {
+        "name": "dbSinDarEla.getVwKundenUndBetreuerAuswahls",
+        "parameters": [
+          {
+            "name": "$filter",
+            "value": "KundenID eq ${parameters.KundenID} AND BetreuerBaseID eq ${parameters.BetreuerBaseID}"
+          }
+        ],
+        "then": [
+          {
+            "name": "dsoKundenBetreuerBase",
+            "type": "set",
+            "value": "${result.value[0]}"
+          },
+          {
+            "name": "intAlterKunde",
+            "type": "set",
+            "value": "0"
+          },
+          {
+            "code": "var birthDate = new Date(this.dsoKundenBetreuerBase.Geburtsdatum);\nvar ageDifMs = Date.now() - birthDate.getTime();\nvar ageDate = new Date(ageDifMs); // miliseconds from Epoch\nthis.intAlterKunde = Math.abs(ageDate.getUTCFullYear() - 1970);",
+            "type": "execute"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "onClickBearbeitenNotiz",
+        "type": "set",
+        "value": "(data) => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this.notificationService.notify({ severity: \"error\", summary: ``, detail: `Noch nicht aktiviert!` });\n}"
+      },
+      {
+        "name": "onClickAnimation",
+        "type": "set",
+        "value": "(ElementId) => {\n  document.getElementById(ElementId).style.animation = \"touchClick 2s linear 1\";\n  \n  setTimeout(() => { \n    document.getElementById(ElementId).style.animation = \"\"; \n  }, 2000)  \n  \n  \n}"
       }
     ]
   },

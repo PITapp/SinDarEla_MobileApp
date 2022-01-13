@@ -29,7 +29,8 @@
   "navigation": [
     "Dashboard",
     "Base",
-    "aaKunden"
+    "aaKunden",
+    "aaKundenKontakte"
   ],
   "pages": [
     "Dashboard",
@@ -47,7 +48,11 @@
     "Edit Base",
     "aaKunden",
     "Add aaKunden",
-    "Edit aaKunden"
+    "Edit aaKunden",
+    "aaKundenKontakte",
+    "Add aaKundenKontakte",
+    "Edit aaKundenKontakte",
+    "zzKundenDaten"
   ],
   "port": 8000,
   "security": {
