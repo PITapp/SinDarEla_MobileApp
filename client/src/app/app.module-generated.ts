@@ -27,14 +27,14 @@ import { TabsModule } from '@radzen/angular/dist/tabs';
 import { TextBoxModule } from '@radzen/angular/dist/textbox';
 import { DataListModule } from '@radzen/angular/dist/datalist';
 import { PanelModule } from '@radzen/angular/dist/panel';
-import { DatePickerModule } from '@radzen/angular/dist/datepicker';
-import { SchedulerModule } from '@radzen/angular/dist/scheduler';
 import { GridModule } from '@radzen/angular/dist/grid';
 import { TemplateFormModule } from '@radzen/angular/dist/template-form';
 import { DropDownDataGridModule } from '@radzen/angular/dist/dropdown-datagrid';
 import { RequiredValidatorModule } from '@radzen/angular/dist/required-validator';
+import { DatePickerModule } from '@radzen/angular/dist/datepicker';
 import { DropDownModule } from '@radzen/angular/dist/dropdown';
 import { FormModule } from '@radzen/angular/dist/form';
+import { SchedulerModule } from '@radzen/angular/dist/scheduler';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -161,14 +161,14 @@ export const AppImports = [
   TextBoxModule,
   DataListModule,
   PanelModule,
-  DatePickerModule,
-  SchedulerModule,
   GridModule,
   TemplateFormModule,
   DropDownDataGridModule,
   RequiredValidatorModule,
+  DatePickerModule,
   DropDownModule,
   FormModule,
+  SchedulerModule,
   SharedModule,
   NotificationModule,
   DialogModule,

@@ -4164,18 +4164,14 @@
       "resource": "VwKundenBetreuers",
       "required": [
         "Betreuungsart",
-        "Leistungsart"
+        "Leistungsart",
+        "Name1"
       ],
       "properties": {
         "KundenID": {
           "x-default-sql": "0",
           "x-nullable": false,
           "type": "integer"
-        },
-        "NameGesamtBetreuer": {
-          "x-nullable": false,
-          "type": "string",
-          "length": 131
         },
         "Betreuungsart": {
           "x-nullable": false,
@@ -4188,6 +4184,72 @@
           "x-nullable": false,
           "type": "string",
           "length": 70
+        },
+        "Name1": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Name2": {
+          "type": "string",
+          "length": 30
+        },
+        "NameGesamtBetreuer": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 131
+        },
+        "NameKuerzel": {
+          "type": "string",
+          "length": 5
+        },
+        "TitelVorne": {
+          "type": "string",
+          "length": 20
+        },
+        "TitelHinten": {
+          "type": "string",
+          "length": 20
+        },
+        "Strasse": {
+          "type": "string",
+          "length": 70
+        },
+        "PLZ": {
+          "type": "string",
+          "length": 10
+        },
+        "Ort": {
+          "type": "string",
+          "length": 100
+        },
+        "Geburtsdatum": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Telefon1": {
+          "type": "string",
+          "length": 30
+        },
+        "Telefon2": {
+          "type": "string",
+          "length": 30
+        },
+        "EMail1": {
+          "type": "string",
+          "length": 70
+        },
+        "EMail2": {
+          "type": "string",
+          "length": 70
+        },
+        "BildURL": {
+          "type": "string",
+          "length": 16777215
+        },
+        "Notiz": {
+          "type": "string",
+          "length": 65535
         }
       }
     },

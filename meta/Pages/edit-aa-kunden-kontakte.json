@@ -64,7 +64,10 @@
                       "title": "Kunden",
                       "type": "lookup",
                       "valueProperty": "KundenID",
-                      "placeholder": "Choose Kunden"
+                      "placeholder": "Choose Kunden",
+                      "requiredText": "is required",
+                      "multipleItemsSelectedText": "{0} items selected",
+                      "emptyFilterText": "No results found"
                     },
                     {
                       "data": "${getKundenKontakteArtensResult}",
@@ -74,53 +77,65 @@
                       "title": "Kunden Kontakte Arten",
                       "type": "lookup",
                       "valueProperty": "KundenKontaktArtID",
-                      "placeholder": "Choose KundenKontakteArten"
+                      "placeholder": "Choose KundenKontakteArten",
+                      "requiredText": "is required",
+                      "multipleItemsSelectedText": "{0} items selected",
+                      "emptyFilterText": "No results found"
                     },
                     {
                       "property": "Name",
                       "required": true,
                       "title": "Name",
                       "type": "string",
-                      "maxLength": 80
+                      "maxLength": 80,
+                      "requiredText": "is required"
                     },
                     {
                       "property": "Adresse",
                       "required": false,
                       "title": "Adresse",
                       "type": "string",
-                      "maxLength": 150
+                      "maxLength": 150,
+                      "requiredText": "is required"
                     },
                     {
                       "property": "Telefon",
                       "required": false,
                       "title": "Telefon",
                       "type": "string",
-                      "maxLength": 30
+                      "maxLength": 30,
+                      "requiredText": "is required"
                     },
                     {
                       "property": "EMail",
                       "required": false,
                       "title": "E Mail",
                       "type": "string",
-                      "maxLength": 70
+                      "maxLength": 70,
+                      "requiredText": "is required"
                     },
                     {
                       "property": "BaseID",
                       "required": false,
                       "title": "Base Id",
-                      "type": "integer"
+                      "type": "integer",
+                      "requiredText": "is required",
+                      "minText": "cannot be less than",
+                      "maxText": "cannot be more than"
                     },
                     {
                       "property": "Hauptansprechpartner",
                       "title": "Hauptansprechpartner",
-                      "type": "boolean"
+                      "type": "boolean",
+                      "requiredText": "is required"
                     },
                     {
                       "property": "Info",
                       "required": false,
                       "title": "Info",
                       "type": "string",
-                      "maxLength": 16777215
+                      "maxLength": 16777215,
+                      "requiredText": "is required"
                     }
                   ],
                   "name": "form0",
@@ -181,6 +196,8 @@
     ]
   },
   "name": "Edit Aa Kunden Kontakte",
-  "access": "Authenticated",
+  "access": [
+    "Authenticated"
+  ],
   "layout": "Main"
 }

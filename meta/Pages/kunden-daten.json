@@ -31,7 +31,7 @@
                                     {
                                       "name": "label8",
                                       "style": {
-                                        "color": "#F1903C",
+                                        "color": "#479cc8",
                                         "display": "block",
                                         "float": "left",
                                         "fontWeight": "normal"
@@ -42,11 +42,12 @@
                                     {
                                       "name": "label10",
                                       "style": {
-                                        "color": "#F1903C",
+                                        "color": "#479cc8",
                                         "display": "block",
                                         "float": "right",
                                         "fontSize": "14px",
-                                        "fontWeight": "normal"
+                                        "fontWeight": "normal",
+                                        "marginTop": "3px"
                                       },
                                       "text": "${dsoKundenBetreuerBase.Geburtsdatum | utcDate : 'dd.MM.yyyy'} (${intAlterKunde})",
                                       "type": "label"
@@ -94,6 +95,18 @@
                                     },
                                     {
                                       "attributes": [],
+                                      "name": "label3",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.PLZ} ${dsoKundenBetreuerBase.Ort}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "attributes": [],
                                       "name": "label12",
                                       "style": {
                                         "color": "rgb(33, 37, 41)",
@@ -106,6 +119,18 @@
                                     },
                                     {
                                       "attributes": [],
+                                      "name": "label16",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Telefon2}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "attributes": [],
                                       "name": "label13",
                                       "style": {
                                         "color": "rgb(33, 37, 41)",
@@ -114,6 +139,54 @@
                                         "fontWeight": "normal"
                                       },
                                       "text": "${dsoKundenBetreuerBase.EMail1}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "attributes": [],
+                                      "name": "label17",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.EMail2}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "attributes": [],
+                                      "name": "label19",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Webseite}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "attributes": [],
+                                      "name": "label20",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Versicherungsnummer != null ? 'Versicherungsnummer: ' + dsoKundenBetreuerBase.Versicherungsnummer : null}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "attributes": [],
+                                      "name": "label21",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Staatsangehoerigkeit != null ? 'Staatsangehörigkeit: ' + dsoKundenBetreuerBase.Staatsangehoerigkeit : null}",
                                       "type": "label"
                                     },
                                     {
@@ -147,18 +220,45 @@
                                 "marginRight": "0"
                               },
                               "type": "row"
+                            },
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-12",
+                                  "components": [
+                                    {
+                                      "icon": "create",
+                                      "name": "button2",
+                                      "size": "sm",
+                                      "style": {
+                                        "float": "right"
+                                      },
+                                      "text": "Bearbeiten Details",
+                                      "type": "button"
+                                    }
+                                  ],
+                                  "name": "col8",
+                                  "style": {
+                                    "borderBottom": "1px dotted #e6ecef",
+                                    "paddingBottom": "10px",
+                                    "paddingLeft": "0",
+                                    "paddingRight": "0",
+                                    "paddingTop": "0"
+                                  },
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row4",
+                              "style": {
+                                "paddingLeft": "15px",
+                                "paddingRight": "15px"
+                              },
+                              "type": "row"
                             }
                           ],
                           "footerTemplate": [],
                           "name": "panel0",
                           "text": "Details",
-                          "type": "panel"
-                        },
-                        {
-                          "allowCollapse": true,
-                          "footerTemplate": [],
-                          "name": "panel4",
-                          "text": "Betreuung",
                           "type": "panel"
                         },
                         {
@@ -224,7 +324,7 @@
                                         {
                                           "name": "label0",
                                           "style": {
-                                            "color": "#F1903C",
+                                            "color": "#479cc8",
                                             "display": "block",
                                             "float": "left",
                                             "fontWeight": "normal"
@@ -235,11 +335,12 @@
                                         {
                                           "name": "label2",
                                           "style": {
-                                            "color": "#F1903C",
+                                            "color": "#479cc8",
                                             "display": "block",
                                             "float": "right",
                                             "fontSize": "14px",
-                                            "fontWeight": "normal"
+                                            "fontWeight": "normal",
+                                            "marginTop": "3px"
                                           },
                                           "text": "${data.KundenKontakteArten.Bezeichnung}${data.Hauptansprechpartner == true ? ' · Hauptkontakt' : ''}",
                                           "type": "label"
@@ -366,7 +467,7 @@
                                   "name": "col3",
                                   "style": {
                                     "borderBottom": "1px dotted #e6ecef",
-                                    "paddingBottom": "11px",
+                                    "paddingBottom": "10px",
                                     "paddingLeft": "0",
                                     "paddingRight": "0",
                                     "paddingTop": "0"
@@ -377,13 +478,154 @@
                               "name": "row2",
                               "style": {
                                 "paddingLeft": "25px",
-                                "paddingRight": "25px"
+                                "paddingRight": "25px",
+                                "paddingTop": "3px"
                               },
                               "type": "row"
                             }
                           ],
                           "name": "panel3",
                           "text": "Kontakte",
+                          "type": "panel"
+                        },
+                        {
+                          "allowCollapse": true,
+                          "components": [
+                            {
+                              "attributes": [
+                                {
+                                  "name": "(click)",
+                                  "value": "onClickBearbeitenNotiz(dsoKundenBetreuerBase)"
+                                }
+                              ],
+                              "components": [
+                                {
+                                  "class": "col-12",
+                                  "components": [
+                                    {
+                                      "name": "label22",
+                                      "style": {
+                                        "color": "#479cc8",
+                                        "display": "block",
+                                        "float": "left",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "Ab ${dsoKundenBetreuerBase.Betreuungsbeginn | utcDate : 'dd.MM.yyyy'}",
+                                      "type": "label"
+                                    },
+                                    {
+                                      "name": "label23",
+                                      "style": {
+                                        "color": "#479cc8",
+                                        "display": "block",
+                                        "float": "right",
+                                        "fontSize": "14px",
+                                        "fontWeight": "normal",
+                                        "marginTop": "3px"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Status}",
+                                      "type": "label"
+                                    }
+                                  ],
+                                  "name": "col9",
+                                  "style": {
+                                    "paddingLeft": "0",
+                                    "paddingRight": "0",
+                                    "position": "relative",
+                                    "verticalAlign": "baseline"
+                                  },
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row5",
+                              "style": {
+                                "marginLeft": "0",
+                                "marginRight": "0"
+                              },
+                              "type": "row"
+                            },
+                            {
+                              "attributes": [
+                                {
+                                  "name": "(click)",
+                                  "value": "onClickBearbeitenNotiz(dsoKundenBetreuerBase)"
+                                }
+                              ],
+                              "components": [
+                                {
+                                  "class": "col-12",
+                                  "components": [
+                                    {
+                                      "attributes": [],
+                                      "name": "label33",
+                                      "style": {
+                                        "color": "rgb(33, 37, 41)",
+                                        "display": "block",
+                                        "float": "none",
+                                        "fontWeight": "normal"
+                                      },
+                                      "text": "${dsoKundenBetreuerBase.Vorbemerkungen}",
+                                      "type": "label"
+                                    }
+                                  ],
+                                  "name": "col10",
+                                  "style": {
+                                    "borderBottom": "1px dotted #e6ecef",
+                                    "paddingLeft": "0",
+                                    "paddingRight": "0",
+                                    "position": "relative",
+                                    "verticalAlign": "baseline"
+                                  },
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row6",
+                              "style": {
+                                "marginBottom": "10px",
+                                "marginLeft": "0",
+                                "marginRight": "0"
+                              },
+                              "type": "row"
+                            },
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-12",
+                                  "components": [
+                                    {
+                                      "icon": "create",
+                                      "name": "button3",
+                                      "size": "sm",
+                                      "style": {
+                                        "float": "right"
+                                      },
+                                      "text": "Bearbeiten Betreuung",
+                                      "tooltip": "",
+                                      "type": "button"
+                                    }
+                                  ],
+                                  "name": "col11",
+                                  "style": {
+                                    "borderBottom": "1px dotted #e6ecef",
+                                    "paddingBottom": "10px",
+                                    "paddingLeft": "0",
+                                    "paddingRight": "0",
+                                    "paddingTop": "0"
+                                  },
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row7",
+                              "style": {
+                                "paddingLeft": "15px",
+                                "paddingRight": "15px"
+                              },
+                              "type": "row"
+                            }
+                          ],
+                          "footerTemplate": [],
+                          "name": "panel4",
+                          "text": "Betreuung",
                           "type": "panel"
                         },
                         {
@@ -436,7 +678,7 @@
                                         {
                                           "name": "label0",
                                           "style": {
-                                            "color": "#F1903C",
+                                            "color": "#479cc8",
                                             "display": "block",
                                             "float": "left",
                                             "fontWeight": "normal"
@@ -447,13 +689,14 @@
                                         {
                                           "name": "label1",
                                           "style": {
-                                            "color": "#F1903C",
+                                            "color": "#479cc8",
                                             "display": "block",
                                             "float": "right",
                                             "fontSize": "14px",
-                                            "fontWeight": "normal"
+                                            "fontWeight": "normal",
+                                            "marginTop": "3px"
                                           },
-                                          "text": "${data.Betreuungsart}",
+                                          "text": "${data.Leistungsart}",
                                           "type": "label"
                                         }
                                       ],
@@ -470,15 +713,113 @@
                                       "class": "col-12",
                                       "components": [
                                         {
-                                          "name": "label9",
+                                          "name": "label34",
                                           "style": {
-                                            "color": "#88989b",
+                                            "color": "#479cc8",
                                             "display": "block",
-                                            "float": "none",
+                                            "float": "right",
                                             "fontSize": "14px",
+                                            "fontWeight": "normal",
+                                            "marginTop": "-3px"
+                                          },
+                                          "text": "${data.Betreuungsart}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label27",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "left",
                                             "fontWeight": "normal"
                                           },
-                                          "text": "${data.Leistungsart}",
+                                          "text": "${data.Strasse}",
+                                          "type": "label"
+                                        }
+                                      ],
+                                      "name": "col12",
+                                      "style": {
+                                        "paddingLeft": "0",
+                                        "paddingRight": "0",
+                                        "position": "relative",
+                                        "verticalAlign": "baseline"
+                                      },
+                                      "type": "col"
+                                    },
+                                    {
+                                      "class": "col-12",
+                                      "components": [
+                                        {
+                                          "attributes": [],
+                                          "name": "label28",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.PLZ} ${data.Ort}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label29",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Telefon1}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label30",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Telefon2}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label31",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.EMail1}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label32",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.EMail2}",
+                                          "type": "label"
+                                        },
+                                        {
+                                          "attributes": [],
+                                          "name": "label37",
+                                          "style": {
+                                            "color": "rgb(33, 37, 41)",
+                                            "display": "block",
+                                            "float": "none",
+                                            "fontWeight": "normal"
+                                          },
+                                          "text": "${data.Notiz}",
                                           "type": "label"
                                         }
                                       ],
@@ -570,18 +911,43 @@
                                         {
                                           "name": "label0",
                                           "style": {
-                                            "color": "#F1903C",
+                                            "color": "#479cc8",
                                             "display": "block",
-                                            "float": "none",
-                                            "fontSize": "14px",
+                                            "float": "left",
                                             "fontWeight": "normal"
                                           },
                                           "text": "${data.Titel}",
                                           "type": "label"
                                         },
                                         {
+                                          "name": "label15",
+                                          "style": {
+                                            "color": "#479cc8",
+                                            "display": "block",
+                                            "float": "right",
+                                            "fontSize": "14px",
+                                            "fontWeight": "normal",
+                                            "marginTop": "3px"
+                                          },
+                                          "text": "${data.Am | utcDate : 'dd.MM.yyyy'}",
+                                          "type": "label"
+                                        }
+                                      ],
+                                      "name": "col0",
+                                      "style": {
+                                        "paddingLeft": "0",
+                                        "paddingRight": "0",
+                                        "position": "relative",
+                                        "verticalAlign": "baseline"
+                                      },
+                                      "type": "col"
+                                    },
+                                    {
+                                      "class": "col-12",
+                                      "components": [
+                                        {
                                           "attributes": [],
-                                          "name": "label3",
+                                          "name": "label18",
                                           "style": {
                                             "color": "rgb(33, 37, 41)",
                                             "display": "block",
@@ -592,7 +958,7 @@
                                           "type": "label"
                                         }
                                       ],
-                                      "name": "col0",
+                                      "name": "col7",
                                       "style": {
                                         "borderBottom": "1px dotted #e6ecef",
                                         "paddingLeft": "0",
@@ -636,7 +1002,7 @@
                                   "name": "col1",
                                   "style": {
                                     "borderBottom": "1px dotted #e6ecef",
-                                    "paddingBottom": "11px",
+                                    "paddingBottom": "10px",
                                     "paddingLeft": "0",
                                     "paddingRight": "0",
                                     "paddingTop": "0"
@@ -647,7 +1013,8 @@
                               "name": "row2",
                               "style": {
                                 "paddingLeft": "25px",
-                                "paddingRight": "25px"
+                                "paddingRight": "25px",
+                                "paddingTop": "3px"
                               },
                               "type": "row"
                             }
@@ -665,32 +1032,620 @@
                   ],
                   "name": "row0",
                   "type": "row"
+                },
+                {
+                  "name": "label24",
+                  "style": {
+                    "backgroundColor": "#479cc8",
+                    "color": "#ffffff",
+                    "paddingLeft": "10px",
+                    "width": "100%"
+                  },
+                  "text": "Hier ist eine Zeile mit 10px Höhe zum Abschluss",
+                  "type": "label",
+                  "visible": false
+                },
+                {
+                  "name": "row8",
+                  "style": {
+                    "backgroundColor": "#ffffff",
+                    "height": "10px"
+                  },
+                  "type": "row"
                 }
               ],
-              "selected": true,
+              "selected": false,
               "text": "Daten"
             },
             {
+              "components": [
+                {
+                  "allowCollapse": true,
+                  "components": [
+                    {
+                      "allowPaging": false,
+                      "count": "${rstKundenLeistungenArtenCount}",
+                      "data": "${rstKundenLeistungenArten}",
+                      "defaultRowText": "Template for index",
+                      "emptyText": "...",
+                      "events": {
+                        "loadData": [
+                          {
+                            "name": "dbSinDarEla.getKundenLeistungens",
+                            "parameters": [
+                              {
+                                "name": "$filter",
+                                "value": "KundenID eq ${parameters.KundenID}"
+                              },
+                              {
+                                "name": "$orderby",
+                                "value": "KundenLeistungArten/LeistungArt"
+                              },
+                              {
+                                "name": "$expand",
+                                "value": "KundenLeistungArten"
+                              }
+                            ],
+                            "then": [
+                              {
+                                "name": "rstKundenLeistungenArten",
+                                "type": "set",
+                                "value": "${result.value}"
+                              },
+                              {
+                                "name": "rstKundenLeistungenArtenCount",
+                                "type": "set",
+                                "value": "event.top != null && event.skip != null ? result['@odata.count'] : ${result.value.length}"
+                              }
+                            ],
+                            "type": "invoke"
+                          }
+                        ]
+                      },
+                      "name": "datalistKundenLeistungenArten",
+                      "pageSize": 20,
+                      "style": {
+                        "border": "1px solid rgba(0, 0, 0, 0)"
+                      },
+                      "template": [
+                        {
+                          "attributes": [
+                            {
+                              "name": "(click)",
+                              "value": "onClickBearbeitenNotiz(data)"
+                            }
+                          ],
+                          "components": [
+                            {
+                              "class": "col-12",
+                              "components": [
+                                {
+                                  "name": "label47",
+                                  "style": {
+                                    "color": "#479cc8",
+                                    "display": "block",
+                                    "float": "left",
+                                    "fontWeight": "normal"
+                                  },
+                                  "text": "${data.KundenLeistungArten.LeistungArt}",
+                                  "type": "label"
+                                },
+                                {
+                                  "name": "label48",
+                                  "style": {
+                                    "color": "#479cc8",
+                                    "display": "block",
+                                    "float": "right",
+                                    "fontSize": "14px",
+                                    "fontWeight": "normal",
+                                    "marginTop": "3px"
+                                  },
+                                  "text": "${data.KundenLeistungArten.LeistungSchluessel}",
+                                  "type": "label"
+                                }
+                              ],
+                              "name": "col18",
+                              "style": {
+                                "paddingLeft": "0",
+                                "paddingRight": "0",
+                                "position": "relative",
+                                "verticalAlign": "baseline"
+                              },
+                              "type": "col"
+                            }
+                          ],
+                          "name": "row14",
+                          "style": {
+                            "marginLeft": "0",
+                            "marginRight": "0"
+                          },
+                          "type": "row"
+                        },
+                        {
+                          "attributes": [
+                            {
+                              "name": "(click)",
+                              "value": "onClickBearbeitenNotiz(data)"
+                            }
+                          ],
+                          "components": [
+                            {
+                              "class": "col-3",
+                              "components": [
+                                {
+                                  "attributes": [],
+                                  "name": "label39",
+                                  "style": {
+                                    "color": "rgb(33, 37, 41)",
+                                    "display": "block",
+                                    "float": "none",
+                                    "fontSize": "14px",
+                                    "fontWeight": "normal",
+                                    "marginTop": "3px"
+                                  },
+                                  "text": "Anspruch",
+                                  "type": "label"
+                                },
+                                {
+                                  "attributes": [],
+                                  "name": "label44",
+                                  "style": {
+                                    "color": "rgb(33, 37, 41)",
+                                    "display": "block",
+                                    "float": "none",
+                                    "fontSize": "14px",
+                                    "fontWeight": "normal",
+                                    "marginTop": "-2px"
+                                  },
+                                  "text": "Verbraucht",
+                                  "type": "label"
+                                },
+                                {
+                                  "attributes": [],
+                                  "name": "label46",
+                                  "style": {
+                                    "color": "rgb(33, 37, 41)",
+                                    "display": "block",
+                                    "float": "none",
+                                    "fontSize": "14px",
+                                    "fontWeight": "normal",
+                                    "marginTop": "-2px"
+                                  },
+                                  "text": "Rest",
+                                  "type": "label"
+                                }
+                              ],
+                              "name": "col16",
+                              "style": {
+                                "borderBottom": "1px dotted #e6ecef",
+                                "paddingLeft": "0",
+                                "paddingRight": "0",
+                                "position": "relative",
+                                "verticalAlign": "baseline"
+                              },
+                              "type": "col"
+                            },
+                            {
+                              "class": "col-3",
+                              "components": [
+                                {
+                                  "attributes": [],
+                                  "name": "label45",
+                                  "style": {
+                                    "color": "rgb(33, 37, 41)",
+                                    "display": "block",
+                                    "float": "none",
+                                    "fontWeight": "normal",
+                                    "textAlign": "right"
+                                  },
+                                  "text": "249,00",
+                                  "type": "label"
+                                },
+                                {
+                                  "attributes": [],
+                                  "name": "label49",
+                                  "style": {
+                                    "color": "rgb(33, 37, 41)",
+                                    "display": "block",
+                                    "float": "none",
+                                    "fontWeight": "normal",
+                                    "marginTop": "-5px",
+                                    "textAlign": "right",
+                                    "width": "100%"
+                                  },
+                                  "text": "29,25",
+                                  "type": "label"
+                                },
+                                {
+                                  "attributes": [],
+                                  "name": "label50",
+                                  "style": {
+                                    "color": "rgb(33, 37, 41)",
+                                    "display": "block",
+                                    "float": "none",
+                                    "fontWeight": "bold",
+                                    "marginTop": "-5px",
+                                    "textAlign": "right",
+                                    "width": "100%"
+                                  },
+                                  "text": "219,75",
+                                  "type": "label"
+                                }
+                              ],
+                              "name": "col20",
+                              "style": {
+                                "borderBottom": "1px dotted #e6ecef",
+                                "paddingLeft": "0",
+                                "paddingRight": "0",
+                                "position": "relative",
+                                "verticalAlign": "baseline"
+                              },
+                              "type": "col"
+                            },
+                            {
+                              "class": "col-6",
+                              "components": [
+                                {
+                                  "name": "gauge0",
+                                  "showAxis": false,
+                                  "style": {
+                                    "float": "right",
+                                    "height": "60px",
+                                    "width": "60px"
+                                  },
+                                  "text": "53%",
+                                  "type": "gauge",
+                                  "unit": "",
+                                  "value": 53
+                                },
+                                {
+                                  "attributes": [],
+                                  "name": "label51",
+                                  "style": {
+                                    "color": "#479cc8",
+                                    "display": "block",
+                                    "float": "right",
+                                    "fontSize": "14px",
+                                    "fontWeight": "normal",
+                                    "left": "62px",
+                                    "marginTop": "-5px",
+                                    "position": "relative",
+                                    "textAlign": "right",
+                                    "top": "46px"
+                                  },
+                                  "text": "Verbraucht",
+                                  "type": "label"
+                                }
+                              ],
+                              "name": "col19",
+                              "style": {
+                                "borderBottom": "1px dotted #e6ecef",
+                                "height": "63px",
+                                "paddingLeft": "0",
+                                "paddingRight": "0",
+                                "position": "static",
+                                "top": "15px",
+                                "verticalAlign": "baseline"
+                              },
+                              "type": "col"
+                            }
+                          ],
+                          "name": "row13",
+                          "style": {
+                            "marginBottom": "10px",
+                            "marginLeft": "0",
+                            "marginRight": "0"
+                          },
+                          "type": "row"
+                        }
+                      ],
+                      "type": "datalist",
+                      "wrapItems": false
+                    }
+                  ],
+                  "footerTemplate": [],
+                  "icon": "",
+                  "name": "panel5",
+                  "text": "Aktuell",
+                  "type": "panel"
+                },
+                {
+                  "allowCollapse": true,
+                  "components": [
+                    {
+                      "attributes": [
+                        {
+                          "name": "(click)",
+                          "value": "onClickBearbeitenNotiz(dsoKundenBetreuerBase)"
+                        }
+                      ],
+                      "components": [
+                        {
+                          "class": "col-12",
+                          "components": [
+                            {
+                              "name": "label9",
+                              "style": {
+                                "color": "#479cc8",
+                                "display": "block",
+                                "float": "left",
+                                "fontWeight": "normal"
+                              },
+                              "text": "01.01.2020 - 31.12.2020",
+                              "type": "label"
+                            },
+                            {
+                              "name": "label35",
+                              "style": {
+                                "color": "#479cc8",
+                                "display": "block",
+                                "float": "right",
+                                "fontSize": "14px",
+                                "fontWeight": "normal",
+                                "marginTop": "3px"
+                              },
+                              "text": "Familienentlastung",
+                              "type": "label"
+                            }
+                          ],
+                          "name": "col13",
+                          "style": {
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "position": "relative",
+                            "verticalAlign": "baseline"
+                          },
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row11",
+                      "style": {
+                        "marginLeft": "0",
+                        "marginRight": "0"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "attributes": [
+                        {
+                          "name": "(click)",
+                          "value": "onClickBearbeitenNotiz(dsoKundenBetreuerBase)"
+                        }
+                      ],
+                      "components": [
+                        {
+                          "class": "col-4",
+                          "components": [
+                            {
+                              "attributes": [],
+                              "name": "label36",
+                              "style": {
+                                "color": "rgb(33, 37, 41)",
+                                "display": "block",
+                                "float": "left",
+                                "fontSize": "14px",
+                                "fontWeight": "normal",
+                                "marginRight": "5px",
+                                "marginTop": "3px"
+                              },
+                              "text": "Anspruch",
+                              "type": "label"
+                            },
+                            {
+                              "attributes": [],
+                              "name": "label38",
+                              "style": {
+                                "color": "rgb(33, 37, 41)",
+                                "display": "block",
+                                "float": "left",
+                                "fontWeight": "normal"
+                              },
+                              "text": "249",
+                              "type": "label"
+                            }
+                          ],
+                          "name": "col14",
+                          "style": {
+                            "borderBottom": "1px dotted #e6ecef",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "position": "relative",
+                            "verticalAlign": "baseline"
+                          },
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-5",
+                          "components": [
+                            {
+                              "attributes": [],
+                              "name": "label40",
+                              "style": {
+                                "color": "rgb(33, 37, 41)",
+                                "display": "block",
+                                "float": "left",
+                                "fontSize": "14px",
+                                "fontWeight": "normal",
+                                "marginRight": "5px",
+                                "marginTop": "3px"
+                              },
+                              "text": "Verbraucht",
+                              "type": "label"
+                            },
+                            {
+                              "attributes": [],
+                              "name": "label41",
+                              "style": {
+                                "color": "rgb(33, 37, 41)",
+                                "display": "block",
+                                "float": "left",
+                                "fontWeight": "normal"
+                              },
+                              "text": "29,25",
+                              "type": "label"
+                            }
+                          ],
+                          "name": "col15",
+                          "style": {
+                            "borderBottom": "1px dotted #e6ecef",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "position": "relative",
+                            "verticalAlign": "baseline"
+                          },
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-3",
+                          "components": [
+                            {
+                              "attributes": [],
+                              "name": "label43",
+                              "style": {
+                                "color": "rgb(33, 37, 41)",
+                                "display": "block",
+                                "float": "right",
+                                "fontWeight": "normal"
+                              },
+                              "text": "219,75",
+                              "type": "label"
+                            },
+                            {
+                              "attributes": [],
+                              "name": "label42",
+                              "style": {
+                                "color": "rgb(33, 37, 41)",
+                                "display": "block",
+                                "float": "right",
+                                "fontSize": "14px",
+                                "fontWeight": "normal",
+                                "marginRight": "5px",
+                                "marginTop": "3px"
+                              },
+                              "text": "Rest",
+                              "type": "label"
+                            }
+                          ],
+                          "name": "col17",
+                          "style": {
+                            "borderBottom": "1px dotted #e6ecef",
+                            "paddingLeft": "0",
+                            "paddingRight": "0",
+                            "position": "relative",
+                            "verticalAlign": "baseline"
+                          },
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row12",
+                      "style": {
+                        "marginBottom": "10px",
+                        "marginLeft": "0",
+                        "marginRight": "0"
+                      },
+                      "type": "row"
+                    }
+                  ],
+                  "footerTemplate": [],
+                  "name": "panel11",
+                  "text": "Kontingente",
+                  "type": "panel"
+                },
+                {
+                  "allowCollapse": true,
+                  "components": [],
+                  "footerTemplate": [],
+                  "icon": "",
+                  "name": "panel6",
+                  "text": "Kontingente",
+                  "type": "panel"
+                },
+                {
+                  "allowCollapse": true,
+                  "components": [],
+                  "footerTemplate": [],
+                  "icon": "",
+                  "name": "panel7",
+                  "text": "Bescheide",
+                  "type": "panel"
+                },
+                {
+                  "allowCollapse": true,
+                  "components": [],
+                  "footerTemplate": [],
+                  "icon": "",
+                  "name": "panel8",
+                  "text": "Betreuer",
+                  "type": "panel"
+                },
+                {
+                  "name": "label25",
+                  "style": {
+                    "backgroundColor": "#479cc8",
+                    "color": "#ffffff",
+                    "paddingLeft": "10px",
+                    "width": "100%"
+                  },
+                  "text": "Hier ist eine Zeile mit 10px Höhe zum Abschluss",
+                  "type": "label",
+                  "visible": false
+                },
+                {
+                  "name": "row9",
+                  "style": {
+                    "backgroundColor": "#ffffff",
+                    "height": "10px"
+                  },
+                  "type": "row"
+                }
+              ],
               "selected": false,
               "text": "Leistungen"
             },
             {
               "components": [
                 {
-                  "name": "datepicker0",
-                  "type": "datepicker"
+                  "allowCollapse": true,
+                  "collapsed": true,
+                  "components": [],
+                  "footerTemplate": [],
+                  "icon": "",
+                  "name": "panel9",
+                  "text": "Erledigt",
+                  "type": "panel"
                 },
                 {
-                  "defaultView": "agendaDay",
-                  "editable": true,
-                  "firstDayOfWeek": 1,
-                  "locale": "de",
-                  "name": "scheduler0",
-                  "type": "scheduler",
-                  "weekends": true
+                  "allowCollapse": true,
+                  "collapsed": false,
+                  "components": [],
+                  "footerTemplate": [],
+                  "icon": "",
+                  "name": "panel10",
+                  "text": "Geplant",
+                  "type": "panel"
+                },
+                {
+                  "name": "label26",
+                  "style": {
+                    "backgroundColor": "#479cc8",
+                    "color": "#ffffff",
+                    "paddingLeft": "10px",
+                    "width": "100%"
+                  },
+                  "text": "Hier ist eine Zeile mit 10px Höhe zum Abschluss",
+                  "type": "label",
+                  "visible": false
+                },
+                {
+                  "name": "row10",
+                  "style": {
+                    "backgroundColor": "#ffffff",
+                    "height": "10px"
+                  },
+                  "type": "row"
                 }
               ],
-              "selected": false,
+              "selected": true,
               "text": "Termine"
             },
             {
@@ -718,7 +1673,7 @@
         "type": "execute"
       },
       {
-        "code": "this.datalistKundenBetreuer.load();\nthis.datalistKundenKontakte.load();\nthis.datalistKundenNotizen.load();",
+        "code": "this.datalistKundenBetreuer.load();\nthis.datalistKundenKontakte.load();\nthis.datalistKundenNotizen.load();\nthis.datalistKundenLeistungenArten.load();",
         "type": "execute"
       },
       {

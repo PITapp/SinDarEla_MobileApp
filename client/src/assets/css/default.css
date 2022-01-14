@@ -12656,7 +12656,7 @@ input:focus {
 
 .ui-panel {
   border-radius: 0px;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 }
 
 .ui-panel-titlebar {

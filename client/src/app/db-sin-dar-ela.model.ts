@@ -682,9 +682,24 @@ export interface VwBenutzerRollen {
 
 export interface VwKundenBetreuer {
   KundenID: number;
-  NameGesamtBetreuer: string;
   Betreuungsart: string;
   Leistungsart: string;
+  Name1: string;
+  Name2: string;
+  NameGesamtBetreuer: string;
+  NameKuerzel: string;
+  TitelVorne: string;
+  TitelHinten: string;
+  Strasse: string;
+  PLZ: string;
+  Ort: string;
+  Geburtsdatum: string;
+  Telefon1: string;
+  Telefon2: string;
+  EMail1: string;
+  EMail2: string;
+  BildURL: string;
+  Notiz: string;
 }
 
 export interface VwKundenUndBetreuerAuswahl {
