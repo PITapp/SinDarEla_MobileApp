@@ -27,10 +27,7 @@
   "name": "SinDarElaMobile",
   "namespaces": [],
   "navigation": [
-    "Dashboard",
-    "Base",
-    "aaKunden",
-    "aaKundenKontakte"
+    "Dashboard"
   ],
   "pages": [
     "Dashboard",
@@ -43,16 +40,9 @@
     "Infos",
     "Kunden",
     "KundenDaten",
-    "Base",
-    "Add Base",
-    "Edit Base",
-    "aaKunden",
-    "Add aaKunden",
-    "Edit aaKunden",
-    "aaKundenKontakte",
+    "zzKundenDaten",
     "Add aaKundenKontakte",
-    "Edit aaKundenKontakte",
-    "zzKundenDaten"
+    "KundenDatenKontakteNBL"
   ],
   "port": 8000,
   "security": {

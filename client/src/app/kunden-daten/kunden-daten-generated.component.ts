@@ -19,6 +19,7 @@ import { DataListComponent } from '@radzen/angular/dist/datalist';
 import { GaugeComponent } from '@radzen/angular/dist/gauge';
 
 import { ConfigService } from '../config.service';
+import { KundenDatenKontakteNblComponent } from '../kunden-daten-kontakte-nbl/kunden-daten-kontakte-nbl.component';
 
 import { DbSinDarElaService } from '../db-sin-dar-ela.service';
 import { SecurityService } from '../security.service';
@@ -43,7 +44,7 @@ export class KundenDatenGenerated implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('button2') button2: ButtonComponent;
   @ViewChild('panel3') panel3: PanelComponent;
   @ViewChild('datalistKundenKontakte') datalistKundenKontakte: DataListComponent;
-  @ViewChild('button1') button1: ButtonComponent;
+  @ViewChild('buttonKundenKontaktNeu') buttonKundenKontaktNeu: ButtonComponent;
   @ViewChild('panel4') panel4: PanelComponent;
   @ViewChild('label22') label22: LabelComponent;
   @ViewChild('label23') label23: LabelComponent;
@@ -103,6 +104,7 @@ export class KundenDatenGenerated implements AfterViewInit, OnInit, OnDestroy {
   intAlterKunde: any;
   onClickBearbeitenNotiz: any;
   onClickAnimation: any;
+  onClickBearbeitenKontakt: any;
   parameters: any;
   rstKundenKontakte: any;
   rstKundenKontakteCount: any;
@@ -198,6 +200,13 @@ this.intAlterKunde = Math.abs(ageDate.getUTCFullYear() - 1970);
   
   
 };
+
+    this.onClickBearbeitenKontakt = (data) => {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
+    this.buttonKundenKontaktBearbeitenClick(null, data)
+};
   }
 
   datalistKundenKontakteLoadData(event: any) {
@@ -209,6 +218,14 @@ this.intAlterKunde = Math.abs(ageDate.getUTCFullYear() - 1970);
     }, (result: any) => {
 
     });
+  }
+
+  buttonKundenKontaktBearbeitenClick(event: any, data: any) {
+    this.dialogService.open(KundenDatenKontakteNblComponent, { parameters: {strModus: 'Bearbeiten', dsoKundenKontakt: data}, title: `Bearbeiten Kontakt` });
+  }
+
+  buttonKundenKontaktNeuClick(event: any) {
+    this.dialogService.open(KundenDatenKontakteNblComponent, { parameters: {strModus: 'Neu', dsoKundenKontakt: null}, title: `Neuer Kontakt` });
   }
 
   datalistKundenBetreuerLoadData(event: any) {

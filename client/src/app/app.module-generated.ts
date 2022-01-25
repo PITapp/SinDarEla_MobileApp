@@ -27,14 +27,15 @@ import { TabsModule } from '@radzen/angular/dist/tabs';
 import { TextBoxModule } from '@radzen/angular/dist/textbox';
 import { DataListModule } from '@radzen/angular/dist/datalist';
 import { PanelModule } from '@radzen/angular/dist/panel';
-import { GridModule } from '@radzen/angular/dist/grid';
-import { TemplateFormModule } from '@radzen/angular/dist/template-form';
-import { DropDownDataGridModule } from '@radzen/angular/dist/dropdown-datagrid';
-import { RequiredValidatorModule } from '@radzen/angular/dist/required-validator';
 import { DatePickerModule } from '@radzen/angular/dist/datepicker';
-import { DropDownModule } from '@radzen/angular/dist/dropdown';
-import { FormModule } from '@radzen/angular/dist/form';
 import { SchedulerModule } from '@radzen/angular/dist/scheduler';
+import { TemplateFormModule } from '@radzen/angular/dist/template-form';
+import { DropDownModule } from '@radzen/angular/dist/dropdown';
+import { RequiredValidatorModule } from '@radzen/angular/dist/required-validator';
+import { NumericModule } from '@radzen/angular/dist/numeric';
+import { CheckBoxModule } from '@radzen/angular/dist/checkbox';
+import { SelectBarModule } from '@radzen/angular/dist/selectbar';
+import { TextAreaModule } from '@radzen/angular/dist/textarea';
 import { SharedModule } from '@radzen/angular/dist/shared';
 import { NotificationModule } from '@radzen/angular/dist/notification';
 import { DialogModule } from '@radzen/angular/dist/dialog';
@@ -54,16 +55,9 @@ import { ZzDashboard3Component } from './zz-dashboard-3/zz-dashboard-3.component
 import { InfosComponent } from './infos/infos.component';
 import { KundenComponent } from './kunden/kunden.component';
 import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
-import { BaseComponent } from './base/base.component';
-import { AddBaseComponent } from './add-base/add-base.component';
-import { EditBaseComponent } from './edit-base/edit-base.component';
-import { AaKundenComponent } from './aa-kunden/aa-kunden.component';
-import { AddAaKundenComponent } from './add-aa-kunden/add-aa-kunden.component';
-import { EditAaKundenComponent } from './edit-aa-kunden/edit-aa-kunden.component';
-import { AaKundenKontakteComponent } from './aa-kunden-kontakte/aa-kunden-kontakte.component';
-import { AddAaKundenKontakteComponent } from './add-aa-kunden-kontakte/add-aa-kunden-kontakte.component';
-import { EditAaKundenKontakteComponent } from './edit-aa-kunden-kontakte/edit-aa-kunden-kontakte.component';
 import { ZzKundenDatenComponent } from './zz-kunden-daten/zz-kunden-daten.component';
+import { AddAaKundenKontakteComponent } from './add-aa-kunden-kontakte/add-aa-kunden-kontakte.component';
+import { KundenDatenKontakteNblComponent } from './kunden-daten-kontakte-nbl/kunden-daten-kontakte-nbl.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { KundenDatenLayoutComponent } from './kunden-daten-layout/kunden-daten-layout.component';
@@ -86,16 +80,9 @@ export const PageDeclarations = [
   InfosComponent,
   KundenComponent,
   KundenDatenComponent,
-  BaseComponent,
-  AddBaseComponent,
-  EditBaseComponent,
-  AaKundenComponent,
-  AddAaKundenComponent,
-  EditAaKundenComponent,
-  AaKundenKontakteComponent,
-  AddAaKundenKontakteComponent,
-  EditAaKundenKontakteComponent,
   ZzKundenDatenComponent,
+  AddAaKundenKontakteComponent,
+  KundenDatenKontakteNblComponent,
 ];
 
 export const LayoutDeclarations = [
@@ -161,14 +148,15 @@ export const AppImports = [
   TextBoxModule,
   DataListModule,
   PanelModule,
-  GridModule,
-  TemplateFormModule,
-  DropDownDataGridModule,
-  RequiredValidatorModule,
   DatePickerModule,
-  DropDownModule,
-  FormModule,
   SchedulerModule,
+  TemplateFormModule,
+  DropDownModule,
+  RequiredValidatorModule,
+  NumericModule,
+  CheckBoxModule,
+  SelectBarModule,
+  TextAreaModule,
   SharedModule,
   NotificationModule,
   DialogModule,

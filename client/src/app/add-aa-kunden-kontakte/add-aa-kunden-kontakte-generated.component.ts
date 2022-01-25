@@ -11,8 +11,14 @@ import { Subscription } from 'rxjs';
 import { DialogService, DIALOG_PARAMETERS, DialogRef } from '@radzen/angular/dist/dialog';
 import { NotificationService } from '@radzen/angular/dist/notification';
 import { ContentComponent } from '@radzen/angular/dist/content';
-import { HeadingComponent } from '@radzen/angular/dist/heading';
-import { FormComponent } from '@radzen/angular/dist/form';
+import { TemplateFormComponent } from '@radzen/angular/dist/template-form';
+import { LabelComponent } from '@radzen/angular/dist/label';
+import { DropDownComponent } from '@radzen/angular/dist/dropdown';
+import { RequiredValidatorComponent } from '@radzen/angular/dist/required-validator';
+import { TextBoxComponent } from '@radzen/angular/dist/textbox';
+import { NumericComponent } from '@radzen/angular/dist/numeric';
+import { CheckBoxComponent } from '@radzen/angular/dist/checkbox';
+import { ButtonComponent } from '@radzen/angular/dist/button';
 
 import { ConfigService } from '../config.service';
 
@@ -22,8 +28,30 @@ import { SecurityService } from '../security.service';
 export class AddAaKundenKontakteGenerated implements AfterViewInit, OnInit, OnDestroy {
   // Components
   @ViewChild('content1') content1: ContentComponent;
-  @ViewChild('pageTitle') pageTitle: HeadingComponent;
-  @ViewChild('form0') form0: FormComponent;
+  @ViewChild('form0') form0: TemplateFormComponent;
+  @ViewChild('kundenIdLabel') kundenIdLabel: LabelComponent;
+  @ViewChild('kundenId') kundenId: DropDownComponent;
+  @ViewChild('kundenIdRequiredValidator') kundenIdRequiredValidator: RequiredValidatorComponent;
+  @ViewChild('kundenKontaktArtIdLabel') kundenKontaktArtIdLabel: LabelComponent;
+  @ViewChild('kundenKontaktArtId') kundenKontaktArtId: DropDownComponent;
+  @ViewChild('kundenKontaktArtIdRequiredValidator') kundenKontaktArtIdRequiredValidator: RequiredValidatorComponent;
+  @ViewChild('nameLabel') nameLabel: LabelComponent;
+  @ViewChild('name') name: TextBoxComponent;
+  @ViewChild('nameRequiredValidator') nameRequiredValidator: RequiredValidatorComponent;
+  @ViewChild('adresseLabel') adresseLabel: LabelComponent;
+  @ViewChild('adresse') adresse: TextBoxComponent;
+  @ViewChild('telefonLabel') telefonLabel: LabelComponent;
+  @ViewChild('telefon') telefon: TextBoxComponent;
+  @ViewChild('eMailLabel') eMailLabel: LabelComponent;
+  @ViewChild('eMail') eMail: TextBoxComponent;
+  @ViewChild('baseIdLabel') baseIdLabel: LabelComponent;
+  @ViewChild('baseId') baseId: NumericComponent;
+  @ViewChild('hauptansprechpartnerLabel') hauptansprechpartnerLabel: LabelComponent;
+  @ViewChild('hauptansprechpartner') hauptansprechpartner: CheckBoxComponent;
+  @ViewChild('infoLabel') infoLabel: LabelComponent;
+  @ViewChild('info') info: TextBoxComponent;
+  @ViewChild('button1') button1: ButtonComponent;
+  @ViewChild('button2') button2: ButtonComponent;
 
   router: Router;
 
@@ -117,14 +145,6 @@ export class AddAaKundenKontakteGenerated implements AfterViewInit, OnInit, OnDe
     });
   }
 
-  form0Cancel(event: any) {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    } else {
-      this._location.back();
-    }
-  }
-
   form0Submit(event: any) {
     this.dbSinDarEla.createKundenKontakte(null, event)
     .subscribe((result: any) => {
@@ -136,5 +156,13 @@ export class AddAaKundenKontakteGenerated implements AfterViewInit, OnInit, OnDe
     }, (result: any) => {
       this.notificationService.notify({ severity: "error", summary: `Error`, detail: `Unable to create new KundenKontakte!` });
     });
+  }
+
+  button2Click(event: any) {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    } else {
+      this._location.back();
+    }
   }
 }

@@ -1,0 +1,98 @@
+<rz-content #content1 container="main">
+  <div [ngStyle]="{}" class="row">
+    <div class="col-md-12">
+      <rz-template-form #form0 (submit)="form0Submit($event)">
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #kundenKontaktArtIdLabel component="KundenKontaktArtID" [style]="{'width': '100%'}" text="Kontaktart">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-dropdown #kundenKontaktArtId [data]="getKundenKontakteArtensResult" emptyFilterText="No results found" multipleItemsSelectedText="{0} items selected" [style]="{'display': 'block', 'width': '100%'}" textProperty="Bezeichnung" [(ngModel)]="kundenkontakte && kundenkontakte.KundenKontaktArtID" valueProperty="KundenKontaktArtID" name="KundenKontaktArtID">
+            </rz-dropdown>
+            <rz-required-validator #kundenKontaktArtIdRequiredValidator [component]="kundenKontaktArtId" [style]="{'position': 'absolute'}" text="Kontaktart eingeben">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #nameLabel component="Name" [style]="{'width': '100%'}" text="Name">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #name [maxLength]="80" [style]="{'display': 'block', 'width': '100%'}" [(ngModel)]="kundenkontakte && kundenkontakte.Name" name="Name">
+            </rz-textbox>
+            <rz-required-validator #nameRequiredValidator [component]="name" [style]="{'position': 'absolute'}" text="Name eingeben">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #adresseLabel component="Adresse" [style]="{'width': '100%'}" text="Adresse">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #adresse [maxLength]="150" [style]="{'width': '100%'}" [(ngModel)]="kundenkontakte && kundenkontakte.Adresse" name="Adresse">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #telefonLabel component="Telefon" [style]="{'width': '100%'}" text="Telefon">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #telefon [maxLength]="30" [style]="{'width': '100%'}" [(ngModel)]="kundenkontakte && kundenkontakte.Telefon" name="Telefon">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #eMailLabel component="EMail" [style]="{'width': '100%'}" text="E-Mail">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #eMail [maxLength]="70" [style]="{'width': '100%'}" [(ngModel)]="kundenkontakte && kundenkontakte.EMail" name="EMail">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #hauptansprechpartnerLabel component="Hauptansprechpartner" [style]="{'width': '100%'}" text="Hauptkontakt">
+            </rz-label>
+          </div>
+          <div class="col-md-9" [ngStyle]="{'verticalAlign': 'baseline'}">
+            <rz-selectbar #selectbar0 [style]="{}" [(ngModel)]="kundenkontakte && kundenkontakte.Hauptansprechpartner" name="selectbar0">
+              <rz-selectbar-option text="Ja" value="Ja">
+              </rz-selectbar-option>
+              <rz-selectbar-option text="Nein" value="Nein">
+              </rz-selectbar-option>
+            </rz-selectbar>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #infoLabel component="Info" [style]="{'width': '100%'}" text="Info">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textarea #info [rows]="8" [style]="{'width': '100%'}" [(ngModel)]="kundenkontakte && kundenkontakte.Info" name="Info">
+            </rz-textarea>
+          </div>
+        </div>
+        <div [ngStyle]="{'float': 'none'}" class="row">
+          <div class="col offset-sm-3 justify-content-end d-flex" [ngStyle]="{'float': 'none'}">
+            <rz-button #buttonLoeschen buttonStyle="danger" buttonType="submit" icon="delete" text="Löschen">
+            </rz-button>
+            <rz-button #buttonSpeichern buttonStyle="success" buttonType="submit" icon="save" [style]="{'marginLeft': '1rem'}" text="Speichern">
+            </rz-button>
+          </div>
+        </div>
+      </rz-template-form>
+    </div>
+  </div>
+  <div [ngStyle]="{'backgroundColor': 'rgba(0, 0, 0, 0)', 'height': '1000px', 'marginTop': '22px', 'width': ''}" class="row">
+    <div class="col-md-12" [ngStyle]="{'backgroundColor': '#e6ecef', 'paddingLeft': '0', 'paddingRight': '0'}">
+    </div>
+  </div>
+</rz-content>

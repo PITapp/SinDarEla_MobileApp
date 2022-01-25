@@ -16,16 +16,9 @@ import { ZzDashboard3Component } from './zz-dashboard-3/zz-dashboard-3.component
 import { InfosComponent } from './infos/infos.component';
 import { KundenComponent } from './kunden/kunden.component';
 import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
-import { BaseComponent } from './base/base.component';
-import { AddBaseComponent } from './add-base/add-base.component';
-import { EditBaseComponent } from './edit-base/edit-base.component';
-import { AaKundenComponent } from './aa-kunden/aa-kunden.component';
-import { AddAaKundenComponent } from './add-aa-kunden/add-aa-kunden.component';
-import { EditAaKundenComponent } from './edit-aa-kunden/edit-aa-kunden.component';
-import { AaKundenKontakteComponent } from './aa-kunden-kontakte/aa-kunden-kontakte.component';
-import { AddAaKundenKontakteComponent } from './add-aa-kunden-kontakte/add-aa-kunden-kontakte.component';
-import { EditAaKundenKontakteComponent } from './edit-aa-kunden-kontakte/edit-aa-kunden-kontakte.component';
 import { ZzKundenDatenComponent } from './zz-kunden-daten/zz-kunden-daten.component';
+import { AddAaKundenKontakteComponent } from './add-aa-kunden-kontakte/add-aa-kunden-kontakte.component';
+import { KundenDatenKontakteNblComponent } from './kunden-daten-kontakte-nbl/kunden-daten-kontakte-nbl.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -83,62 +76,6 @@ export const routes: Routes = [
         component: ZzDashboard3Component
       },
       {
-        path: 'base',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: BaseComponent
-      },
-      {
-        path: 'add-base',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: AddBaseComponent
-      },
-      {
-        path: 'edit-base/:BaseID',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: EditBaseComponent
-      },
-      {
-        path: 'aa-kunden',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: AaKundenComponent
-      },
-      {
-        path: 'add-aa-kunden',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: AddAaKundenComponent
-      },
-      {
-        path: 'edit-aa-kunden/:KundenID',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: EditAaKundenComponent
-      },
-      {
-        path: 'aa-kunden-kontakte',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: AaKundenKontakteComponent
-      },
-      {
         path: 'add-aa-kunden-kontakte',
         canActivate: [AuthGuard],
         data: {
@@ -147,12 +84,12 @@ export const routes: Routes = [
         component: AddAaKundenKontakteComponent
       },
       {
-        path: 'edit-aa-kunden-kontakte/:KundenKontaktID',
+        path: 'kunden-daten-kontakte-nbl/:strModus/:dsoKundenKontakt',
         canActivate: [AuthGuard],
         data: {
           roles: ['Authenticated'],
         },
-        component: EditAaKundenKontakteComponent
+        component: KundenDatenKontakteNblComponent
       },
     ]
   },

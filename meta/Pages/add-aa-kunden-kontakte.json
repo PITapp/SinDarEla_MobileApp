@@ -5,12 +5,6 @@
       "container": "main",
       "components": [
         {
-          "type": "heading",
-          "name": "pageTitle",
-          "size": "H1",
-          "text": "Add Aa Kunden Kontakte"
-        },
-        {
           "type": "row",
           "components": [
             {
@@ -18,13 +12,412 @@
               "class": "col-md-12",
               "components": [
                 {
-                  "data": "",
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Kunden",
+                              "component": "KundenID",
+                              "name": "KundenIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getKundensResult}",
+                              "textProperty": "Vorbemerkungen",
+                              "valueProperty": "KundenID",
+                              "placeholder": "Choose Kunden",
+                              "type": "dropdown",
+                              "name": "KundenID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "multipleItemsSelectedText": "{0} items selected",
+                              "emptyFilterText": "No results found"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "KundenIDRequiredValidator",
+                              "component": "KundenID",
+                              "text": "KundenID is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Kunden Kontakte Arten",
+                              "component": "KundenKontaktArtID",
+                              "name": "KundenKontaktArtIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getKundenKontakteArtensResult}",
+                              "textProperty": "Bezeichnung",
+                              "valueProperty": "KundenKontaktArtID",
+                              "placeholder": "Choose KundenKontakteArten",
+                              "type": "dropdown",
+                              "name": "KundenKontaktArtID",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "multipleItemsSelectedText": "{0} items selected",
+                              "emptyFilterText": "No results found"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "KundenKontaktArtIDRequiredValidator",
+                              "component": "KundenKontaktArtID",
+                              "text": "KundenKontaktArtID is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Name",
+                              "component": "Name",
+                              "name": "NameLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 80,
+                              "type": "textbox",
+                              "name": "Name",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              }
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "NameRequiredValidator",
+                              "component": "Name",
+                              "text": "Name is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Adresse",
+                              "component": "Adresse",
+                              "name": "AdresseLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 150,
+                              "type": "textbox",
+                              "name": "Adresse",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Telefon",
+                              "component": "Telefon",
+                              "name": "TelefonLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 30,
+                              "type": "textbox",
+                              "name": "Telefon",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "E Mail",
+                              "component": "EMail",
+                              "name": "EMailLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 70,
+                              "type": "textbox",
+                              "name": "EMail",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Base Id",
+                              "component": "BaseID",
+                              "name": "BaseIDLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "type": "numeric",
+                              "name": "BaseID",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Hauptansprechpartner",
+                              "component": "Hauptansprechpartner",
+                              "name": "HauptansprechpartnerLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "type": "checkbox",
+                              "name": "Hauptansprechpartner"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Info",
+                              "component": "Info",
+                              "name": "InfoLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 16777215,
+                              "type": "textbox",
+                              "name": "Info",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "back"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
                   "events": {
-                    "cancel": [
-                      {
-                        "type": "back"
-                      }
-                    ],
                     "submit": [
                       {
                         "error": [
@@ -50,92 +443,7 @@
                         "type": "invoke"
                       }
                     ]
-                  },
-                  "fields": [
-                    {
-                      "data": "${getKundensResult}",
-                      "property": "KundenID",
-                      "required": true,
-                      "textProperty": "Vorbemerkungen",
-                      "title": "Kunden",
-                      "type": "lookup",
-                      "valueProperty": "KundenID",
-                      "placeholder": "Choose Kunden",
-                      "requiredText": "is required",
-                      "multipleItemsSelectedText": "{0} items selected",
-                      "emptyFilterText": "No results found"
-                    },
-                    {
-                      "data": "${getKundenKontakteArtensResult}",
-                      "property": "KundenKontaktArtID",
-                      "required": true,
-                      "textProperty": "Bezeichnung",
-                      "title": "Kunden Kontakte Arten",
-                      "type": "lookup",
-                      "valueProperty": "KundenKontaktArtID",
-                      "placeholder": "Choose KundenKontakteArten",
-                      "requiredText": "is required",
-                      "multipleItemsSelectedText": "{0} items selected",
-                      "emptyFilterText": "No results found"
-                    },
-                    {
-                      "property": "Name",
-                      "required": true,
-                      "title": "Name",
-                      "type": "string",
-                      "maxLength": 80,
-                      "requiredText": "is required"
-                    },
-                    {
-                      "property": "Adresse",
-                      "required": false,
-                      "title": "Adresse",
-                      "type": "string",
-                      "maxLength": 150,
-                      "requiredText": "is required"
-                    },
-                    {
-                      "property": "Telefon",
-                      "required": false,
-                      "title": "Telefon",
-                      "type": "string",
-                      "maxLength": 30,
-                      "requiredText": "is required"
-                    },
-                    {
-                      "property": "EMail",
-                      "required": false,
-                      "title": "E Mail",
-                      "type": "string",
-                      "maxLength": 70,
-                      "requiredText": "is required"
-                    },
-                    {
-                      "property": "BaseID",
-                      "required": false,
-                      "title": "Base Id",
-                      "type": "integer",
-                      "requiredText": "is required",
-                      "minText": "cannot be less than",
-                      "maxText": "cannot be more than"
-                    },
-                    {
-                      "property": "Hauptansprechpartner",
-                      "title": "Hauptansprechpartner",
-                      "type": "boolean",
-                      "requiredText": "is required"
-                    },
-                    {
-                      "property": "Info",
-                      "required": false,
-                      "title": "Info",
-                      "type": "string",
-                      "maxLength": 16777215,
-                      "requiredText": "is required"
-                    }
-                  ],
-                  "name": "form0",
-                  "type": "form"
+                  }
                 }
               ]
             }

@@ -1609,7 +1609,8 @@
       "required": [
         "KundenID",
         "KundenKontaktArtID",
-        "Name"
+        "Name",
+        "Hauptansprechpartner"
       ],
       "properties": {
         "KundenKontaktID": {
@@ -1676,12 +1677,10 @@
           "type": "string",
           "length": 70
         },
-        "BaseID": {
-          "type": "integer"
-        },
         "Hauptansprechpartner": {
           "x-nullable": false,
-          "type": "boolean"
+          "type": "string",
+          "length": 5
         },
         "Info": {
           "type": "string",

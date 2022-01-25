@@ -1,6 +1,6 @@
 <rz-content #content1 container="contentContainer0">
   <rz-tabs #tabs0>
-    <rz-tabs-item [selected]="false" text="Daten">
+    <rz-tabs-item [selected]="true" text="Daten">
       <div class="row">
         <div class="col-md-12">
           <rz-panel #panel0 [allowCollapse]="true" text="Details">
@@ -46,15 +46,15 @@
           <rz-panel #panel3 [allowCollapse]="true" text="Kontakte">
             <rz-datalist #datalistKundenKontakte [allowPaging]="false" [count]="rstKundenKontakteCount" [data]="rstKundenKontakte" defaultRowText="Template for index" emptyText="..." [pageSize]="20" [style]="{'border': '1px solid rgba(0, 0, 0, 0)'}" [wrapItems]="false" (loadData)="datalistKundenKontakteLoadData($event)">
               <ng-template let-data datalistTemplate>
-                <div [ngStyle]="{'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickBearbeitenNotiz(data)">
+                <div [ngStyle]="{'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickBearbeitenKontakt(data)">
                   <div class="col-12" [ngStyle]="{'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
-                    <rz-label #label0 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'left', 'fontWeight': 'normal'}" [text]="data?.Name">
+                    <rz-label #label53 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'left', 'fontWeight': 'normal'}" [text]="data?.Name">
                     </rz-label>
-                    <rz-label #label2 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'right', 'fontSize': '14px', 'fontWeight': 'normal', 'marginTop': '3px'}" text="{{data?.KundenKontakteArten?.Bezeichnung}}{{((data?.Hauptansprechpartner == true) ? (' · Hauptkontakt') : (''))}}">
+                    <rz-label #label2 [style]="{'color': '#479cc8', 'display': 'block', 'float': 'right', 'fontSize': '14px', 'fontWeight': 'normal', 'marginTop': '3px'}" text="{{data?.KundenKontakteArten?.Bezeichnung}}{{((data?.Hauptansprechpartner == 'Ja') ? (' · Hauptkontakt') : (''))}}">
                     </rz-label>
                   </div>
                 </div>
-                <div [ngStyle]="{'marginBottom': '10px', 'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickBearbeitenNotiz(data)">
+                <div [ngStyle]="{'marginBottom': '10px', 'marginLeft': '0', 'marginRight': '0'}" class="row" (click)="onClickBearbeitenKontakt(data)">
                   <div class="col-12" [ngStyle]="{'borderBottom': '1px dotted #e6ecef', 'paddingLeft': '0', 'paddingRight': '0', 'position': 'relative', 'verticalAlign': 'baseline'}">
                     <rz-label #label6 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'float': 'none', 'fontWeight': 'normal'}" [text]="data?.Adresse">
                     </rz-label>
@@ -66,12 +66,17 @@
                     </rz-label>
                   </div>
                 </div>
+                <rz-label #label52 [style]="{'backgroundColor': '#479cc8', 'color': '#ffffff', 'marginBottom': '10px', 'marginTop': '20px', 'paddingLeft': '10px', 'width': '100%'}" text="Diese Schaltflächen müssen da sein, damit beim Compilieren in der Navigation die Parameter erstellt werden! Sie werden auch als Funktionen genutzt, die über Click-Ereignisse aktiviert werden.
+                Siehe app.routes.ts" *ngIf="false">
+                </rz-label>
+                <rz-button #buttonKundenKontaktBearbeiten [style]="{}" text="OpenDialog - KundenKontaktBearbeiten" *ngIf="false" (click)="buttonKundenKontaktBearbeitenClick($event, data)">
+                </rz-button>
               </ng-template>
             </rz-datalist>
             <rz-panel-footer>
               <div [ngStyle]="{'paddingLeft': '25px', 'paddingRight': '25px', 'paddingTop': '3px'}" class="row">
                 <div class="col-md-12" [ngStyle]="{'borderBottom': '1px dotted #e6ecef', 'paddingBottom': '10px', 'paddingLeft': '0', 'paddingRight': '0', 'paddingTop': '0'}">
-                  <rz-button #button1 icon="add" size="sm" [style]="{'float': 'right'}" text="Neuer Kontakt">
+                  <rz-button #buttonKundenKontaktNeu icon="add" size="sm" [style]="{'float': 'right'}" text="Neuer Kontakt" (click)="buttonKundenKontaktNeuClick($event)">
                   </rz-button>
                 </div>
               </div>
@@ -246,7 +251,7 @@
       <div [ngStyle]="{'backgroundColor': '#ffffff', 'height': '10px'}" class="row">
       </div>
     </rz-tabs-item>
-    <rz-tabs-item [selected]="true" text="Termine">
+    <rz-tabs-item [selected]="false" text="Termine">
       <rz-panel #panel9 [allowCollapse]="true" [collapsed]="true" text="Erledigt">
       </rz-panel>
       <rz-panel #panel10 [allowCollapse]="true" [collapsed]="false" text="Geplant">

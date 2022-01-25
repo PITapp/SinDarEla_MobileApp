@@ -52,12 +52,7 @@ namespace SinDarElaMobile.Models.DbSinDarEla
       get;
       set;
     }
-    public int? BaseID
-    {
-      get;
-      set;
-    }
-    public bool Hauptansprechpartner
+    public string Hauptansprechpartner
     {
       get;
       set;

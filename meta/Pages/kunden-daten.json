@@ -314,7 +314,7 @@
                                   "attributes": [
                                     {
                                       "name": "(click)",
-                                      "value": "onClickBearbeitenNotiz(data)"
+                                      "value": "onClickBearbeitenKontakt(data)"
                                     }
                                   ],
                                   "components": [
@@ -322,7 +322,7 @@
                                       "class": "col-12",
                                       "components": [
                                         {
-                                          "name": "label0",
+                                          "name": "label53",
                                           "style": {
                                             "color": "#479cc8",
                                             "display": "block",
@@ -342,11 +342,11 @@
                                             "fontWeight": "normal",
                                             "marginTop": "3px"
                                           },
-                                          "text": "${data.KundenKontakteArten.Bezeichnung}${data.Hauptansprechpartner == true ? ' · Hauptkontakt' : ''}",
+                                          "text": "${data.KundenKontakteArten.Bezeichnung}${data.Hauptansprechpartner == 'Ja' ? ' · Hauptkontakt' : ''}",
                                           "type": "label"
                                         }
                                       ],
-                                      "name": "col0",
+                                      "name": "col21",
                                       "style": {
                                         "paddingLeft": "0",
                                         "paddingRight": "0",
@@ -356,7 +356,7 @@
                                       "type": "col"
                                     }
                                   ],
-                                  "name": "row0",
+                                  "name": "row15",
                                   "style": {
                                     "marginLeft": "0",
                                     "marginRight": "0"
@@ -367,7 +367,7 @@
                                   "attributes": [
                                     {
                                       "name": "(click)",
-                                      "value": "onClickBearbeitenNotiz(data)"
+                                      "value": "onClickBearbeitenKontakt(data)"
                                     }
                                   ],
                                   "components": [
@@ -441,6 +441,47 @@
                                     "marginRight": "0"
                                   },
                                   "type": "row"
+                                },
+                                {
+                                  "name": "label52",
+                                  "style": {
+                                    "backgroundColor": "#479cc8",
+                                    "color": "#ffffff",
+                                    "marginBottom": "10px",
+                                    "marginTop": "20px",
+                                    "paddingLeft": "10px",
+                                    "width": "100%"
+                                  },
+                                  "text": "Diese Schaltflächen müssen da sein, damit beim Compilieren in der Navigation die Parameter erstellt werden! Sie werden auch als Funktionen genutzt, die über Click-Ereignisse aktiviert werden.\nSiehe app.routes.ts",
+                                  "type": "label",
+                                  "visible": false
+                                },
+                                {
+                                  "events": {
+                                    "click": [
+                                      {
+                                        "parameters": [
+                                          {
+                                            "name": "strModus",
+                                            "value": "'Bearbeiten'"
+                                          },
+                                          {
+                                            "name": "dsoKundenKontakt",
+                                            "value": "${data}"
+                                          }
+                                        ],
+                                        "path": "kunden-daten-kontakte-nbl",
+                                        "title": "Bearbeiten Kontakt",
+                                        "type": "popup"
+                                      }
+                                    ]
+                                  },
+                                  "name": "buttonKundenKontaktBearbeiten",
+                                  "style": {},
+                                  "text": "OpenDialog - KundenKontaktBearbeiten",
+                                  "tooltip": "",
+                                  "type": "button",
+                                  "visible": false
                                 }
                               ],
                               "type": "datalist",
@@ -454,8 +495,27 @@
                                   "class": "col-md-12",
                                   "components": [
                                     {
+                                      "events": {
+                                        "click": [
+                                          {
+                                            "parameters": [
+                                              {
+                                                "name": "strModus",
+                                                "value": "'Neu'"
+                                              },
+                                              {
+                                                "name": "dsoKundenKontakt",
+                                                "value": "null"
+                                              }
+                                            ],
+                                            "path": "kunden-daten-kontakte-nbl",
+                                            "title": "Neuer Kontakt",
+                                            "type": "popup"
+                                          }
+                                        ]
+                                      },
                                       "icon": "add",
-                                      "name": "button1",
+                                      "name": "buttonKundenKontaktNeu",
                                       "size": "sm",
                                       "style": {
                                         "float": "right"
@@ -1054,7 +1114,7 @@
                   "type": "row"
                 }
               ],
-              "selected": false,
+              "selected": true,
               "text": "Daten"
             },
             {
@@ -1645,7 +1705,7 @@
                   "type": "row"
                 }
               ],
-              "selected": true,
+              "selected": false,
               "text": "Termine"
             },
             {
@@ -1711,6 +1771,11 @@
         "name": "onClickAnimation",
         "type": "set",
         "value": "(ElementId) => {\n  document.getElementById(ElementId).style.animation = \"touchClick 2s linear 1\";\n  \n  setTimeout(() => { \n    document.getElementById(ElementId).style.animation = \"\"; \n  }, 2000)  \n  \n  \n}"
+      },
+      {
+        "name": "onClickBearbeitenKontakt",
+        "type": "set",
+        "value": "(data) => {\n    if (this.dialogRef) {\n      this.dialogRef.close();\n    }\n    this.buttonKundenKontaktBearbeitenClick(null, data)\n}"
       }
     ]
   },

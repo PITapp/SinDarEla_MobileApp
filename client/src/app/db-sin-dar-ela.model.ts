@@ -263,8 +263,7 @@ export interface KundenKontakte {
   Adresse: string;
   Telefon: string;
   EMail: string;
-  BaseID: number;
-  Hauptansprechpartner: boolean;
+  Hauptansprechpartner: string;
   Info: string;
 }
 

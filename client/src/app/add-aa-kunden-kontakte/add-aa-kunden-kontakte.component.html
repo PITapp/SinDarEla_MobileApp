@@ -1,28 +1,112 @@
 <rz-content #content1 container="main">
-  <rz-heading #pageTitle size="H1" text="Add Aa Kunden Kontakte">
-  </rz-heading>
   <div class="row">
     <div class="col-md-12">
-      <rz-form #form0 (cancel)="form0Cancel($event)" (submit)="form0Submit($event)">
-        <rz-lookup-form-field [data]="getKundensResult" property="KundenID" [required]="true" textProperty="Vorbemerkungen" title="Kunden" valueProperty="KundenID" placeholder="Choose Kunden" requiredText="is required" multipleItemsSelectedText="{0} items selected" emptyFilterText="No results found" type="lookup">
-        </rz-lookup-form-field>
-        <rz-lookup-form-field [data]="getKundenKontakteArtensResult" property="KundenKontaktArtID" [required]="true" textProperty="Bezeichnung" title="Kunden Kontakte Arten" valueProperty="KundenKontaktArtID" placeholder="Choose KundenKontakteArten" requiredText="is required" multipleItemsSelectedText="{0} items selected" emptyFilterText="No results found" type="lookup">
-        </rz-lookup-form-field>
-        <rz-string-form-field property="Name" [required]="true" title="Name" [maxLength]="80" requiredText="is required" type="string">
-        </rz-string-form-field>
-        <rz-string-form-field property="Adresse" [required]="false" title="Adresse" [maxLength]="150" requiredText="is required" type="string">
-        </rz-string-form-field>
-        <rz-string-form-field property="Telefon" [required]="false" title="Telefon" [maxLength]="30" requiredText="is required" type="string">
-        </rz-string-form-field>
-        <rz-string-form-field property="EMail" [required]="false" title="E Mail" [maxLength]="70" requiredText="is required" type="string">
-        </rz-string-form-field>
-        <rz-integer-form-field property="BaseID" [required]="false" title="Base Id" requiredText="is required" minText="cannot be less than" maxText="cannot be more than" type="integer">
-        </rz-integer-form-field>
-        <rz-boolean-form-field property="Hauptansprechpartner" title="Hauptansprechpartner" requiredText="is required" type="boolean">
-        </rz-boolean-form-field>
-        <rz-string-form-field property="Info" [required]="false" title="Info" [maxLength]="16777215" requiredText="is required" type="string">
-        </rz-string-form-field>
-      </rz-form>
+      <rz-template-form #form0 (submit)="form0Submit($event)">
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #kundenIdLabel text="Kunden" component="KundenID" [style]="{'width': '100%'}">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-dropdown #kundenId [data]="getKundensResult" textProperty="Vorbemerkungen" valueProperty="KundenID" placeholder="Choose Kunden" [style]="{'display': 'block', 'width': '100%'}" multipleItemsSelectedText="{0} items selected" emptyFilterText="No results found" name="KundenID">
+            </rz-dropdown>
+            <rz-required-validator #kundenIdRequiredValidator [component]="kundenId" text="KundenID is required" [style]="{'position': 'absolute'}">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #kundenKontaktArtIdLabel text="Kunden Kontakte Arten" component="KundenKontaktArtID" [style]="{'width': '100%'}">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-dropdown #kundenKontaktArtId [data]="getKundenKontakteArtensResult" textProperty="Bezeichnung" valueProperty="KundenKontaktArtID" placeholder="Choose KundenKontakteArten" [style]="{'display': 'block', 'width': '100%'}" multipleItemsSelectedText="{0} items selected" emptyFilterText="No results found" name="KundenKontaktArtID">
+            </rz-dropdown>
+            <rz-required-validator #kundenKontaktArtIdRequiredValidator [component]="kundenKontaktArtId" text="KundenKontaktArtID is required" [style]="{'position': 'absolute'}">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #nameLabel text="Name" component="Name" [style]="{'width': '100%'}">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #name [maxLength]="80" [style]="{'display': 'block', 'width': '100%'}" name="Name">
+            </rz-textbox>
+            <rz-required-validator #nameRequiredValidator [component]="name" text="Name is required" [style]="{'position': 'absolute'}">
+            </rz-required-validator>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #adresseLabel text="Adresse" component="Adresse" [style]="{'width': '100%'}">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #adresse [maxLength]="150" [style]="{'width': '100%'}" name="Adresse">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #telefonLabel text="Telefon" component="Telefon" [style]="{'width': '100%'}">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #telefon [maxLength]="30" [style]="{'width': '100%'}" name="Telefon">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #eMailLabel text="E Mail" component="EMail" [style]="{'width': '100%'}">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #eMail [maxLength]="70" [style]="{'width': '100%'}" name="EMail">
+            </rz-textbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #baseIdLabel text="Base Id" component="BaseID" [style]="{'width': '100%'}">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-numeric #baseId [style]="{'width': '100%'}" name="BaseID">
+            </rz-numeric>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #hauptansprechpartnerLabel text="Hauptansprechpartner" component="Hauptansprechpartner" [style]="{'width': '100%'}">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-checkbox #hauptansprechpartner name="Hauptansprechpartner">
+            </rz-checkbox>
+          </div>
+        </div>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-3">
+            <rz-label #infoLabel text="Info" component="Info" [style]="{'width': '100%'}">
+            </rz-label>
+          </div>
+          <div class="col-md-9">
+            <rz-textbox #info [maxLength]="16777215" [style]="{'width': '100%'}" name="Info">
+            </rz-textbox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col offset-sm-3">
+            <rz-button #button1 buttonType="submit" icon="save" text="Save" buttonStyle="primary">
+            </rz-button>
+            <rz-button #button2 buttonStyle="light" [style]="{'marginLeft': '1rem'}" text="Cancel" (click)="button2Click($event)">
+            </rz-button>
+          </div>
+        </div>
+      </rz-template-form>
     </div>
   </div>
 </rz-content>
