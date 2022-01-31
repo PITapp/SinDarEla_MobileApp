@@ -41,8 +41,11 @@
     "Kunden",
     "KundenDaten",
     "zzKundenDaten",
-    "Add aaKundenKontakte",
-    "KundenDatenKontakteNBL"
+    "KundenDatenKontakteNBL",
+    "MeldungFortschritt",
+    "MeldungJaNein",
+    "MeldungLoeschen",
+    "MeldungOK"
   ],
   "port": 8000,
   "security": {

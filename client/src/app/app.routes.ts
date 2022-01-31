@@ -17,8 +17,11 @@ import { InfosComponent } from './infos/infos.component';
 import { KundenComponent } from './kunden/kunden.component';
 import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
 import { ZzKundenDatenComponent } from './zz-kunden-daten/zz-kunden-daten.component';
-import { AddAaKundenKontakteComponent } from './add-aa-kunden-kontakte/add-aa-kunden-kontakte.component';
 import { KundenDatenKontakteNblComponent } from './kunden-daten-kontakte-nbl/kunden-daten-kontakte-nbl.component';
+import { MeldungFortschrittComponent } from './meldung-fortschritt/meldung-fortschritt.component';
+import { MeldungJaNeinComponent } from './meldung-ja-nein/meldung-ja-nein.component';
+import { MeldungLoeschenComponent } from './meldung-loeschen/meldung-loeschen.component';
+import { MeldungOkComponent } from './meldung-ok/meldung-ok.component';
 
 import { SecurityService } from './security.service';
 import { AuthGuard } from './auth.guard';
@@ -76,20 +79,44 @@ export const routes: Routes = [
         component: ZzDashboard3Component
       },
       {
-        path: 'add-aa-kunden-kontakte',
-        canActivate: [AuthGuard],
-        data: {
-          roles: ['Authenticated'],
-        },
-        component: AddAaKundenKontakteComponent
-      },
-      {
-        path: 'kunden-daten-kontakte-nbl/:strModus/:dsoKundenKontakt',
+        path: 'kunden-daten-kontakte-nbl/:strModus/:intID',
         canActivate: [AuthGuard],
         data: {
           roles: ['Authenticated'],
         },
         component: KundenDatenKontakteNblComponent
+      },
+      {
+        path: 'meldung-fortschritt',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: MeldungFortschrittComponent
+      },
+      {
+        path: 'meldung-ja-nein',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: MeldungJaNeinComponent
+      },
+      {
+        path: 'meldung-loeschen/:strMeldung',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: MeldungLoeschenComponent
+      },
+      {
+        path: 'meldung-ok',
+        canActivate: [AuthGuard],
+        data: {
+          roles: ['Authenticated'],
+        },
+        component: MeldungOkComponent
       },
     ]
   },

@@ -466,8 +466,8 @@
                                             "value": "'Bearbeiten'"
                                           },
                                           {
-                                            "name": "dsoKundenKontakt",
-                                            "value": "${data}"
+                                            "name": "intID",
+                                            "value": "${data.KundenKontaktID}"
                                           }
                                         ],
                                         "path": "kunden-daten-kontakte-nbl",
@@ -504,8 +504,8 @@
                                                 "value": "'Neu'"
                                               },
                                               {
-                                                "name": "dsoKundenKontakt",
-                                                "value": "null"
+                                                "name": "intID",
+                                                "value": "${parameters.KundenID}"
                                               }
                                             ],
                                             "path": "kunden-daten-kontakte-nbl",

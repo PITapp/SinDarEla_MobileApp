@@ -12652,18 +12652,15 @@ textarea:focus {
 
 /* --- Dialog: Höhe auf 100%; weitere Einstellungen für den Dialog --- */
 @media (max-width: 768px) {
-  .xxui-dialog:not(.ui-confirmdialog) {
-    height: 100% !important;
-  }
-
   .ui-dialog-content {
+    padding-top: 13px;
     margin-left: -15px;
-    margin-right: -30px;
-    height: 1000px !important;
+    margin-right: -15px;
+    height: 1010px !important;
   }
 
   .ui-dialog-content .label {
-    margin-left: 10px;
+    margin-left: 50px !important;
   }
 }
 
@@ -12722,4 +12719,15 @@ textarea:focus {
 .ui-multiselect-items-wrapper {
   max-height: 500px !important;
   max-width: 798px !important;
+}
+
+.ui-dropdown-item, .ui-dropdown-items li {
+  padding: 0.75rem 0.625rem;
+  font-size: 1.1rem;
+}
+
+/* --- Einstellungen für Label im Dialog --- */
+.dialogLabel {
+  color: rgb(89, 128, 135);
+  padding-left: 10px;
 }

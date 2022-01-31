@@ -1,0 +1,22 @@
+<rz-content #content1 container="main">
+  <div class="row">
+    <div class="col-md-12">
+      <rz-template-form #form0>
+        <div [ngStyle]="{'marginBottom': '1rem'}" class="row">
+          <div class="col-md-12" [ngStyle]="{'paddingLeft': '0', 'paddingRight': '0'}">
+            <rz-progressbar #progressbar0 mode="indeterminate">
+            </rz-progressbar>
+            <rz-label #label0 [style]="{'color': 'rgb(33, 37, 41)', 'display': 'block', 'fontSize': '18px', 'fontWeight': 'normal'}" [text]="parameters?.strMeldung">
+            </rz-label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col offset-sm-3 justify-content-end d-flex" [ngStyle]="{'paddingRight': '0'}">
+            <rz-button #button1 buttonStyle="light" [style]="{'marginLeft': '1rem'}" text="OK" (click)="button1Click($event)">
+            </rz-button>
+          </div>
+        </div>
+      </rz-template-form>
+    </div>
+  </div>
+</rz-content>

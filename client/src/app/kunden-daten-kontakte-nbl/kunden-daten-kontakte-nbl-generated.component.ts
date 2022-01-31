@@ -21,6 +21,7 @@ import { TextAreaComponent } from '@radzen/angular/dist/textarea';
 import { ButtonComponent } from '@radzen/angular/dist/button';
 
 import { ConfigService } from '../config.service';
+import { MeldungLoeschenComponent } from '../meldung-loeschen/meldung-loeschen.component';
 
 import { DbSinDarElaService } from '../db-sin-dar-ela.service';
 import { SecurityService } from '../security.service';
@@ -42,7 +43,8 @@ export class KundenDatenKontakteNblGenerated implements AfterViewInit, OnInit, O
   @ViewChild('eMailLabel') eMailLabel: LabelComponent;
   @ViewChild('eMail') eMail: TextBoxComponent;
   @ViewChild('hauptansprechpartnerLabel') hauptansprechpartnerLabel: LabelComponent;
-  @ViewChild('selectbar0') selectbar0: SelectBarComponent;
+  @ViewChild('hauptansprechpartner') hauptansprechpartner: SelectBarComponent;
+  @ViewChild('requiredValidator0') requiredValidator0: RequiredValidatorComponent;
   @ViewChild('infoLabel') infoLabel: LabelComponent;
   @ViewChild('info') info: TextAreaComponent;
   @ViewChild('buttonLoeschen') buttonLoeschen: ButtonComponent;
@@ -73,9 +75,8 @@ export class KundenDatenKontakteNblGenerated implements AfterViewInit, OnInit, O
   dbSinDarEla: DbSinDarElaService;
 
   security: SecurityService;
-  getKundensResult: any;
-  getKundenKontakteArtensResult: any;
-  kundenkontakte: any;
+  dsoKundenKontakt: any;
+  rstKundenKontakteArten: any;
   parameters: any;
 
   constructor(private injector: Injector) {
@@ -126,33 +127,64 @@ export class KundenDatenKontakteNblGenerated implements AfterViewInit, OnInit, O
 
 
   load() {
-    this.dbSinDarEla.getKundens(null, null, null, null, null, null, null, null)
-    .subscribe((result: any) => {
-      this.getKundensResult = result.value;
-    }, (result: any) => {
+    if (this.parameters.strModus == 'Neu') {
+        this.dsoKundenKontakt = {};
+    }
 
-    });
+    if (this.parameters.strModus == 'Bearbeiten') {
+          this.dbSinDarEla.getKundenKontakteByKundenKontaktId(null, this.parameters.intID)
+      .subscribe((result: any) => {
+          this.dsoKundenKontakt = result;
+      }, (result: any) => {
+    
+      });
+    }
 
     this.dbSinDarEla.getKundenKontakteArtens(null, null, null, null, null, null, null, null)
     .subscribe((result: any) => {
-      this.getKundenKontakteArtensResult = result.value;
+      this.rstKundenKontakteArten = result.value;
     }, (result: any) => {
 
     });
-
-    this.kundenkontakte = this.parameters.dsoKundenKontakt;
   }
 
   form0Submit(event: any) {
-    this.dbSinDarEla.updateKundenKontakte(null, this.parameters.KundenKontaktID, event)
-    .subscribe((result: any) => {
-      if (this.dialogRef) {
-        this.dialogRef.close();
-      } else {
-        this._location.back();
+    if (this.parameters.strModus == 'Bearbeiten') {
+          this.dbSinDarEla.updateKundenKontakte(null, this.parameters.intID, event)
+      .subscribe((result: any) => {
+          this.notificationService.notify({ severity: "success", summary: ``, detail: `Kontakt gespeichert` });
+
+      this.dialogRef.close(result);
+      }, (result: any) => {
+          this.notificationService.notify({ severity: "error", summary: `Error`, detail: `Kontakt konnte nicht gespeichert werden!` });
+      });
+    }
+
+    if (this.parameters.strModus == 'Neu') {
+          this.dbSinDarEla.createKundenKontakte(null, Object.assign(event, { KundenID: this.parameters.intID }))
+      .subscribe((result: any) => {
+          this.notificationService.notify({ severity: "success", summary: ``, detail: `Kontakt erstellt` });
+
+      this.dialogRef.close(result);
+      }, (result: any) => {
+          this.notificationService.notify({ severity: "error", summary: ``, detail: `Kontakt konnte nicht erstellt werden!` });
+      });
+    }
+  }
+
+  buttonLoeschenClick(event: any) {
+    this.dialogService.open(MeldungLoeschenComponent, { parameters: {strMeldung: "Soll der Kontakt '" + this.dsoKundenKontakt.Name + "' gelöscht werden?"}, title: `Löschen Kontakt` })
+        .afterClosed().subscribe(result => {
+              if (result == 'Löschen') {
+              this.dbSinDarEla.deleteKundenKontakte(this.parameters.intID)
+        .subscribe((result: any) => {
+              this.notificationService.notify({ severity: "success", summary: ``, detail: `Kontakt gelöscht` });
+
+        this.dialogRef.close(result);
+        }, (result: any) => {
+              this.notificationService.notify({ severity: "error", summary: ``, detail: `Kontakt konnte nicht gelöscht werden!` });
+        });
       }
-    }, (result: any) => {
-      this.notificationService.notify({ severity: "error", summary: `Error`, detail: `Unable to update KundenKontakte` });
     });
   }
 }

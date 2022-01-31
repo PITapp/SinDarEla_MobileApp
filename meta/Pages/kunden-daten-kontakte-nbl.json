@@ -6,11 +6,13 @@
     {
       "components": [
         {
+          "attributes": [],
           "components": [
             {
               "class": "col-md-12",
               "components": [
                 {
+                  "attributes": [],
                   "components": [
                     {
                       "components": [
@@ -18,6 +20,10 @@
                           "class": "col-md-3",
                           "components": [
                             {
+                              "attributes": [],
+                              "classList": {
+                                "dialogLabel": true
+                              },
                               "component": "KundenKontaktArtID",
                               "name": "KundenKontaktArtIDLabel",
                               "style": {
@@ -33,11 +39,11 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "data": "${getKundenKontakteArtensResult}",
+                              "data": "${rstKundenKontakteArten}",
                               "emptyFilterText": "No results found",
-                              "multipleItemsSelectedText": "{0} items selected",
+                              "multipleItemsSelectedText": "",
                               "name": "KundenKontaktArtID",
-                              "placeholder": "",
+                              "placeholder": "Auswählen",
                               "style": {
                                 "display": "block",
                                 "width": "100%"
@@ -45,7 +51,7 @@
                               "template": "",
                               "textProperty": "Bezeichnung",
                               "type": "dropdown",
-                              "value": "${kundenkontakte.KundenKontaktArtID}",
+                              "value": "${dsoKundenKontakt.KundenKontaktArtID}",
                               "valueProperty": "KundenKontaktArtID"
                             },
                             {
@@ -72,6 +78,10 @@
                           "class": "col-md-3",
                           "components": [
                             {
+                              "attributes": [],
+                              "classList": {
+                                "dialogLabel": true
+                              },
                               "component": "Name",
                               "name": "NameLabel",
                               "style": {
@@ -94,7 +104,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${kundenkontakte.Name}"
+                              "value": "${dsoKundenKontakt.Name}"
                             },
                             {
                               "component": "Name",
@@ -120,6 +130,10 @@
                           "class": "col-md-3",
                           "components": [
                             {
+                              "attributes": [],
+                              "classList": {
+                                "dialogLabel": true
+                              },
                               "component": "Adresse",
                               "name": "AdresseLabel",
                               "style": {
@@ -141,7 +155,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${kundenkontakte.Adresse}"
+                              "value": "${dsoKundenKontakt.Adresse}"
                             }
                           ],
                           "type": "col"
@@ -158,6 +172,10 @@
                           "class": "col-md-3",
                           "components": [
                             {
+                              "attributes": [],
+                              "classList": {
+                                "dialogLabel": true
+                              },
                               "component": "Telefon",
                               "name": "TelefonLabel",
                               "style": {
@@ -179,7 +197,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${kundenkontakte.Telefon}"
+                              "value": "${dsoKundenKontakt.Telefon}"
                             }
                           ],
                           "type": "col"
@@ -193,9 +211,14 @@
                     {
                       "components": [
                         {
+                          "attributes": [],
                           "class": "col-md-3",
                           "components": [
                             {
+                              "attributes": [],
+                              "classList": {
+                                "dialogLabel": true
+                              },
                               "component": "EMail",
                               "name": "EMailLabel",
                               "style": {
@@ -217,7 +240,7 @@
                                 "width": "100%"
                               },
                               "type": "textbox",
-                              "value": "${kundenkontakte.EMail}"
+                              "value": "${dsoKundenKontakt.EMail}"
                             }
                           ],
                           "type": "col"
@@ -234,6 +257,9 @@
                           "class": "col-md-3",
                           "components": [
                             {
+                              "classList": {
+                                "dialogLabel": true
+                              },
                               "component": "Hauptansprechpartner",
                               "name": "HauptansprechpartnerLabel",
                               "style": {
@@ -249,7 +275,7 @@
                           "class": "col-md-9",
                           "components": [
                             {
-                              "name": "selectbar0",
+                              "name": "Hauptansprechpartner",
                               "options": [
                                 {
                                   "text": "Ja",
@@ -260,9 +286,20 @@
                                   "value": "Nein"
                                 }
                               ],
-                              "style": {},
+                              "style": {
+                                "display": "block"
+                              },
                               "type": "selectbar",
-                              "value": "${kundenkontakte.Hauptansprechpartner}"
+                              "value": "${dsoKundenKontakt.Hauptansprechpartner}"
+                            },
+                            {
+                              "component": "Hauptansprechpartner",
+                              "name": "requiredValidator0",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Hauptkontakt eingeben",
+                              "type": "required-validator"
                             }
                           ],
                           "style": {
@@ -282,6 +319,9 @@
                           "class": "col-md-3",
                           "components": [
                             {
+                              "classList": {
+                                "dialogLabel": true
+                              },
                               "component": "Info",
                               "name": "InfoLabel",
                               "style": {
@@ -303,7 +343,7 @@
                                 "width": "100%"
                               },
                               "type": "textarea",
-                              "value": "${kundenkontakte.Info}"
+                              "value": "${dsoKundenKontakt.Info}"
                             }
                           ],
                           "type": "col"
@@ -321,15 +361,65 @@
                           "components": [
                             {
                               "buttonStyle": "danger",
-                              "buttonType": "submit",
+                              "buttonType": "button",
+                              "events": {
+                                "click": [
+                                  {
+                                    "parameters": [
+                                      {
+                                        "name": "strMeldung",
+                                        "value": "\"Soll der Kontakt '\" + ${dsoKundenKontakt.Name} + \"' gelöscht werden?\""
+                                      }
+                                    ],
+                                    "path": "meldung-loeschen",
+                                    "then": [
+                                      {
+                                        "condition": "${result} == 'Löschen'",
+                                        "error": [
+                                          {
+                                            "detail": "Kontakt konnte nicht gelöscht werden!",
+                                            "severity": "error",
+                                            "type": "notify"
+                                          }
+                                        ],
+                                        "name": "dbSinDarEla.deleteKundenKontakte",
+                                        "parameters": [
+                                          {
+                                            "name": "KundenKontaktID",
+                                            "value": "${parameters.intID}"
+                                          }
+                                        ],
+                                        "then": [
+                                          {
+                                            "detail": "Kontakt gelöscht",
+                                            "severity": "success",
+                                            "type": "notify"
+                                          },
+                                          {
+                                            "result": "${result}",
+                                            "type": "close-popup"
+                                          }
+                                        ],
+                                        "type": "invoke"
+                                      }
+                                    ],
+                                    "title": "Löschen Kontakt",
+                                    "type": "popup"
+                                  }
+                                ]
+                              },
                               "icon": "delete",
                               "name": "buttonLoeschen",
                               "text": "Löschen",
-                              "type": "button"
+                              "type": "button",
+                              "visible": "${parameters.strModus == 'Bearbeiten'}"
                             },
                             {
                               "buttonStyle": "success",
                               "buttonType": "submit",
+                              "events": {
+                                "click": []
+                              },
                               "icon": "save",
                               "name": "buttonSpeichern",
                               "style": {
@@ -354,9 +444,10 @@
                   "events": {
                     "submit": [
                       {
+                        "condition": "${parameters.strModus} == 'Bearbeiten'",
                         "error": [
                           {
-                            "detail": "Unable to update KundenKontakte",
+                            "detail": "Kontakt konnte nicht gespeichert werden!",
                             "severity": "error",
                             "summary": "Error",
                             "type": "notify"
@@ -366,7 +457,7 @@
                         "parameters": [
                           {
                             "name": "KundenKontaktID",
-                            "value": "${parameters.KundenKontaktID}"
+                            "value": "${parameters.intID}"
                           },
                           {
                             "name": "KundenKontakte",
@@ -375,7 +466,42 @@
                         ],
                         "then": [
                           {
-                            "type": "back"
+                            "detail": "Kontakt gespeichert",
+                            "severity": "success",
+                            "type": "notify"
+                          },
+                          {
+                            "result": "${result}",
+                            "type": "close-popup"
+                          }
+                        ],
+                        "type": "invoke"
+                      },
+                      {
+                        "condition": "${parameters.strModus} == 'Neu'",
+                        "error": [
+                          {
+                            "detail": "Kontakt konnte nicht erstellt werden!",
+                            "severity": "error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "dbSinDarEla.createKundenKontakte",
+                        "parameters": [
+                          {
+                            "name": "KundenKontakte",
+                            "value": "${Object.assign(event, {KundenID: this.parameters.intID})}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "detail": "Kontakt erstellt",
+                            "severity": "success",
+                            "type": "notify"
+                          },
+                          {
+                            "result": "${result}",
+                            "type": "close-popup"
                           }
                         ],
                         "type": "invoke"
@@ -398,7 +524,7 @@
               "class": "col-md-12",
               "name": "col1",
               "style": {
-                "backgroundColor": "#e6ecef",
+                "backgroundColor": "#F5F5F6",
                 "paddingLeft": "0",
                 "paddingRight": "0"
               },
@@ -408,7 +534,7 @@
           "name": "row1",
           "style": {
             "backgroundColor": "rgba(0, 0, 0, 0)",
-            "height": "1000px",
+            "height": "555px",
             "marginTop": "22px",
             "width": ""
           },
@@ -422,13 +548,25 @@
   "events": {
     "load": [
       {
-        "name": "dbSinDarEla.getKundens",
-        "parameters": [],
+        "condition": "${parameters.strModus} == 'Neu'",
+        "name": "dsoKundenKontakt",
+        "type": "set",
+        "value": "{}"
+      },
+      {
+        "condition": "${parameters.strModus} == 'Bearbeiten'",
+        "name": "dbSinDarEla.getKundenKontakteByKundenKontaktID",
+        "parameters": [
+          {
+            "name": "KundenKontaktID",
+            "value": "${parameters.intID}"
+          }
+        ],
         "then": [
           {
-            "name": "getKundensResult",
+            "name": "dsoKundenKontakt",
             "type": "set",
-            "value": "${result.value}"
+            "value": "${result}"
           }
         ],
         "type": "invoke"
@@ -438,17 +576,12 @@
         "parameters": [],
         "then": [
           {
-            "name": "getKundenKontakteArtensResult",
+            "name": "rstKundenKontakteArten",
             "type": "set",
             "value": "${result.value}"
           }
         ],
         "type": "invoke"
-      },
-      {
-        "name": "kundenkontakte",
-        "type": "set",
-        "value": "${parameters.dsoKundenKontakt}"
       }
     ]
   },

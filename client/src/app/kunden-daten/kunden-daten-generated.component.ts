@@ -221,11 +221,11 @@ this.intAlterKunde = Math.abs(ageDate.getUTCFullYear() - 1970);
   }
 
   buttonKundenKontaktBearbeitenClick(event: any, data: any) {
-    this.dialogService.open(KundenDatenKontakteNblComponent, { parameters: {strModus: 'Bearbeiten', dsoKundenKontakt: data}, title: `Bearbeiten Kontakt` });
+    this.dialogService.open(KundenDatenKontakteNblComponent, { parameters: {strModus: 'Bearbeiten', intID: data.KundenKontaktID}, title: `Bearbeiten Kontakt` });
   }
 
   buttonKundenKontaktNeuClick(event: any) {
-    this.dialogService.open(KundenDatenKontakteNblComponent, { parameters: {strModus: 'Neu', dsoKundenKontakt: null}, title: `Neuer Kontakt` });
+    this.dialogService.open(KundenDatenKontakteNblComponent, { parameters: {strModus: 'Neu', intID: this.parameters.KundenID}, title: `Neuer Kontakt` });
   }
 
   datalistKundenBetreuerLoadData(event: any) {

@@ -32,8 +32,6 @@ import { SchedulerModule } from '@radzen/angular/dist/scheduler';
 import { TemplateFormModule } from '@radzen/angular/dist/template-form';
 import { DropDownModule } from '@radzen/angular/dist/dropdown';
 import { RequiredValidatorModule } from '@radzen/angular/dist/required-validator';
-import { NumericModule } from '@radzen/angular/dist/numeric';
-import { CheckBoxModule } from '@radzen/angular/dist/checkbox';
 import { SelectBarModule } from '@radzen/angular/dist/selectbar';
 import { TextAreaModule } from '@radzen/angular/dist/textarea';
 import { SharedModule } from '@radzen/angular/dist/shared';
@@ -56,8 +54,11 @@ import { InfosComponent } from './infos/infos.component';
 import { KundenComponent } from './kunden/kunden.component';
 import { KundenDatenComponent } from './kunden-daten/kunden-daten.component';
 import { ZzKundenDatenComponent } from './zz-kunden-daten/zz-kunden-daten.component';
-import { AddAaKundenKontakteComponent } from './add-aa-kunden-kontakte/add-aa-kunden-kontakte.component';
 import { KundenDatenKontakteNblComponent } from './kunden-daten-kontakte-nbl/kunden-daten-kontakte-nbl.component';
+import { MeldungFortschrittComponent } from './meldung-fortschritt/meldung-fortschritt.component';
+import { MeldungJaNeinComponent } from './meldung-ja-nein/meldung-ja-nein.component';
+import { MeldungLoeschenComponent } from './meldung-loeschen/meldung-loeschen.component';
+import { MeldungOkComponent } from './meldung-ok/meldung-ok.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { KundenDatenLayoutComponent } from './kunden-daten-layout/kunden-daten-layout.component';
@@ -81,8 +82,11 @@ export const PageDeclarations = [
   KundenComponent,
   KundenDatenComponent,
   ZzKundenDatenComponent,
-  AddAaKundenKontakteComponent,
   KundenDatenKontakteNblComponent,
+  MeldungFortschrittComponent,
+  MeldungJaNeinComponent,
+  MeldungLoeschenComponent,
+  MeldungOkComponent,
 ];
 
 export const LayoutDeclarations = [
@@ -153,8 +157,6 @@ export const AppImports = [
   TemplateFormModule,
   DropDownModule,
   RequiredValidatorModule,
-  NumericModule,
-  CheckBoxModule,
   SelectBarModule,
   TextAreaModule,
   SharedModule,
