@@ -24,7 +24,7 @@
     "Kunden"
   ],
   "logo": "",
-  "name": "SinDarElaMobile",
+  "name": "SinDarElaAngularMobile",
   "namespaces": [],
   "navigation": [
     "Dashboard"
@@ -338,5 +338,5 @@
     "$warning": "#e6c54f",
     "upgraded": true
   },
-  "title": "SinDarElaMobile"
+  "title": "SinDarEla Mobile"
 }

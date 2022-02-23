@@ -217,6 +217,26 @@ export class DbSinDarElaService {
     return this.odata.patch(`/Debuggs(${debuggId})`, debugg, item => item.DebuggID == debuggId, { expand }, []);
   }
 
+  getDeviceCodes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/DeviceCodes`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  createDeviceCode(expand: string | null, deviceCode: models.DeviceCode | null) : Observable<any> {
+    return this.odata.post(`/DeviceCodes`, deviceCode, { expand }, []);
+  }
+
+  deleteDeviceCode(userCode: string | null) : Observable<any> {
+    return this.odata.delete(`/DeviceCodes('${encodeURIComponent(userCode)}')`, item => !(item.UserCode == userCode));
+  }
+
+  getDeviceCodeByUserCode(expand: string | null, userCode: string | null) : Observable<any> {
+    return this.odata.getById(`/DeviceCodes('${encodeURIComponent(userCode)}')`, { expand });
+  }
+
+  updateDeviceCode(expand: string | null, userCode: string | null, deviceCode: models.DeviceCode | null) : Observable<any> {
+    return this.odata.patch(`/DeviceCodes('${encodeURIComponent(userCode)}')`, deviceCode, item => item.UserCode == userCode, { expand }, []);
+  }
+
   getDokumentes(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
     return this.odata.get(`/Dokumentes`, { filter, top, skip, orderby, count, expand, format, select });
   }
@@ -395,6 +415,26 @@ export class DbSinDarElaService {
 
   updateInfotexteHtml(expand: string | null, infotextId: number | null, infotexteHtml: models.InfotexteHtml | null) : Observable<any> {
     return this.odata.patch(`/InfotexteHtmls(${infotextId})`, infotexteHtml, item => item.InfotextID == infotextId, { expand }, []);
+  }
+
+  getKeys(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/Keys`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  createKey(expand: string | null, key: models.Key | null) : Observable<any> {
+    return this.odata.post(`/Keys`, key, { expand }, []);
+  }
+
+  deleteKey(id: string | null) : Observable<any> {
+    return this.odata.delete(`/Keys('${encodeURIComponent(id)}')`, item => !(item.Id == id));
+  }
+
+  getKeyById(expand: string | null, id: string | null) : Observable<any> {
+    return this.odata.getById(`/Keys('${encodeURIComponent(id)}')`, { expand });
+  }
+
+  updateKey(expand: string | null, id: string | null, key: models.Key | null) : Observable<any> {
+    return this.odata.patch(`/Keys('${encodeURIComponent(id)}')`, key, item => item.Id == id, { expand }, []);
   }
 
   getKundens(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
@@ -1015,6 +1055,26 @@ export class DbSinDarElaService {
 
   updateNotizen(expand: string | null, notizId: number | null, notizen: models.Notizen | null) : Observable<any> {
     return this.odata.patch(`/Notizens(${notizId})`, notizen, item => item.NotizID == notizId, { expand }, []);
+  }
+
+  getPersistedGrants(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {
+    return this.odata.get(`/PersistedGrants`, { filter, top, skip, orderby, count, expand, format, select });
+  }
+
+  createPersistedGrant(expand: string | null, persistedGrant: models.PersistedGrant | null) : Observable<any> {
+    return this.odata.post(`/PersistedGrants`, persistedGrant, { expand }, []);
+  }
+
+  deletePersistedGrant(key: string | null) : Observable<any> {
+    return this.odata.delete(`/PersistedGrants('${encodeURIComponent(key)}')`, item => !(item.Key == key));
+  }
+
+  getPersistedGrantByKey(expand: string | null, key: string | null) : Observable<any> {
+    return this.odata.getById(`/PersistedGrants('${encodeURIComponent(key)}')`, { expand });
+  }
+
+  updatePersistedGrant(expand: string | null, key: string | null, persistedGrant: models.PersistedGrant | null) : Observable<any> {
+    return this.odata.patch(`/PersistedGrants('${encodeURIComponent(key)}')`, persistedGrant, item => item.Key == key, { expand }, []);
   }
 
   getProtokolls(filter: string | null, top: number | null, skip: number | null, orderby: string | null, count: boolean | null, expand: string | null, format: string | null, select: string | null) : Observable<any> {

@@ -504,6 +504,12 @@ namespace SinDarElaMobile.Data
           set;
         }
 
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.DeviceCode> DeviceCodes
+        {
+          get;
+          set;
+        }
+
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.Dokumente> Dokumentes
         {
           get;
@@ -553,6 +559,12 @@ namespace SinDarElaMobile.Data
         }
 
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.InfotexteHtml> InfotexteHtmls
+        {
+          get;
+          set;
+        }
+
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.Key> Keys
         {
           get;
           set;
@@ -739,6 +751,12 @@ namespace SinDarElaMobile.Data
         }
 
         public DbSet<SinDarElaMobile.Models.DbSinDarEla.Notizen> Notizens
+        {
+          get;
+          set;
+        }
+
+        public DbSet<SinDarElaMobile.Models.DbSinDarEla.PersistedGrant> PersistedGrants
         {
           get;
           set;

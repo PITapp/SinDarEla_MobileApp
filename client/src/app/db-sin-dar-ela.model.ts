@@ -125,6 +125,18 @@ export interface Debugg {
   Sortierung2: number;
 }
 
+export interface DeviceCode {
+  UserCode: string;
+  DeviceCode1: string;
+  SubjectId: string;
+  SessionId: string;
+  ClientId: string;
+  Description: string;
+  CreationTime: string;
+  Expiration: string;
+  Data: string;
+}
+
 export interface Dokumente {
   DokumentID: number;
   DokumenteKategorieID: number;
@@ -244,6 +256,17 @@ export interface InfotexteHtml {
   Titel: string;
   Inhalt: string;
   Sortierung: number;
+}
+
+export interface Key {
+  Id: string;
+  Version: number;
+  Created: string;
+  Use: string;
+  Algorithm: string;
+  IsX509Certificate: boolean;
+  DataProtected: boolean;
+  Data: string;
 }
 
 export interface Kunden {
@@ -537,6 +560,19 @@ export interface Notizen {
   Am: string;
   Titel: string;
   Notiz: string;
+}
+
+export interface PersistedGrant {
+  Key: string;
+  Type: string;
+  SubjectId: string;
+  SessionId: string;
+  ClientId: string;
+  Description: string;
+  CreationTime: string;
+  Expiration: string;
+  ConsumedTime: string;
+  Data: string;
 }
 
 export interface Protokoll {

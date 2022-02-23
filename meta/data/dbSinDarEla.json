@@ -758,6 +758,64 @@
         }
       }
     },
+    "DeviceCode": {
+      "x-table": "def.DeviceCodes",
+      "resource": "DeviceCodes",
+      "required": [
+        "UserCode",
+        "DeviceCode1",
+        "ClientId",
+        "CreationTime",
+        "Expiration",
+        "Data"
+      ],
+      "properties": {
+        "UserCode": {
+          "x-key": true,
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "DeviceCode1": {
+          "x-original-name": "DeviceCode",
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "SubjectId": {
+          "type": "string",
+          "length": 200
+        },
+        "SessionId": {
+          "type": "string",
+          "length": 100
+        },
+        "ClientId": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "Description": {
+          "type": "string",
+          "length": 200
+        },
+        "CreationTime": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "Expiration": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "Data": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 65535
+        }
+      }
+    },
     "Dokumente": {
       "x-table": "def.Dokumente",
       "resource": "Dokumentes",
@@ -1490,6 +1548,56 @@
         },
         "Sortierung": {
           "type": "integer"
+        }
+      }
+    },
+    "Key": {
+      "x-table": "def.Keys",
+      "resource": "Keys",
+      "required": [
+        "Id",
+        "Version",
+        "Created",
+        "Algorithm",
+        "Data"
+      ],
+      "properties": {
+        "Id": {
+          "x-key": true,
+          "x-nullable": false,
+          "type": "string",
+          "length": 450
+        },
+        "Version": {
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "Created": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "Use": {
+          "type": "string",
+          "length": 450
+        },
+        "Algorithm": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "IsX509Certificate": {
+          "x-nullable": false,
+          "type": "boolean"
+        },
+        "DataProtected": {
+          "x-nullable": false,
+          "type": "boolean"
+        },
+        "Data": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 65535
         }
       }
     },
@@ -3563,6 +3671,65 @@
         }
       }
     },
+    "PersistedGrant": {
+      "x-table": "def.PersistedGrants",
+      "resource": "PersistedGrants",
+      "required": [
+        "Key",
+        "Type",
+        "ClientId",
+        "CreationTime",
+        "Data"
+      ],
+      "properties": {
+        "Key": {
+          "x-key": true,
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "Type": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 50
+        },
+        "SubjectId": {
+          "type": "string",
+          "length": 200
+        },
+        "SessionId": {
+          "type": "string",
+          "length": 100
+        },
+        "ClientId": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "Description": {
+          "type": "string",
+          "length": 200
+        },
+        "CreationTime": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "Expiration": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ConsumedTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Data": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 65535
+        }
+      }
+    },
     "Protokoll": {
       "x-table": "def.Protokoll",
       "resource": "Protokolls",
@@ -5367,6 +5534,102 @@
         }
       }
     },
+    "/DeviceCodes": {
+      "get": {
+        "operationId": "getDeviceCodes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/DeviceCode"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createDeviceCode",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "DeviceCode",
+            "schema": {
+              "$ref": "#/definitions/DeviceCode"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/DeviceCode"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Dokumentes": {
       "get": {
         "operationId": "getDokumentes",
@@ -6221,6 +6484,102 @@
           "201": {
             "schema": {
               "$ref": "#/definitions/InfotexteHtml"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Keys": {
+      "get": {
+        "operationId": "getKeys",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Key"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createKey",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Key",
+            "schema": {
+              "$ref": "#/definitions/Key"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Key"
             }
           },
           "default": {
@@ -9207,6 +9566,102 @@
         }
       }
     },
+    "/PersistedGrants": {
+      "get": {
+        "operationId": "getPersistedGrants",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/PersistedGrant"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createPersistedGrant",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "PersistedGrant",
+            "schema": {
+              "$ref": "#/definitions/PersistedGrant"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/PersistedGrant"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Protokolls": {
       "get": {
         "operationId": "getProtokolls",
@@ -10772,6 +11227,83 @@
         }
       }
     },
+    "/DeviceCodes('{UserCode}')": {
+      "delete": {
+        "operationId": "deleteDeviceCode",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "UserCode",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getDeviceCodeByUserCode",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "UserCode",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/DeviceCode"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateDeviceCode",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "UserCode",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "DeviceCode",
+            "schema": {
+              "$ref": "#/definitions/DeviceCode"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/Dokumentes({DokumentID})": {
       "delete": {
         "operationId": "deleteDokumente",
@@ -11452,6 +11984,83 @@
             "name": "InfotexteHtml",
             "schema": {
               "$ref": "#/definitions/InfotexteHtml"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Keys('{Id}')": {
+      "delete": {
+        "operationId": "deleteKey",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getKeyById",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Id",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Key"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateKey",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Id",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Key",
+            "schema": {
+              "$ref": "#/definitions/Key"
             }
           }
         ],
@@ -13839,6 +14448,83 @@
             "name": "Notizen",
             "schema": {
               "$ref": "#/definitions/Notizen"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/PersistedGrants('{Key}')": {
+      "delete": {
+        "operationId": "deletePersistedGrant",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Key",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getPersistedGrantByKey",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Key",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/PersistedGrant"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updatePersistedGrant",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "Key",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "PersistedGrant",
+            "schema": {
+              "$ref": "#/definitions/PersistedGrant"
             }
           }
         ],

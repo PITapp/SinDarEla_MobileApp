@@ -176,6 +176,7 @@ namespace SinDarElaMobile
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.BaseKontakte>("BaseKontaktes");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Benutzer>("Benutzers");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Debugg>("Debuggs");
+          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.DeviceCode>("DeviceCodes");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Dokumente>("Dokumentes");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.DokumenteKategorien>("DokumenteKategoriens");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Ereignisse>("Ereignisses");
@@ -185,6 +186,7 @@ namespace SinDarElaMobile
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.EreignisseTeilnehmerStatus>("EreignisseTeilnehmerStatuses");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Feedback>("Feedbacks");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.InfotexteHtml>("InfotexteHtmls");
+          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Key>("Keys");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Kunden>("Kundens");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.KundenKontakte>("KundenKontaktes");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.KundenKontakteArten>("KundenKontakteArtens");
@@ -216,6 +218,7 @@ namespace SinDarElaMobile
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Mitteilungen>("Mitteilungens");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.MitteilungenVerteiler>("MitteilungenVerteilers");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Notizen>("Notizens");
+          oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.PersistedGrant>("PersistedGrants");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.Protokoll>("Protokolls");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.RegelnAbwesenheiten>("RegelnAbwesenheitens");
           oDataBuilder.EntitySet<SinDarElaMobile.Models.DbSinDarEla.VwBaseAlle>("VwBaseAlles");
